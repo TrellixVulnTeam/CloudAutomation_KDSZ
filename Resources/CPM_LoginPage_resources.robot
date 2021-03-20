@@ -23,7 +23,7 @@ Open CPM Portal and Blank user name login verification
     Input Text    ${txt_username}   ${username_blank}
     sleep_call_1
     Click Button    ${btn_next}
-    sleep_call_1
+    sleep_call_2
     page should contain element     ${lbl_errormessage}
     element text should be      ${lbl_errormessage}      ${invalid_user_text}
     close browser
