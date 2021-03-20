@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20210320 20:28:50.056" rpa="false">
+<suite id="s1" name="WebUpload CPM TC5 Holepunch" source="C:\Users\neogis\D Drive\FREEDOM\Python\CloudAutomation\WebUpload\WebUpload_CPM_TC5_Holepunch.robot">
+<kw name="Check total number of holepunch options" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210320 20:28:52.578" level="INFO">Opening browser 'Chrome' to base url 'https://dev.us.cloud.onelxk.co'.</msg>
+<status status="PASS" starttime="20210320 20:28:52.578" endtime="20210320 20:29:01.836"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210320 20:29:01.836" endtime="20210320 20:29:01.992"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Lexmark Log In</arg>
+</arguments>
+<msg timestamp="20210320 20:29:02.008" level="INFO">Page title is 'Lexmark Log In'.</msg>
+<status status="PASS" starttime="20210320 20:29:01.992" endtime="20210320 20:29:02.008"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>id:user_email</arg>
+</arguments>
+<assign>
+<var>${username_text}</var>
+</assign>
+<msg timestamp="20210320 20:29:02.008" level="INFO">${username_text} = id:user_email</msg>
+<status status="PASS" starttime="20210320 20:29:02.008" endtime="20210320 20:29:02.008"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>id:user_password</arg>
+</arguments>
+<assign>
+<var>${password_text}</var>
+</assign>
+<msg timestamp="20210320 20:29:02.008" level="INFO">${password_text} = id:user_password</msg>
+<status status="PASS" starttime="20210320 20:29:02.008" endtime="20210320 20:29:02.008"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:user_email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:02.008" level="INFO">Typing text 'sravantesh.neogi@lexmark.com' into text field 'id:user_email'.</msg>
+<status status="PASS" starttime="20210320 20:29:02.008" endtime="20210320 20:29:02.190"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>btn-email-next</arg>
+</arguments>
+<assign>
+<var>${nextbtn}</var>
+</assign>
+<msg timestamp="20210320 20:29:02.191" level="INFO">${nextbtn} = btn-email-next</msg>
+<status status="PASS" starttime="20210320 20:29:02.190" endtime="20210320 20:29:02.191"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btn-email-next</arg>
+</arguments>
+<msg timestamp="20210320 20:29:02.191" level="INFO">Clicking button 'btn-email-next'.</msg>
+<status status="PASS" starttime="20210320 20:29:02.191" endtime="20210320 20:29:02.959"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>id:user_password</arg>
+</arguments>
+<assign>
+<var>${password_text}</var>
+</assign>
+<msg timestamp="20210320 20:29:02.964" level="INFO">${password_text} = id:user_password</msg>
+<status status="PASS" starttime="20210320 20:29:02.959" endtime="20210320 20:29:02.964"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:user_password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:02.968" level="INFO">Typing text 'Password@1234' into text field 'id:user_password'.</msg>
+<status status="PASS" starttime="20210320 20:29:02.966" endtime="20210320 20:29:03.085"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>btn-email-login</arg>
+</arguments>
+<assign>
+<var>${loginbtn}</var>
+</assign>
+<msg timestamp="20210320 20:29:03.085" level="INFO">${loginbtn} = btn-email-login</msg>
+<status status="PASS" starttime="20210320 20:29:03.085" endtime="20210320 20:29:03.085"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btn-email-login</arg>
+</arguments>
+<msg timestamp="20210320 20:29:03.086" level="INFO">Clicking button 'btn-email-login'.</msg>
+<status status="PASS" starttime="20210320 20:29:03.085" endtime="20210320 20:29:05.131"></status>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:05.131" endtime="20210320 20:29:10.138"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>//*[@id="card-10"]/cui-card-body/cui-priv-block/div/div</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:29:10.138" endtime="20210320 20:29:10.208"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div</arg>
+</arguments>
+<msg timestamp="20210320 20:29:10.209" level="INFO">Clicking element 'xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div'.</msg>
+<status status="PASS" starttime="20210320 20:29:10.208" endtime="20210320 20:29:10.418"></status>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:10.418" endtime="20210320 20:29:14.418"></status>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<doc>Switches to browser window matching ``locator``.</doc>
+<arguments>
+<arg>Print Management | Lexmark Cloud Services</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:29:14.419" endtime="20210320 20:29:19.680"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Print Management | Lexmark Cloud Services</arg>
+</arguments>
+<msg timestamp="20210320 20:29:19.685" level="INFO">Page title is 'Print Management | Lexmark Cloud Services'.</msg>
+<status status="PASS" starttime="20210320 20:29:19.680" endtime="20210320 20:29:19.685"></status>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:19.685" endtime="20210320 20:29:24.686"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id:link-navPrintQueue</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:29:24.686" endtime="20210320 20:29:24.755"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:link-navPrintQueue</arg>
+</arguments>
+<msg timestamp="20210320 20:29:24.755" level="INFO">Clicking element 'id:link-navPrintQueue'.</msg>
+<status status="PASS" starttime="20210320 20:29:24.755" endtime="20210320 20:29:24.838"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>xpath://*[@id="printQueuePageHeaderDropDown_button"]/div</arg>
+<arg>${tab1name}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:24.868" level="INFO">Element 'xpath://*[@id="printQueuePageHeaderDropDown_button"]/div' contains text 'Print Queue'.</msg>
+<status status="PASS" starttime="20210320 20:29:24.838" endtime="20210320 20:29:24.868"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>printQueueDefaultPrintSettingsButton</arg>
+</arguments>
+<assign>
+<var>${default_settings_btn}</var>
+</assign>
+<msg timestamp="20210320 20:29:24.868" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
+<status status="PASS" starttime="20210320 20:29:24.868" endtime="20210320 20:29:24.868"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${default_settings_btn}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:24.868" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
+<status status="PASS" starttime="20210320 20:29:24.868" endtime="20210320 20:29:24.997"></status>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:24.997" endtime="20210320 20:29:29.000"></status>
+</kw>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>//*[@id="holePunch-listbox-item-printer"]</arg>
+<arg>aria-setsize</arg>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20210320 20:29:29.054" level="INFO">Element '//*[@id="holePunch-listbox-item-printer"]' attribute 'aria-setsize' contains value '5'.</msg>
+<status status="PASS" starttime="20210320 20:29:29.000" endtime="20210320 20:29:29.054"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:29.054" endtime="20210320 20:29:30.058"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:28:52.578" endtime="20210320 20:29:30.058"></status>
+</kw>
+<test id="s1-t1" name="Validation of Holepunch combobox setting Holepunch values as Use printer setting">
+<kw name="Validation of Holepunch dropdown">
+<arguments>
+<arg>holePunch</arg>
+<arg>holePunch-listbox-item-printer</arg>
+<arg>Use printer setting</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>printQueueDefaultPrintSettingsButton</arg>
+</arguments>
+<assign>
+<var>${default_settings_btn}</var>
+</assign>
+<msg timestamp="20210320 20:29:30.058" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
+<status status="PASS" starttime="20210320 20:29:30.058" endtime="20210320 20:29:30.058"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:30.058" endtime="20210320 20:29:31.061"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>saveChangesButton</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:29:31.061" endtime="20210320 20:29:31.410"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:31.410" endtime="20210320 20:29:32.413"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOLEPUNCH}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:32.413" level="INFO">Clicking element 'holePunch'.</msg>
+<status status="PASS" starttime="20210320 20:29:32.413" endtime="20210320 20:29:32.547"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:32.548" endtime="20210320 20:29:33.556"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:33.556" level="INFO">Clicking element 'holePunch-listbox-item-printer'.</msg>
+<status status="PASS" starttime="20210320 20:29:33.556" endtime="20210320 20:29:33.708"></status>
+</kw>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:33.727" level="INFO">Element 'holePunch-listbox-item-printer' attribute 'title' contains value 'Use printer setting'.</msg>
+<status status="PASS" starttime="20210320 20:29:33.709" endtime="20210320 20:29:33.728"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:33.728" endtime="20210320 20:29:34.737"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>element attribute value should be</arg>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:34.775" level="INFO">Element 'holePunch-listbox-item-printer' attribute 'title' contains value 'Use printer setting'.</msg>
+<status status="PASS" starttime="20210320 20:29:34.737" endtime="20210320 20:29:34.775"></status>
+</kw>
+<msg timestamp="20210320 20:29:34.775" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20210320 20:29:34.737" endtime="20210320 20:29:34.775"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status}==False</arg>
+<arg>click button</arg>
+<arg>cancelChangesButton</arg>
+<arg>ELSE</arg>
+<arg>click button</arg>
+<arg>saveChangesButton</arg>
+</arguments>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>saveChangesButton</arg>
+</arguments>
+<msg timestamp="20210320 20:29:34.775" level="INFO">Clicking button 'saveChangesButton'.</msg>
+<status status="PASS" starttime="20210320 20:29:34.775" endtime="20210320 20:29:34.961"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:34.775" endtime="20210320 20:29:34.961"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>settingsUpdatingBusySpinner</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:29:34.961" endtime="20210320 20:29:34.992"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:34.992" endtime="20210320 20:29:35.993"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${default_settings_btn}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:35.995" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
+<status status="PASS" starttime="20210320 20:29:35.994" endtime="20210320 20:29:36.159"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:36.160" endtime="20210320 20:29:37.160"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:30.058" endtime="20210320 20:29:37.160"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:30.058" endtime="20210320 20:29:37.162" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Validation of Holepunch combobox setting Holepunch values as Off">
+<kw name="Validation of Holepunch dropdown">
+<arguments>
+<arg>holePunch</arg>
+<arg>holePunch-listbox-item-off</arg>
+<arg>Off</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>printQueueDefaultPrintSettingsButton</arg>
+</arguments>
+<assign>
+<var>${default_settings_btn}</var>
+</assign>
+<msg timestamp="20210320 20:29:37.168" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
+<status status="PASS" starttime="20210320 20:29:37.167" endtime="20210320 20:29:37.168"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:37.168" endtime="20210320 20:29:38.169"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>saveChangesButton</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:29:38.169" endtime="20210320 20:29:38.485"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:38.485" endtime="20210320 20:29:39.488"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOLEPUNCH}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:39.488" level="INFO">Clicking element 'holePunch'.</msg>
+<status status="PASS" starttime="20210320 20:29:39.488" endtime="20210320 20:29:39.617"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:39.618" endtime="20210320 20:29:40.623"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:40.623" level="INFO">Clicking element 'holePunch-listbox-item-off'.</msg>
+<status status="PASS" starttime="20210320 20:29:40.623" endtime="20210320 20:29:40.794"></status>
+</kw>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:40.814" level="INFO">Element 'holePunch-listbox-item-off' attribute 'title' contains value 'Off'.</msg>
+<status status="PASS" starttime="20210320 20:29:40.795" endtime="20210320 20:29:40.814"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:40.814" endtime="20210320 20:29:41.827"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>element attribute value should be</arg>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:41.864" level="INFO">Element 'holePunch-listbox-item-off' attribute 'title' contains value 'Off'.</msg>
+<status status="PASS" starttime="20210320 20:29:41.827" endtime="20210320 20:29:41.864"></status>
+</kw>
+<msg timestamp="20210320 20:29:41.864" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20210320 20:29:41.827" endtime="20210320 20:29:41.864"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status}==False</arg>
+<arg>click button</arg>
+<arg>cancelChangesButton</arg>
+<arg>ELSE</arg>
+<arg>click button</arg>
+<arg>saveChangesButton</arg>
+</arguments>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>saveChangesButton</arg>
+</arguments>
+<msg timestamp="20210320 20:29:41.864" level="INFO">Clicking button 'saveChangesButton'.</msg>
+<status status="PASS" starttime="20210320 20:29:41.864" endtime="20210320 20:29:42.079"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:41.864" endtime="20210320 20:29:42.079"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>settingsUpdatingBusySpinner</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:29:42.079" endtime="20210320 20:29:42.098"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:42.098" endtime="20210320 20:29:43.098"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${default_settings_btn}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:43.098" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
+<status status="PASS" starttime="20210320 20:29:43.098" endtime="20210320 20:29:43.240"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:43.241" endtime="20210320 20:29:44.247"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:37.166" endtime="20210320 20:29:44.249"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:37.165" endtime="20210320 20:29:44.256" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Validation of Holepunch combobox setting Holepunch values as 2-Hole">
+<kw name="Validation of Holepunch dropdown">
+<arguments>
+<arg>holePunch</arg>
+<arg>holePunch-listbox-item-2-hole</arg>
+<arg>2-Hole</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>printQueueDefaultPrintSettingsButton</arg>
+</arguments>
+<assign>
+<var>${default_settings_btn}</var>
+</assign>
+<msg timestamp="20210320 20:29:44.267" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
+<status status="PASS" starttime="20210320 20:29:44.267" endtime="20210320 20:29:44.267"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:44.268" endtime="20210320 20:29:45.291"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>saveChangesButton</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:29:45.291" endtime="20210320 20:29:45.607"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:45.607" endtime="20210320 20:29:46.611"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOLEPUNCH}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:46.611" level="INFO">Clicking element 'holePunch'.</msg>
+<status status="PASS" starttime="20210320 20:29:46.611" endtime="20210320 20:29:46.707"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:46.707" endtime="20210320 20:29:47.716"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:47.716" level="INFO">Clicking element 'holePunch-listbox-item-2-hole'.</msg>
+<status status="PASS" starttime="20210320 20:29:47.716" endtime="20210320 20:29:47.860"></status>
+</kw>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:47.887" level="INFO">Element 'holePunch-listbox-item-2-hole' attribute 'title' contains value '2-Hole'.</msg>
+<status status="PASS" starttime="20210320 20:29:47.861" endtime="20210320 20:29:47.888"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:47.888" endtime="20210320 20:29:48.904"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>element attribute value should be</arg>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:48.935" level="INFO">Element 'holePunch-listbox-item-2-hole' attribute 'title' contains value '2-Hole'.</msg>
+<status status="PASS" starttime="20210320 20:29:48.904" endtime="20210320 20:29:48.935"></status>
+</kw>
+<msg timestamp="20210320 20:29:48.935" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20210320 20:29:48.904" endtime="20210320 20:29:48.935"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status}==False</arg>
+<arg>click button</arg>
+<arg>cancelChangesButton</arg>
+<arg>ELSE</arg>
+<arg>click button</arg>
+<arg>saveChangesButton</arg>
+</arguments>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>saveChangesButton</arg>
+</arguments>
+<msg timestamp="20210320 20:29:48.935" level="INFO">Clicking button 'saveChangesButton'.</msg>
+<status status="PASS" starttime="20210320 20:29:48.935" endtime="20210320 20:29:49.077"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:48.935" endtime="20210320 20:29:49.077"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>settingsUpdatingBusySpinner</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:29:49.077" endtime="20210320 20:29:49.095"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:49.095" endtime="20210320 20:29:50.106"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${default_settings_btn}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:50.106" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
+<status status="PASS" starttime="20210320 20:29:50.106" endtime="20210320 20:29:50.250"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:50.250" endtime="20210320 20:29:51.252"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:44.266" endtime="20210320 20:29:51.252"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:44.263" endtime="20210320 20:29:51.253" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Validation of Holepunch combobox setting Holepunch values as 3-Hole">
+<kw name="Validation of Holepunch dropdown">
+<arguments>
+<arg>holePunch</arg>
+<arg>holePunch-listbox-item-3-hole</arg>
+<arg>3-Hole</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>printQueueDefaultPrintSettingsButton</arg>
+</arguments>
+<assign>
+<var>${default_settings_btn}</var>
+</assign>
+<msg timestamp="20210320 20:29:51.260" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
+<status status="PASS" starttime="20210320 20:29:51.260" endtime="20210320 20:29:51.260"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:51.260" endtime="20210320 20:29:52.274"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>saveChangesButton</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:29:52.274" endtime="20210320 20:29:52.613"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:52.613" endtime="20210320 20:29:53.616"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOLEPUNCH}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:53.616" level="INFO">Clicking element 'holePunch'.</msg>
+<status status="PASS" starttime="20210320 20:29:53.616" endtime="20210320 20:29:53.724"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:53.724" endtime="20210320 20:29:54.736"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:54.736" level="INFO">Clicking element 'holePunch-listbox-item-3-hole'.</msg>
+<status status="PASS" starttime="20210320 20:29:54.736" endtime="20210320 20:29:54.832"></status>
+</kw>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:54.850" level="INFO">Element 'holePunch-listbox-item-3-hole' attribute 'title' contains value '3-Hole'.</msg>
+<status status="PASS" starttime="20210320 20:29:54.832" endtime="20210320 20:29:54.850"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:54.850" endtime="20210320 20:29:55.855"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>element attribute value should be</arg>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:55.886" level="INFO">Element 'holePunch-listbox-item-3-hole' attribute 'title' contains value '3-Hole'.</msg>
+<status status="PASS" starttime="20210320 20:29:55.855" endtime="20210320 20:29:55.886"></status>
+</kw>
+<msg timestamp="20210320 20:29:55.886" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20210320 20:29:55.855" endtime="20210320 20:29:55.886"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status}==False</arg>
+<arg>click button</arg>
+<arg>cancelChangesButton</arg>
+<arg>ELSE</arg>
+<arg>click button</arg>
+<arg>saveChangesButton</arg>
+</arguments>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>saveChangesButton</arg>
+</arguments>
+<msg timestamp="20210320 20:29:55.886" level="INFO">Clicking button 'saveChangesButton'.</msg>
+<status status="PASS" starttime="20210320 20:29:55.886" endtime="20210320 20:29:56.048"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:55.886" endtime="20210320 20:29:56.048"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>settingsUpdatingBusySpinner</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:29:56.048" endtime="20210320 20:29:56.064"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:56.064" endtime="20210320 20:29:57.074"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${default_settings_btn}</arg>
+</arguments>
+<msg timestamp="20210320 20:29:57.074" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
+<status status="PASS" starttime="20210320 20:29:57.074" endtime="20210320 20:29:57.189"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:57.189" endtime="20210320 20:29:58.191"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:51.259" endtime="20210320 20:29:58.191"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:51.255" endtime="20210320 20:29:58.197" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Validation of Holepunch combobox setting Holepunch values as 4-Hole">
+<kw name="Validation of Holepunch dropdown">
+<arguments>
+<arg>holePunch</arg>
+<arg>holePunch-listbox-item-4-hole</arg>
+<arg>4-Hole</arg>
+</arguments>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>printQueueDefaultPrintSettingsButton</arg>
+</arguments>
+<assign>
+<var>${default_settings_btn}</var>
+</assign>
+<msg timestamp="20210320 20:29:58.203" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
+<status status="PASS" starttime="20210320 20:29:58.203" endtime="20210320 20:29:58.203"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:58.204" endtime="20210320 20:29:59.210"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>saveChangesButton</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:29:59.210" endtime="20210320 20:29:59.497"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:29:59.497" endtime="20210320 20:30:00.499"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOLEPUNCH}</arg>
+</arguments>
+<msg timestamp="20210320 20:30:00.499" level="INFO">Clicking element 'holePunch'.</msg>
+<status status="PASS" starttime="20210320 20:30:00.499" endtime="20210320 20:30:00.610"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:30:00.610" endtime="20210320 20:30:01.619"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+</arguments>
+<msg timestamp="20210320 20:30:01.619" level="INFO">Clicking element 'holePunch-listbox-item-4-hole'.</msg>
+<status status="PASS" starttime="20210320 20:30:01.619" endtime="20210320 20:30:01.767"></status>
+</kw>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<msg timestamp="20210320 20:30:01.785" level="INFO">Element 'holePunch-listbox-item-4-hole' attribute 'title' contains value '4-Hole'.</msg>
+<status status="PASS" starttime="20210320 20:30:01.768" endtime="20210320 20:30:01.786"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:30:01.786" endtime="20210320 20:30:02.794"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>element attribute value should be</arg>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<arguments>
+<arg>${HOLEPUNCH CONTROL}</arg>
+<arg>title</arg>
+<arg>${HOLEPUNCH NAME}</arg>
+</arguments>
+<msg timestamp="20210320 20:30:02.831" level="INFO">Element 'holePunch-listbox-item-4-hole' attribute 'title' contains value '4-Hole'.</msg>
+<status status="PASS" starttime="20210320 20:30:02.794" endtime="20210320 20:30:02.831"></status>
+</kw>
+<msg timestamp="20210320 20:30:02.831" level="INFO">${status} = True</msg>
+<status status="PASS" starttime="20210320 20:30:02.794" endtime="20210320 20:30:02.831"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status}==False</arg>
+<arg>click button</arg>
+<arg>cancelChangesButton</arg>
+<arg>ELSE</arg>
+<arg>click button</arg>
+<arg>saveChangesButton</arg>
+</arguments>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>saveChangesButton</arg>
+</arguments>
+<msg timestamp="20210320 20:30:02.831" level="INFO">Clicking button 'saveChangesButton'.</msg>
+<status status="PASS" starttime="20210320 20:30:02.831" endtime="20210320 20:30:03.021"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:30:02.831" endtime="20210320 20:30:03.021"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>settingsUpdatingBusySpinner</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:30:03.022" endtime="20210320 20:30:03.040"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:30:03.041" endtime="20210320 20:30:04.050"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${default_settings_btn}</arg>
+</arguments>
+<msg timestamp="20210320 20:30:04.050" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
+<status status="PASS" starttime="20210320 20:30:04.050" endtime="20210320 20:30:04.196"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:30:04.196" endtime="20210320 20:30:05.197"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:58.201" endtime="20210320 20:30:05.197"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:29:58.199" endtime="20210320 20:30:05.202" critical="yes"></status>
+</test>
+<kw name="Reset , Log Out and Close Browsers" type="teardown">
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:30:05.206" endtime="20210320 20:30:06.217"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>holePunch</arg>
+</arguments>
+<msg timestamp="20210320 20:30:06.217" level="INFO">Clicking element 'holePunch'.</msg>
+<status status="PASS" starttime="20210320 20:30:06.217" endtime="20210320 20:30:06.332"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>holePunch-listbox-item-printer</arg>
+</arguments>
+<msg timestamp="20210320 20:30:06.336" level="INFO">Clicking element 'holePunch-listbox-item-printer'.</msg>
+<status status="PASS" starttime="20210320 20:30:06.332" endtime="20210320 20:30:06.468"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:30:06.468" endtime="20210320 20:30:07.474"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>saveChangesButton</arg>
+</arguments>
+<msg timestamp="20210320 20:30:07.474" level="INFO">Clicking button 'saveChangesButton'.</msg>
+<status status="PASS" starttime="20210320 20:30:07.474" endtime="20210320 20:30:07.619"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>settingsUpdatingBusySpinner</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:30:07.619" endtime="20210320 20:30:07.630"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:30:07.632" endtime="20210320 20:30:08.642"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>userMenu</arg>
+</arguments>
+<assign>
+<var>${usermenu}</var>
+</assign>
+<msg timestamp="20210320 20:30:08.642" level="INFO">${usermenu} = userMenu</msg>
+<status status="PASS" starttime="20210320 20:30:08.642" endtime="20210320 20:30:08.642"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>link-logout</arg>
+</arguments>
+<assign>
+<var>${logout}</var>
+</assign>
+<msg timestamp="20210320 20:30:08.642" level="INFO">${logout} = link-logout</msg>
+<status status="PASS" starttime="20210320 20:30:08.642" endtime="20210320 20:30:08.642"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${usermenu}</arg>
+</arguments>
+<msg timestamp="20210320 20:30:08.647" level="INFO">Clicking element 'userMenu'.</msg>
+<status status="PASS" starttime="20210320 20:30:08.642" endtime="20210320 20:30:08.783"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${logout}</arg>
+</arguments>
+<status status="PASS" starttime="20210320 20:30:08.784" endtime="20210320 20:30:08.812"></status>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:30:08.812" endtime="20210320 20:30:12.823"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${logout}</arg>
+</arguments>
+<msg timestamp="20210320 20:30:12.823" level="INFO">Clicking element 'link-logout'.</msg>
+<status status="PASS" starttime="20210320 20:30:12.823" endtime="20210320 20:30:12.945"></status>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210320 20:30:12.945" endtime="20210320 20:30:17.957"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210320 20:30:17.957" endtime="20210320 20:30:20.500"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:30:05.206" endtime="20210320 20:30:20.503"></status>
+</kw>
+<status status="PASS" starttime="20210320 20:28:50.056" endtime="20210320 20:30:20.504"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0">Critical Tests</stat>
+<stat pass="5" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" id="s1" name="WebUpload CPM TC5 Holepunch">WebUpload CPM TC5 Holepunch</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

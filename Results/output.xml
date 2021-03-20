@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20210316 19:53:23.896" rpa="false">
+<suite id="s1" name="CPM Email Blank Subject Body" source="C:\Users\neogis\D Drive\FREEDOM\Python\CloudAutomation\Email\CPM_Email_Blank_Subject_Body.robot">
+<test id="s1-t1" name="Email job verification with blank subject and body">
+<kw name="Open Browser To Login Page" library="CPM_Email_Resources">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210316 19:53:24.967" level="INFO">Opening browser 'Chrome' to base url 'https://qa.us.iss.lexmark.com'.</msg>
+<status status="PASS" starttime="20210316 19:53:24.967" endtime="20210316 19:53:33.180"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210316 19:53:33.181" endtime="20210316 19:53:33.325"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210316 19:53:33.326" level="INFO">Typing text 'sravantesh.neogi@lexmark.com' into text field 'id:user_email'.</msg>
+<status status="PASS" starttime="20210316 19:53:33.325" endtime="20210316 19:53:33.455"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_next}</arg>
+</arguments>
+<msg timestamp="20210316 19:53:33.456" level="INFO">Clicking button 'id:btn-email-next'.</msg>
+<status status="PASS" starttime="20210316 19:53:33.456" endtime="20210316 19:53:34.225"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210316 19:53:34.227" level="INFO">Typing text 'Password@1234' into text field 'id:user_password'.</msg>
+<status status="PASS" starttime="20210316 19:53:34.225" endtime="20210316 19:53:34.406"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20210316 19:53:34.407" level="INFO">Clicking button 'id:btn-email-login'.</msg>
+<status status="PASS" starttime="20210316 19:53:34.407" endtime="20210316 19:53:36.389"></status>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:53:36.389" endtime="20210316 19:53:41.389"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${lnk_cpm}</arg>
+</arguments>
+<status status="PASS" starttime="20210316 19:53:41.389" endtime="20210316 19:53:41.410"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_cpm}</arg>
+</arguments>
+<msg timestamp="20210316 19:53:41.410" level="INFO">Clicking element 'xpath://*[@id='card-12']/cui-card-body/cui-priv-block/div/div'.</msg>
+<status status="PASS" starttime="20210316 19:53:41.410" endtime="20210316 19:53:41.574"></status>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:53:41.574" endtime="20210316 19:53:45.575"></status>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<doc>Switches to browser window matching ``locator``.</doc>
+<arguments>
+<arg>Print Management | Lexmark Cloud Services</arg>
+</arguments>
+<status status="PASS" starttime="20210316 19:53:45.575" endtime="20210316 19:53:45.767"></status>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:53:45.767" endtime="20210316 19:53:50.786"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${name_printqueue}</arg>
+</arguments>
+<status status="PASS" starttime="20210316 19:53:50.786" endtime="20210316 19:53:50.817"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>No data available</arg>
+</arguments>
+<msg timestamp="20210316 19:53:50.833" level="INFO">Current page contains text 'No data available'.</msg>
+<status status="PASS" starttime="20210316 19:53:50.817" endtime="20210316 19:53:50.833"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${name_printqueue}</arg>
+</arguments>
+<status status="PASS" starttime="20210316 19:53:50.833" endtime="20210316 19:53:50.848"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${name_printqueue}</arg>
+</arguments>
+<msg timestamp="20210316 19:53:50.848" level="INFO">Clicking element 'id:link-navPrintQueue'.</msg>
+<status status="PASS" starttime="20210316 19:53:50.848" endtime="20210316 19:53:50.922"></status>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:53:50.922" endtime="20210316 19:53:54.924"></status>
+</kw>
+<status status="PASS" starttime="20210316 19:53:24.967" endtime="20210316 19:53:54.924"></status>
+</kw>
+<kw name="Check blank subject email job" library="CPM_Email_Resources">
+<kw name="Blank Subject" library="send_email">
+<assign>
+<var>${email_status}</var>
+</assign>
+<msg timestamp="20210316 19:54:56.433" level="INFO">Email submission successful
+Attachment processed</msg>
+<msg timestamp="20210316 19:54:56.433" level="INFO">${email_status} = Email received - all documents processed</msg>
+<status status="PASS" starttime="20210316 19:53:54.924" endtime="20210316 19:54:56.433"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${email_status}</arg>
+</arguments>
+<msg timestamp="20210316 19:54:56.433" level="INFO">Email received - all documents processed</msg>
+<status status="PASS" starttime="20210316 19:54:56.433" endtime="20210316 19:54:56.433"></status>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:54:56.433" endtime="20210316 19:55:00.434"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>element text should be</arg>
+<arg>${txt_nojob}</arg>
+<arg>No data available</arg>
+</arguments>
+<assign>
+<var>${joblist}</var>
+</assign>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${txt_nojob}</arg>
+<arg>No data available</arg>
+</arguments>
+<msg timestamp="20210316 19:55:00.434" level="INFO">Verifying element 'xpath://*[@id='documents']/ag-grid-angular/div/div[1]/div/div[6]/div/div/span' contains exact text 'No data available'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210316 19:55:00.867" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210316 19:55:00.481" endtime="20210316 19:55:00.867"></status>
+</kw>
+<msg timestamp="20210316 19:55:00.871" level="FAIL">Element with locator 'xpath://*[@id='documents']/ag-grid-angular/div/div[1]/div/div[6]/div/div/span' not found.</msg>
+<status status="FAIL" starttime="20210316 19:55:00.434" endtime="20210316 19:55:00.871"></status>
+</kw>
+<msg timestamp="20210316 19:55:00.873" level="INFO">${joblist} = False</msg>
+<status status="PASS" starttime="20210316 19:55:00.434" endtime="20210316 19:55:00.873"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${joblist}</arg>
+<arg>reload page</arg>
+</arguments>
+<status status="PASS" starttime="20210316 19:55:00.873" endtime="20210316 19:55:00.873"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>element text should be</arg>
+<arg>${email_job1_status}</arg>
+<arg>Processing</arg>
+</arguments>
+<assign>
+<var>${pagestatus}</var>
+</assign>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${email_job1_status}</arg>
+<arg>Processing</arg>
+</arguments>
+<msg timestamp="20210316 19:55:00.875" level="INFO">Verifying element 'xpath://*[@id='documents-row-0-documentStatus']/lpm-status-renderer' contains exact text 'Processing'.</msg>
+<status status="PASS" starttime="20210316 19:55:00.873" endtime="20210316 19:55:00.906"></status>
+</kw>
+<msg timestamp="20210316 19:55:00.906" level="INFO">${pagestatus} = True</msg>
+<status status="PASS" starttime="20210316 19:55:00.873" endtime="20210316 19:55:00.906"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${pagestatus}</arg>
+<arg>reload page</arg>
+</arguments>
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20210316 19:55:00.906" endtime="20210316 19:55:02.295"></status>
+</kw>
+<status status="PASS" starttime="20210316 19:55:00.906" endtime="20210316 19:55:02.295"></status>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:55:02.295" endtime="20210316 19:55:07.300"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${name_printqueue}</arg>
+</arguments>
+<status status="PASS" starttime="20210316 19:55:07.300" endtime="20210316 19:55:07.353"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${tbl_printqueue}</arg>
+</arguments>
+<status status="PASS" starttime="20210316 19:55:07.353" endtime="20210316 19:55:07.406"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${email_job1_description}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<msg timestamp="20210316 19:55:07.406" level="INFO">Verifying element 'id:documents-row-0-description' contains exact text ''.</msg>
+<status status="PASS" starttime="20210316 19:55:07.406" endtime="20210316 19:55:07.453"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>${tbl_printqueue}</arg>
+<arg>emailBody.html</arg>
+</arguments>
+<msg timestamp="20210316 19:55:07.510" level="INFO">Element 'xpath://*[@id='documents']/ag-grid-angular/div/div[1]/div/div[3]' contains text 'emailBody.html'.</msg>
+<status status="PASS" starttime="20210316 19:55:07.453" endtime="20210316 19:55:07.510"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${email_icon_job1}</arg>
+</arguments>
+<msg timestamp="20210316 19:55:07.541" level="INFO">Element 'id:documents-row-0-client' is displayed.</msg>
+<status status="PASS" starttime="20210316 19:55:07.510" endtime="20210316 19:55:07.541"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${email_job1_status}</arg>
+<arg>Ready</arg>
+</arguments>
+<msg timestamp="20210316 19:55:07.541" level="INFO">Verifying element 'xpath://*[@id='documents-row-0-documentStatus']/lpm-status-renderer' contains exact text 'Ready'.</msg>
+<status status="PASS" starttime="20210316 19:55:07.541" endtime="20210316 19:55:07.560"></status>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:55:07.560" endtime="20210316 19:55:12.574"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:55:12.574" endtime="20210316 19:55:13.584"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>//*[@id="documents-total-items-bottom"]/span</arg>
+</arguments>
+<assign>
+<var>${dummy_click}</var>
+</assign>
+<msg timestamp="20210316 19:55:13.584" level="INFO">${dummy_click} = //*[@id="documents-total-items-bottom"]/span</msg>
+<status status="PASS" starttime="20210316 19:55:13.584" endtime="20210316 19:55:13.584"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${chk_deleteall}</arg>
+</arguments>
+<msg timestamp="20210316 19:55:13.584" level="INFO">Clicking element 'id:documents-select-all'.</msg>
+<status status="PASS" starttime="20210316 19:55:13.584" endtime="20210316 19:55:13.745"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:55:13.745" endtime="20210316 19:55:14.748"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${dummy_click}</arg>
+</arguments>
+<msg timestamp="20210316 19:55:14.748" level="INFO">Clicking element '//*[@id="documents-total-items-bottom"]/span'.</msg>
+<status status="PASS" starttime="20210316 19:55:14.748" endtime="20210316 19:55:14.856"></status>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:55:14.856" endtime="20210316 19:55:15.875"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_delete}</arg>
+</arguments>
+<msg timestamp="20210316 19:55:15.875" level="INFO">Clicking button 'id:printQueueDeleteButton'.</msg>
+<status status="PASS" starttime="20210316 19:55:15.875" endtime="20210316 19:55:16.060"></status>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:55:16.060" endtime="20210316 19:55:20.065"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_yes}</arg>
+</arguments>
+<msg timestamp="20210316 19:55:20.065" level="INFO">Clicking button 'id:confirmation-modal_okButton'.</msg>
+<status status="PASS" starttime="20210316 19:55:20.065" endtime="20210316 19:55:20.218"></status>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:55:20.218" endtime="20210316 19:55:24.220"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${txt_nojob}</arg>
+<arg>No data available</arg>
+</arguments>
+<msg timestamp="20210316 19:55:24.221" level="INFO">Verifying element 'xpath://*[@id='documents']/ag-grid-angular/div/div[1]/div/div[6]/div/div/span' contains exact text 'No data available'.</msg>
+<status status="PASS" starttime="20210316 19:55:24.220" endtime="20210316 19:55:24.276"></status>
+</kw>
+<status status="PASS" starttime="20210316 19:53:54.924" endtime="20210316 19:55:24.277"></status>
+</kw>
+<kw name="Log out" library="CPM_Email_Resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_username}</arg>
+</arguments>
+<msg timestamp="20210316 19:55:24.278" level="INFO">Clicking element 'id:userMenu'.</msg>
+<status status="PASS" starttime="20210316 19:55:24.278" endtime="20210316 19:55:24.371"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${lnl_logout}</arg>
+</arguments>
+<status status="PASS" starttime="20210316 19:55:24.371" endtime="20210316 19:55:24.393"></status>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:55:24.394" endtime="20210316 19:55:28.407"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${lnl_logout}</arg>
+</arguments>
+<msg timestamp="20210316 19:55:28.407" level="INFO">Clicking element 'id:link-logout'.</msg>
+<status status="PASS" starttime="20210316 19:55:28.407" endtime="20210316 19:55:28.544"></status>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210316 19:55:28.545" endtime="20210316 19:55:33.558"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210316 19:55:33.558" endtime="20210316 19:55:35.897"></status>
+</kw>
+<status status="PASS" starttime="20210316 19:55:24.278" endtime="20210316 19:55:35.897"></status>
+</kw>
+<status status="PASS" starttime="20210316 19:53:24.967" endtime="20210316 19:55:35.897" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210316 19:53:23.896" endtime="20210316 19:55:35.897"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="CPM Email Blank Subject Body">CPM Email Blank Subject Body</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
