@@ -21,7 +21,7 @@ Open CPM Portal and Blank user name login verification
     wait until page contains    E-mail
     Maximize Browser Window
     Input Text    ${txt_username}   ${username_blank}
-    sleep_call_1
+    sleep_call_2
     Click Button    ${btn_next}
     sleep_call_2
     page should contain element     ${lbl_errormessage}
