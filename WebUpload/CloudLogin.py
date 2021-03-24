@@ -32,7 +32,7 @@ def sleep_call_2():
 
 
 def sleep_call_1():
-    time.sleep(1)
+    time.sleep(2)
 
 
 def download_wait(filename):

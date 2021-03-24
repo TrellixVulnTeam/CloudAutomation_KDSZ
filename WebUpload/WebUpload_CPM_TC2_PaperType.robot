@@ -8,7 +8,7 @@ Suite Teardown     Reset , Log Out and Close Browsers
 
 *** Variables ***
 ${LOGIN URL}                    https://dev.us.cloud.onelxk.co
-${BROWSER}                      Chrome
+${BROWSER}                      headlessChrome
 ${username}                     sravantesh.neogi@lexmark.com
 ${password}                     Password@1234
 ${tab1name}                     Print Queue
@@ -78,7 +78,7 @@ Check total number of paper types
 
 #Check page size count
     element attribute value should be   //*[@id="paperType-listbox-item-printer"]   aria-setsize   24
-    sleep_call_1
+    sleep_call_2
 
 Validation of Paper type dropdown
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
@@ -86,35 +86,35 @@ Validation of Paper type dropdown
 
     sleep_call
     scroll element into view        holePunch
-    sleep_call_1
+    sleep_call_2
     click element   ${PAPER TYPE}
-    sleep_call_1
+    sleep_call_2
     click element   ${PAPER TYPE CONTROL}
 
     run keyword if  ${CHECK}==True     page should contain   ${ERROR_TEXT}
-    sleep_call_1
+    sleep_call_2
 
     #Icon ID gets generated run time, hence cannot track it.
 
     element attribute value should be   ${PAPER TYPE CONTROL}   title   ${PAPER TYPE NAME}
-    sleep_call_1
+    sleep_call_2
     ${status}=       run keyword and return status  element attribute value should be   ${PAPER TYPE CONTROL}   title   ${PAPER TYPE NAME}
 
     Run keyword if  ${status}==False    click button    cancelChangesButton
     ...         ELSE    click button    saveChangesButton
     wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_1
+    sleep_call_2
     click button    ${default_settings_btn}
-    sleep_call_1
+    sleep_call_2
 
 Reset , Log Out and Close Browsers
-    sleep_call_1
+    sleep_call_2
     click element   paperType
     click element   paperType-listbox-item-printer
-    sleep_call_1
+    sleep_call_2
     click button    saveChangesButton
     wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_1
+    sleep_call_2
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}

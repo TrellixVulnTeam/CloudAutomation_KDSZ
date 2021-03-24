@@ -88,28 +88,28 @@ Validation of Paper size dropdown
 
     sleep_call_1
     scroll element into view        holePunch
-    sleep_call_1
+    sleep_call_2
     click element   ${PAGE SIZE}
-    sleep_call_1
+    sleep_call_2
     click element   ${PAGE SIZE CONTROL}
     element attribute value should be   ${PAGE SIZE CONTROL}   title   ${PAGE SIZE NAME}
-    sleep_call_1
+    sleep_call_2
     ${status}=       run keyword and return status  element attribute value should be   ${PAGE SIZE CONTROL}   title   ${PAGE SIZE NAME}
-
+    sleep_call_2
     Run keyword if  ${status}==False    click button    cancelChangesButton
     ...         ELSE    click button    saveChangesButton
     wait until page contains element    settingsUpdatingBusySpinner
     sleep_call_1
     click button    ${default_settings_btn}
-    sleep_call_1
+    sleep_call_2
 
 Reset , Log Out and Close Browsers
     click element   paperSize
     click element   paperSize-listbox-item-printer
-    sleep_call_1
+    sleep_call_2
     click button    saveChangesButton
     wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_1
+    sleep_call_2
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}
