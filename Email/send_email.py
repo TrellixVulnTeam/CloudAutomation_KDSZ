@@ -68,12 +68,12 @@ def blank_subject():
     inbox = namespace.GetDefaultFolder(6)
     message = inbox.Items
     last_message = message.GetLast()
-    last_message_sender = last_message.Sender()
+    last_message_sender = last_message.SenderName
 
     while last_message_sender not in "no-reply@cloud.onelxk.co":
         time.sleep(5)
         last_message = message.GetLast()
-        last_message_sender = last_message.Sender()
+        last_message_sender = last_message.SenderName
         email_status=last_message.Subject
 
     if last_message_sender == 'no-reply@cloud.onelxk.co':
@@ -107,13 +107,13 @@ def blank_body():
     inbox = namespace.GetDefaultFolder(6)
     message = inbox.Items
     last_message = message.GetLast()
-    last_message_sender = last_message.Sender()
+    last_message_sender = last_message.SenderName
     email_status = last_message.Subject
 
     while last_message_sender not in "no-reply@cloud.onelxk.co":
         time.sleep(5)
         last_message = message.GetLast()
-        last_message_sender = last_message.Sender()
+        last_message_sender = last_message.SenderName
 
     if last_message_sender == 'no-reply@cloud.onelxk.co':
         if last_message.Subject == 'Email received - all documents processed':
