@@ -124,4 +124,3 @@ def blank_body():
     return email_status
 
 
-send_email_singleattachment("Attachment.txt")
