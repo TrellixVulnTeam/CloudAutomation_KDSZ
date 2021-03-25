@@ -10,7 +10,7 @@ Suite Teardown     Log out
 
 *** Variables ***
 ${LOGIN URL}                    https://dev.us.cloud.onelxk.co
-${BROWSER}                      Chrome
+${BROWSER}                      headlessChrome
 ${username}                     sravantesh.neogi@lexmark.com
 ${password}                     Password@1234
 ${CPM_URL}                      https://dev.us.cloud.onelxk.co

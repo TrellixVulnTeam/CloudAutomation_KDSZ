@@ -7,7 +7,7 @@ Resource     ../Resources/CPM_Mobile_Resources.robot
 
 *** Variables ***
 ${LOGIN URL}                    https://dev.us.cloud.onelxk.co
-${BROWSER}                      Chrome
+${BROWSER}                      headlessChrome
 ${username}                     sravantesh.neogi@lexmark.com
 ${password}                     Password@1234
 ${tab1name}                     Print Queue

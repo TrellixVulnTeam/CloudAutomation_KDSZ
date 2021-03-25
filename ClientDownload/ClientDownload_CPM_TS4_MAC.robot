@@ -10,7 +10,7 @@ Suite Teardown     Log out
 
 *** Variables ***
 ${LOGIN URL}                    https://qa.us.iss.lexmark.com
-${BROWSER}                      Chrome
+${BROWSER}                      headlessChrome
 ${username}                     sravantesh.neogi@lexmark.com
 ${password}                     Password@1234
 ${CPM_URL}                      https://qa.us.iss.lexmark.com/cpm

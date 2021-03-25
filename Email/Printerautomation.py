@@ -47,14 +47,14 @@ def printer_automation(text):
             # text="Hello.txt"
             ups.regex('Find Widget "resource-id=\'esf.printReleaseUi:id/action_settings\'" do "press"')
             ups.regex('On text "Refresh" do "press"')
-            time.sleep(5)
+            time.sleep(7)
             ups_command = '''In area "resource-id='esf.printReleaseUi:id/lvFragMain'" On text "{}" Do "press"'''.format(
                 text)
             ups.regex(ups_command)
             ups.regex('on text "Print" do "press"')
             time.sleep(10)
             ups.regex('on text "Print" Do "wait_until_found"')
-            #time.sleep(5)
+            time.sleep(5)
             ups.regex('do "press key KEYCODE_BACK"')
             time.sleep(2)
             ups.regex('on text "sravantesh.neogi@lexmark.com" do "press" ')
@@ -67,6 +67,9 @@ def printer_automation(text):
             print("Job name not found")
             print_status = 'False'
             return print_status
+
+
+
 
 
 

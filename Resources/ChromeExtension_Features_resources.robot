@@ -70,6 +70,7 @@ Chrome Extension Login Job Verification
 
 Print Job
 #Call the Print Device Automation Python script for releasing the jobs
+    sleep_call
     ${print_job_status} =   printer_automation  ${chrome_job}
     log     {print_job_status}
 
