@@ -10,10 +10,13 @@ import time
 def printer_automation(text):
     print(text)
     ip_address = "10.195.7.84"
-    lxk_printer_device.webservices.automation.download_panel_xml(ip_address, filename="panel.xml", path=".")
+    #lxk_printer_device.webservices.automation.download_panel_xml(ip_address, filename="panel.xml", path=".")
 
     ups = UPS(printer_ip="10.195.7.84")
     ups.initialize()
+    time.sleep(2)
+    ups.regex('do "press key KEYCODE_HOME"')
+    time.sleep(5)
 
     # Job name
     # text = "Hello.txt"

@@ -6,18 +6,17 @@ from lxk_universal_panel_step.core.universal_panel_step import TextInputUsingNum
 import lxk_universal_panel_step
 import time
 
-
+ups = UPS(printer_ip="10.195.7.84")
+ups.initialize()
 
 def printer_automation(text):
-    # print(text)
     ip_address = "10.195.7.84"
-    #lxk_printer_device.webservices.automation.download_panel_xml(ip_address, filename="panel.xml", path=".")
 
     ups = UPS(printer_ip="10.195.7.84")
     ups.initialize()
-
-    # Job name
-    # text = "Hello.txt"
+    time.sleep(2)
+    ups.regex('do "press key KEYCODE_HOME"')
+    time.sleep(5)
 
     # Click PIN login
     # ups.regex('Find widget "text-id=\'STRING_IDLEBUTTON_ID_1\'" do "press"')
@@ -72,4 +71,4 @@ def printer_automation(text):
 
 
 
-#printer_automation("Test Mail.html")
+
