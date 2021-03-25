@@ -7,10 +7,10 @@ Library     CloudLogin.py
 #Suite Teardown     Verify deletion of jobs
 
 *** Variables ***
-#${LOGIN URL}                    https://dev.us.cloud.onelxk.co
+${LOGIN URL}                    https://dev.us.cloud.onelxk.co
 ${BROWSER}                      Chrome
-#${username}                     sravantesh.neogi@lexmark.com
-#${password}                     Password@1234
+${username}                     sravantesh.neogi@lexmark.com
+${password}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${tab1name}                     Print Queue
