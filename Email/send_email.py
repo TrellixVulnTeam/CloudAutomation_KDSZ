@@ -26,13 +26,15 @@ def send_email_singleattachment(file):
     inbox = namespace.GetDefaultFolder(6)
     message = inbox.Items
     last_message = message.GetLast()
-    last_message_sender = last_message.Sender()
-    email_status=last_message.Subject
+    #print(last_message.SenderName)
+    last_message_sender = last_message.SenderName
+    #print(last_message_sender)
+    email_status = last_message.Subject
 
     while last_message_sender not in "no-reply@cloud.onelxk.co":
         time.sleep(5)
         last_message = message.GetLast()
-        last_message_sender = last_message.Sender()
+        last_message_sender = last_message.SenderName
 
     if last_message_sender == 'no-reply@cloud.onelxk.co':
         if last_message.Subject == 'Email received - all documents processed':
@@ -122,4 +124,4 @@ def blank_body():
     return email_status
 
 
-
+send_email_singleattachment("Attachment.txt")
