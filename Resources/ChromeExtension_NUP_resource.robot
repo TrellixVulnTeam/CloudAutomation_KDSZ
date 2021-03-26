@@ -4,7 +4,7 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variable ***
-${BROWSER}      headlessChrome
+${BROWSER}      Chrome
 ${URL}          https://dev.us.cloud.onelxk.co/
 ${USER}         sravantesh.neogi@lexmark.com
 ${PASSWORD}     Password@1234

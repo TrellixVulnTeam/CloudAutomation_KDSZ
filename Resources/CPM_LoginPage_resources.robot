@@ -4,7 +4,7 @@ Variables    ../PageObjects/Locators.py
 
 *** Variables ***
 ${URL}                          https://dev.us.cloud.onelxk.co/
-${BROWSER}                      headlessChrome
+${BROWSER}                      Chrome
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${next}                         Next

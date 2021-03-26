@@ -7,7 +7,7 @@ Resource     ../Resources/ChromeExtension_Features_resources.robot
 
 *** Variables ***
 ${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      headlessChrome
+${BROWSER}                      Chrome
 ${USER}                     sravantesh.neogi@lexmark.com
 ${PASSWORD}                     Password@1234
 ${TABNAME}                     Print Queue

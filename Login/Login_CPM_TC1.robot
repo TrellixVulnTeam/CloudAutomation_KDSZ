@@ -7,7 +7,7 @@ Resource     ../Resources/CPM_LoginPage_resources.robot
 
 *** Variables ***
 ${LOGIN URL}                    https://dev.us.cloud.onelxk.co
-${BROWSER}                      headlessChrome
+${BROWSER}                      Chrome
 ${USER}                         sravantesh.neogi@lexmark.com
 ${PASSWORD}                     Password@1234
 ${username_blank}
