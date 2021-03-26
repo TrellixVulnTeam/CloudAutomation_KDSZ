@@ -86,7 +86,7 @@ Validation of Paper size dropdown
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     [Arguments]        ${PAGE SIZE}     ${PAGE SIZE CONTROL}       ${PAGE SIZE NAME}
 
-    sleep_call_1
+    sleep_call
     scroll element into view        holePunch
     sleep_call_2
     click element   ${PAGE SIZE}
@@ -98,8 +98,8 @@ Validation of Paper size dropdown
     sleep_call_2
     Run keyword if  ${status}==False    click button    cancelChangesButton
     ...         ELSE    click button    saveChangesButton
-    wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_1
+    #wait until page contains element    settingsUpdatingBusySpinner
+    sleep_call
     click button    ${default_settings_btn}
     sleep_call_2
 

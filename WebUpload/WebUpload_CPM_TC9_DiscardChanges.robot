@@ -27,6 +27,7 @@ Discard Change dialog validation
     Increment Copy validation by 1 to 2
     Validation of Confirmation dialog by Discarding
     Validation of Confirmation Dialog by Saving Changes
+    Log Out Close Browsers
 
 
 *** Keywords ***
@@ -69,7 +70,7 @@ Open Browser To Login Page
     Click Element   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
-    Title Should Be     Print Management | Lexmark Cloud Services
+    #Title Should Be     Print Management | Lexmark Cloud Services
     sleep_call
 
 
@@ -118,15 +119,15 @@ Validation of Confirmation Dialog by Saving Changes
 
 
 
-#Log Out Close Browsers
-#    ${usermenu}     set variable    userMenu
-#    ${logout}       set variable    link-logout
-#    click element   ${usermenu}
-#    wait until page contains element    ${logout}
-#    sleep_call_2
-#    click element   ${logout}
-#    sleep_call
-#    close all browsers
+Log Out Close Browsers
+    ${usermenu}     set variable    userMenu
+    ${logout}       set variable    link-logout
+    click element   ${usermenu}
+    wait until page contains element    ${logout}
+    sleep_call_2
+    click element   ${logout}
+    sleep_call
+    close all browsers
 
 ###################################################################################################################
 

@@ -84,7 +84,7 @@ Validation of Staple dropdown
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     [Arguments]        ${STAPLE}     ${STAPLE CONTROL}       ${STAPLE NAME}
 
-    sleep_call_1
+    sleep_call
     scroll element into view        holePunch
     sleep_call_1
     click element   ${STAPLE}
@@ -96,8 +96,8 @@ Validation of Staple dropdown
 
     Run keyword if  ${status}==False    click button    cancelChangesButton
     ...         ELSE    click button    saveChangesButton
-    wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_1
+    #wait until page contains element    settingsUpdatingBusySpinner
+    sleep_call
     click button    ${default_settings_btn}
     sleep_call_1
 

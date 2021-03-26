@@ -84,7 +84,7 @@ Validation of Fold dropdown
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     [Arguments]        ${FOLD}     ${FOLD CONTROL}       ${FOLD NAME}
 
-    sleep_call_2
+    sleep_call
     scroll element into view        saveChangesButton
     sleep_call_2
     click element   ${FOLD}
@@ -96,8 +96,8 @@ Validation of Fold dropdown
 
     Run keyword if  ${status}==False    click button    cancelChangesButton
     ...         ELSE    click button    saveChangesButton
-    wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_1
+    #wait until page contains element    settingsUpdatingBusySpinner
+    sleep_call
     click button    ${default_settings_btn}
     sleep_call_1
 

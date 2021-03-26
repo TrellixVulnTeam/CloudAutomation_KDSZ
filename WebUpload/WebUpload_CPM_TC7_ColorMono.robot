@@ -90,12 +90,13 @@ Validation of Color Mono default state
 
     click element     ${mono}
     click button        saveChangesButton
-    wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_1
+    #wait until page contains element    settingsUpdatingBusySpinner
+    sleep_call
 
     click button    ${default_settings_btn}
-    sleep_call_2
+    sleep_call
     scroll element into view        saveChangesButton
+    sleep_call_2
 
 Validation of Color Mono new state
 

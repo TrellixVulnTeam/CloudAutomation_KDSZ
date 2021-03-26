@@ -84,7 +84,7 @@ Validation of Output Bin dropdown
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     [Arguments]        ${OUTPUT BIN}     ${OUTPUT BIN CONTROL}       ${OUTPUT BIN NAME}
 
-    sleep_call_2
+    sleep_call
     scroll element into view        holePunch
     sleep_call_2
     click element   ${OUTPUT BIN}
@@ -97,7 +97,7 @@ Validation of Output Bin dropdown
     Run keyword if  ${status}==False    click button    cancelChangesButton
     ...         ELSE    click button    saveChangesButton
     #wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_2
+    sleep_call
     click button    ${default_settings_btn}
     sleep_call_2
 

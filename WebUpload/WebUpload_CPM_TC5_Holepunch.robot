@@ -85,7 +85,7 @@ Validation of Holepunch dropdown
     [Arguments]        ${HOLEPUNCH}     ${HOLEPUNCH CONTROL}       ${HOLEPUNCH NAME}
 
     sleep_call
-    scroll element into view        saveChangesButton
+    scroll element into view        holePunch
     sleep_call
     click element   ${HOLEPUNCH}
     sleep_call
@@ -96,8 +96,8 @@ Validation of Holepunch dropdown
 
     Run keyword if  ${status}==False    click button    cancelChangesButton
     ...         ELSE    click button    saveChangesButton
-    wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_1
+    #wait until page contains element    settingsUpdatingBusySpinner
+    sleep_call
     click button    ${default_settings_btn}
     sleep_call_1
 

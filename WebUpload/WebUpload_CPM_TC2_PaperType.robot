@@ -102,8 +102,8 @@ Validation of Paper type dropdown
 
     Run keyword if  ${status}==False    click button    cancelChangesButton
     ...         ELSE    click button    saveChangesButton
-    wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_2
+    #wait until page contains element    settingsUpdatingBusySpinner
+    sleep_call
     click button    ${default_settings_btn}
     sleep_call_2
 

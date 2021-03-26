@@ -24,18 +24,18 @@ ${delete_dlg_title_actual}      Delete Print Jobs
 *** Test Cases ***
 Copy Collate NupOrientation validation
     Open Browser To Login Page
-#    Increment Copy validation by 1 to 2
-#    Decrement Copy Validation from 2 to 1
-#    Collate Checkbox disable validation on making copy 1
-#    Collate Checkbox enable validation on making copy more than 1
-#    Collate checkbox validation by checking and unchecking
-#    Validation with incorrect copies value more than 999
-#    Validation with incorrect copies value of 0
-#    Validate NUp orientation is disabled
-#    Validate NUp orientation is enabled with NUP value
-#    Validate NUp orientation is disabled with NUP value as 1
-     Validation of Paper size dropdown
-#    Log Out Close Browsers
+    Increment Copy validation by 1 to 2
+    Decrement Copy Validation from 2 to 1
+    Collate Checkbox disable validation on making copy 1
+    Collate Checkbox enable validation on making copy more than 1
+    Collate checkbox validation by checking and unchecking
+    Validation with incorrect copies value more than 999
+    Validation with incorrect copies value of 0
+    Validate NUp orientation is disabled
+    Validate NUp orientation is enabled with NUP value
+    Validate NUp orientation is disabled with NUP value as 1
+    Validation of Paper size dropdown
+    Log Out Close Browsers
 
 
 *** Keywords ***
@@ -78,7 +78,7 @@ Open Browser To Login Page
     Click Element   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
-    Title Should Be     Print Management | Lexmark Cloud Services
+    #Title Should Be     Print Management | Lexmark Cloud Services
     sleep_call
 
 
@@ -189,7 +189,7 @@ Validate NUp orientation is disabled with NUP value as 1
     element attribute value should be   //*[@id="nupOrientation"]/div    disabled   true
 
 Validation of Paper size dropdown
-    scroll element into view        paperSize
+    scroll element into view        saveChangesButton
     sleep_call_1
     click element       paperSize
     sleep_call_1
