@@ -6,13 +6,14 @@ from lxk_universal_panel_step.core.universal_panel_step import TextInputUsingNum
 import lxk_universal_panel_step
 import time
 
-ups = UPS(printer_ip="10.195.7.84")
-ups.initialize()
+
 
 def printer_automation(text):
-    ip_address = "10.195.7.84"
 
-    ups = UPS(printer_ip="10.195.7.84")
+
+    ip_address = "10.195.7.227"
+
+    ups = UPS(printer_ip="10.195.7.227")
     ups.initialize()
     time.sleep(2)
     ups.regex('do "press key KEYCODE_HOME"')

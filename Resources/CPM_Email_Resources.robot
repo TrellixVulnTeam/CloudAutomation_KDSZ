@@ -9,7 +9,7 @@ ${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
 ${BROWSER}                      headlessChrome
 ${username}                     sravantesh.neogi@lexmark.com
 ${password}                     Password@1234
-${FILENAME2}                     Test Mail.html
+${FILENAME2}                    Test Mail.html
 ${FILENAME3}                    emailBody.html
 
 *** Keywords ***
@@ -93,7 +93,7 @@ Email submission with
 #Now call printer simulation for second job
     sleep_call
 
-    ${print_job_status} =   printer_automation  Test Mail.html
+    ${print_job_status} =   printer_automation  ${FILENAME2}
     log     {print_job_status}
 
     sleep_call

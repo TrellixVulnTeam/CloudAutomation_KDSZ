@@ -9,10 +9,10 @@ import time
 
 def printer_automation(text):
     # print(text)
-    ip_address = "10.195.7.84"
+    ip_address = "10.195.7.227"
     lxk_printer_device.webservices.automation.download_panel_xml(ip_address, filename="panel.xml", path=".")
 
-    ups = UPS(printer_ip="10.195.7.84")
+    ups = UPS(printer_ip="10.195.7.227")
     ups.initialize()
 
     # Job name
