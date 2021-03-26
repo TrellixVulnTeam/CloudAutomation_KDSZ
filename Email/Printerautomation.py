@@ -46,8 +46,8 @@ def printer_automation(text):
     while True:
         try:
             # text="Hello.txt"
-            ups.regex('Find Widget "resource-id=\'esf.printReleaseUi:id/action_settings\'" do "press"')
-            ups.regex('On text "Refresh" do "press"')
+            #ups.regex('Find Widget "resource-id=\'esf.printReleaseUi:id/action_settings\'" do "press"')
+            #ups.regex('On text "Refresh" do "press"')
             time.sleep(7)
             ups_command = '''In area "resource-id='esf.printReleaseUi:id/lvFragMain'" On text "{}" Do "press"'''.format(
                 text)

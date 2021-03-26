@@ -2,15 +2,16 @@ import lxk_printer_device
 import lxk_printer_device.webservices.automation
 import lxk_printer_device.ews.webglue
 from lxk_universal_panel_step import UPS
-from lxk_universal_panel_step.core.universal_panel_step import TextInputUsingNumpad
+from lxk_universal_panel_step.core.universal_panel_step import TextInputUsingNumpad, AndroidUPS
 import lxk_universal_panel_step
 import time
 
 
+
 def printer_automation(text):
-    print(text)
+
+
     ip_address = "10.195.7.227"
-    #lxk_printer_device.webservices.automation.download_panel_xml(ip_address, filename="panel.xml", path=".")
 
     ups = UPS(printer_ip="10.195.7.227")
     ups.initialize()
@@ -18,11 +19,10 @@ def printer_automation(text):
     ups.regex('do "press key KEYCODE_HOME"')
     time.sleep(5)
 
-    # Job name
-    # text = "Hello.txt"
-
     # Click PIN login
     # ups.regex('Find widget "text-id=\'STRING_IDLEBUTTON_ID_1\'" do "press"')
+    ups.regex('Find widget "text-id=\'idle_text\'" do "press"')
+    time.sleep(5)
     ups.regex('on text "PIN Login" do "press" ')
     ups.regex('Find widget "text-id=\'pin_login_ui_pinvalue\'" Do "wait_until_found"')
 
@@ -46,15 +46,16 @@ def printer_automation(text):
     while True:
         try:
             # text="Hello.txt"
-            ups.regex('Find Widget "resource-id=\'esf.printReleaseUi:id/action_settings\'" do "press"')
-            ups.regex('On text "Refresh" do "press"')
-            time.sleep(5)
+            #ups.regex('Find Widget "resource-id=\'esf.printReleaseUi:id/action_settings\'" do "press"')
+            #ups.regex('On text "Refresh" do "press"')
+            time.sleep(7)
             ups_command = '''In area "resource-id='esf.printReleaseUi:id/lvFragMain'" On text "{}" Do "press"'''.format(
                 text)
             ups.regex(ups_command)
             ups.regex('on text "Print" do "press"')
             time.sleep(10)
-            #time.sleep(5)
+            ups.regex('on text "Print" Do "wait_until_found"')
+            time.sleep(5)
             ups.regex('do "press key KEYCODE_BACK"')
             time.sleep(2)
             ups.regex('on text "sravantesh.neogi@lexmark.com" do "press" ')
@@ -62,9 +63,22 @@ def printer_automation(text):
             ups.regex('on text "Yes" do "press" ')
             print_status = 'True'
             return print_status
-            break
+            #break
         except ValueError:
-            print("Some error occured")
+            print("Job name not found")
             print_status = 'False'
+            time.sleep(5)
+            ups.regex('do "press key KEYCODE_BACK"')
+            time.sleep(2)
+            ups.regex('on text "sravantesh.neogi@lexmark.com" do "press" ')
+            time.sleep(2)
+            ups.regex('on text "Yes" do "press" ')
             return print_status
+
+
+
+
+
+
+
 
