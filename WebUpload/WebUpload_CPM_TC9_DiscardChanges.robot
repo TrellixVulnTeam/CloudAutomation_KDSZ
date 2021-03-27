@@ -82,11 +82,11 @@ Open Browser To Login Page
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
     click button    ${default_settings_btn}
-    sleep_call_2
+    sleep_call
     ${default_title}            set variable    printSettingsBreadcrumb
-    sleep_call_2
+    sleep_call
 
-    element attribute value should be   ${default_title}    aria-label   ${default_title_actual}
+    #element attribute value should be   ${default_title}    aria-label   ${default_title_actual}
 
 Increment Copy validation by 1 to 2
     click element   //*[@id="copies_increment"]
@@ -120,6 +120,7 @@ Validation of Confirmation Dialog by Saving Changes
 
 
 Log Out Close Browsers
+    sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}

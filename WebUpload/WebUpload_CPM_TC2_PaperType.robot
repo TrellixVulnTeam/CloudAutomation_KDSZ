@@ -74,18 +74,22 @@ Check total number of paper types
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
     click button    ${default_settings_btn}
-    sleep_call_2
+    sleep_call
 
 #Check page size count
     element attribute value should be   //*[@id="paperType-listbox-item-printer"]   aria-setsize   24
     sleep_call_2
 
 Validation of Paper type dropdown
+    sleep_call
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
+    sleep_call
     [Arguments]        ${PAPER TYPE}     ${PAPER TYPE CONTROL}       ${PAPER TYPE NAME}     ${ERROR_TEXT}   ${CHECK}
 
+    #sleep_call
     sleep_call
-    scroll element into view        holePunch
+   #scroll element into view        holePunch
+    #wait until page contains element    holePunch
     sleep_call_2
     click element   ${PAPER TYPE}
     sleep_call_2
@@ -105,7 +109,7 @@ Validation of Paper type dropdown
     #wait until page contains element    settingsUpdatingBusySpinner
     sleep_call
     click button    ${default_settings_btn}
-    sleep_call_2
+    sleep_call
 
 Reset , Log Out and Close Browsers
     sleep_call_2
@@ -114,7 +118,7 @@ Reset , Log Out and Close Browsers
     sleep_call_2
     click button    saveChangesButton
     wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_2
+    sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}

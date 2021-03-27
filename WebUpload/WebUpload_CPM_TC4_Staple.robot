@@ -74,18 +74,21 @@ Check total number of staple bins
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
     click button    ${default_settings_btn}
-    sleep_call_2
+    sleep_call
 
 #Check page size count
     element attribute value should be   //*[@id="staple-listbox-item-printer"]   aria-setsize   15
     sleep_call_1
 
 Validation of Staple dropdown
+    sleep_call
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
+    sleep_call
     [Arguments]        ${STAPLE}     ${STAPLE CONTROL}       ${STAPLE NAME}
 
     sleep_call
-    scroll element into view        holePunch
+    #wait until page contains element    holePunch
+    #scroll element into view        holePunch
     sleep_call_1
     click element   ${STAPLE}
     sleep_call_1
@@ -99,7 +102,7 @@ Validation of Staple dropdown
     #wait until page contains element    settingsUpdatingBusySpinner
     sleep_call
     click button    ${default_settings_btn}
-    sleep_call_1
+    sleep_call
 
 Reset , Log Out and Close Browsers
     sleep_call_1
@@ -108,7 +111,7 @@ Reset , Log Out and Close Browsers
     sleep_call_1
     click button    saveChangesButton
     wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_1
+    sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}

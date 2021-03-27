@@ -41,14 +41,16 @@ Email submission with
     sleep_call_2
     ${joblist}=     run keyword and return status   element text should be      ${txt_nojob}     No data available
     run keyword if  ${joblist}   reload page
+    sleep_call
     ${pagestatus}=  run keyword and return status   element text should be  ${email_job1_status}  Processing
     run keyword if  ${pagestatus}   reload page
+    sleep_call
     ${pagestatus}=  run keyword and return status   element text should be  ${email_job2_status}  Processing
     run keyword if  ${pagestatus}   reload page
 
     sleep_call
     Wait until Element Is Visible   ${name_printqueue}
-
+    #click element   ${name_printqueue}
     wait until element is visible       ${tbl_printqueue}
 
     element text should be      ${email_job1_description}      Test Mail
@@ -76,6 +78,7 @@ Email submission with
     Switch Window       Print Management | Lexmark Cloud Services
     Title Should Be     Print Management | Lexmark Cloud Services
     reload page
+    sleep_call
     Title Should Be     Print Management | Lexmark Cloud Services
     sleep_call
     Wait until Element Is Visible   ${name_printqueue}
@@ -83,6 +86,9 @@ Email submission with
     click element   link-navJobHistory
     sleep_call_2
     #page should contain
+    reload page
+    sleep_call
+    sleep_call
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
 
     element text should be      ${print_job_name1}     ${FILENAME}
@@ -108,7 +114,9 @@ Email submission with
     Wait until Element Is Visible   ${name_printqueue}
     sleep_call_2
     click element   link-navJobHistory
-    sleep_call_2
+    reload page
+    sleep_call
+    sleep_call
     #page should contain
     ${print_job_name}   set variable    dataGridMyPrintJobsId-row-0-jobName
 
@@ -124,11 +132,13 @@ Check blank subject email job
     sleep_call_2
     ${joblist}=     run keyword and return status   element text should be      ${txt_nojob}     No data available
     run keyword if  ${joblist}   reload page
+    sleep_call
     ${pagestatus}=  run keyword and return status   element text should be  ${email_job1_status}  Processing
     run keyword if  ${pagestatus}   reload page
     sleep_call
     Wait until Element Is Visible   ${name_printqueue}
     wait until element is visible       ${tbl_printqueue}
+    sleep_call
     element text should be      ${email_job1_description}   ${EMPTY}
     element should contain      ${email_job1}        emailBody.html
     element should be visible   ${email_icon_job1}
@@ -149,8 +159,11 @@ Check blank subject email job
     Title Should Be     Print Management | Lexmark Cloud Services
     reload page
     sleep_call
+    Wait until Element Is Visible   ${name_printqueue}
+    sleep_call_2
     click element   link-navJobHistory
-    #reload page
+    sleep_call
+    reload page
     sleep_call
     sleep_call
     #page should contain

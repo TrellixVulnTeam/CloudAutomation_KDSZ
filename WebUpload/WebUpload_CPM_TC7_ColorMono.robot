@@ -72,7 +72,7 @@ Open Browser and Login
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
     click button    ${default_settings_btn}
-    sleep_call_2
+    sleep_call
 
 Validation of Color Mono default state
 
@@ -82,7 +82,7 @@ Validation of Color Mono default state
     ${mono}                         set variable    //*[@id="blackAndWhite_radio_input"]
 
     sleep_call_1
-    scroll element into view        saveChangesButton
+    #scroll element into view        saveChangesButton
     sleep_call_1
 
     element attribute value should be       ${color}    aria-checked    true
@@ -99,7 +99,7 @@ Validation of Color Mono default state
     sleep_call_2
 
 Validation of Color Mono new state
-
+    sleep_call
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     ${color}                        set variable    //*[@id="color_radio_input"]
     ${mono}                         set variable    //*[@id="blackAndWhite_radio_input"]
@@ -109,17 +109,18 @@ Validation of Color Mono new state
 
     click element       ${color}
     click button        saveChangesButton
-    wait until page contains element    settingsUpdatingBusySpinner
+    #wait until page contains element    settingsUpdatingBusySpinner
     sleep_call
 
     click button    ${default_settings_btn}
-    sleep_call_2
+    sleep_call
     scroll element into view        saveChangesButton
     element attribute value should be       ${color}    aria-checked    true
     element attribute value should be       ${mono}    aria-checked    false
 
 
 Reset , Log Out and Close Browsers
+    sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}

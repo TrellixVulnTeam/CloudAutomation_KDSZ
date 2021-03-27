@@ -25,19 +25,20 @@ def printer_automation(text):
     time.sleep(5)
     ups.regex('on text "PIN Login" do "press" ')
     ups.regex('Find widget "text-id=\'pin_login_ui_pinvalue\'" Do "wait_until_found"')
-
+    time.sleep(10)
     # Click Input text to bring keypad
     ups.regex('Find widget "text-id=\'pin_login_ui_pinvalue\'" do "press"')
     ups.regex('Find widget "text-id=\'DIALOG_OK_ID\'" Do "wait_until_found"')
-
+    time.sleep(10)
     # Enter PIN and login
     lxk_universal_panel_step.core.universal_panel_step.type_text("1234")
     ups.regex('Find widget "text-id=\'DIALOG_OK_ID\'" do "press"')
+    time.sleep(5)
 
     # Wait till Print Release Appears
     ups.regex('On text "Print Release" Do "wait_until_found"')
     ups.regex('On text "Print Release" Do "press"')
-
+    time.sleep(10)
     # Wait till list view appears
     ups.regex('on text "Print" Do "wait_until_found"')
 
@@ -57,10 +58,11 @@ def printer_automation(text):
             ups.regex('on text "Print" Do "wait_until_found"')
             time.sleep(5)
             ups.regex('do "press key KEYCODE_BACK"')
-            time.sleep(2)
+            time.sleep(5)
             ups.regex('on text "sravantesh.neogi@lexmark.com" do "press" ')
-            time.sleep(2)
+            time.sleep(5)
             ups.regex('on text "Yes" do "press" ')
+            time.sleep(2)
             print_status = 'True'
             return print_status
             #break

@@ -74,18 +74,20 @@ Check total number of holepunch options
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
     click button    ${default_settings_btn}
-    sleep_call_2
+    sleep_call
 
 #Check page size count
     element attribute value should be   //*[@id="holePunch-listbox-item-printer"]   aria-setsize   5
     sleep_call_1
 
 Validation of Holepunch dropdown
+    sleep_call
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
+    sleep_call
     [Arguments]        ${HOLEPUNCH}     ${HOLEPUNCH CONTROL}       ${HOLEPUNCH NAME}
 
     sleep_call
-    scroll element into view        holePunch
+    #scroll element into view        holePunch
     sleep_call
     click element   ${HOLEPUNCH}
     sleep_call
@@ -99,7 +101,7 @@ Validation of Holepunch dropdown
     #wait until page contains element    settingsUpdatingBusySpinner
     sleep_call
     click button    ${default_settings_btn}
-    sleep_call_1
+    sleep_call
 
 Reset , Log Out and Close Browsers
     sleep_call_1
@@ -108,7 +110,8 @@ Reset , Log Out and Close Browsers
     sleep_call_1
     click button    saveChangesButton
     wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_1
+    sleep_call
+    sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}

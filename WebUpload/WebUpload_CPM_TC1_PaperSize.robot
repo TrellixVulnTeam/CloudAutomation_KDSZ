@@ -72,10 +72,11 @@ Check total number of paper sizes
     element should contain  xpath://*[@id="printQueuePageHeaderDropDown_button"]/div   ${tab1name}
 
 #Open Print default settings
+    sleep_call
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
     click button    ${default_settings_btn}
-    sleep_call_2
+    sleep_call
 
 
 #Check page size count
@@ -83,11 +84,14 @@ Check total number of paper sizes
     sleep_call_1
 
 Validation of Paper size dropdown
+    sleep_call
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
+    sleep_call
     [Arguments]        ${PAGE SIZE}     ${PAGE SIZE CONTROL}       ${PAGE SIZE NAME}
 
     sleep_call
-    scroll element into view        holePunch
+    #wait until page contains element    holePunch
+    #scroll element into view        holePunch
     sleep_call_2
     click element   ${PAGE SIZE}
     sleep_call_2
@@ -101,7 +105,7 @@ Validation of Paper size dropdown
     #wait until page contains element    settingsUpdatingBusySpinner
     sleep_call
     click button    ${default_settings_btn}
-    sleep_call_2
+    sleep_call
 
 Reset , Log Out and Close Browsers
     click element   paperSize
@@ -109,7 +113,7 @@ Reset , Log Out and Close Browsers
     sleep_call_2
     click button    saveChangesButton
     wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_2
+    sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}

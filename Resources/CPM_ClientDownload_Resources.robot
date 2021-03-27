@@ -21,7 +21,7 @@ ${messagefail}                  Fail
 #${latebind}                             False
 #${hybrid_printed_jobs_value}            150
 #${saas}                                 False
-${CPM URL}                              https://qa.us.iss.lexmark.com/cpm
+${CPM URL}                              https://dev.us.cloud.onelxk.co/cpm
 ##########################################
 
 *** Keywords ***

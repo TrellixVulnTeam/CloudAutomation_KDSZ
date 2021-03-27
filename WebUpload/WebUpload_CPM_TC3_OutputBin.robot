@@ -74,18 +74,21 @@ Check total number of output bins
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
     click button    ${default_settings_btn}
-    sleep_call_2
+    sleep_call
 
 #Check page size count
     element attribute value should be   //*[@id="outputBin-listbox-item-printer"]   aria-setsize   14
     sleep_call_2
 
 Validation of Output Bin dropdown
+    sleep_call
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
+    sleep_call
     [Arguments]        ${OUTPUT BIN}     ${OUTPUT BIN CONTROL}       ${OUTPUT BIN NAME}
 
     sleep_call
-    scroll element into view        holePunch
+    #wait until page contains element    holePunch
+    #scroll element into view        holePunch
     sleep_call_2
     click element   ${OUTPUT BIN}
     sleep_call_2
@@ -99,7 +102,7 @@ Validation of Output Bin dropdown
     #wait until page contains element    settingsUpdatingBusySpinner
     sleep_call
     click button    ${default_settings_btn}
-    sleep_call_2
+    sleep_call
 
 Reset , Log Out and Close Browsers
     sleep_call_2
@@ -108,7 +111,7 @@ Reset , Log Out and Close Browsers
     sleep_call_2
     click button    saveChangesButton
     wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call_2
+    sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}

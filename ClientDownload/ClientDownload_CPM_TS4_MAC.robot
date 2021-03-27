@@ -9,7 +9,7 @@ Test Template   Download MAC Default Packages
 Suite Teardown     Log out
 
 *** Variables ***
-${LOGIN URL}                    https://qa.us.iss.lexmark.com
+${LOGIN URL}                    https://dev.us.cloud.onelxk.co
 ${BROWSER}                      Chrome
 ${username}                     sravantesh.neogi@lexmark.com
 ${password}                     Password@1234
