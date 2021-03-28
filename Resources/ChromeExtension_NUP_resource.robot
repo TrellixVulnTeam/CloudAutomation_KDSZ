@@ -39,6 +39,7 @@ Open My Browser
 #Click CPM
     Click Element   ${lnk_cpm}
     Switch Window       Print Management | Lexmark Cloud Services
+    sleep_call
     Title Should Be     Print Management | Lexmark Cloud Services
 
 #Verify Print queue is displayed

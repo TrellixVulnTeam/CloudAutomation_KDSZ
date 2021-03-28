@@ -72,6 +72,7 @@ Mobile submission
 
 #Check Print Job History table
     Switch Window       Print Management | Lexmark Cloud Services
+    sleep_call
     Title Should Be     Print Management | Lexmark Cloud Services
     reload page
     sleep_call

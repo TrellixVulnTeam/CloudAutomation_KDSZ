@@ -41,6 +41,7 @@ Navigate to CPM
     Click Element   ${lnk_cpm}
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
+    sleep_call
     Title Should Be     Print Management | Lexmark Cloud Services
     sleep_call
 
