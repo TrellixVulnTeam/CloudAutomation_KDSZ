@@ -70,6 +70,10 @@ Check Client Download
 
 Check client download tab is visible for non admin
     page should contain element         ${tab_clientdownload}
+    click element       ${tab_clientdownload}
+    wait until page contains element        ${header_clientdownload}
+    element should not be visible     ${lnk_customwin}
+    element should not be visible     ${lnk_custommac}
 
 Check client download tab is not visible for non admin
     page should not contain element         ${tab_clientdownload}
@@ -176,11 +180,6 @@ Log Out Non admin
     click element   ${lnl_logout}
     sleep_call
     close all browsers
-
-
-
-
-
 
 Log out
     click element   ${lnk_username}

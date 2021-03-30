@@ -128,6 +128,9 @@ org_policy="id:navAdminDropdownOrganizationalPolicy"
 
 page_header="xpath://*[@id='organizationalPolicyPageHeader']/div[1]/h2"
 chk_clientdownload="id:enableClientDownloadCheckbox"
+header_clientdownload="id:clientDownloadPageHeader"
+lnk_customwin="id:createCustomPackageWindows"
+lnl_custommac="id:createCustomPackageMac"
 btn_save="id:save_changes_btn"
 
 chk_delegates="id:enablePrintDocumentDelegationCheckbox"
