@@ -1,0 +1,16 @@
+cd C:\Users\neogis\D Drive\FREEDOM\Python\CloudAutomation
+robot -d C:\Users\neogis\.jenkins\workspace\CPM_Automation_UI\Result TestCases\CPM_TS0_FileUpload_Valid_File.robot
+robot -d C:\Users\neogis\.jenkins\workspace\CPM_Automation_UI\Result TestCases\CPM_TS1_FileUpload_Invalid_File.robot
+robot -d C:\Users\neogis\.jenkins\workspace\CPM_Automation_UI\Result TestCases\CPM_TS2_OpenLoginPage.robot
+robot -d C:\Users\neogis\.jenkins\workspace\CPM_Automation_UI\Result TestCases\CPM_TS4_Delegate_Valid_Duplicate_Input.robot
+robot -d C:\Users\neogis\.jenkins\workspace\CPM_Automation_UI\Result TestCases\CPM_TS5_Delegate_Invalid_Input.robot
+robot -d C:\Users\neogis\.jenkins\workspace\CPM_Automation_UI\Result TestCases\CPM_TS6_DefPackage_Win.robot
+robot -d C:\Users\neogis\.jenkins\workspace\CPM_Automation_UI\Result TestCases\CPM_TS7_DefPackage_MAC.robot
+robot -d C:\Users\neogis\.jenkins\workspace\CPM_Automation_UI\Result TestCases\CPM_TS8_FileUpload_CopyNUPValidation.robot
+robot -d C:\Users\neogis\.jenkins\workspace\CPM_Automation_UI\Result TestCases\CPM_TS9_FileUpload_DiscardChanges.robot
+robot -d C:\Users\neogis\.jenkins\workspace\CPM_Automation_UI\Result TestCases\CPM_TS10_FileUpload_PaperSize.robot
+robot -d C:\Users\neogis\.jenkins\workspace\CPM_Automation_UI\Result TestCases\CPM_TS11_FileUpload_PaperType.robot
+
+
+
+java -jar jenkins.war
