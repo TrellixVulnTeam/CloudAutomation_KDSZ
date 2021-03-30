@@ -15,7 +15,7 @@ ${EMAIL USER}                   user_pallabi@test.onelxk.co
 
 
 *** Test Cases ***
-Org Policy
+Check Enable Client Download Feature
     Open Browser To Login Page using Admin
     Open Organisational Policy Page
     Check default state of client download
@@ -31,10 +31,11 @@ Org Policy
     Open Browser To Login Page using non admin
     Check client download tab is not visible for non admin
     Log Out Non admin
+
+Check Login
     Open Browser To Login Page using Admin
     Open Organisational Policy Page
     Check Client Download
-    Log out
 
 
 ###################################################################
