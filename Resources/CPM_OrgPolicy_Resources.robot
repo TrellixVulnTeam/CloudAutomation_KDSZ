@@ -249,3 +249,198 @@ Check whether department and personal tab is displayed
 Check whether no tab is displayed
     element should not be visible       ${tab_costcenter}
     element should not be visible       ${tab_personal}
+
+Open Quota Definition Page
+    wait until element is visible   ${admin_dropdown}
+    click element       ${admin_dropdown}
+    wait until page contains element    ${lbl_quotadefinition}
+    sleep_call_2
+    click element       ${lbl_quotadefinition}
+    sleep_call_2
+
+Check default quota definition
+    click element   ${icon_definition}
+    sleep_call
+    page should contain     Quota interval
+    page should contain     Total Quota (Color + B&W)
+    page should contain     Color printing limit
+    element text should be      ${quota_interval_value}       Monthly
+    element text should be      ${total_quota_value}       Unlimited
+    element text should be      ${bw_quota_value}       Unlimited
+    sleep_call_2
+    click button       ${btn_default}
+    sleep_call_2
+    element text should be      ${quota_limit}        Same limits for each month
+    element text should be      ${total_quota}        Allow unlimited printing
+    element attribute value should be       ${radio_unlimited}     aria-checked        true
+    click button        ${btn_cancel_changes}
+
+Open Browser and Quota Page
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Input Text    ${txt_username}    ${username}
+    Click Button    ${btn_next}
+    Input Text    ${txt_password}    ${password}
+    Click Button    ${btn_login}
+    sleep_call
+    Wait Until Element Is Visible   ${lnk_cpm}
+    Click Element   ${lnk_cpm}
+    sleep_call_2
+    Switch Window       Print Management | Lexmark Cloud Services
+    sleep_call
+    wait until element is visible   ${admin_dropdown}
+    click element       ${admin_dropdown}
+    wait until page contains element    ${lbl_quotadefinition}
+    sleep_call_2
+    click element       ${lbl_quotadefinition}
+    sleep_call_2
+
+
+Create Custom quota monthly
+    [Arguments]        ${quota_name}     ${quota_interval}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}
+    Set Global Variable   ${quota_color_value}
+    Set Global Variable   ${quota_color}
+
+    Set Global Variable   ${quota_name}
+    Set Global Variable   ${quota_interval_value}
+    Set Global Variable   ${quota_total_value}
+
+
+    sleep_call
+    sleep_call
+    click element    ${btn_create_quota}
+    clear element text  ${txt_quotaname}
+    input text      ${txt_quotaname}        ${quota_name}
+    click element   ${lst_quotalimit}
+    sleep_call_1
+    click element   ${quota_interval}
+    sleep_call_1
+    click element   ${lst_total_quota}
+    sleep_call_1
+    click element   ${quota_total}
+    sleep_call_1
+    #element attribute value should be   ${quota_total}   title   Disable all printing
+    ${is_disable}=     run keyword and return status   element attribute value should be   ${quota_total}   title   Disable all printing
+    ${is_custom}=     run keyword and return status   element attribute value should be   ${quota_total}   title   Set custom quota
+    run keyword if  ${is_disable}      Set Disable Print
+    ...     ELSE IF    ${is_custom}      Set Custom Total
+    ...     ELSE    Set Color Controls
+
+
+Create Custom quota vary
+    [Arguments]        ${quota_name}     ${quota_interval}     ${month}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}     ${monthly_total_id} 	${monthly_total_value}  	${monthly_color_id}	    ${monthly_color_value}
+
+    Set Global Variable   ${quota_color_value}
+    Set Global Variable   ${quota_color}
+
+    Set Global Variable   ${quota_name}
+    Set Global Variable   ${quota_interval_value}
+    Set Global Variable   ${quota_total_value}
+    Set Global Variable   ${month}
+
+    Set Global Variable   ${monthly_total_id}
+    Set Global Variable   ${monthly_total_value}
+    Set Global Variable   ${monthly_color_id}
+    Set Global Variable   ${monthly_color_value}
+
+    sleep_call
+    sleep_call
+    click element    ${btn_create_quota}
+    clear element text  ${txt_quotaname}
+    input text      ${txt_quotaname}        ${quota_name}
+    click element   ${lst_quotalimit}
+    sleep_call_1
+    click element   ${quota_interval}
+    sleep_call_2
+    click element     ${month}
+    sleep_call_1
+    click element   ${txt_quotaname}
+    click button        ${btn_monthly}
+    sleep_call_2
+    click element   ${lst_total_quota}
+    sleep_call_1
+    click element   ${quota_total}
+    sleep_call_1
+    #element attribute value should be   ${quota_total}   title   Disable all printing
+    ${is_disable}=     run keyword and return status   element attribute value should be   ${quota_total}   title   Disable all printing
+    ${is_custom}=     run keyword and return status   element attribute value should be   ${quota_total}   title   Set custom quota
+    run keyword if  ${is_disable}      Set Disable Print
+    ...     ELSE IF    ${is_custom}      Set Custom Total
+    ...     ELSE    Set Color Controls
+
+
+
+
+Set Color Controls
+    sleep_call_2
+    click element   ${quota_color}
+    sleep_call_2
+    ${custom_color}=     run keyword and return status   element attribute value should be       ${radio_customcolor}    aria-checked    true
+    run keyword if  ${custom_color}   Set Custom Color
+
+    click button    ${btn_vary_ok}
+    sleep_call_1
+    click button    ${btn_create_def}
+    sleep_call
+    sleep_call
+
+    element text should be      ${lst_new_quota_namme}      ${quota_name}
+#    element text should be      ${lst_new_quota_interval}      ${quota_interval_value}
+#    element text should be      ${lst_new_quota_total}      ${quota_total_value}
+#    element text should be      ${lst_new_quota_color}      ${quota_color_value}
+
+    click element       ${job_name}
+    sleep_call_1
+    element text should be      ${monthly_total_id}   ${monthly_total_value}
+    element text should be      ${monthly_color_id}   ${monthly_color_value}
+
+    click button    ${btn_cancel_monthly}
+    sleep_call
+    sleep_call
+
+    click element       ${btn_quota_select_all}
+    click element   ${undefined}
+    click button    ${btn_delete_quota}
+    sleep_call_2
+    click button    ${btn_delete_def}
+    sleep_call
+
+Set Disable Print
+    click button    ${btn_vary_ok}
+    sleep_call_1
+    click button    ${btn_create_def}
+    sleep_call
+    sleep_call
+    element text should be      ${lst_new_quota_namme}      ${quota_name}
+#    element text should be      ${lst_new_quota_interval}      ${quota_interval_value}
+#    element text should be      ${lst_new_quota_total}      ${quota_total_value}
+#    element text should be      ${lst_new_quota_color}      ${quota_color_value}
+
+    click element       ${job_name}
+    sleep_call_1
+    element text should be      ${monthly_total_id}   ${monthly_total_value}
+    element text should be      ${monthly_color_id}   ${monthly_color_value}
+
+    click button    ${btn_cancel_monthly}
+    sleep_call
+    sleep_call
+
+    click element       ${btn_quota_select_all}
+    click element   ${undefined}
+    click button    ${btn_delete_quota}
+    sleep_call_2
+    click button    ${btn_delete_def}
+    sleep_call
+
+
+Set Custom Color
+    click element   ${txt_color_value}
+    press keys      ${txt_color_value}      \DELETE
+    input text      ${txt_color_value}      ${quota_color_value}
+
+Set Custom Total
+    click element   ${txt_total_value}
+    press keys      ${txt_total_value}      \DELETE
+    input text      ${txt_total_value}      ${quota_total_value}
+    run keyword     Set Color Controls
+

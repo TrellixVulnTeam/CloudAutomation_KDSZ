@@ -10,10 +10,6 @@ Test Template   Multiple Delegates
 Suite Teardown     Log out
 
 *** Variables ***
-#${LOGIN URL}                    https://qa.us.iss.lexmark.com
-#${BROWSER}                      Chrome
-#${USER}                         sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
 ${EMAIL USER}                   user_pallabi@test.onelxk.co
 
 
