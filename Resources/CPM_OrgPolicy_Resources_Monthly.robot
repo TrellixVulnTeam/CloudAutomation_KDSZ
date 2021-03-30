@@ -5,7 +5,7 @@ Variables    ../PageObjects/Locators.py
 
 *** Variables ***
 ${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
+${BROWSER}                      headlessChrome
 ${username}                     sravantesh.neogi@lexmark.com
 ${password}                     Password@1234
 ${username_nonadmin}            simpleuser@test.onelxk.co
@@ -327,48 +327,6 @@ Create Custom quota monthly
     ...     ELSE    Set Color Controls
 
 
-Create Custom quota vary
-    [Arguments]        ${quota_name}     ${quota_interval}     ${month}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}     ${monthly_total_id} 	${monthly_total_value}  	${monthly_color_id}	    ${monthly_color_value}
-
-    Set Global Variable   ${quota_color_value}
-    Set Global Variable   ${quota_color}
-
-    Set Global Variable   ${quota_name}
-    Set Global Variable   ${quota_interval_value}
-    Set Global Variable   ${quota_total_value}
-    Set Global Variable   ${month}
-
-    Set Global Variable   ${monthly_total_id}
-    Set Global Variable   ${monthly_total_value}
-    Set Global Variable   ${monthly_color_id}
-    Set Global Variable   ${monthly_color_value}
-
-    sleep_call
-    sleep_call
-    click element    ${btn_create_quota}
-    clear element text  ${txt_quotaname}
-    input text      ${txt_quotaname}        ${quota_name}
-    click element   ${lst_quotalimit}
-    sleep_call_1
-    click element   ${quota_interval}
-    sleep_call_2
-    click element     ${month}
-    sleep_call_1
-    click element   ${txt_quotaname}
-    click button        ${btn_monthly}
-    sleep_call_2
-    click element   ${lst_total_quota}
-    sleep_call_1
-    click element   ${quota_total}
-    sleep_call_1
-    #element attribute value should be   ${quota_total}   title   Disable all printing
-    ${is_disable}=     run keyword and return status   element attribute value should be   ${quota_total}   title   Disable all printing
-    ${is_custom}=     run keyword and return status   element attribute value should be   ${quota_total}   title   Set custom quota
-    run keyword if  ${is_disable}      Set Disable Print
-    ...     ELSE IF    ${is_custom}      Set Custom Total
-    ...     ELSE    Set Color Controls
-
-
 
 
 Set Color Controls
@@ -378,25 +336,15 @@ Set Color Controls
     ${custom_color}=     run keyword and return status   element attribute value should be       ${radio_customcolor}    aria-checked    true
     run keyword if  ${custom_color}   Set Custom Color
 
-    click button    ${btn_vary_ok}
-    sleep_call_1
     click button    ${btn_create_def}
     sleep_call
     sleep_call
 
     element text should be      ${lst_new_quota_namme}      ${quota_name}
-#    element text should be      ${lst_new_quota_interval}      ${quota_interval_value}
-#    element text should be      ${lst_new_quota_total}      ${quota_total_value}
-#    element text should be      ${lst_new_quota_color}      ${quota_color_value}
+    element text should be      ${lst_new_quota_interval}      ${quota_interval_value}
+    element text should be      ${lst_new_quota_total}      ${quota_total_value}
+    element text should be      ${lst_new_quota_color}      ${quota_color_value}
 
-    click element       ${job_name}
-    sleep_call_1
-    element text should be      ${monthly_total_id}   ${monthly_total_value}
-    element text should be      ${monthly_color_id}   ${monthly_color_value}
-
-    click button    ${btn_cancel_monthly}
-    sleep_call
-    sleep_call
 
     click element       ${btn_quota_select_all}
     click element   ${undefined}
@@ -406,24 +354,17 @@ Set Color Controls
     sleep_call
 
 Set Disable Print
-    click button    ${btn_vary_ok}
-    sleep_call_1
+
     click button    ${btn_create_def}
     sleep_call
     sleep_call
     element text should be      ${lst_new_quota_namme}      ${quota_name}
-#    element text should be      ${lst_new_quota_interval}      ${quota_interval_value}
-#    element text should be      ${lst_new_quota_total}      ${quota_total_value}
-#    element text should be      ${lst_new_quota_color}      ${quota_color_value}
+    element text should be      ${lst_new_quota_interval}      ${quota_interval_value}
+    element text should be      ${lst_new_quota_total}      ${quota_total_value}
+    element text should be      ${lst_new_quota_color}      ${quota_color_value}
 
-    click element       ${job_name}
-    sleep_call_1
-    element text should be      ${monthly_total_id}   ${monthly_total_value}
-    element text should be      ${monthly_color_id}   ${monthly_color_value}
 
-    click button    ${btn_cancel_monthly}
-    sleep_call
-    sleep_call
+
 
     click element       ${btn_quota_select_all}
     click element   ${undefined}

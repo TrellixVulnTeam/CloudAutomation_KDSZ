@@ -3,7 +3,7 @@ Library  SeleniumLibrary
 Library     ../Delegates/ChromeExtension.py
 Library     ../Delegates/CloudLogin.py
 Library     ../Email/Printerautomation.py
-Resource     ../Resources/CPM_OrgPolicy_Resources.robot
+Resource     ../Resources/CPM_OrgPolicy_Resources_Vary.robot
 
 
 *** Variables ***

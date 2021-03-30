@@ -3,7 +3,7 @@ Library  SeleniumLibrary
 Library     ../Delegates/ChromeExtension.py
 Library     ../Delegates/CloudLogin.py
 Library     ../Email/Printerautomation.py
-Resource     ../Resources/CPM_OrgPolicy_Resources.robot
+Resource     ../Resources/CPM_OrgPolicy_Resources_Vary.robot
 
 
 *** Variables ***
@@ -41,8 +41,12 @@ Check Delegate feature
     Check delegate tab is visible
     Open Organisational Policy Page
     Reset Delegate feature
+    Log out
+
 
 Check Email feature
+    Open Browser To Login Page using Admin
+    Open Organisational Policy Page
     Check default state of email
     Check email header is not visible
     Open Organisational Policy Page
@@ -50,10 +54,14 @@ Check Email feature
     Check email header is present
     Open Organisational Policy Page
     Reset Email feature
+    Log out
 
 Check Quota feature
+    Open Browser To Login Page using Admin
+    Open Organisational Policy Page
     check default state of quota
     Enable Quota
     Check Quota feature controls
     Reset Quota
+    Log out
 ###################################################################
