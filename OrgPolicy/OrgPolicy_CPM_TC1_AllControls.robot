@@ -39,6 +39,7 @@ Check Delegate feature
     Check delegate tab is not visible
     Enable Delegate
     Check delegate tab is visible
+    Open Organisational Policy Page
     Reset Delegate feature
 
 Check Email feature

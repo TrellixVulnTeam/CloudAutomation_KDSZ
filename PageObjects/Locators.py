@@ -40,6 +40,7 @@ lbl_errormessage="xpath://*[@id='error_explanation']/div/label"
 
 lbl_delegate="id:link-navDelegates"
 txt_delegate="xpath://*[@id='delegatesPageHeaderDropDown_button']/div"
+header_delegate="id:delegatesPageHeaderDropDown_button"
 
 btn_delegate_add="id:delegatesAddButton"
 btn_delegate_remove="id:delegatesRemoveButton"
@@ -130,7 +131,7 @@ page_header="xpath://*[@id='organizationalPolicyPageHeader']/div[1]/h2"
 chk_clientdownload="id:enableClientDownloadCheckbox"
 header_clientdownload="id:clientDownloadPageHeader"
 lnk_customwin="id:createCustomPackageWindows"
-lnl_custommac="id:createCustomPackageMac"
+lnk_custommac="id:createCustomPackageMac"
 btn_save="id:save_changes_btn"
 
 chk_delegates="id:enablePrintDocumentDelegationCheckbox"

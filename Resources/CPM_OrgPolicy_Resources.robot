@@ -71,6 +71,7 @@ Check Client Download
 Check client download tab is visible for non admin
     page should contain element         ${tab_clientdownload}
     click element       ${tab_clientdownload}
+    sleep_call_2
     wait until page contains element        ${header_clientdownload}
     element should not be visible     ${lnk_customwin}
     element should not be visible     ${lnk_custommac}
@@ -98,8 +99,11 @@ Enable Delegate
     element attribute value should be       ${chk_delegates}       aria-checked    true
 
 
+
 Check delegate tab is visible
     page should contain element     ${lbl_delegate}
+    click element   ${lbl_delegate}
+    wait until page contains element        ${header_delegate}
 
 Reset Delegate feature
     unselect checkbox    ${chk_delegates}
