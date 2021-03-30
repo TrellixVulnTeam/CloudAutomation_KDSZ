@@ -123,5 +123,13 @@ radio_PS="id:Radio 3_radio_input"
 radio_Exclude="id:Radio 4_radio_input"
 
 
+admin_dropdown="id:navAdminDropdown"
+org_policy="id:navAdminDropdownOrganizationalPolicy"
+
+page_header="xpath://*[@id='organizationalPolicyPageHeader']/div[1]/h2"
+chk_clientdownload="id:enableClientDownloadCheckbox"
+btn_save="id=save_changes_btn"
+
+
 
 
