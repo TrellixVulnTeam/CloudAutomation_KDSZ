@@ -145,3 +145,13 @@ radio_personal="id:usePersonalOption_radio_input"
 lbl_quotadefinition="id:navAdminDropdownQuotaDefinition"
 lbl_quotaassignment="id:navAdminDropdownQuotaAssignments"
 lbl_quotastatus="id:navAdminDropdownUserQuotaStatus"
+
+btn_confirmchange="id:confirmation-modal_okButton"
+#tab_costcenter="id:costCenterTab"
+tab_costcenter="xpath://*[@id='costCenterTab']/a"
+tab_personal="xpath://*[@id='userTab']/a"
+
+chk_costcenter="id:useCostCenterOption_radio_input"
+chk_dept="id:useDepartmentOption_radio_input"
+chk_personal="id:usePersonalOption_radio_input"
+

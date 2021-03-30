@@ -194,4 +194,58 @@ Log out
     close all browsers
 ###################################################################################################################
 
+Select Cost Center or Personal
+    select checkbox     ${chk_costcenter}
+    wait until page contains element        ${btn_confirmchange}
+    click element       ${btn_confirmchange}
+    sleep_call_2
+    click element       ${btn_save}
+    sleep_call
 
+Reset to Cost Center or Personal and uncheck quota
+    click element     ${chk_costcenter}
+    sleep_call_2
+    unselect checkbox       ${chk_quota}
+    click element       ${btn_save}
+    sleep_call
+
+Open Quota Assignment Page
+    wait until element is visible   ${admin_dropdown}
+    click element       ${admin_dropdown}
+    wait until page contains element    ${lbl_quotaassignment}
+    sleep_call_2
+    click element       ${lbl_quotaassignment}
+    sleep_call_2
+
+Check whether cost center and personal tab is displayed
+    element should be visible       ${tab_costcenter}
+    element attribute value should be       ${tab_costcenter}       title       Cost Center
+    element should be enabled       ${tab_personal}
+    element attribute value should be       ${tab_personal}       title       Personal
+
+Select Department or Personal
+    click element     ${radio_dept}
+    wait until page contains element        ${btn_confirmchange}
+    click element       ${btn_confirmchange}
+    sleep_call_2
+    click element       ${btn_save}
+    sleep_call
+
+Select Personal
+    click element     ${radio_personal}
+    wait until page contains element        ${btn_confirmchange}
+    click element       ${btn_confirmchange}
+    sleep_call_2
+    click element       ${btn_save}
+    sleep_call
+
+
+Check whether department and personal tab is displayed
+    element should be visible       ${tab_costcenter}
+    element attribute value should be       ${tab_costcenter}       title       Department
+    element should be enabled       ${tab_personal}
+    element attribute value should be       ${tab_personal}       title       Personal
+
+Check whether no tab is displayed
+    element should not be visible       ${tab_costcenter}
+    element should not be visible       ${tab_personal}
