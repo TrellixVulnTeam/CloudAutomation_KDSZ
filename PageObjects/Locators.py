@@ -128,8 +128,16 @@ org_policy="id:navAdminDropdownOrganizationalPolicy"
 
 page_header="xpath://*[@id='organizationalPolicyPageHeader']/div[1]/h2"
 chk_clientdownload="id:enableClientDownloadCheckbox"
-btn_save="id=save_changes_btn"
+btn_save="id:save_changes_btn"
 
+chk_delegates="id:enablePrintDocumentDelegationCheckbox"
+chk_email="id:enableEmailSubmissionCheckbox"
+header_email="id:email-submission-banner"
 
-
-
+chk_quota="id:enableQuotasCheckbox"
+radio_costcenter="id:useCostCenterOption_radio_input"
+radio_dept="id:useDepartmentOption_radio_input"
+radio_personal="id:usePersonalOption_radio_input"
+lbl_quotadefinition="id:navAdminDropdownQuotaDefinition"
+lbl_quotaassignment="id:navAdminDropdownQuotaAssignments"
+lbl_quotastatus="id:navAdminDropdownUserQuotaStatus"

@@ -11,7 +11,6 @@ Resource     ../Resources/CPM_OrgPolicy_Resources.robot
 #${BROWSER}                      Chrome
 #${USER}                         sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
-${EMAIL USER}                   user_pallabi@test.onelxk.co
 
 
 *** Test Cases ***
@@ -32,10 +31,28 @@ Check Enable Client Download Feature
     Check client download tab is not visible for non admin
     Log Out Non admin
 
-Check Login
+Check Delegate feature
     Open Browser To Login Page using Admin
     Open Organisational Policy Page
-    Check Client Download
+    Reset Client Download
+    Check default state of delegates
+    Check delegate tab is not visible
+    Enable Delegate
+    Check delegate tab is visible
+    Reset Delegate feature
 
+Check Email feature
+    Check default state of email
+    Check email header is not visible
+    Open Organisational Policy Page
+    Enable Email
+    Check email header is present
+    Open Organisational Policy Page
+    Reset Email feature
 
+Check Quota feature
+    check default state of quota
+    Enable Quota
+    Check Quota feature controls
+    Reset Quota
 ###################################################################
