@@ -13,7 +13,9 @@ ${email_text}                   In addition to uploading a file, you may also e-
 ${costcenter}                   stl
 ${noquotaassignment}            No custom quota definitions for assigning.
 ${totaldisable}                 0
-
+${totalvalue}                   15
+${colorvalue}                   20
+${NULL}
 *** Keywords ***
 Open Browser To Login Page using Admin
     Open Browser    ${LOGIN URL}    ${BROWSER}
@@ -331,6 +333,133 @@ Check the table values
     sleep_call_2
     click element       ${lbl_quotadefinition}
     sleep_call
+
+
+Create a quota
+    sleep_call
+    sleep_call
+    click element    ${btn_create_quota}
+    clear element text  ${txt_quotaname}
+    input text      ${txt_quotaname}        ErrorQuota
+    click element   ${lst_quotalimit}
+    sleep_call_1
+    click element   definitionLimitsSelectControl-listbox-item-1
+    sleep_call_1
+    click element   ${lst_total_quota}
+    sleep_call_1
+    click element   definitionTotalSelectControl-listbox-item-3
+    sleep_call_1
+    click element   customRadioOption_radio_input
+
+Set Total Value as 0
+    click element   ${txt_total_value}
+    press keys      ${txt_total_value}      \DELETE
+    input text      ${txt_total_value}      0
+    click element   totalQuotaLabel
+    element should be visible       monoQuotaLabelExceedsRange
+    press keys      ${txt_total_value}      \DELETE
+    input text      ${txt_total_value}      1
+    click element   totalQuotaLabel
+
+
+Set Total Value as alphabet
+    click element   ${txt_total_value}
+    press keys      ${txt_total_value}      \DELETE
+    input text      ${txt_total_value}      a
+    textfield value should be         ${txt_total_value}    ${EMPTY}
+    click element   totalQuotaLabel
+
+Set Total Value as Decimal
+    click element   ${txt_total_value}
+    press keys      ${txt_total_value}      \DELETE
+    input text      ${txt_total_value}      .1
+    click element   totalQuotaLabel
+    textfield value should be       ${txt_total_value}      1
+    press keys      ${txt_total_value}      \DELETE
+    input text      ${txt_total_value}      1
+    click element   totalQuotaLabel
+
+Set Total Value as Characters
+    click element   ${txt_total_value}
+    press keys      ${txt_total_value}      \DELETE
+    input text      ${txt_total_value}      $
+    textfield value should be         ${txt_total_value}    ${EMPTY}
+    click element   totalQuotaLabel
+
+Set Total Value as -1
+    click element   ${txt_total_value}
+    press keys      ${txt_total_value}      \DELETE
+    input text      ${txt_total_value}      -1
+    click element   totalQuotaLabel
+    element should be visible       monoQuotaLabelExceedsRange
+    sleep_call_1
+    click element   ${txt_total_value}
+    press keys      ${txt_total_value}      \DELETE
+    press keys      ${txt_total_value}      \DELETE
+    input text      ${txt_total_value}      1
+    click element   totalQuotaLabel
+
+Set Color Value as 0
+    click element   ${txt_color_value}
+    press keys      ${txt_color_value}      \DELETE
+    input text      ${txt_color_value}      0
+    click element   totalQuotaLabel
+    element should be visible       colorQuotaLabelExceedsRange
+    press keys      ${txt_color_value}      \DELETE
+    input text      ${txt_color_value}      1
+    click element   totalQuotaLabel
+
+Set Color Value as -1
+    click element   ${txt_color_value}
+    press keys      ${txt_color_value}      \DELETE
+    input text      ${txt_color_value}      -1
+    click element   totalQuotaLabel
+    element should be visible       colorQuotaLabelExceedsRange
+    click element   ${txt_color_value}
+    press keys      ${txt_color_value}      \DELETE
+    press keys      ${txt_color_value}      \DELETE
+    input text      ${txt_color_value}      1
+    click element   totalQuotaLabel
+
+Set Color Value as alphabet
+    click element   ${txt_color_value}
+    press keys      ${txt_color_value}      \DELETE
+    input text      ${txt_color_value}      a
+    textfield value should be         ${txt_color_value}    ${EMPTY}
+    click element   totalQuotaLabel
+
+Set Color Value as Decimal
+    click element   ${txt_color_value}
+    press keys      ${txt_color_value}      \DELETE
+    input text      ${txt_color_value}      .1
+    textfield value should be       ${txt_total_value}      1
+    press keys      ${txt_total_value}      \DELETE
+    input text      ${txt_total_value}      1
+    click element   totalQuotaLabel
+
+Set Color Value as Characters
+    click element   ${txt_color_value}
+    press keys      ${txt_color_value}      \DELETE
+    input text      ${txt_color_value}      $
+    textfield value should be         ${txt_color_value}    ${EMPTY}
+    click element   totalQuotaLabel
+
+Set Total Value less than Color Value
+    click element   ${txt_total_value}
+    press keys      ${txt_total_value}      \DELETE
+    input text      ${txt_total_value}      ${totalvalue}
+    click element   totalQuotaLabel
+    element text should be      colorQuotaLabelDescription      Color printing limit range: 1 - ${totalvalue}.
+    click element   ${txt_color_value}
+    press keys      ${txt_color_value}      \DELETE
+    input text      ${txt_color_value}      ${colorvalue}
+    click element   totalQuotaLabel
+    sleep_call_2
+    textfield value should be       ${txt_color_value}      ${totalvalue}
+
+
+
+
 ########################################################################################################################
 
 

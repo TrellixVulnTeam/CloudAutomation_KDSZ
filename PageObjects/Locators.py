@@ -178,14 +178,6 @@ lst_total_quota="id:definitionTotalSelectControl"
 lst_total_quota_value="id:definitionTotalSelectControl-listbox"
 
 
-#lst_quotalimit_1="id:definitionLimitsSelectControl-listbox-item-1"
-#lst_quotalimit_2="id:definitionLimitsSelectControl-listbox-item-2"
-
-
-#lst_total_unlimited="id:definitionTotalSelectControl-listbox-item-1"
-#lst_total_custom="id:definitionTotalSelectControl-listbox-item-2"
-#lst_total_disable="id:definitionTotalSelectControl-listbox-item-3"
-
 costcenter_assignment_count="id:quotaDefinitionGrid-row-0-assignments.costCenterAssignments"
 personal_assignment_count="id:quotaDefinitionGrid-row-0-assignments.individualAssignments"
 dept_assignment_count="id:quotaDefinitionGrid-row-0-assignments.departmentAssignments"
