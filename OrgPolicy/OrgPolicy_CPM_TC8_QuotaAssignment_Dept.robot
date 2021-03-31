@@ -3,7 +3,7 @@ Library  SeleniumLibrary
 Library     ../Delegates/ChromeExtension.py
 Library     ../Delegates/CloudLogin.py
 Library     ../Email/Printerautomation.py
-Resource     ../Resources/CPM_OrgPolicy_Resources_Vary.robot
+Resource     ../Resources/CPM_OrgPolicy_Resources_Dept.robot
 Library     DataDriver  ../TestData/Custom_Quota_Vary.xlsx
 Suite Setup     Open Browser and Quota Page
 Test Template   Check Custom quota vary
@@ -13,7 +13,7 @@ Suite Teardown     Log out
 *** Variables ***
 
 *** Test Cases ***
-Custom Quota Vary : ${quota_name}
+Department Quota Assignment : ${quota_name}
 
 
 *** Keywords ***

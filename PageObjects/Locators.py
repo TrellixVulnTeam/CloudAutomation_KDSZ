@@ -149,7 +149,7 @@ lbl_quotastatus="id:navAdminDropdownUserQuotaStatus"
 btn_confirmchange="id:confirmation-modal_okButton"
 #tab_costcenter="id:costCenterTab"
 tab_costcenter="xpath://*[@id='costCenterTab']/a"
-tab_personal="xpath://*[@id='userTab']/a"
+tab_personal="id:userTab"
 
 chk_costcenter="id:useCostCenterOption_radio_input"
 chk_dept="id:useDepartmentOption_radio_input"
@@ -187,6 +187,8 @@ lst_total_quota_value="id:definitionTotalSelectControl-listbox"
 #lst_total_disable="id:definitionTotalSelectControl-listbox-item-3"
 
 costcenter_assignment_count="id:quotaDefinitionGrid-row-0-assignments.costCenterAssignments"
+personal_assignment_count="id:quotaDefinitionGrid-row-0-assignments.individualAssignments"
+dept_assignment_count="id:quotaDefinitionGrid-row-0-assignments.departmentAssignments"
 
 radio_fullcolor="id:unlimitedRadioOption_radio_input"
 radio_disablecolor="id:disabledRadioOption_radio_input"
@@ -214,7 +216,8 @@ btn_cancel_monthly="id:cancelChanges"
 
 job_name="id:definition_link_0"
 
-quota_name="xpath//*[@id='collections-row-0-quotaDefinition.name']/lpm-definition-summary-renderer"
+quota_name_link="xpath://*[@id='collections-row-0-quotaDefinition.name']/lpm-definition-summary-renderer"
+
 
 btn_assignquota="id:createUserAssignment"
 txt_costcentername="xpath://*[@id='collectionSelectControl']/div"
@@ -230,4 +233,17 @@ tbl_costcenter_quota_name="id:collections-row-0-quotaDefinition.name"
 btn_summary_close="id:definition_summary_close_id"
 
 header_quota_preview="id:quotaPreviewDiv"
+
+txt_email="xpath://*[@id='userSelectControl']/div"
+txt_email_input="id:userSelectControl_Input"
+lst_email="id:userSelectControl-listbox"
+
+personal_name="id:userAssignmentGrid-row-0-identityEmail"
+tbl_email_quota="id:userAssignmentGrid-row-checkbox-0"
+tbl_personal_name="id:userAssignmentGrid-row-0-identityEmail"
+tbl_email_quota_name="id:userAssignmentGrid-row-0-quotaDefinition.name"
+
+email_quota_link="xpath://*[@id='userAssignmentGrid-row-0-quotaDefinition.name']/lpm-definition-summary-renderer"
+
+
 

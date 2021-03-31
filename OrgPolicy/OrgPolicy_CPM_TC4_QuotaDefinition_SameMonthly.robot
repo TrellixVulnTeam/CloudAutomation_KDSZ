@@ -3,7 +3,7 @@ Library  SeleniumLibrary
 Library     ../Delegates/ChromeExtension.py
 Library     ../Delegates/CloudLogin.py
 Library     ../Email/Printerautomation.py
-Resource     ../Resources/CPM_OrgPolicy_Resources_Monthly.robot
+Resource     ../Resources/CPM_OrgPolicy_Resources_SameMonthly.robot
 Library     DataDriver  ../TestData/Custom_Quota.xlsx
 Suite Setup     Open Browser and Quota Page
 Test Template   Check Custom quota monthly

@@ -5,7 +5,7 @@ Variables    ../PageObjects/Locators.py
 
 *** Variables ***
 ${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      headlessChrome
+${BROWSER}                      Chrome
 ${username}                     sravantesh.neogi@lexmark.com
 ${password}                     Password@1234
 ${username_nonadmin}            simpleuser@test.onelxk.co
@@ -38,155 +38,21 @@ Open Organisational Policy Page
     wait until page contains element       ${page_header}
     sleep_call_2
 
-Check default state of client download
-    element attribute value should be       ${chk_clientdownload}       aria-checked    true
-
-Uncheck Enable Client Download
-    unselect checkbox       ${chk_clientdownload}
-    click element       ${btn_save}
-    sleep_call
-
-Check new state of client download
-    element attribute value should be       ${chk_clientdownload}       aria-checked    false
-
-
-Open Browser To Login Page using non admin
-    Open Browser    ${LOGIN URL}    ${BROWSER}
-    Maximize Browser Window
-    Input Text    ${txt_username}    ${username_nonadmin}
-    Click Button    ${btn_next}
-    Input Text    ${txt_password}    ${password}
-    Click Button    ${btn_login}
-    sleep_call
-    Wait Until Element Is Visible   ${lnk_cpm}
-    Click Element   ${lnk_cpm}
-    sleep_call_2
-    Switch Window       Print Management | Lexmark Cloud Services
-    sleep_call
-
-####################################################################################################
-    ################CLIENT DOWNLOAD###########################
-Check Client Download
-    select checkbox       ${chk_clientdownload}
-    click element       ${btn_save}
-    sleep_call
-
-Check client download tab is visible for non admin
-    page should contain element         ${tab_clientdownload}
-    click element       ${tab_clientdownload}
-    sleep_call_2
-    wait until page contains element        ${header_clientdownload}
-    element should not be visible     ${lnk_customwin}
-    element should not be visible     ${lnk_custommac}
-
-Check client download tab is not visible for non admin
-    page should not contain element         ${tab_clientdownload}
-
-Reset Client Download
-    select checkbox       ${chk_clientdownload}
-    click element       ${btn_save}
-    sleep_call
-
-####################################################################################################
-    ################DELEGATES###########################
-Check default state of delegates
-    element attribute value should be       ${chk_delegates}       aria-checked    false
-
-Check delegate tab is not visible
-    page should not contain element     ${lbl_delegate}
-
-Enable Delegate
-    select checkbox    ${chk_delegates}
-    click element       ${btn_save}
-    sleep_call
-    element attribute value should be       ${chk_delegates}       aria-checked    true
-
-
-
-Check delegate tab is visible
-    page should contain element     ${lbl_delegate}
-    click element   ${lbl_delegate}
-    wait until page contains element        ${header_delegate}
-
-Reset Delegate feature
-    unselect checkbox    ${chk_delegates}
-    click element       ${btn_save}
-    sleep_call
-
-####################################################################################################
-    ################EMAIL###########################
-Check default state of email
-    element attribute value should be       ${chk_email}       aria-checked    false
-
-Check email header is not visible
-    click element       ${name_printqueue}
-    sleep_call
-    page should not contain element     ${header_email}
-
-Enable Email
-    select checkbox    ${chk_email}
-    click element       ${btn_save}
-    element attribute value should be       ${chk_email}       aria-checked    true
-    sleep_call
-
-Check email header is present
-    click element       ${name_printqueue}
-    sleep_call
-    page should contain element     ${header_email}
-    page should contain           ${email_text}
-
-Reset Email feature
-    unselect checkbox    ${chk_email}
-    click element       ${btn_save}
-    sleep_call
 
 ####################################################################################################
     ################QUOTA###########################
-Check default state of quota
-    element attribute value should be       ${chk_quota}        aria-checked    false
-    element should be disabled      ${radio_costcenter}
-    element should be disabled      ${radio_dept}
-    element should be disabled      ${radio_personal}
-    sleep_call_2
-    wait until element is visible   ${admin_dropdown}
-    click element       ${admin_dropdown}
-    element should not be visible   lbl_quotadefinition
-    element should not be visible   lbl_quotaassignment
-    element should not be visible   lbl_quotastatus
 
 Enable Quota
     select checkbox     ${chk_quota}
     click element       ${btn_save}
     sleep_call
 
-Check Quota feature controls
-    element attribute value should be       ${chk_quota}        aria-checked    true
-    element should be enabled      ${radio_costcenter}
-    element attribute value should be       ${radio_costcenter}     aria-checked    true
-    element attribute value should be       ${radio_dept}     aria-checked    false
-    element attribute value should be       ${radio_personal}     aria-checked    false
-    element should be enabled      ${radio_dept}
-    element should be enabled      ${radio_personal}
-    sleep_call_2
-    wait until element is visible   ${admin_dropdown}
-    click element       ${admin_dropdown}
-    sleep_call
-    element should be visible   ${lbl_quotadefinition}
-    element should be visible   ${lbl_quotaassignment}
-    element should be visible   ${lbl_quotastatus}
 
 Reset Quota
     unselect checkbox   ${chk_quota}
     click element       ${btn_save}
     sleep_call
 
-Log Out Non admin
-    click element   ${lnk_username}
-    wait until page contains element    ${lnl_logout}
-    sleep_call_2
-    click element   ${lnl_logout}
-    sleep_call
-    close all browsers
 
 Log out
     click element   ${lnk_username}
@@ -220,12 +86,6 @@ Open Quota Assignment Page
     click element       ${lbl_quotaassignment}
     sleep_call_2
 
-Check whether cost center and personal tab is displayed
-    element should be visible       ${tab_costcenter}
-    element attribute value should be       ${tab_costcenter}       title       Cost Center
-    element should be enabled       ${tab_personal}
-    element attribute value should be       ${tab_personal}       title       Personal
-
 Select Department or Personal
     click element     ${radio_dept}
     wait until page contains element        ${btn_confirmchange}
@@ -243,16 +103,6 @@ Select Personal
     sleep_call
 
 
-Check whether department and personal tab is displayed
-    element should be visible       ${tab_costcenter}
-    element attribute value should be       ${tab_costcenter}       title       Department
-    element should be enabled       ${tab_personal}
-    element attribute value should be       ${tab_personal}       title       Personal
-
-Check whether no tab is displayed
-    element should not be visible       ${tab_costcenter}
-    element should not be visible       ${tab_personal}
-
 Open Quota Definition Page
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
@@ -260,23 +110,6 @@ Open Quota Definition Page
     sleep_call_2
     click element       ${lbl_quotadefinition}
     sleep_call_2
-
-Check default quota definition
-    click element   ${icon_definition}
-    sleep_call
-    page should contain     Quota interval
-    page should contain     Total Quota (Color + B&W)
-    page should contain     Color printing limit
-    element text should be      ${quota_interval_value}       Monthly
-    element text should be      ${total_quota_value}       Unlimited
-    element text should be      ${bw_quota_value}       Unlimited
-    sleep_call_2
-    click button       ${btn_default}
-    sleep_call_2
-    element text should be      ${quota_limit}        Same limits for each month
-    element text should be      ${total_quota}        Allow unlimited printing
-    element attribute value should be       ${radio_unlimited}     aria-checked        true
-    click button        ${btn_cancel_changes}
 
 Open Browser and Quota Page
     Open Browser    ${LOGIN URL}    ${BROWSER}
@@ -384,8 +217,15 @@ Set Color Controls
     click button    ${btn_create_def}
     sleep_call
     sleep_call
+    click element   ${job_name}
+    sleep_call_2
+    element text should be      ${monthly_total_id}   ${monthly_total_value}
+    element text should be      ${monthly_color_id}   ${monthly_color_value}
 
-    run keyword     Set Quota Assignment for Cost Center
+    click button    ${btn_cancel_monthly}
+    sleep_call_1
+
+   # run keyword     Set Quota Assignment for Personal
 
     click element       ${btn_quota_select_all}
     click element   ${undefined}
@@ -393,7 +233,12 @@ Set Color Controls
     sleep_call_2
     click button    ${btn_delete_def}
     sleep_call
-    run keyword     Check Quota Assignment is removed
+    click element       ${admin_dropdown}
+    sleep_call_2
+    click element       ${lbl_quotadefinition}
+    sleep_call
+
+    #run keyword     Check Quota Assignment is removed
 
 Set Disable Print
     click button    ${btn_vary_ok}
@@ -401,17 +246,26 @@ Set Disable Print
     click button    ${btn_create_def}
     sleep_call
     sleep_call
+    click element   ${job_name}
+    sleep_call_2
+    element text should be      ${monthly_total_id}   ${monthly_total_value}
+    element text should be      ${monthly_color_id}   ${monthly_color_value}
 
-    run keyword     Set Quota Assignment for Cost Center
+    click button    ${btn_cancel_monthly}
+    sleep_call_1
+
+   # run keyword     Set Quota Assignment for Personal
+
     click element       ${btn_quota_select_all}
     click element   ${undefined}
     click button    ${btn_delete_quota}
     sleep_call_2
     click button    ${btn_delete_def}
     sleep_call
-
-    run keyword     Check Quota Assignment is removed
-
+    click element       ${admin_dropdown}
+    sleep_call_2
+    click element       ${lbl_quotadefinition}
+    sleep_call
 
 Set Custom Color
     click element   ${txt_color_value}
@@ -425,7 +279,59 @@ Set Custom Total
     run keyword     Set Color Controls
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Set Quota Assignment for Cost Center
+
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     wait until page contains element    ${org_policy}
@@ -446,7 +352,6 @@ Set Quota Assignment for Cost Center
     click button    ${btn_assignquota}
     sleep_call_1
 
-
     click element   ${txt_costcentername}
     input text      ${txt_costcentername_input}       ${costcenter}
     sleep_call_2
@@ -466,8 +371,70 @@ Set Quota Assignment for Cost Center
 
     sleep_call_1
     element text should be      ${costcenter_name}      ${costcenter}
-    click element       ${quota_name}
+    click element       ${quota_name_link}
     sleep_call_1
+
+    run keyword     Check the table values
+
+    element text should be      ${costcenter_assignment_count}      1
+    sleep_call_2
+
+Check Quota Assignment is removed
+    sleep_call_1
+    click element       ${admin_dropdown}
+    sleep_call_2
+    click element       ${lbl_quotaassignment}
+    page should contain    ${noquotaassignment}
+    click element       ${admin_dropdown}
+    sleep_call_2
+    click element       ${lbl_quotadefinition}
+    sleep_call_2
+
+Check Header Text
+    ${iscolordisable}=    Run Keyword And Return Status    Should Be Equal As Strings    ${quota_color_value}    ${totaldisable}
+    Run Keyword If  ${iscolordisable}  element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (no color printing)
+
+    ...     ELSE    run keyword        element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (${monthly_color_value} for color printing)
+
+############################################################################################################
+Set Quota Assignment for Personal
+    wait until element is visible   ${admin_dropdown}
+    click element       ${admin_dropdown}
+    sleep_call_2
+    click element       ${lbl_quotaassignment}
+    sleep_call
+    click element   ${tab_personal}
+    click button    ${btn_assignquota}
+    sleep_call_2
+    click element   ${txt_email}
+    input text      ${txt_email_input}   ${username}
+    sleep_call_2
+    #element should be visible   ${lst_email}
+    Press Keys    ${lst_email}    ENTER
+    sleep_call_2
+    click element   ${txt_quota_def}
+    press keys      ${lst_quota_def}    ARROW_DOWN
+    Press Keys    ${lst_quota_def}    ENTER
+    sleep_call_2
+    wait until element is enabled   ${btn_vary_ok}
+    sleep_call_2
+    click button    ${btn_vary_ok}
+    sleep_call
+    wait until element is visible   ${tbl_email_quota}
+    element text should be      ${tbl_personal_name}    ${username}
+
+    sleep_call
+    #wait until element is visible   ${tbl_email_quota_name}
+    element text should be      ${tbl_email_quota_name}    ${quota_name}
+
+    click element       ${email_quota_link}
+    sleep_call_1
+    run keyword     Check the table values
+    #element text should be      ${personal_assignment_count}      1
+    #sleep_call_2
+
+##########################################################################################
+Check the table values
     element text should be      ${monthly_total_id}   ${monthly_total_value}
     element text should be      ${monthly_color_id}   ${monthly_color_value}
 
@@ -489,25 +456,6 @@ Set Quota Assignment for Cost Center
     sleep_call_2
     click element       ${lbl_quotadefinition}
     sleep_call
-
-    element text should be      ${costcenter_assignment_count}      1
-    sleep_call_2
-
-Check Quota Assignment is removed
-    sleep_call_1
-    click element       ${admin_dropdown}
-    sleep_call_2
-    click element       ${lbl_quotaassignment}
-    page should contain    ${noquotaassignment}
-    click element       ${admin_dropdown}
-    sleep_call_2
-    click element       ${lbl_quotadefinition}
-    sleep_call_2
-
-Check Header Text
-    ${iscolordisable}=    Run Keyword And Return Status    Should Be Equal As Strings    ${quota_color_value}    ${totaldisable}
-    Run Keyword If  ${iscolordisable}  element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (no color printing)
-
-    ...     ELSE    run keyword        element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (${monthly_color_value} for color printing)
+########################################################################################################################
 
 
