@@ -145,6 +145,7 @@ Create Custom quota monthly
     sleep_call
     sleep_call
     click element    ${btn_create_quota}
+    sleep_call_2
     clear element text  ${txt_quotaname}
     input text      ${txt_quotaname}        ${quota_name}
     click element   ${lst_quotalimit}
@@ -182,6 +183,7 @@ Create Custom quota vary
     sleep_call
     sleep_call
     click element    ${btn_create_quota}
+    sleep_call_2
     clear element text  ${txt_quotaname}
     input text      ${txt_quotaname}        ${quota_name}
     click element   ${lst_quotalimit}

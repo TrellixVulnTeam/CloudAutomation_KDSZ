@@ -8,7 +8,7 @@ ${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
 ${BROWSER}                      Chrome
 ${username}                     sravantesh.neogi@lexmark.com
 ${password}                     Password@1234
-${username_nonadmin}            simpleuser@test.onelxk.co
+${username_nonadmin}            testuser@test.onelxk.co
 ${email_text}                   In addition to uploading a file, you may also e-mail it to lcp.dev2@lexmark.com to place it in your print queue.
 ${costcenter}                   stl
 ${noquotaassignment}            No custom quota definitions for assigning.
@@ -58,10 +58,10 @@ Open Browser To Login Page using non admin
     Input Text    ${txt_password}    ${password}
     Click Button    ${btn_login}
     sleep_call
-    Wait Until Element Is Visible   ${lnk_cpm}
-    Click Element   ${lnk_cpm}
-    sleep_call_2
-    Switch Window       Print Management | Lexmark Cloud Services
+    Wait Until Element Is Visible   ${lnk_cpm_nonadmin}
+    Click Element   ${lnk_cpm_nonadmin}
+    #sleep_call_2
+    #Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
 
 ####################################################################################################
@@ -312,6 +312,7 @@ Create Custom quota monthly
     sleep_call
     sleep_call
     click element    ${btn_create_quota}
+    sleep_call_2
     clear element text  ${txt_quotaname}
     input text      ${txt_quotaname}        ${quota_name}
     click element   ${lst_quotalimit}
@@ -349,6 +350,7 @@ Create Custom quota vary
     sleep_call
     sleep_call
     click element    ${btn_create_quota}
+    sleep_call_2
     clear element text  ${txt_quotaname}
     input text      ${txt_quotaname}        ${quota_name}
     click element   ${lst_quotalimit}
@@ -479,6 +481,7 @@ Check Quota Assignment is removed
     click element       ${admin_dropdown}
     sleep_call_2
     click element       ${lbl_quotaassignment}
+    sleep_call_2
     page should contain    ${noquotaassignment}
     click element       ${admin_dropdown}
     sleep_call_2

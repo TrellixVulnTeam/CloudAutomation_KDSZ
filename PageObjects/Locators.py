@@ -6,6 +6,7 @@ btn_next = "id:btn-email-next"
 btn_login = "id:btn-email-login"
 
 lnk_cpm = "xpath://*[@id='card-10']/cui-card-body/cui-priv-block/div/div"
+lnk_cpm_nonadmin="xpath://*[@id='card-14']/cui-card-body/cui-priv-block/div/div"
 
 name_printqueue = "id:link-navPrintQueue"
 
@@ -149,7 +150,8 @@ lbl_quotastatus="id:navAdminDropdownUserQuotaStatus"
 btn_confirmchange="id:confirmation-modal_okButton"
 #tab_costcenter="id:costCenterTab"
 tab_costcenter="xpath://*[@id='costCenterTab']/a"
-tab_personal="id:userTab"
+tab_personal="xpath://*[@id='userTab']/a"
+
 
 chk_costcenter="id:useCostCenterOption_radio_input"
 chk_dept="id:useDepartmentOption_radio_input"
