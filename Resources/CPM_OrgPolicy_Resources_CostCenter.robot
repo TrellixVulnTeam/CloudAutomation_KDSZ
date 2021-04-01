@@ -59,9 +59,10 @@ Open Browser To Login Page using non admin
     Click Button    ${btn_login}
     sleep_call
     Wait Until Element Is Visible   ${lnk_cpm_nonadmin}
+    sleep_call_2
     Click Element   ${lnk_cpm_nonadmin}
-    #sleep_call_2
-    #Switch Window       Print Management | Lexmark Cloud Services
+    sleep_call_2
+    Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
 
 ####################################################################################################
