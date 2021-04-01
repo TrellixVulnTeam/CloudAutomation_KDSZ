@@ -8,7 +8,7 @@ Suite Teardown     Reset , Log Out and Close Browsers
 
 *** Variables ***
 ${LOGIN URL}                    https://dev.us.cloud.onelxk.co
-${BROWSER}                      Chrome
+${BROWSER}                      headlessChrome
 ${username}                     sravantesh.neogi@lexmark.com
 ${password}                     Password@1234
 ${tab1name}                     Print Queue
@@ -75,34 +75,63 @@ Check total number of staple bins
 
     click button    ${default_settings_btn}
     sleep_call
-
+    #wait until page contains element    settingsUpdatingBusySpinner
+    wait until page contains element    saveChangesButton
 #Check page size count
     element attribute value should be   //*[@id="staple-listbox-item-printer"]   aria-setsize   15
     sleep_call_1
 
 Validation of Staple dropdown
-    sleep_call
+    #sleep_call
+    #sleep_call
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    sleep_call
+    #sleep_call
     [Arguments]        ${STAPLE}     ${STAPLE CONTROL}       ${STAPLE NAME}
 
-    sleep_call
     #wait until page contains element    holePunch
     #scroll element into view        holePunch
     sleep_call_1
     click element   ${STAPLE}
     sleep_call_1
     click element   ${STAPLE CONTROL}
-    element attribute value should be   ${STAPLE CONTROL}   title   ${STAPLE NAME}
-    sleep_call_1
-    ${status}=       run keyword and return status  element attribute value should be   ${STAPLE CONTROL}   title   ${STAPLE NAME}
-
-    Run keyword if  ${status}==False    click button    cancelChangesButton
-    ...         ELSE    click button    saveChangesButton
-    #wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call
+    click button    saveChangesButton
+    sleep_call_2
     click button    ${default_settings_btn}
     sleep_call
+    #wait until page contains element    settingsUpdatingBusySpinner
+    wait until page contains element    saveChangesButton
+    element attribute value should be   ${STAPLE CONTROL}   title   ${STAPLE NAME}
+
+
+
+
+
+#
+#
+#
+#    sleep_call
+#    sleep_call
+#    ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
+#    sleep_call
+#    [Arguments]        ${STAPLE}     ${STAPLE CONTROL}       ${STAPLE NAME}
+#
+#    sleep_call
+#    #wait until page contains element    holePunch
+#    #scroll element into view        holePunch
+#    sleep_call_1
+#    click element   ${STAPLE}
+#    sleep_call_1
+#    click element   ${STAPLE CONTROL}
+#    element attribute value should be   ${STAPLE CONTROL}   title   ${STAPLE NAME}
+#    sleep_call_1
+#    ${status}=       run keyword and return status  element attribute value should be   ${STAPLE CONTROL}   title   ${STAPLE NAME}
+#
+#    Run keyword if  ${status}==False    click button    cancelChangesButton
+#    ...         ELSE    click button    saveChangesButton
+#    #wait until page contains element    settingsUpdatingBusySpinner
+#    sleep_call
+#    click button    ${default_settings_btn}
+#    sleep_call
 
 Reset , Log Out and Close Browsers
     sleep_call_1

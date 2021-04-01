@@ -8,7 +8,7 @@ Suite Teardown     Reset , Log Out and Close Browsers
 
 *** Variables ***
 ${LOGIN URL}                    https://dev.us.cloud.onelxk.co
-${BROWSER}                      Chrome
+${BROWSER}                      headlessChrome
 ${username}                     sravantesh.neogi@lexmark.com
 ${password}                     Password@1234
 ${tab1name}                     Print Queue
@@ -72,11 +72,13 @@ Check total number of paper sizes
     element should contain  xpath://*[@id="printQueuePageHeaderDropDown_button"]/div   ${tab1name}
 
 #Open Print default settings
-    sleep_call
+    #sleep_call
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
     click button    ${default_settings_btn}
     sleep_call
+    #wait until page contains element    settingsLoadingBusySpinner
+    wait until page contains element    saveChangesButton
 
 
 #Check page size count
@@ -84,28 +86,35 @@ Check total number of paper sizes
     sleep_call_1
 
 Validation of Paper size dropdown
-    sleep_call
+    #sleep_call
+    #sleep_call
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    sleep_call
+    #sleep_call
     [Arguments]        ${PAGE SIZE}     ${PAGE SIZE CONTROL}       ${PAGE SIZE NAME}
 
-    sleep_call
     #wait until page contains element    holePunch
     #scroll element into view        holePunch
-    sleep_call_2
+    sleep_call_1
     click element   ${PAGE SIZE}
-    sleep_call_2
+    sleep_call_1
     click element   ${PAGE SIZE CONTROL}
-    element attribute value should be   ${PAGE SIZE CONTROL}   title   ${PAGE SIZE NAME}
+    sleep_call_1
+    click button    saveChangesButton
     sleep_call_2
-    ${status}=       run keyword and return status  element attribute value should be   ${PAGE SIZE CONTROL}   title   ${PAGE SIZE NAME}
-    sleep_call_2
-    Run keyword if  ${status}==False    click button    cancelChangesButton
-    ...         ELSE    click button    saveChangesButton
-    #wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call
     click button    ${default_settings_btn}
     sleep_call
+    #wait until page contains element    settingsLoadingBusySpinner
+    wait until page contains element    saveChangesButton
+    element attribute value should be   ${PAGE SIZE CONTROL}   title   ${PAGE SIZE NAME}
+
+    #${status}=       run keyword and return status  element attribute value should be   ${PAGE SIZE CONTROL}   title   ${PAGE SIZE NAME}
+    #sleep_call_2
+    #Run keyword if  ${status}==False    click button    cancelChangesButton
+    #...         ELSE    click button    saveChangesButton
+    #wait until page contains element    settingsUpdatingBusySpinner
+    #sleep_call_2
+
+    #sleep_call
 
 Reset , Log Out and Close Browsers
     click element   paperSize

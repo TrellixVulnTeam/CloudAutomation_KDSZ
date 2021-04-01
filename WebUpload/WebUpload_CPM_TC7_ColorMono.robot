@@ -5,7 +5,7 @@ Library     CloudLogin.py
 
 *** Variables ***
 ${LOGIN URL}                    https://dev.us.cloud.onelxk.co
-${BROWSER}                      Chrome
+${BROWSER}                      headlessChrome
 ${username}                     sravantesh.neogi@lexmark.com
 ${password}                     Password@1234
 ${tab1name}                     Print Queue
@@ -75,6 +75,7 @@ Open Browser and Login
     sleep_call
 
 Validation of Color Mono default state
+    sleep_call
 
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
@@ -90,7 +91,7 @@ Validation of Color Mono default state
 
     click element     ${mono}
     click button        saveChangesButton
-    #wait until page contains element    settingsUpdatingBusySpinner
+
     sleep_call
 
     click button    ${default_settings_btn}

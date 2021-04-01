@@ -11,9 +11,9 @@ import time
 def printer_automation(text):
 
 
-    ip_address = "10.195.7.227"
+    ip_address = "10.195.6.123"
 
-    ups = UPS(printer_ip="10.195.7.227")
+    ups = UPS(printer_ip="10.195.6.123")
     ups.initialize()
     time.sleep(2)
     ups.regex('do "press key KEYCODE_HOME"')
