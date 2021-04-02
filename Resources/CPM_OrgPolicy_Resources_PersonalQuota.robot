@@ -134,6 +134,7 @@ Open Browser and Quota Page
 
 
 Create Custom quota monthly
+    sleep_call
     [Arguments]        ${quota_name}     ${quota_interval}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}
     Set Global Variable   ${quota_color_value}
     Set Global Variable   ${quota_color}
@@ -166,6 +167,7 @@ Create Custom quota monthly
 
 
 Create Custom quota vary
+    sleep_call
     [Arguments]        ${quota_name}     ${quota_interval}     ${month}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}     ${monthly_total_id} 	${monthly_total_value}  	${monthly_color_id}	    ${monthly_color_value}
 
     Set Global Variable   ${quota_color_value}
@@ -222,7 +224,7 @@ Set Color Controls
     sleep_call
 
     run keyword     Set Quota Assignment for Personal
-
+    sleep_call
     click element       ${btn_quota_select_all}
     click element   ${undefined}
     click button    ${btn_delete_quota}
@@ -239,6 +241,7 @@ Set Disable Print
     sleep_call
 
     run keyword     Set Quota Assignment for Personal
+    sleep_call
     click element       ${btn_quota_select_all}
     click element   ${undefined}
     click button    ${btn_delete_quota}
@@ -264,6 +267,7 @@ Check Quota Assignment is removed
     click element       ${admin_dropdown}
     sleep_call_2
     click element       ${lbl_quotaassignment}
+    sleep_call_2
     page should contain    ${noquotaassignment}
     click element       ${admin_dropdown}
     sleep_call_2
@@ -341,6 +345,7 @@ Create a quota
     sleep_call
     sleep_call
     click element    ${btn_create_quota}
+    sleep_call_2
     clear element text  ${txt_quotaname}
     input text      ${txt_quotaname}        ErrorQuota
     click element   ${lst_quotalimit}

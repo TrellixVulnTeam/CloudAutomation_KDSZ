@@ -133,6 +133,7 @@ Open Browser and Quota Page
 
 
 Create Custom quota monthly
+    sleep_call
     [Arguments]        ${quota_name}     ${quota_interval}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}
     Set Global Variable   ${quota_color_value}
     Set Global Variable   ${quota_color}
@@ -165,6 +166,7 @@ Create Custom quota monthly
 
 
 Create Custom quota vary
+    sleep_call
     [Arguments]        ${quota_name}     ${quota_interval}     ${month}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}     ${monthly_total_id} 	${monthly_total_value}  	${monthly_color_id}	    ${monthly_color_value}
 
     Set Global Variable   ${quota_color_value}
@@ -225,11 +227,12 @@ Set Color Controls
     element text should be      ${monthly_color_id}   ${monthly_color_value}
 
     click button    ${btn_cancel_monthly}
-    sleep_call_1
+    sleep_call
 
    # run keyword     Set Quota Assignment for Personal
 
     click element       ${btn_quota_select_all}
+    sleep_call_1
     click element   ${undefined}
     click button    ${btn_delete_quota}
     sleep_call_2
@@ -254,11 +257,12 @@ Set Disable Print
     element text should be      ${monthly_color_id}   ${monthly_color_value}
 
     click button    ${btn_cancel_monthly}
-    sleep_call_1
+    sleep_call
 
    # run keyword     Set Quota Assignment for Personal
 
     click element       ${btn_quota_select_all}
+    sleep_call_1
     click element   ${undefined}
     click button    ${btn_delete_quota}
     sleep_call_2
@@ -279,57 +283,6 @@ Set Custom Total
     press keys      ${txt_total_value}      \DELETE
     input text      ${txt_total_value}      ${quota_total_value}
     run keyword     Set Color Controls
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Set Quota Assignment for Cost Center

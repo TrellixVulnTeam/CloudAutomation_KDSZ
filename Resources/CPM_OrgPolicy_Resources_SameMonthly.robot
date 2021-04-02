@@ -92,6 +92,7 @@ Open Browser and Quota Page
 
 
 Create Custom quota monthly
+    sleep_call
     [Arguments]        ${quota_name}     ${quota_interval}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}
     Set Global Variable   ${quota_color_value}
     Set Global Variable   ${quota_color}
@@ -139,7 +140,7 @@ Set Color Controls
     element text should be      ${lst_new_quota_total}      ${quota_total_value}
     element text should be      ${lst_new_quota_color}      ${quota_color_value}
 
-
+    sleep_call
     click element       ${btn_quota_select_all}
     click element   ${undefined}
     click button    ${btn_delete_quota}
@@ -157,6 +158,7 @@ Set Disable Print
     element text should be      ${lst_new_quota_total}      ${quota_total_value}
     element text should be      ${lst_new_quota_color}      ${quota_color_value}
 
+    sleep_call
     click element       ${btn_quota_select_all}
     click element   ${undefined}
     click button    ${btn_delete_quota}
