@@ -4,10 +4,10 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
-${username}                     sravantesh.neogi@lexmark.com
-${password}                     Password@1234
+#${URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 ${username_nonadmin}            simpleuser@test.onelxk.co
 ${email_text}                   In addition to uploading a file, you may also e-mail it to lcp.dev2@lexmark.com to place it in your print queue.
 ${costcenter}                   stl
@@ -18,11 +18,11 @@ ${colorvalue}                   20
 ${NULL}
 *** Keywords ***
 Open Browser To Login Page using Admin
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-    Input Text    ${txt_username}    ${username}
+    Input Text    ${txt_username}    ${USER}
     Click Button    ${btn_next}
-    Input Text    ${txt_password}    ${password}
+    Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
     Wait Until Element Is Visible   ${lnk_cpm}
@@ -113,11 +113,11 @@ Open Quota Definition Page
     sleep_call_2
 
 Open Browser and Quota Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-    Input Text    ${txt_username}    ${username}
+    Input Text    ${txt_username}    ${USER}
     Click Button    ${btn_next}
-    Input Text    ${txt_password}    ${password}
+    Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
     Wait Until Element Is Visible   ${lnk_cpm}
@@ -290,7 +290,7 @@ Set Quota Assignment for Personal
     click button    ${btn_assignquota}
     sleep_call_2
     click element   ${txt_email}
-    input text      ${txt_email_input}   ${username}
+    input text      ${txt_email_input}   ${USER}
     sleep_call_2
     #element should be visible   ${lst_email}
     Press Keys    ${lst_email}    ENTER
@@ -304,7 +304,7 @@ Set Quota Assignment for Personal
     click button    ${btn_vary_ok}
     sleep_call
     wait until element is visible   ${tbl_email_quota}
-    element text should be      ${tbl_personal_name}    ${username}
+    element text should be      ${tbl_personal_name}    ${USER}
 
     sleep_call
     #wait until element is visible   ${tbl_email_quota_name}

@@ -7,10 +7,10 @@ Library     CloudLogin.py
 #Suite Teardown     Verify deletion of jobs
 
 *** Variables ***
-${LOGIN URL}                    https://dev.us.cloud.onelxk.co
-${BROWSER}                      headlessChrome
-${username}                     sravantesh.neogi@lexmark.com
-${password}                     Password@1234
+#${URL}                    https://dev.us.cloud.onelxk.co
+#${BROWSER}                      Chrome
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${tab1name}                     Print Queue
@@ -36,11 +36,11 @@ LoginTest
     Maximise Browser
     Check Copyright in Login
     Check Username field is enabled and displayed
-    Input Username      ${username}
+    Input Username      ${USER}
     Verify Next Button is enabled and verify value
     Click Next button
     Check Password field is enabled and displayed
-    Input Password      ${password}
+    Input Password      ${PASSWORD}
     Verify Login Button is enabled and verify value
     Click Login Button
     Dashboard Should Open
@@ -48,7 +48,7 @@ LoginTest
 
 *** Keywords ***
 Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}
 
 Maximise Browser
     Maximize Browser Window
@@ -65,8 +65,8 @@ Check Username field is enabled and displayed
     element should not be visible   ${password_text}
 
 Input Username
-    [Arguments]    ${username}
-    Input Text    id:user_email    ${username}
+    [Arguments]    ${USER}
+    Input Text    id:user_email    ${USER}
 
 Verify Next Button is enabled and verify value
     ${nextbtn}  set variable    btn-email-next
@@ -83,8 +83,8 @@ Check Password field is enabled and displayed
     element should be visible   ${password_text}
 
 Input Password
-    [Arguments]    ${password}
-    Input Text    id:user_password    ${password}
+    [Arguments]    ${PASSWORD}
+    Input Text    id:user_password    ${PASSWORD}
 
 Verify Login Button is enabled and verify value
     ${loginbtn}  set variable    btn-email-login

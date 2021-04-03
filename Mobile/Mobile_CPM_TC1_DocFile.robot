@@ -6,10 +6,10 @@ Library     ../Email/Printerautomation.py
 Resource     ../Resources/CPM_Mobile_Resources.robot
 
 *** Variables ***
-${LOGIN URL}                    https://dev.us.cloud.onelxk.co
-${BROWSER}                      headlessChrome
-${username}                     sravantesh.neogi@lexmark.com
-${password}                     Password@1234
+#${URL}                    https://dev.us.cloud.onelxk.co
+#${BROWSER}                      Chrome
+#${URL}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 ${tab1name}                     Print Queue
 ${correct}                      Correct Number of Pages listed
 

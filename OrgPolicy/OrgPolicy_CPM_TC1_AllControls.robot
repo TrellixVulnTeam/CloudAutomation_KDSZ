@@ -62,9 +62,9 @@ Check Delegate feature
     sleep_call_2
     Check delegate tab is visible
     sleep_call_2
-    Open Organisational Policy Page
-    sleep_call_2
-    Reset Delegate feature
+    #Open Organisational Policy Page
+    #sleep_call_2
+    #Reset Delegate feature
     sleep_call_2
     Log out
     sleep_call_2
@@ -86,9 +86,9 @@ Check Email feature
     sleep_call_2
     Check email header is present
     sleep_call_2
-    Open Organisational Policy Page
-    sleep_call_2
-    Reset Email feature
+    #Open Organisational Policy Page
+    #sleep_call_2
+    #Reset Email feature
     sleep_call_2
     Log out
     sleep_call_2

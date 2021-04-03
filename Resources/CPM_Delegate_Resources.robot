@@ -4,19 +4,19 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
-${username}                     sravantesh.neogi@lexmark.com
-${password}                     Password@1234
+#${URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 
 
 *** Keywords ***
 Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-    Input Text    ${txt_username}    ${username}
+    Input Text    ${txt_username}    ${USER}
     Click Button    ${btn_next}
-    Input Text    ${txt_password}    ${password}
+    Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
     Wait Until Element Is Visible   ${lnk_cpm}

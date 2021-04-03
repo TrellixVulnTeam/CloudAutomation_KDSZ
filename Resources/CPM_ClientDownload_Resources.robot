@@ -4,10 +4,10 @@ Variables    ../PageObjects/Locators.py
 #Library     DataDriver  ../TestData/Win_Custom_Package.xlsx
 
 *** Variables ***
-${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      headlessChrome
-${username}                     sravantesh.neogi@lexmark.com
-${password}                     Password@1234
+#${URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 ${PACKAGE NAME}                 customPackage.zip
 ${message}                      Pass
 ${messagefail}                  Fail
@@ -27,11 +27,11 @@ ${CPM URL}                              https://dev.us.cloud.onelxk.co/cpm
 *** Keywords ***
 
 Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-    Input Text    ${txt_username}    ${username}
+    Input Text    ${txt_username}    ${USER}
     Click Button    ${btn_next}
-    Input Text    ${txt_password}    ${password}
+    Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
     sleep_call
@@ -54,11 +54,11 @@ Open Browser To Login Page
 Create Custom Package
     [Arguments]   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
     Set Global Variable      ${unused_client_value_delete_span}
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
-    Input Text    ${txt_username}    ${username}
+    Input Text    ${txt_username}    ${USER}
     Click Button    ${btn_next}
-    Input Text    ${txt_password}    ${password}
+    Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
 
@@ -79,7 +79,7 @@ Create Custom Package
     Press Keys    None      ARROW_UP
     sleep_call_2
 
-    go to   ${LOGIN URL}
+    go to   ${URL}
 
     sleep_call
     Wait Until Element Is Visible   ${lnk_cpm}

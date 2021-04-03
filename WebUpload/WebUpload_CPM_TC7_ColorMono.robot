@@ -4,10 +4,10 @@ Library     CloudLogin.py
 
 
 *** Variables ***
-${LOGIN URL}                    https://dev.us.cloud.onelxk.co
-${BROWSER}                      headlessChrome
-${username}                     sravantesh.neogi@lexmark.com
-${password}                     Password@1234
+#${URL}                    https://dev.us.cloud.onelxk.co
+#${BROWSER}                      headlessChrome
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 ${tab1name}                     Print Queue
 ${correct}                      Correct Number of Output Bins listed
 
@@ -23,7 +23,7 @@ Validation of Color Mono setting
 *** Keywords ***
 
 Open Browser and Login
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}
 
 #Maximise Browser
     Maximize Browser Window
@@ -34,7 +34,7 @@ Open Browser and Login
     ${password_text}    set variable    id:user_password
 
 #Input Username
-    Input Text    id:user_email    ${username}
+    Input Text    id:user_email    ${USER}
 
 #Verify Next Button is enabled and verify value
     ${nextbtn}  set variable    btn-email-next
@@ -46,7 +46,7 @@ Open Browser and Login
     ${password_text}    set variable    id:user_password
 
 #Input Password
-    Input Text    id:user_password    ${password}
+    Input Text    id:user_password    ${PASSWORD}
 
 #Verify Login Button is enabled and verify value
     ${loginbtn}  set variable    btn-email-login
