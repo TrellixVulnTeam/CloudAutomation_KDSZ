@@ -291,6 +291,9 @@ Set Quota Assignment for Personal
     click element       ${lbl_quotaassignment}
     sleep_call
     click element   ${tab_personal}
+    sleep_call
+    set selenium timeout    20
+    wait until page contains element    ${btn_assignquota}
     click button    ${btn_assignquota}
     sleep_call_2
     click element   ${txt_email}

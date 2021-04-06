@@ -436,7 +436,7 @@ Set Custom Total
 
 
 Set Quota Assignment for Cost Center
-
+    set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     wait until page contains element    ${org_policy}
@@ -454,6 +454,8 @@ Set Quota Assignment for Cost Center
     sleep_call
     sleep_call
     #Assign Quota by Cost Center
+    set selenium timeout    20
+    wait until page contains element   ${btn_assignquota}
     click button    ${btn_assignquota}
     sleep_call_1
 
@@ -490,6 +492,8 @@ Check Quota Assignment is removed
     sleep_call_2
     click element       ${lbl_quotaassignment}
     sleep_call_2
+    set selenium timeout    20
+    wait until page contains element    ${noquotaassignment}
     page should contain    ${noquotaassignment}
     click element       ${admin_dropdown}
     sleep_call_2
@@ -504,6 +508,7 @@ Check Header Text
 
 ##########################################################################################
 Check the table values
+    set selenium timeout    20
     element text should be      ${monthly_total_id}   ${monthly_total_value}
     element text should be      ${monthly_color_id}   ${monthly_color_value}
 

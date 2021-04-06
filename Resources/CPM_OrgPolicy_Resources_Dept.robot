@@ -240,6 +240,8 @@ Set Quota Assignment for Department
     run keyword     Select Department or Personal
     run keyword     Open Quota Assignment Page
     sleep_call
+    set selenium timeout    20
+    wait until page contains element    ${btn_assignquota}
     click button    ${btn_assignquota}
     sleep_call_1
 
@@ -275,6 +277,7 @@ Check Quota Assignment is removed
     sleep_call_2
     click element       ${lbl_quotaassignment}
     sleep_call_2
+    set selenium timeout    20
     page should contain    ${noquotaassignment}
     click element       ${admin_dropdown}
     sleep_call_2
