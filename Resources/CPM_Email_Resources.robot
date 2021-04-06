@@ -21,6 +21,7 @@ Open Browser To Login Page
     Input Text    ${txt_password}    ${password}
     Click Button    ${btn_login}
     sleep_call
+    set selenium timeout    20
     Wait Until Element Is Visible   ${lnk_cpm}
     Click Element   ${lnk_cpm}
     sleep_call_2
@@ -35,7 +36,7 @@ Open Browser To Login Page
 
 Email submission with
     [Arguments]        ${FILENAME}
-
+    set selenium timeout    20
     ${email_status}=   send_email_singleattachment      ${FILENAME}
     log     ${email_status}
     sleep_call_2
@@ -126,7 +127,7 @@ Email submission with
     Click Element   link-navPrintQueue
 
 Check blank subject email job
-
+    set selenium timeout    20
     ${email_status}=   blank_subject
     log     ${email_status}
     sleep_call_2
@@ -176,6 +177,7 @@ Check blank subject email job
     Click Element   link-navPrintQueue
 
 Check blank body email job
+    set selenium timeout    20
     ${email_status}=   blank_body
     log     ${email_status}
 
@@ -198,6 +200,7 @@ Check blank body email job
 
 Log out
     click element   ${lnk_username}
+    set selenium timeout    20
     wait until page contains element    ${lnl_logout}
     sleep_call_2
     click element   ${lnl_logout}

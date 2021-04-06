@@ -19,6 +19,7 @@ Open Browser To Login Page
     Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
+    set selenium timeout    20
     Wait Until Element Is Visible   ${lnk_cpm}
     Click Element   ${lnk_cpm}
     sleep_call_2
@@ -27,6 +28,7 @@ Open Browser To Login Page
 
 Check Adding Valid and Duplicate Delegates
    [Arguments]        ${EMAIL USER}
+    set selenium timeout    20
     Wait until Element Is Visible   ${lbl_delegate}
     page should contain     No data available
     Wait until Element Is Visible   ${lbl_delegate}
@@ -92,6 +94,7 @@ Check Adding Valid and Duplicate Delegates
 
 Check Adding Invalid Delegates
    [Arguments]        ${EMAIL USER}
+    set selenium timeout     20
     Wait until Element Is Visible   ${lbl_delegate}
     page should contain     No data available
     Wait until Element Is Visible   ${lbl_delegate}
@@ -112,13 +115,9 @@ Check Adding Invalid Delegates
     click button    ${dlg_btn_delegate_cancel}
     sleep_call_2
 
-
-
-
-
-
 Log out
     click element   ${lnk_username}
+    set selenium timeout    20
     wait until page contains element    ${lnl_logout}
     sleep_call_2
     click element   ${lnl_logout}

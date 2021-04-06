@@ -13,6 +13,7 @@ ${mobile_job}                   mobile.doc
 
 *** Keywords ***
 Open Browser To Login Page
+    set selenium timeout    20
     Open Browser    ${URL}   ${BROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
@@ -34,7 +35,7 @@ Open Browser To Login Page
 
 Mobile submission
     #[Arguments]        ${FILENAME}
-
+    set selenium timeout    20
     ${mobile_status}=   mobile_submit
     log     ${mobile_status}
     sleep_call_2
@@ -90,6 +91,7 @@ Mobile submission
 
 
 Log out
+    set selenium timeout    20
     click element   ${lnk_username}
     wait until page contains element    ${lnl_logout}
     sleep_call_2

@@ -16,6 +16,7 @@ ${totaldisable}                 0
 
 *** Keywords ***
 Open Browser To Login Page using Admin
+    set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
@@ -30,6 +31,7 @@ Open Browser To Login Page using Admin
     sleep_call
 
 Open Organisational Policy Page
+    set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     wait until page contains element    ${org_policy}
@@ -51,6 +53,7 @@ Check new state of client download
 
 
 Open Browser To Login Page using non admin
+    set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${username_nonadmin}
@@ -73,6 +76,7 @@ Check Client Download
     sleep_call
 
 Check client download tab is visible for non admin
+    set selenium timeout    20
     page should contain element         ${tab_clientdownload}
     click element       ${tab_clientdownload}
     sleep_call_2
@@ -81,6 +85,7 @@ Check client download tab is visible for non admin
     element should not be visible     ${lnk_custommac}
 
 Check client download tab is not visible for non admin
+    set selenium timeout    20
     page should not contain element         ${tab_clientdownload}
 
 Reset Client Download
@@ -94,6 +99,7 @@ Check default state of delegates
     element attribute value should be       ${chk_delegates}       aria-checked    false
 
 Check delegate tab is not visible
+    set selenium timeout    20
     page should not contain element     ${lbl_delegate}
 
 Enable Delegate
@@ -105,6 +111,7 @@ Enable Delegate
 
 
 Check delegate tab is visible
+    set selenium timeout    20
     page should contain element     ${lbl_delegate}
     click element   ${lbl_delegate}
     wait until page contains element        ${header_delegate}
@@ -144,6 +151,7 @@ Reset Email feature
 ####################################################################################################
     ################QUOTA###########################
 Check default state of quota
+    set selenium timeout    20
     element attribute value should be       ${chk_quota}        aria-checked    false
     element should be disabled      ${radio_costcenter}
     element should be disabled      ${radio_dept}
@@ -161,6 +169,7 @@ Enable Quota
     sleep_call
 
 Check Quota feature controls
+    set selenium timeout    20
     element attribute value should be       ${chk_quota}        aria-checked    true
     element should be enabled      ${radio_costcenter}
     element attribute value should be       ${radio_costcenter}     aria-checked    true
@@ -182,6 +191,7 @@ Reset Quota
     sleep_call
 
 Log Out Non admin
+    set selenium timeout    20
     click element   ${lnk_username}
     wait until page contains element    ${lnl_logout}
     sleep_call_2
@@ -190,6 +200,7 @@ Log Out Non admin
     close all browsers
 
 Log out
+    set selenium timeout    20
     click element   ${lnk_username}
     wait until page contains element    ${lnl_logout}
     sleep_call_2
@@ -199,6 +210,7 @@ Log out
 ###################################################################################################################
 
 Select Cost Center or Personal
+    set selenium timeout    20
     select checkbox     ${chk_costcenter}
     wait until page contains element        ${btn_confirmchange}
     click element       ${btn_confirmchange}
@@ -214,6 +226,7 @@ Reset to Cost Center or Personal and uncheck quota
     sleep_call
 
 Open Quota Assignment Page
+    set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     wait until page contains element    ${lbl_quotaassignment}
@@ -228,6 +241,7 @@ Check whether cost center and personal tab is displayed
     element attribute value should be       ${tab_personal}       title       Personal
 
 Select Department or Personal
+    set selenium timeout    20
     click element     ${radio_dept}
     wait until page contains element        ${btn_confirmchange}
     click element       ${btn_confirmchange}
@@ -236,6 +250,7 @@ Select Department or Personal
     sleep_call
 
 Select Personal
+    set selenium timeout    20
     click element     ${radio_personal}
     wait until page contains element        ${btn_confirmchange}
     click element       ${btn_confirmchange}
@@ -255,6 +270,7 @@ Check whether no tab is displayed
     element should not be visible       ${tab_personal}
 
 Open Quota Definition Page
+    set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     wait until page contains element    ${lbl_quotadefinition}
@@ -280,6 +296,7 @@ Check default quota definition
     click button        ${btn_cancel_changes}
 
 Open Browser and Quota Page
+    set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
@@ -303,6 +320,7 @@ Open Browser and Quota Page
 Create Custom quota monthly
     sleep_call
     [Arguments]        ${quota_name}     ${quota_interval}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}
+    set selenium timeout    20
     Set Global Variable   ${quota_color_value}
     Set Global Variable   ${quota_color}
 
@@ -337,6 +355,7 @@ Create Custom quota vary
     sleep_call
     [Arguments]        ${quota_name}     ${quota_interval}     ${month}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}     ${monthly_total_id} 	${monthly_total_value}  	${monthly_color_id}	    ${monthly_color_value}
 
+    set selenium timeout    20
     Set Global Variable   ${quota_color_value}
     Set Global Variable   ${quota_color}
 
@@ -378,6 +397,7 @@ Create Custom quota vary
 
 
 Set Color Controls
+    set selenium timeout    20
     sleep_call_2
     click element   ${quota_color}
     sleep_call_2
@@ -403,6 +423,7 @@ Set Color Controls
     run keyword     Check Quota Assignment is removed
 
 Set Disable Print
+    set selenium timeout    20
     click button    ${btn_vary_ok}
     sleep_call_1
     click button    ${btn_create_def}
@@ -501,6 +522,7 @@ Check Quota Assignment is removed
     sleep_call_2
 
 Check Header Text
+    set selenium timeout    20
     ${iscolordisable}=    Run Keyword And Return Status    Should Be Equal As Strings    ${quota_color_value}    ${totaldisable}
     Run Keyword If  ${iscolordisable}  element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (no color printing)
 

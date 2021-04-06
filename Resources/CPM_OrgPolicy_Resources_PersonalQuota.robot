@@ -18,6 +18,7 @@ ${colorvalue}                   20
 ${NULL}
 *** Keywords ***
 Open Browser To Login Page using Admin
+    set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
@@ -32,6 +33,7 @@ Open Browser To Login Page using Admin
     sleep_call
 
 Open Organisational Policy Page
+    set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     wait until page contains element    ${org_policy}
@@ -56,6 +58,7 @@ Reset Quota
     sleep_call
 
 Log out
+    set selenium timeout    20
     click element   ${lnk_username}
     wait until page contains element    ${lnl_logout}
     sleep_call_2
@@ -65,6 +68,7 @@ Log out
 ###################################################################################################################
 
 Select Cost Center or Personal
+    set selenium timeout    20
     select checkbox     ${chk_costcenter}
     wait until page contains element        ${btn_confirmchange}
     click element       ${btn_confirmchange}
@@ -73,6 +77,7 @@ Select Cost Center or Personal
     sleep_call
 
 Reset to Cost Center or Personal and uncheck quota
+    set selenium timeout    20
     click element     ${chk_costcenter}
     sleep_call_2
     unselect checkbox       ${chk_quota}
@@ -80,6 +85,7 @@ Reset to Cost Center or Personal and uncheck quota
     sleep_call
 
 Open Quota Assignment Page
+    set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     wait until page contains element    ${lbl_quotaassignment}
@@ -88,6 +94,7 @@ Open Quota Assignment Page
     sleep_call_2
 
 Select Department or Personal
+    set selenium timeout    20
     click element     ${radio_dept}
     wait until page contains element        ${btn_confirmchange}
     click element       ${btn_confirmchange}
@@ -96,6 +103,7 @@ Select Department or Personal
     sleep_call
 
 Select Personal
+    set selenium timeout    20
     click element     ${radio_personal}
     wait until page contains element        ${btn_confirmchange}
     click element       ${btn_confirmchange}
@@ -105,6 +113,7 @@ Select Personal
 
 
 Open Quota Definition Page
+    set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     wait until page contains element    ${lbl_quotadefinition}
@@ -113,6 +122,7 @@ Open Quota Definition Page
     sleep_call_2
 
 Open Browser and Quota Page
+    set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
@@ -136,6 +146,7 @@ Open Browser and Quota Page
 Create Custom quota monthly
     sleep_call
     [Arguments]        ${quota_name}     ${quota_interval}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}
+    set selenium timeout    20
     Set Global Variable   ${quota_color_value}
     Set Global Variable   ${quota_color}
 
@@ -170,6 +181,7 @@ Create Custom quota vary
     sleep_call
     [Arguments]        ${quota_name}     ${quota_interval}     ${month}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}     ${monthly_total_id} 	${monthly_total_value}  	${monthly_color_id}	    ${monthly_color_value}
 
+    set selenium timeout    20
     Set Global Variable   ${quota_color_value}
     Set Global Variable   ${quota_color}
 
@@ -211,6 +223,7 @@ Create Custom quota vary
 
 
 Set Color Controls
+    set selenium timeout    20
     sleep_call_2
     click element   ${quota_color}
     sleep_call_2
@@ -236,6 +249,7 @@ Set Color Controls
     run keyword     Check Quota Assignment is removed
 
 Set Disable Print
+    set selenium timeout    20
     click button    ${btn_vary_ok}
     sleep_call_1
     click button    ${btn_create_def}
@@ -267,6 +281,7 @@ Set Custom Total
     run keyword     Set Color Controls
 
 Check Quota Assignment is removed
+    set selenium timeout    20
     sleep_call_1
     click element       ${admin_dropdown}
     sleep_call_2
@@ -279,12 +294,14 @@ Check Quota Assignment is removed
     sleep_call_2
 
 Check Header Text
+    set selenium timeout    20
     ${iscolordisable}=    Run Keyword And Return Status    Should Be Equal As Strings    ${quota_color_value}    ${totaldisable}
     Run Keyword If  ${iscolordisable}  element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (no color printing)
 
     ...     ELSE    run keyword        element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (${monthly_color_value} for color printing)
 
 Set Quota Assignment for Personal
+    set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     sleep_call_2
@@ -325,6 +342,7 @@ Set Quota Assignment for Personal
 
 ##########################################################################################
 Check the table values
+    set selenium timeout    20
     element text should be      ${monthly_total_id}   ${monthly_total_value}
     element text should be      ${monthly_color_id}   ${monthly_color_value}
 
@@ -349,6 +367,7 @@ Check the table values
 
 
 Create a quota
+    set selenium timeout    20
     sleep_call
     sleep_call
     click element    ${btn_create_quota}
@@ -366,6 +385,7 @@ Create a quota
     click element   customRadioOption_radio_input
 
 Set Total Value as 0
+    set selenium timeout    20
     click element   ${txt_total_value}
     press keys      ${txt_total_value}      \DELETE
     input text      ${txt_total_value}      0
@@ -377,6 +397,7 @@ Set Total Value as 0
 
 
 Set Total Value as alphabet
+    set selenium timeout    20
     click element   ${txt_total_value}
     press keys      ${txt_total_value}      \DELETE
     input text      ${txt_total_value}      a
@@ -384,6 +405,7 @@ Set Total Value as alphabet
     click element   totalQuotaLabel
 
 Set Total Value as Decimal
+    set selenium timeout    20
     click element   ${txt_total_value}
     press keys      ${txt_total_value}      \DELETE
     input text      ${txt_total_value}      .1
@@ -394,6 +416,7 @@ Set Total Value as Decimal
     click element   totalQuotaLabel
 
 Set Total Value as Characters
+    set selenium timeout    20
     click element   ${txt_total_value}
     press keys      ${txt_total_value}      \DELETE
     input text      ${txt_total_value}      $
@@ -401,6 +424,7 @@ Set Total Value as Characters
     click element   totalQuotaLabel
 
 Set Total Value as -1
+    set selenium timeout    20
     click element   ${txt_total_value}
     press keys      ${txt_total_value}      \DELETE
     input text      ${txt_total_value}      -1
@@ -414,6 +438,7 @@ Set Total Value as -1
     click element   totalQuotaLabel
 
 Set Color Value as 0
+    set selenium timeout    20
     click element   ${txt_color_value}
     press keys      ${txt_color_value}      \DELETE
     input text      ${txt_color_value}      0
@@ -424,6 +449,7 @@ Set Color Value as 0
     click element   totalQuotaLabel
 
 Set Color Value as -1
+    set selenium timeout    20
     click element   ${txt_color_value}
     press keys      ${txt_color_value}      \DELETE
     input text      ${txt_color_value}      -1
@@ -436,6 +462,7 @@ Set Color Value as -1
     click element   totalQuotaLabel
 
 Set Color Value as alphabet
+    set selenium timeout    20
     click element   ${txt_color_value}
     press keys      ${txt_color_value}      \DELETE
     input text      ${txt_color_value}      a
@@ -443,6 +470,7 @@ Set Color Value as alphabet
     click element   totalQuotaLabel
 
 Set Color Value as Decimal
+    set selenium timeout    20
     click element   ${txt_color_value}
     press keys      ${txt_color_value}      \DELETE
     input text      ${txt_color_value}      .1
@@ -452,6 +480,7 @@ Set Color Value as Decimal
     click element   totalQuotaLabel
 
 Set Color Value as Characters
+    set selenium timeout    20
     click element   ${txt_color_value}
     press keys      ${txt_color_value}      \DELETE
     input text      ${txt_color_value}      $
@@ -459,6 +488,7 @@ Set Color Value as Characters
     click element   totalQuotaLabel
 
 Set Total Value less than Color Value
+    set selenium timeout    20
     click element   ${txt_total_value}
     press keys      ${txt_total_value}      \DELETE
     input text      ${txt_total_value}      ${totalvalue}

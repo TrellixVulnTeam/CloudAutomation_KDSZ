@@ -18,7 +18,9 @@ ${invalid_user_text}            Invalid Username or Email.
 
 
 Open CPM Portal and Blank user name login verification
+
     [Arguments]    ${username_blank}
+    set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     wait until page contains    E-mail
     Maximize Browser Window
@@ -32,6 +34,7 @@ Open CPM Portal and Blank user name login verification
 
 Open CPM Portal and Invalid user name login verification
     [Arguments]    ${username_invalid}
+    set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     wait until page contains    E-mail
     Maximize Browser Window
@@ -45,6 +48,7 @@ Open CPM Portal and Invalid user name login verification
 
 Open CPM Portal and Blank password verification
     [Arguments]    ${username}      ${password_blank}
+    set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     wait until page contains    E-mail
     Maximize Browser Window
@@ -61,6 +65,7 @@ Open CPM Portal and Blank password verification
 
 Open CPM Portal and Invalid password verification
     [Arguments]    ${username}      ${password_invalid}
+    set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     wait until page contains    E-mail
     Maximize Browser Window
@@ -78,6 +83,7 @@ Open CPM Portal and Invalid password verification
 
 Open CPM portal and Login Verification
     [Arguments]    ${username}      ${password}
+    set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     wait until page contains    E-mail
     Maximize Browser Window
@@ -103,11 +109,13 @@ Open CPM portal and Login Verification
     sleep_call
 
 Dashboard Should Open
+    set selenium timeout    20
     wait until page contains    Cloud Services Home
     Title Should Be     Dashboard | Lexmark Cloud Services
     sleep_call
 
 Logout
+    set selenium timeout    20
     click element   ${lnk_username}
     wait until page contains element    ${lnl_logout}
     sleep_call_2
