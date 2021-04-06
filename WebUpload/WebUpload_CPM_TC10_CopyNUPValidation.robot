@@ -42,7 +42,7 @@ Copy Collate NupOrientation validation
 #
 Open Browser To Login Page
     Open Browser    ${URL}    ${BROWSER}
-
+    set selenium timeout    20
 #Maximise Browser
     Maximize Browser Window
     Title Should Be     Lexmark Log In
@@ -97,6 +97,7 @@ Open Browser To Login Page
     #element attribute value should be   ${default_title}    aria-label   ${default_title_actual}
 
 Increment Copy validation by 1 to 2
+    set selenium timeout    20
     textfield should contain    //*[@id="copies_input"]  1
     click element   //*[@id="copies_increment"]
     sleep_call_1
@@ -104,14 +105,17 @@ Increment Copy validation by 1 to 2
     element should be enabled   //*[@id="copies"]/div/div[1]
 
 Decrement Copy Validation from 2 to 1
+    set selenium timeout    20
     click element   //*[@id="copies"]/div/div[1]
     sleep_call_1
     textfield should contain    //*[@id="copies_input"]  1
 
 Collate Checkbox disable validation on making copy 1
+    set selenium timeout    20
     element should be disabled   id:collateCheckbox
 
 Collate Checkbox enable validation on making copy more than 1
+    set selenium timeout    20
     click element   //*[@id="copies_increment"]
     sleep_call_1
 
@@ -120,6 +124,7 @@ Collate Checkbox enable validation on making copy more than 1
     Run keyword if  ${isCheck}      checkbox should be selected     id:collateCheckbox
 
 Collate checkbox validation by checking and unchecking
+    set selenium timeout    20
     sleep_call_1
     unselect checkbox       id:collateCheckbox
     sleep_call_1
@@ -135,6 +140,7 @@ Collate checkbox validation by checking and unchecking
 
 
 Validation with incorrect copies value more than 999
+    set selenium timeout    20
     input text      //*[@id="copies_input"]     1000
     sleep_call_1
     click element   //*[@id="id-11"]/div/div[1]/p
@@ -144,6 +150,7 @@ Validation with incorrect copies value more than 999
 
 
 Validation with incorrect copies value of 0
+    set selenium timeout    20
     click element   //*[@id="copies"]/div/div[1]
     sleep_call_1
     press keys      //*[@id="copies_input"]      \DELETE
@@ -159,6 +166,7 @@ Validation with incorrect copies value of 0
     click element       //*[@id="copies_increment"]
 
 Validate NUp orientation is disabled
+    set selenium timeout    20
     element attribute value should be   //*[@id="nupOrientation"]/div    disabled   true
     sleep_call_1
     click element   nup
@@ -167,6 +175,7 @@ Validate NUp orientation is disabled
     sleep_call_1
 
 Validate NUp orientation is enabled with NUP value
+    set selenium timeout    20
     element attribute value should be   //*[@id="nupOrientation"]/div    aria-disabled   false
     click element   nupOrientation
     wait until page contains element    nupOrientation-listbox-item-shortedge
@@ -181,6 +190,7 @@ Validate NUp orientation is enabled with NUP value
     click element       nupOrientation-listbox-item-auto
 
 Validate NUp orientation is disabled with NUP value as 1
+    set selenium timeout    20
     sleep_call_1
     click element   nup
     wait until page contains element    nup-listbox-item-1
@@ -189,6 +199,7 @@ Validate NUp orientation is disabled with NUP value as 1
     element attribute value should be   //*[@id="nupOrientation"]/div    disabled   true
 
 Validation of Paper size dropdown
+    set selenium timeout    20
     scroll element into view        saveChangesButton
     sleep_call_1
     click element       paperSize
@@ -199,6 +210,7 @@ Validation of Paper size dropdown
 
 
 Log Out Close Browsers
+    set selenium timeout    20
     sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout

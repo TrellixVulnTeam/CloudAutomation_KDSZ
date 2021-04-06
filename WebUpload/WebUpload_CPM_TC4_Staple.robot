@@ -25,7 +25,7 @@ Validation of Staple combobox setting Staple values as ${STAPLE NAME}
 
 Check total number of staple bins
     Open Browser    ${URL}    ${BROWSER}
-
+    set selenium timeout    20
 #Maximise Browser
     Maximize Browser Window
     Title Should Be     Lexmark Log In
@@ -87,7 +87,7 @@ Validation of Staple dropdown
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     #sleep_call
     [Arguments]        ${STAPLE}     ${STAPLE CONTROL}       ${STAPLE NAME}
-
+    set selenium timeout    20
     #wait until page contains element    holePunch
     #scroll element into view        holePunch
     sleep_call_1
@@ -134,6 +134,7 @@ Validation of Staple dropdown
 #    sleep_call
 
 Reset , Log Out and Close Browsers
+    set selenium timeout    20
     sleep_call_1
     click element   staple
     click element   staple-listbox-item-printer

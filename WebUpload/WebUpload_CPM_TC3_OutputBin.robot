@@ -25,7 +25,7 @@ Validation of Output Bin combobox setting Output Bin as ${OUTPUT BIN NAME}
 
 Check total number of output bins
     Open Browser    ${URL}    ${BROWSER}
-
+    set selenium timeout    20
 #Maximise Browser
     Maximize Browser Window
     Title Should Be     Lexmark Log In
@@ -87,7 +87,7 @@ Validation of Output Bin dropdown
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     #sleep_call
     [Arguments]        ${OUTPUT BIN}     ${OUTPUT BIN CONTROL}       ${OUTPUT BIN NAME}
-
+    set selenium timeout    20
     #wait until page contains element    holePunch
     #scroll element into view        holePunch
     sleep_call_1
@@ -128,6 +128,7 @@ Validation of Output Bin dropdown
 
 Reset , Log Out and Close Browsers
     sleep_call_2
+    set selenium timeout    20
     click element   outputBin
     click element   outputBin-listbox-item-printer
     sleep_call_2

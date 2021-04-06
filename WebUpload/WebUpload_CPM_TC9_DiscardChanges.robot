@@ -34,7 +34,7 @@ Discard Change dialog validation
 
 Open Browser To Login Page
     Open Browser    ${URL}    ${BROWSER}
-
+    set selenium timeout    20
 #Maximise Browser
     Maximize Browser Window
     Title Should Be     Lexmark Log In
@@ -89,12 +89,14 @@ Open Browser To Login Page
     #element attribute value should be   ${default_title}    aria-label   ${default_title_actual}
 
 Increment Copy validation by 1 to 2
+    set selenium timeout    20
     click element   //*[@id="copies_increment"]
     sleep_call_1
     textfield should contain    //*[@id="copies_input"]  2
     click element   //*[@id="id-11"]/div/div[1]/p
 
 Validation of Confirmation dialog by Discarding
+    set selenium timeout    20
     Click Element   id:link-navPrintQueue
     wait until element is visible       //*[@id="confirmation-modal"]/div[2]/div[1]
     wait until page contains element    //*[@id="confirmation-modal"]/div[2]/div[1]
@@ -107,6 +109,7 @@ Validation of Confirmation dialog by Discarding
     textfield should contain    //*[@id="copies_input"]  1
 
 Validation of Confirmation Dialog by Saving Changes
+    set selenium timeout    20
     click element   //*[@id="copies_increment"]
     sleep_call_1
     textfield should contain    //*[@id="copies_input"]  2
@@ -120,6 +123,7 @@ Validation of Confirmation Dialog by Saving Changes
 
 
 Log Out Close Browsers
+    set selenium timeout    20
     sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout

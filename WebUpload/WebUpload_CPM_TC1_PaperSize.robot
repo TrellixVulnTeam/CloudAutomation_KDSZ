@@ -25,7 +25,7 @@ Validation of Paper Size combobox setting page size as ${PAGE SIZE NAME}
 
 Check total number of paper sizes
     Open Browser    ${URL}    ${BROWSER}
-
+    set selenium timeout    20
 #Maximise Browser
     Maximize Browser Window
     Title Should Be     Lexmark Log In
@@ -91,7 +91,7 @@ Validation of Paper size dropdown
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     #sleep_call
     [Arguments]        ${PAGE SIZE}     ${PAGE SIZE CONTROL}       ${PAGE SIZE NAME}
-
+    set selenium timeout    20
     #wait until page contains element    holePunch
     #scroll element into view        holePunch
     sleep_call_1
@@ -117,6 +117,7 @@ Validation of Paper size dropdown
     #sleep_call
 
 Reset , Log Out and Close Browsers
+    set selenium timeout    20
     click element   paperSize
     click element   paperSize-listbox-item-printer
     sleep_call_2

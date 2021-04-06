@@ -25,7 +25,7 @@ Validation of Holepunch combobox setting Holepunch values as ${HOLEPUNCH NAME}
 
 Check total number of holepunch options
     Open Browser    ${URL}    ${BROWSER}
-
+    set selenium timeout    20
 #Maximise Browser
     Maximize Browser Window
     Title Should Be     Lexmark Log In
@@ -88,7 +88,7 @@ Validation of Holepunch dropdown
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     #sleep_call
     [Arguments]        ${HOLEPUNCH}     ${HOLEPUNCH CONTROL}       ${HOLEPUNCH NAME}
-
+    set selenium timeout    20
     #wait until page contains element    holePunch
     #scroll element into view        holePunch
     sleep_call_1
@@ -133,6 +133,7 @@ Validation of Holepunch dropdown
 #    sleep_call
 
 Reset , Log Out and Close Browsers
+    set selenium timeout    20
     sleep_call_1
     click element   holePunch
     click element   holePunch-listbox-item-printer

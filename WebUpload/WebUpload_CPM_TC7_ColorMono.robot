@@ -24,7 +24,7 @@ Validation of Color Mono setting
 
 Open Browser and Login
     Open Browser    ${URL}    ${BROWSER}
-
+    set selenium timeout    20
 #Maximise Browser
     Maximize Browser Window
     Title Should Be     Lexmark Log In
@@ -76,7 +76,7 @@ Open Browser and Login
 
 Validation of Color Mono default state
     sleep_call
-
+    set selenium timeout    20
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
     ${color}                        set variable    //*[@id="color_radio_input"]
@@ -100,6 +100,7 @@ Validation of Color Mono default state
     sleep_call_2
 
 Validation of Color Mono new state
+    set selenium timeout    20
     sleep_call
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     ${color}                        set variable    //*[@id="color_radio_input"]
@@ -121,6 +122,7 @@ Validation of Color Mono new state
 
 
 Reset , Log Out and Close Browsers
+    set selenium timeout    20
     sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout

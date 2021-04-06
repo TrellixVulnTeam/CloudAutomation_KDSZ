@@ -25,7 +25,7 @@ Validation of Paper type combobox setting page type as ${PAPER TYPE NAME}
 
 Check total number of paper types
     Open Browser    ${URL}    ${BROWSER}
-
+    set selenium timeout    20
 #Maximise Browser
     Maximize Browser Window
     Title Should Be     Lexmark Log In
@@ -88,7 +88,7 @@ Validation of Paper type dropdown
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     #sleep_call
     [Arguments]        ${PAPER TYPE}     ${PAPER TYPE CONTROL}       ${PAPER TYPE NAME}     ${ERROR_TEXT}   ${CHECK}
-
+    set selenium timeout    20
     #sleep_call
     #sleep_call
    #scroll element into view        holePunch
@@ -120,6 +120,7 @@ Validation of Paper type dropdown
 #    sleep_call
 
 Reset , Log Out and Close Browsers
+    set selenium timeout    20
     sleep_call_2
     click element   paperType
     click element   paperType-listbox-item-printer

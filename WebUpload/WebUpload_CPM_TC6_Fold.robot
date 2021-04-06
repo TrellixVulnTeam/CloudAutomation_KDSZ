@@ -25,7 +25,7 @@ Validation of Fold combobox setting Fold values as ${FOLD NAME}
 
 Check total number of fold options
     Open Browser    ${URL}    ${BROWSER}
-
+    set selenium timeout    20
 #Maximise Browser
     Maximize Browser Window
     Title Should Be     Lexmark Log In
@@ -88,7 +88,7 @@ Validation of Fold dropdown
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     #sleep_call
     [Arguments]        ${FOLD}     ${FOLD CONTROL}       ${FOLD NAME}
-
+    set selenium timeout    20
     #wait until page contains element    holePunch
     #scroll element into view        holePunch
     sleep_call_1
@@ -129,6 +129,7 @@ Validation of Fold dropdown
 #    sleep_call
 
 Reset , Log Out and Close Browsers
+    set selenium timeout    20
     sleep_call_1
     click element   fold
     click element   fold-listbox-item-printer
