@@ -201,7 +201,7 @@ Set Color Controls
 
 Delete Quota
     sleep_call
-    set selenium timeout    20
+    set selenium timeout    25
     wait until page contains element     ${btn_quota_select_all}
     click element       ${btn_quota_select_all}
     click element   ${undefined}

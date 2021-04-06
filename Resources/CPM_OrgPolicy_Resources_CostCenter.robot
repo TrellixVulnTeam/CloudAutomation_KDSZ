@@ -436,7 +436,7 @@ Set Custom Total
 
 
 Set Quota Assignment for Cost Center
-    set selenium timeout    20
+    set selenium timeout    25
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     wait until page contains element    ${org_policy}

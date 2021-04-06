@@ -292,7 +292,7 @@ Set Quota Assignment for Personal
     sleep_call
     click element   ${tab_personal}
     sleep_call
-    set selenium timeout    20
+    set selenium timeout    25
     wait until page contains element    ${btn_assignquota}
     click button    ${btn_assignquota}
     sleep_call_2
