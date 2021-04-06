@@ -72,7 +72,7 @@ Check total number of staple bins
 
 #Open Print default settings
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-
+    wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
     sleep_call
     #wait until page contains element    settingsUpdatingBusySpinner
@@ -96,6 +96,7 @@ Validation of Staple dropdown
     click element   ${STAPLE CONTROL}
     click button    saveChangesButton
     sleep_call_2
+    wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
     sleep_call
     #wait until page contains element    settingsUpdatingBusySpinner

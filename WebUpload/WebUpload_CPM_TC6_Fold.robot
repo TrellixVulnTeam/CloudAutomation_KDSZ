@@ -73,7 +73,7 @@ Check total number of fold options
 #Open Print default settings
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     sleep_call
-
+    wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
     sleep_call
     wait until page contains element    saveChangesButton
@@ -98,6 +98,7 @@ Validation of Fold dropdown
     sleep_call_1
     click button    saveChangesButton
     sleep_call_2
+    wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
     sleep_call
     wait until page contains element    saveChangesButton

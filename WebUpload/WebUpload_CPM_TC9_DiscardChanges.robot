@@ -80,7 +80,7 @@ Open Browser To Login Page
     element should contain  xpath://*[@id="printQueuePageHeaderDropDown_button"]/div   ${tab1name}
 
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-
+    wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
     sleep_call
     ${default_title}            set variable    printSettingsBreadcrumb

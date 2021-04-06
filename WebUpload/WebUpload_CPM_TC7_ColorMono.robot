@@ -70,7 +70,7 @@ Open Browser and Login
 
 #Open Print default settings
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-
+    wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
     sleep_call
 
@@ -93,7 +93,7 @@ Validation of Color Mono default state
     click button        saveChangesButton
 
     sleep_call
-
+    wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
     sleep_call
     scroll element into view        saveChangesButton
@@ -113,7 +113,7 @@ Validation of Color Mono new state
     click button        saveChangesButton
     #wait until page contains element    settingsUpdatingBusySpinner
     sleep_call
-
+    wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
     sleep_call
     scroll element into view        saveChangesButton
