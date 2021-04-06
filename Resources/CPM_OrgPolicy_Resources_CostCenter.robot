@@ -514,7 +514,6 @@ Check Quota Assignment is removed
     click element       ${lbl_quotaassignment}
     sleep_call_2
     set selenium timeout    20
-    wait until page contains element    ${noquotaassignment}
     page should contain    ${noquotaassignment}
     click element       ${admin_dropdown}
     sleep_call_2
