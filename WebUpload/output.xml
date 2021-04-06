@@ -1,1885 +1,446 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0 (Python 3.8.3 on win32)" generated="20210401 19:58:26.491" rpa="false" schemaversion="2">
-<suite id="s1" name="WebUpload CPM TC1 PaperSize" source="C:\Users\neogis\D Drive\FREEDOM\Python\CloudAutomation\WebUpload\WebUpload_CPM_TC1_PaperSize.robot">
-<kw name="Check total number of paper sizes" type="SETUP">
+<robot generator="Robot 4.0 (Python 3.8.3 on win32)" generated="20210406 19:23:46.007" rpa="false" schemaversion="2">
+<suite id="s1" name="WebUpload CPM TC3 OutputBin" source="C:\Users\neogis\D Drive\FREEDOM\Python\CloudAutomation\WebUpload\WebUpload_CPM_TC3_OutputBin.robot">
+<kw name="Check total number of output bins" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${LOGIN URL}</arg>
+<arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210401 19:58:28.804" level="INFO">Opening browser 'headlessChrome' to base url 'https://dev.us.cloud.onelxk.co'.</msg>
-<status status="PASS" starttime="20210401 19:58:28.804" endtime="20210401 19:59:06.661"/>
+<msg timestamp="20210406 19:23:50.418" level="INFO">Opening browser 'Chrome' to base url 'https://dev.us.cloud.onelxk.co'.</msg>
+<status status="PASS" starttime="20210406 19:23:50.418" endtime="20210406 19:24:00.482"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210406 19:24:00.484" endtime="20210406 19:24:00.487"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210401 19:59:06.662" endtime="20210401 19:59:06.782"/>
+<status status="PASS" starttime="20210406 19:24:00.487" endtime="20210406 19:24:00.663"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Lexmark Log In</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210401 19:59:06.796" level="INFO">Page title is 'Lexmark Log In'.</msg>
-<status status="PASS" starttime="20210401 19:59:06.782" endtime="20210401 19:59:06.796"/>
+<msg timestamp="20210406 19:24:00.663" level="INFO">Page title is 'Lexmark Log In'.</msg>
+<status status="PASS" starttime="20210406 19:24:00.663" endtime="20210406 19:24:00.663"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${username_text}</var>
 <arg>id:user_email</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 19:59:06.796" level="INFO">${username_text} = id:user_email</msg>
-<status status="PASS" starttime="20210401 19:59:06.796" endtime="20210401 19:59:06.796"/>
+<msg timestamp="20210406 19:24:00.663" level="INFO">${username_text} = id:user_email</msg>
+<status status="PASS" starttime="20210406 19:24:00.663" endtime="20210406 19:24:00.663"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${password_text}</var>
 <arg>id:user_password</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 19:59:06.796" level="INFO">${password_text} = id:user_password</msg>
-<status status="PASS" starttime="20210401 19:59:06.796" endtime="20210401 19:59:06.796"/>
+<msg timestamp="20210406 19:24:00.663" level="INFO">${password_text} = id:user_password</msg>
+<status status="PASS" starttime="20210406 19:24:00.663" endtime="20210406 19:24:00.663"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:user_email</arg>
-<arg>${username}</arg>
+<arg>${USER}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210401 19:59:06.796" level="INFO">Typing text 'sravantesh.neogi@lexmark.com' into text field 'id:user_email'.</msg>
-<status status="PASS" starttime="20210401 19:59:06.796" endtime="20210401 19:59:07.009"/>
+<msg timestamp="20210406 19:24:00.663" level="INFO">Typing text 'sravantesh.neogi@lexmark.com' into text field 'id:user_email'.</msg>
+<status status="PASS" starttime="20210406 19:24:00.663" endtime="20210406 19:24:00.834"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${nextbtn}</var>
 <arg>btn-email-next</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 19:59:07.011" level="INFO">${nextbtn} = btn-email-next</msg>
-<status status="PASS" starttime="20210401 19:59:07.009" endtime="20210401 19:59:07.011"/>
+<msg timestamp="20210406 19:24:00.835" level="INFO">${nextbtn} = btn-email-next</msg>
+<status status="PASS" starttime="20210406 19:24:00.835" endtime="20210406 19:24:00.835"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>btn-email-next</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 19:59:07.013" level="INFO">Clicking button 'btn-email-next'.</msg>
-<status status="PASS" starttime="20210401 19:59:07.012" endtime="20210401 19:59:07.796"/>
+<msg timestamp="20210406 19:24:00.836" level="INFO">Clicking button 'btn-email-next'.</msg>
+<status status="PASS" starttime="20210406 19:24:00.836" endtime="20210406 19:24:01.995"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${password_text}</var>
 <arg>id:user_password</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 19:59:07.797" level="INFO">${password_text} = id:user_password</msg>
-<status status="PASS" starttime="20210401 19:59:07.797" endtime="20210401 19:59:07.797"/>
+<msg timestamp="20210406 19:24:01.996" level="INFO">${password_text} = id:user_password</msg>
+<status status="PASS" starttime="20210406 19:24:01.996" endtime="20210406 19:24:01.996"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:user_password</arg>
-<arg>${password}</arg>
+<arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210401 19:59:07.798" level="INFO">Typing text 'Password@1234' into text field 'id:user_password'.</msg>
-<status status="PASS" starttime="20210401 19:59:07.797" endtime="20210401 19:59:07.918"/>
+<msg timestamp="20210406 19:24:02.001" level="INFO">Typing text 'Password@1234' into text field 'id:user_password'.</msg>
+<status status="PASS" starttime="20210406 19:24:01.997" endtime="20210406 19:24:02.160"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${loginbtn}</var>
 <arg>btn-email-login</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 19:59:07.919" level="INFO">${loginbtn} = btn-email-login</msg>
-<status status="PASS" starttime="20210401 19:59:07.918" endtime="20210401 19:59:07.919"/>
+<msg timestamp="20210406 19:24:02.161" level="INFO">${loginbtn} = btn-email-login</msg>
+<status status="PASS" starttime="20210406 19:24:02.161" endtime="20210406 19:24:02.162"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>btn-email-login</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 19:59:07.919" level="INFO">Clicking button 'btn-email-login'.</msg>
-<status status="PASS" starttime="20210401 19:59:07.919" endtime="20210401 19:59:09.427"/>
+<msg timestamp="20210406 19:24:02.162" level="INFO">Clicking button 'btn-email-login'.</msg>
+<status status="PASS" starttime="20210406 19:24:02.162" endtime="20210406 19:24:04.173"/>
 </kw>
 <kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 19:59:09.428" endtime="20210401 19:59:14.432"/>
+<status status="PASS" starttime="20210406 19:24:04.173" endtime="20210406 19:24:09.174"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>//*[@id="card-10"]/cui-card-body/cui-priv-block/div/div</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210401 19:59:14.432" endtime="20210401 19:59:14.479"/>
+<status status="PASS" starttime="20210406 19:24:09.174" endtime="20210406 19:24:09.253"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 19:59:14.479" level="INFO">Clicking element 'xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div'.</msg>
-<status status="PASS" starttime="20210401 19:59:14.479" endtime="20210401 19:59:14.620"/>
+<msg timestamp="20210406 19:24:09.254" level="INFO">Clicking element 'xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div'.</msg>
+<status status="PASS" starttime="20210406 19:24:09.254" endtime="20210406 19:24:09.560"/>
 </kw>
 <kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 19:59:14.620" endtime="20210401 19:59:18.622"/>
+<status status="PASS" starttime="20210406 19:24:09.561" endtime="20210406 19:24:13.570"/>
 </kw>
 <kw name="Switch Window" library="SeleniumLibrary">
 <arg>Print Management | Lexmark Cloud Services</arg>
 <doc>Switches to browser window matching ``locator``.</doc>
-<status status="PASS" starttime="20210401 19:59:18.622" endtime="20210401 19:59:51.974"/>
+<status status="PASS" starttime="20210406 19:24:13.570" endtime="20210406 19:24:14.222"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Print Management | Lexmark Cloud Services</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210401 19:59:51.996" level="INFO">Page title is 'Print Management | Lexmark Cloud Services'.</msg>
-<status status="PASS" starttime="20210401 19:59:51.975" endtime="20210401 19:59:51.996"/>
+<msg timestamp="20210406 19:24:14.280" level="INFO">Page title is 'Print Management | Lexmark Cloud Services'.</msg>
+<status status="PASS" starttime="20210406 19:24:14.222" endtime="20210406 19:24:14.280"/>
 </kw>
 <kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 19:59:51.996" endtime="20210401 19:59:57.012"/>
+<status status="PASS" starttime="20210406 19:24:14.280" endtime="20210406 19:24:19.292"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>id:link-navPrintQueue</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210401 19:59:57.012" endtime="20210401 19:59:57.055"/>
+<status status="PASS" starttime="20210406 19:24:19.292" endtime="20210406 19:24:19.361"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id:link-navPrintQueue</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 19:59:57.055" level="INFO">Clicking element 'id:link-navPrintQueue'.</msg>
-<status status="PASS" starttime="20210401 19:59:57.055" endtime="20210401 19:59:57.122"/>
+<msg timestamp="20210406 19:24:19.361" level="INFO">Clicking element 'id:link-navPrintQueue'.</msg>
+<status status="PASS" starttime="20210406 19:24:19.361" endtime="20210406 19:24:19.473"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>xpath://*[@id="printQueuePageHeaderDropDown_button"]/div</arg>
 <arg>${tab1name}</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210401 19:59:57.153" level="INFO">Element 'xpath://*[@id="printQueuePageHeaderDropDown_button"]/div' contains text 'Print Queue'.</msg>
-<status status="PASS" starttime="20210401 19:59:57.122" endtime="20210401 19:59:57.153"/>
+<msg timestamp="20210406 19:24:19.530" level="INFO">Element 'xpath://*[@id="printQueuePageHeaderDropDown_button"]/div' contains text 'Print Queue'.</msg>
+<status status="PASS" starttime="20210406 19:24:19.473" endtime="20210406 19:24:19.530"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${default_settings_btn}</var>
 <arg>printQueueDefaultPrintSettingsButton</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 19:59:57.153" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 19:59:57.153" endtime="20210401 19:59:57.153"/>
+<msg timestamp="20210406 19:24:19.531" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
+<status status="PASS" starttime="20210406 19:24:19.530" endtime="20210406 19:24:19.531"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${default_settings_btn}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210406 19:24:19.531" endtime="20210406 19:24:19.545"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${default_settings_btn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 19:59:57.153" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 19:59:57.153" endtime="20210401 19:59:57.287"/>
+<msg timestamp="20210406 19:24:19.545" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
+<status status="PASS" starttime="20210406 19:24:19.545" endtime="20210406 19:24:19.667"/>
 </kw>
 <kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 19:59:57.287" endtime="20210401 20:00:02.289"/>
+<status status="PASS" starttime="20210406 19:24:19.668" endtime="20210406 19:24:24.668"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>saveChangesButton</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:00:02.289" endtime="20210401 20:00:02.289"/>
+<status status="PASS" starttime="20210406 19:24:24.668" endtime="20210406 19:24:24.689"/>
 </kw>
 <kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>//*[@id="paperSize-listbox-item-printer"]</arg>
+<arg>//*[@id="outputBin-listbox-item-printer"]</arg>
 <arg>aria-setsize</arg>
-<arg>24</arg>
+<arg>14</arg>
 <doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:00:02.320" level="INFO">Element '//*[@id="paperSize-listbox-item-printer"]' attribute 'aria-setsize' contains value '24'.</msg>
-<status status="PASS" starttime="20210401 20:00:02.289" endtime="20210401 20:00:02.320"/>
+<msg timestamp="20210406 19:24:24.705" level="INFO">Element '//*[@id="outputBin-listbox-item-printer"]' attribute 'aria-setsize' contains value '14'.</msg>
+<status status="PASS" starttime="20210406 19:24:24.689" endtime="20210406 19:24:24.705"/>
 </kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:02.320" endtime="20210401 20:00:04.321"/>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210406 19:24:24.705" endtime="20210406 19:24:28.715"/>
 </kw>
-<status status="PASS" starttime="20210401 19:58:28.804" endtime="20210401 20:00:04.321"/>
+<status status="PASS" starttime="20210406 19:23:50.418" endtime="20210406 19:24:28.715"/>
 </kw>
-<test id="s1-t1" name="Validation of Paper Size combobox setting page size as Use printer setting">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-printer</arg>
+<test id="s1-t1" name="Validation of Output Bin combobox setting Output Bin as Use printer setting">
+<kw name="Validation of Output Bin dropdown">
+<arg>outputBin</arg>
+<arg>outputBin-listbox-item-printer</arg>
 <arg>Use printer setting</arg>
 <kw name="Set Variable" library="BuiltIn">
 <var>${default_settings_btn}</var>
 <arg>printQueueDefaultPrintSettingsButton</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:00:04.323" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:00:04.323" endtime="20210401 20:00:04.323"/>
+<msg timestamp="20210406 19:24:28.715" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
+<status status="PASS" starttime="20210406 19:24:28.715" endtime="20210406 19:24:28.715"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210406 19:24:28.715" endtime="20210406 19:24:28.715"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:04.323" endtime="20210401 20:00:06.323"/>
+<status status="PASS" starttime="20210406 19:24:28.715" endtime="20210406 19:24:30.715"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
+<arg>${OUTPUT BIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:06.324" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:00:06.323" endtime="20210401 20:00:06.492"/>
+<msg timestamp="20210406 19:24:30.716" level="INFO">Clicking element 'outputBin'.</msg>
+<status status="PASS" starttime="20210406 19:24:30.715" endtime="20210406 19:24:30.829"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:06.493" endtime="20210401 20:00:08.494"/>
+<status status="PASS" starttime="20210406 19:24:30.830" endtime="20210406 19:24:32.845"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
+<arg>${OUTPUT BIN CONTROL}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:08.495" level="INFO">Clicking element 'paperSize-listbox-item-printer'.</msg>
-<status status="PASS" starttime="20210401 20:00:08.494" endtime="20210401 20:00:08.615"/>
+<msg timestamp="20210406 19:24:32.845" level="INFO">Clicking element 'outputBin-listbox-item-printer'.</msg>
+<status status="PASS" starttime="20210406 19:24:32.845" endtime="20210406 19:24:32.991"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:08.615" endtime="20210401 20:00:10.616"/>
+<status status="PASS" starttime="20210406 19:24:32.991" endtime="20210406 19:24:35.008"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>saveChangesButton</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:10.617" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:00:10.616" endtime="20210401 20:00:10.828"/>
+<msg timestamp="20210406 19:24:35.008" level="INFO">Clicking button 'saveChangesButton'.</msg>
+<status status="PASS" starttime="20210406 19:24:35.008" endtime="20210406 19:24:35.224"/>
 </kw>
 <kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:10.829" endtime="20210401 20:00:14.829"/>
+<status status="PASS" starttime="20210406 19:24:35.225" endtime="20210406 19:24:39.236"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${default_settings_btn}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210406 19:24:39.237" endtime="20210406 19:24:39.271"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${default_settings_btn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:14.830" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:00:14.829" endtime="20210401 20:00:14.983"/>
+<msg timestamp="20210406 19:24:39.271" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
+<status status="PASS" starttime="20210406 19:24:39.271" endtime="20210406 19:24:39.436"/>
 </kw>
 <kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:14.984" endtime="20210401 20:00:19.985"/>
+<status status="PASS" starttime="20210406 19:24:39.436" endtime="20210406 19:24:44.438"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>saveChangesButton</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:00:19.985" endtime="20210401 20:00:20.049"/>
+<status status="PASS" starttime="20210406 19:24:44.438" endtime="20210406 19:24:44.469"/>
 </kw>
 <kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
+<arg>${OUTPUT BIN CONTROL}</arg>
 <arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
+<arg>${OUTPUT BIN NAME}</arg>
 <doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:00:20.120" level="INFO">Element 'paperSize-listbox-item-printer' attribute 'title' contains value 'Use printer setting'.</msg>
-<status status="PASS" starttime="20210401 20:00:20.050" endtime="20210401 20:00:20.120"/>
+<msg timestamp="20210406 19:24:44.500" level="INFO">Element 'outputBin-listbox-item-printer' attribute 'title' contains value 'Use printer setting'.</msg>
+<status status="PASS" starttime="20210406 19:24:44.469" endtime="20210406 19:24:44.500"/>
 </kw>
-<status status="PASS" starttime="20210401 20:00:04.322" endtime="20210401 20:00:20.120"/>
+<status status="PASS" starttime="20210406 19:24:28.715" endtime="20210406 19:24:44.500"/>
 </kw>
-<status status="PASS" starttime="20210401 20:00:04.321" endtime="20210401 20:00:20.122"/>
+<status status="PASS" starttime="20210406 19:24:28.715" endtime="20210406 19:24:44.516"/>
 </test>
-<test id="s1-t2" name="Validation of Paper Size combobox setting page size as Letter">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-letter</arg>
-<arg>Letter</arg>
+<test id="s1-t2" name="Validation of Output Bin combobox setting Output Bin as Standard bin">
+<kw name="Validation of Output Bin dropdown">
+<arg>outputBin</arg>
+<arg>outputBin-listbox-item-upper</arg>
+<arg>Standard bin</arg>
 <kw name="Set Variable" library="BuiltIn">
 <var>${default_settings_btn}</var>
 <arg>printQueueDefaultPrintSettingsButton</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:00:20.129" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:00:20.128" endtime="20210401 20:00:20.129"/>
+<msg timestamp="20210406 19:24:44.516" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
+<status status="PASS" starttime="20210406 19:24:44.516" endtime="20210406 19:24:44.516"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210406 19:24:44.516" endtime="20210406 19:24:44.522"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:20.129" endtime="20210401 20:00:22.130"/>
+<status status="PASS" starttime="20210406 19:24:44.522" endtime="20210406 19:24:46.524"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
+<arg>${OUTPUT BIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:22.130" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:00:22.130" endtime="20210401 20:00:22.257"/>
+<msg timestamp="20210406 19:24:46.524" level="INFO">Clicking element 'outputBin'.</msg>
+<status status="PASS" starttime="20210406 19:24:46.524" endtime="20210406 19:24:46.673"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:22.257" endtime="20210401 20:00:24.259"/>
+<status status="PASS" starttime="20210406 19:24:46.673" endtime="20210406 19:24:48.683"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
+<arg>${OUTPUT BIN CONTROL}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:24.260" level="INFO">Clicking element 'paperSize-listbox-item-letter'.</msg>
-<status status="PASS" starttime="20210401 20:00:24.259" endtime="20210401 20:00:24.418"/>
+<msg timestamp="20210406 19:24:48.683" level="INFO">Clicking element 'outputBin-listbox-item-upper'.</msg>
+<status status="PASS" starttime="20210406 19:24:48.683" endtime="20210406 19:24:48.833"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:24.418" endtime="20210401 20:00:26.418"/>
+<status status="PASS" starttime="20210406 19:24:48.833" endtime="20210406 19:24:50.838"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>saveChangesButton</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:26.419" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:00:26.418" endtime="20210401 20:00:26.687"/>
+<msg timestamp="20210406 19:24:50.838" level="INFO">Clicking button 'saveChangesButton'.</msg>
+<status status="PASS" starttime="20210406 19:24:50.838" endtime="20210406 19:24:51.053"/>
 </kw>
 <kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:26.687" endtime="20210401 20:00:30.688"/>
+<status status="PASS" starttime="20210406 19:24:51.053" endtime="20210406 19:24:55.074"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${default_settings_btn}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210406 19:24:55.074" endtime="20210406 19:24:55.090"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${default_settings_btn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:30.692" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:00:30.689" endtime="20210401 20:00:30.881"/>
+<msg timestamp="20210406 19:24:55.090" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
+<status status="PASS" starttime="20210406 19:24:55.090" endtime="20210406 19:24:55.209"/>
 </kw>
 <kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:30.882" endtime="20210401 20:00:35.883"/>
+<status status="PASS" starttime="20210406 19:24:55.210" endtime="20210406 19:25:00.212"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>saveChangesButton</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:00:35.883" endtime="20210401 20:00:35.931"/>
+<status status="PASS" starttime="20210406 19:25:00.212" endtime="20210406 19:25:00.243"/>
 </kw>
 <kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
+<arg>${OUTPUT BIN CONTROL}</arg>
 <arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
+<arg>${OUTPUT BIN NAME}</arg>
 <doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:00:35.962" level="INFO">Element 'paperSize-listbox-item-letter' attribute 'title' contains value 'Letter'.</msg>
-<status status="PASS" starttime="20210401 20:00:35.931" endtime="20210401 20:00:35.962"/>
+<msg timestamp="20210406 19:25:00.258" level="INFO">Element 'outputBin-listbox-item-upper' attribute 'title' contains value 'Standard bin'.</msg>
+<status status="PASS" starttime="20210406 19:25:00.243" endtime="20210406 19:25:00.258"/>
 </kw>
-<status status="PASS" starttime="20210401 20:00:20.126" endtime="20210401 20:00:35.962"/>
+<status status="PASS" starttime="20210406 19:24:44.516" endtime="20210406 19:25:00.258"/>
 </kw>
-<status status="PASS" starttime="20210401 20:00:20.125" endtime="20210401 20:00:35.963"/>
+<status status="PASS" starttime="20210406 19:24:44.516" endtime="20210406 19:25:00.258"/>
 </test>
-<test id="s1-t3" name="Validation of Paper Size combobox setting page size as Tabloid">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-tabloid</arg>
-<arg>Tabloid</arg>
+<test id="s1-t3" name="Validation of Output Bin combobox setting Output Bin as Bin 1">
+<kw name="Validation of Output Bin dropdown">
+<arg>outputBin</arg>
+<arg>outputBin-listbox-item-optionaloutbin1</arg>
+<arg>Bin 1</arg>
 <kw name="Set Variable" library="BuiltIn">
 <var>${default_settings_btn}</var>
 <arg>printQueueDefaultPrintSettingsButton</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:00:35.967" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:00:35.966" endtime="20210401 20:00:35.967"/>
+<msg timestamp="20210406 19:25:00.258" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
+<status status="PASS" starttime="20210406 19:25:00.258" endtime="20210406 19:25:00.258"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210406 19:25:00.258" endtime="20210406 19:25:00.274"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:35.967" endtime="20210401 20:00:37.967"/>
+<status status="PASS" starttime="20210406 19:25:00.274" endtime="20210406 19:25:02.280"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
+<arg>${OUTPUT BIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:37.970" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:00:37.968" endtime="20210401 20:00:38.124"/>
+<msg timestamp="20210406 19:25:02.280" level="INFO">Clicking element 'outputBin'.</msg>
+<status status="PASS" starttime="20210406 19:25:02.280" endtime="20210406 19:25:02.427"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:38.124" endtime="20210401 20:00:40.124"/>
+<status status="PASS" starttime="20210406 19:25:02.428" endtime="20210406 19:25:04.440"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
+<arg>${OUTPUT BIN CONTROL}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:40.126" level="INFO">Clicking element 'paperSize-listbox-item-tabloid'.</msg>
-<status status="PASS" starttime="20210401 20:00:40.124" endtime="20210401 20:00:40.285"/>
+<msg timestamp="20210406 19:25:04.440" level="INFO">Clicking element 'outputBin-listbox-item-optionaloutbin1'.</msg>
+<status status="PASS" starttime="20210406 19:25:04.440" endtime="20210406 19:25:04.561"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:40.286" endtime="20210401 20:00:42.287"/>
+<status status="PASS" starttime="20210406 19:25:04.562" endtime="20210406 19:25:06.563"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>saveChangesButton</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:42.287" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:00:42.287" endtime="20210401 20:00:42.412"/>
+<msg timestamp="20210406 19:25:06.563" level="INFO">Clicking button 'saveChangesButton'.</msg>
+<status status="PASS" starttime="20210406 19:25:06.563" endtime="20210406 19:25:06.686"/>
 </kw>
 <kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:42.412" endtime="20210401 20:00:46.412"/>
+<status status="PASS" starttime="20210406 19:25:06.686" endtime="20210406 19:25:10.693"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${default_settings_btn}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210406 19:25:10.693" endtime="20210406 19:25:10.715"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${default_settings_btn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:46.414" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:00:46.412" endtime="20210401 20:00:46.542"/>
+<msg timestamp="20210406 19:25:10.715" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
+<status status="PASS" starttime="20210406 19:25:10.715" endtime="20210406 19:25:10.822"/>
 </kw>
 <kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:46.543" endtime="20210401 20:00:51.543"/>
+<status status="PASS" starttime="20210406 19:25:10.823" endtime="20210406 19:25:15.826"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>saveChangesButton</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:00:51.543" endtime="20210401 20:00:51.572"/>
+<status status="PASS" starttime="20210406 19:25:15.826" endtime="20210406 19:25:15.833"/>
 </kw>
 <kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
+<arg>${OUTPUT BIN CONTROL}</arg>
 <arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
+<arg>${OUTPUT BIN NAME}</arg>
 <doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:00:51.606" level="INFO">Element 'paperSize-listbox-item-tabloid' attribute 'title' contains value 'Tabloid'.</msg>
-<status status="PASS" starttime="20210401 20:00:51.573" endtime="20210401 20:00:51.606"/>
+<msg timestamp="20210406 19:25:15.849" level="INFO">Element 'outputBin-listbox-item-optionaloutbin1' attribute 'title' contains value 'Bin 1'.</msg>
+<status status="PASS" starttime="20210406 19:25:15.833" endtime="20210406 19:25:15.849"/>
 </kw>
-<status status="PASS" starttime="20210401 20:00:35.965" endtime="20210401 20:00:51.606"/>
+<status status="PASS" starttime="20210406 19:25:00.258" endtime="20210406 19:25:15.849"/>
 </kw>
-<status status="PASS" starttime="20210401 20:00:35.965" endtime="20210401 20:00:51.607"/>
+<status status="PASS" starttime="20210406 19:25:00.258" endtime="20210406 19:25:15.849"/>
 </test>
-<test id="s1-t4" name="Validation of Paper Size combobox setting page size as Legal">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-legal</arg>
-<arg>Legal</arg>
+<test id="s1-t4" name="Validation of Output Bin combobox setting Output Bin as Bin 2">
+<kw name="Validation of Output Bin dropdown">
+<arg>outputBin</arg>
+<arg>outputBin-listbox-item-optionaloutbin2</arg>
+<arg>Bin 2</arg>
 <kw name="Set Variable" library="BuiltIn">
 <var>${default_settings_btn}</var>
 <arg>printQueueDefaultPrintSettingsButton</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:00:51.614" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:00:51.613" endtime="20210401 20:00:51.614"/>
+<msg timestamp="20210406 19:25:15.849" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
+<status status="PASS" starttime="20210406 19:25:15.849" endtime="20210406 19:25:15.849"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210406 19:25:15.849" endtime="20210406 19:25:15.849"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:51.614" endtime="20210401 20:00:53.614"/>
+<status status="PASS" starttime="20210406 19:25:15.849" endtime="20210406 19:25:17.855"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
+<arg>${OUTPUT BIN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:53.616" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:00:53.614" endtime="20210401 20:00:53.779"/>
+<msg timestamp="20210406 19:25:17.855" level="INFO">Clicking element 'outputBin'.</msg>
+<status status="PASS" starttime="20210406 19:25:17.855" endtime="20210406 19:25:18.000"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:53.779" endtime="20210401 20:00:55.780"/>
+<status status="PASS" starttime="20210406 19:25:18.000" endtime="20210406 19:25:20.002"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
+<arg>${OUTPUT BIN CONTROL}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:55.781" level="INFO">Clicking element 'paperSize-listbox-item-legal'.</msg>
-<status status="PASS" starttime="20210401 20:00:55.780" endtime="20210401 20:00:55.990"/>
+<msg timestamp="20210406 19:25:20.002" level="INFO">Clicking element 'outputBin-listbox-item-optionaloutbin2'.</msg>
+<status status="PASS" starttime="20210406 19:25:20.002" endtime="20210406 19:25:20.134"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:55.990" endtime="20210401 20:00:57.992"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:00:57.993" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:00:57.992" endtime="20210401 20:00:58.110"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:00:58.111" endtime="20210401 20:01:02.112"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:02.114" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:01:02.112" endtime="20210401 20:01:02.260"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:02.260" endtime="20210401 20:01:07.261"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:01:07.261" endtime="20210401 20:01:07.272"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:01:07.290" level="INFO">Element 'paperSize-listbox-item-legal' attribute 'title' contains value 'Legal'.</msg>
-<status status="PASS" starttime="20210401 20:01:07.272" endtime="20210401 20:01:07.290"/>
-</kw>
-<status status="PASS" starttime="20210401 20:00:51.612" endtime="20210401 20:01:07.290"/>
-</kw>
-<status status="PASS" starttime="20210401 20:00:51.611" endtime="20210401 20:01:07.291"/>
-</test>
-<test id="s1-t5" name="Validation of Paper Size combobox setting page size as Executive">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-executive</arg>
-<arg>Executive</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:01:07.294" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:01:07.294" endtime="20210401 20:01:07.294"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:07.294" endtime="20210401 20:01:09.295"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:09.297" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:01:09.296" endtime="20210401 20:01:09.413"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:09.414" endtime="20210401 20:01:11.414"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:11.415" level="INFO">Clicking element 'paperSize-listbox-item-executive'.</msg>
-<status status="PASS" starttime="20210401 20:01:11.414" endtime="20210401 20:01:11.534"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:11.535" endtime="20210401 20:01:13.535"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:13.537" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:01:13.536" endtime="20210401 20:01:13.742"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:13.742" endtime="20210401 20:01:17.744"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:17.746" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:01:17.744" endtime="20210401 20:01:17.891"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:17.891" endtime="20210401 20:01:22.892"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:01:22.892" endtime="20210401 20:01:22.916"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:01:22.943" level="INFO">Element 'paperSize-listbox-item-executive' attribute 'title' contains value 'Executive'.</msg>
-<status status="PASS" starttime="20210401 20:01:22.916" endtime="20210401 20:01:22.944"/>
-</kw>
-<status status="PASS" starttime="20210401 20:01:07.293" endtime="20210401 20:01:22.944"/>
-</kw>
-<status status="PASS" starttime="20210401 20:01:07.292" endtime="20210401 20:01:22.945"/>
-</test>
-<test id="s1-t6" name="Validation of Paper Size combobox setting page size as A3">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-a3</arg>
-<arg>A3</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:01:22.949" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:01:22.948" endtime="20210401 20:01:22.949"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:22.949" endtime="20210401 20:01:24.950"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:24.952" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:01:24.950" endtime="20210401 20:01:25.094"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:25.095" endtime="20210401 20:01:27.096"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:27.098" level="INFO">Clicking element 'paperSize-listbox-item-a3'.</msg>
-<status status="PASS" starttime="20210401 20:01:27.097" endtime="20210401 20:01:27.276"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:27.281" endtime="20210401 20:01:29.284"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:29.284" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:01:29.284" endtime="20210401 20:01:29.509"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:29.510" endtime="20210401 20:01:33.510"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:33.513" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:01:33.511" endtime="20210401 20:01:33.634"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:33.634" endtime="20210401 20:01:38.635"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:01:38.635" endtime="20210401 20:01:38.660"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:01:38.685" level="INFO">Element 'paperSize-listbox-item-a3' attribute 'title' contains value 'A3'.</msg>
-<status status="PASS" starttime="20210401 20:01:38.660" endtime="20210401 20:01:38.685"/>
-</kw>
-<status status="PASS" starttime="20210401 20:01:22.948" endtime="20210401 20:01:38.686"/>
-</kw>
-<status status="PASS" starttime="20210401 20:01:22.946" endtime="20210401 20:01:38.687"/>
-</test>
-<test id="s1-t7" name="Validation of Paper Size combobox setting page size as A4">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-a4</arg>
-<arg>A4</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:01:38.692" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:01:38.692" endtime="20210401 20:01:38.692"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:38.693" endtime="20210401 20:01:40.694"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:40.694" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:01:40.694" endtime="20210401 20:01:40.861"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:40.861" endtime="20210401 20:01:42.861"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:42.863" level="INFO">Clicking element 'paperSize-listbox-item-a4'.</msg>
-<status status="PASS" starttime="20210401 20:01:42.862" endtime="20210401 20:01:43.016"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:43.017" endtime="20210401 20:01:45.018"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:45.019" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:01:45.019" endtime="20210401 20:01:45.195"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:45.196" endtime="20210401 20:01:49.197"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:49.199" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:01:49.197" endtime="20210401 20:01:49.354"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:49.354" endtime="20210401 20:01:54.355"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:01:54.356" endtime="20210401 20:01:54.381"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:01:54.409" level="INFO">Element 'paperSize-listbox-item-a4' attribute 'title' contains value 'A4'.</msg>
-<status status="PASS" starttime="20210401 20:01:54.381" endtime="20210401 20:01:54.409"/>
-</kw>
-<status status="PASS" starttime="20210401 20:01:38.691" endtime="20210401 20:01:54.410"/>
-</kw>
-<status status="PASS" starttime="20210401 20:01:38.689" endtime="20210401 20:01:54.411"/>
-</test>
-<test id="s1-t8" name="Validation of Paper Size combobox setting page size as A5">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-a5</arg>
-<arg>A5</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:01:54.417" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:01:54.416" endtime="20210401 20:01:54.417"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:54.417" endtime="20210401 20:01:56.419"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:56.420" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:01:56.419" endtime="20210401 20:01:56.571"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:56.571" endtime="20210401 20:01:58.571"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:01:58.573" level="INFO">Clicking element 'paperSize-listbox-item-a5'.</msg>
-<status status="PASS" starttime="20210401 20:01:58.571" endtime="20210401 20:01:58.676"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:01:58.676" endtime="20210401 20:02:00.678"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:00.680" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:02:00.679" endtime="20210401 20:02:00.887"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:00.888" endtime="20210401 20:02:04.888"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:04.891" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:02:04.889" endtime="20210401 20:02:05.034"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:05.034" endtime="20210401 20:02:10.034"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:02:10.034" endtime="20210401 20:02:10.065"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:02:10.106" level="INFO">Element 'paperSize-listbox-item-a5' attribute 'title' contains value 'A5'.</msg>
-<status status="PASS" starttime="20210401 20:02:10.066" endtime="20210401 20:02:10.106"/>
-</kw>
-<status status="PASS" starttime="20210401 20:01:54.415" endtime="20210401 20:02:10.107"/>
-</kw>
-<status status="PASS" starttime="20210401 20:01:54.414" endtime="20210401 20:02:10.108"/>
-</test>
-<test id="s1-t9" name="Validation of Paper Size combobox setting page size as A6">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-a6</arg>
-<arg>A6</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:02:10.115" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:02:10.114" endtime="20210401 20:02:10.115"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:10.115" endtime="20210401 20:02:12.116"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:12.116" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:02:12.116" endtime="20210401 20:02:12.239"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:12.239" endtime="20210401 20:02:14.241"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:14.243" level="INFO">Clicking element 'paperSize-listbox-item-a6'.</msg>
-<status status="PASS" starttime="20210401 20:02:14.241" endtime="20210401 20:02:14.405"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:14.406" endtime="20210401 20:02:16.407"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:16.408" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:02:16.407" endtime="20210401 20:02:16.573"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:16.573" endtime="20210401 20:02:20.575"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:20.576" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:02:20.575" endtime="20210401 20:02:20.708"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:20.708" endtime="20210401 20:02:25.708"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:02:25.708" endtime="20210401 20:02:25.720"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:02:25.739" level="INFO">Element 'paperSize-listbox-item-a6' attribute 'title' contains value 'A6'.</msg>
-<status status="PASS" starttime="20210401 20:02:25.720" endtime="20210401 20:02:25.739"/>
-</kw>
-<status status="PASS" starttime="20210401 20:02:10.113" endtime="20210401 20:02:25.739"/>
-</kw>
-<status status="PASS" starttime="20210401 20:02:10.111" endtime="20210401 20:02:25.740"/>
-</test>
-<test id="s1-t10" name="Validation of Paper Size combobox setting page size as B4">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-jisb4</arg>
-<arg>B4</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:02:25.743" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:02:25.743" endtime="20210401 20:02:25.743"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:25.744" endtime="20210401 20:02:27.745"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:27.747" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:02:27.746" endtime="20210401 20:02:27.903"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:27.903" endtime="20210401 20:02:29.904"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:29.906" level="INFO">Clicking element 'paperSize-listbox-item-jisb4'.</msg>
-<status status="PASS" starttime="20210401 20:02:29.904" endtime="20210401 20:02:30.060"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:30.060" endtime="20210401 20:02:32.061"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:32.063" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:02:32.062" endtime="20210401 20:02:32.236"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:32.237" endtime="20210401 20:02:36.237"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:36.239" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:02:36.237" endtime="20210401 20:02:36.416"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:36.417" endtime="20210401 20:02:41.417"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:02:41.417" endtime="20210401 20:02:41.448"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:02:41.487" level="INFO">Element 'paperSize-listbox-item-jisb4' attribute 'title' contains value 'B4'.</msg>
-<status status="PASS" starttime="20210401 20:02:41.449" endtime="20210401 20:02:41.487"/>
-</kw>
-<status status="PASS" starttime="20210401 20:02:25.742" endtime="20210401 20:02:41.487"/>
-</kw>
-<status status="PASS" starttime="20210401 20:02:25.741" endtime="20210401 20:02:41.488"/>
-</test>
-<test id="s1-t11" name="Validation of Paper Size combobox setting page size as B5">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-jisb5</arg>
-<arg>B5</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:02:41.493" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:02:41.493" endtime="20210401 20:02:41.493"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:41.494" endtime="20210401 20:02:43.494"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:43.495" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:02:43.494" endtime="20210401 20:02:43.611"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:43.611" endtime="20210401 20:02:45.612"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:45.614" level="INFO">Clicking element 'paperSize-listbox-item-jisb5'.</msg>
-<status status="PASS" starttime="20210401 20:02:45.613" endtime="20210401 20:02:45.748"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:45.749" endtime="20210401 20:02:47.750"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:47.752" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:02:47.751" endtime="20210401 20:02:47.911"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:47.911" endtime="20210401 20:02:51.913"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:51.913" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:02:51.913" endtime="20210401 20:02:52.003"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:52.004" endtime="20210401 20:02:57.005"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:02:57.005" endtime="20210401 20:02:57.039"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:02:57.066" level="INFO">Element 'paperSize-listbox-item-jisb5' attribute 'title' contains value 'B5'.</msg>
-<status status="PASS" starttime="20210401 20:02:57.040" endtime="20210401 20:02:57.066"/>
-</kw>
-<status status="PASS" starttime="20210401 20:02:41.492" endtime="20210401 20:02:57.066"/>
-</kw>
-<status status="PASS" starttime="20210401 20:02:41.491" endtime="20210401 20:02:57.067"/>
-</test>
-<test id="s1-t12" name="Validation of Paper Size combobox setting page size as Folio">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-folio</arg>
-<arg>Folio</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:02:57.075" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:02:57.075" endtime="20210401 20:02:57.075"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:57.075" endtime="20210401 20:02:59.075"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:02:59.077" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:02:59.075" endtime="20210401 20:02:59.187"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:02:59.188" endtime="20210401 20:03:01.189"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:01.191" level="INFO">Clicking element 'paperSize-listbox-item-folio'.</msg>
-<status status="PASS" starttime="20210401 20:03:01.189" endtime="20210401 20:03:01.343"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:01.344" endtime="20210401 20:03:03.345"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:03.346" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:03:03.345" endtime="20210401 20:03:03.485"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:03.485" endtime="20210401 20:03:07.487"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:07.489" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:03:07.488" endtime="20210401 20:03:07.615"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:07.616" endtime="20210401 20:03:12.617"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:03:12.617" endtime="20210401 20:03:12.631"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:03:12.650" level="INFO">Element 'paperSize-listbox-item-folio' attribute 'title' contains value 'Folio'.</msg>
-<status status="PASS" starttime="20210401 20:03:12.631" endtime="20210401 20:03:12.651"/>
-</kw>
-<status status="PASS" starttime="20210401 20:02:57.074" endtime="20210401 20:03:12.651"/>
-</kw>
-<status status="PASS" starttime="20210401 20:02:57.072" endtime="20210401 20:03:12.652"/>
-</test>
-<test id="s1-t13" name="Validation of Paper Size combobox setting page size as Universal">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-universal</arg>
-<arg>Universal</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:03:12.655" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:03:12.655" endtime="20210401 20:03:12.655"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:12.655" endtime="20210401 20:03:14.656"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:14.657" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:03:14.656" endtime="20210401 20:03:14.774"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:14.774" endtime="20210401 20:03:16.774"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:16.776" level="INFO">Clicking element 'paperSize-listbox-item-universal'.</msg>
-<status status="PASS" starttime="20210401 20:03:16.775" endtime="20210401 20:03:16.913"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:16.913" endtime="20210401 20:03:18.914"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:18.915" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:03:18.914" endtime="20210401 20:03:19.059"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:19.059" endtime="20210401 20:03:23.061"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:23.063" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:03:23.061" endtime="20210401 20:03:23.183"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:23.184" endtime="20210401 20:03:28.185"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:03:28.185" endtime="20210401 20:03:28.199"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:03:28.215" level="INFO">Element 'paperSize-listbox-item-universal' attribute 'title' contains value 'Universal'.</msg>
-<status status="PASS" starttime="20210401 20:03:28.199" endtime="20210401 20:03:28.215"/>
-</kw>
-<status status="PASS" starttime="20210401 20:03:12.654" endtime="20210401 20:03:28.216"/>
-</kw>
-<status status="PASS" starttime="20210401 20:03:12.653" endtime="20210401 20:03:28.216"/>
-</test>
-<test id="s1-t14" name="Validation of Paper Size combobox setting page size as Oficio Mexico">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-oficio</arg>
-<arg>Oficio Mexico</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:03:28.219" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:03:28.219" endtime="20210401 20:03:28.219"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:28.220" endtime="20210401 20:03:30.222"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:30.225" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:03:30.224" endtime="20210401 20:03:30.322"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:30.322" endtime="20210401 20:03:32.324"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:32.324" level="INFO">Clicking element 'paperSize-listbox-item-oficio'.</msg>
-<status status="PASS" starttime="20210401 20:03:32.324" endtime="20210401 20:03:32.447"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:32.448" endtime="20210401 20:03:34.450"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:34.454" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:03:34.451" endtime="20210401 20:03:34.570"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:34.570" endtime="20210401 20:03:38.571"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:38.572" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:03:38.571" endtime="20210401 20:03:38.685"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:38.685" endtime="20210401 20:03:43.686"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:03:43.686" endtime="20210401 20:03:43.696"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:03:43.714" level="INFO">Element 'paperSize-listbox-item-oficio' attribute 'title' contains value 'Oficio Mexico'.</msg>
-<status status="PASS" starttime="20210401 20:03:43.696" endtime="20210401 20:03:43.714"/>
-</kw>
-<status status="PASS" starttime="20210401 20:03:28.218" endtime="20210401 20:03:43.714"/>
-</kw>
-<status status="PASS" starttime="20210401 20:03:28.217" endtime="20210401 20:03:43.715"/>
-</test>
-<test id="s1-t15" name="Validation of Paper Size combobox setting page size as Statement">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-statement</arg>
-<arg>Statement</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:03:43.720" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:03:43.719" endtime="20210401 20:03:43.720"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:43.720" endtime="20210401 20:03:45.720"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:45.722" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:03:45.720" endtime="20210401 20:03:45.889"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:45.889" endtime="20210401 20:03:47.890"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:47.893" level="INFO">Clicking element 'paperSize-listbox-item-statement'.</msg>
-<status status="PASS" starttime="20210401 20:03:47.891" endtime="20210401 20:03:48.027"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:48.027" endtime="20210401 20:03:50.029"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:50.029" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:03:50.029" endtime="20210401 20:03:50.185"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:50.185" endtime="20210401 20:03:54.186"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:03:54.188" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:03:54.186" endtime="20210401 20:03:54.333"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:54.334" endtime="20210401 20:03:59.334"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:03:59.335" endtime="20210401 20:03:59.360"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:03:59.384" level="INFO">Element 'paperSize-listbox-item-statement' attribute 'title' contains value 'Statement'.</msg>
-<status status="PASS" starttime="20210401 20:03:59.360" endtime="20210401 20:03:59.384"/>
-</kw>
-<status status="PASS" starttime="20210401 20:03:43.718" endtime="20210401 20:03:59.385"/>
-</kw>
-<status status="PASS" starttime="20210401 20:03:43.717" endtime="20210401 20:03:59.386"/>
-</test>
-<test id="s1-t16" name="Validation of Paper Size combobox setting page size as Envelope #7 3/4">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-envelope734</arg>
-<arg>Envelope #7 3/4</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:03:59.390" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:03:59.389" endtime="20210401 20:03:59.390"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:03:59.390" endtime="20210401 20:04:01.391"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:01.392" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:04:01.391" endtime="20210401 20:04:01.481"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:01.481" endtime="20210401 20:04:03.482"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:03.484" level="INFO">Clicking element 'paperSize-listbox-item-envelope734'.</msg>
-<status status="PASS" starttime="20210401 20:04:03.482" endtime="20210401 20:04:03.616"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:03.616" endtime="20210401 20:04:05.616"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:05.618" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:04:05.617" endtime="20210401 20:04:05.826"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:05.827" endtime="20210401 20:04:09.827"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:09.828" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:04:09.827" endtime="20210401 20:04:09.963"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:09.964" endtime="20210401 20:04:14.966"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:04:14.966" endtime="20210401 20:04:14.976"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:04:14.993" level="INFO">Element 'paperSize-listbox-item-envelope734' attribute 'title' contains value 'Envelope #7 3/4'.</msg>
-<status status="PASS" starttime="20210401 20:04:14.976" endtime="20210401 20:04:14.993"/>
-</kw>
-<status status="PASS" starttime="20210401 20:03:59.389" endtime="20210401 20:04:14.993"/>
-</kw>
-<status status="PASS" starttime="20210401 20:03:59.387" endtime="20210401 20:04:14.994"/>
-</test>
-<test id="s1-t17" name="Validation of Paper Size combobox setting page size as Envelope #9">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-envelope9</arg>
-<arg>Envelope #9</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:04:14.998" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:04:14.998" endtime="20210401 20:04:14.998"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:14.998" endtime="20210401 20:04:16.999"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:17.001" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:04:16.999" endtime="20210401 20:04:17.118"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:17.118" endtime="20210401 20:04:19.119"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:19.120" level="INFO">Clicking element 'paperSize-listbox-item-envelope9'.</msg>
-<status status="PASS" starttime="20210401 20:04:19.119" endtime="20210401 20:04:19.260"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:19.260" endtime="20210401 20:04:21.261"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:21.266" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:04:21.263" endtime="20210401 20:04:21.421"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:21.422" endtime="20210401 20:04:25.423"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:25.425" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:04:25.424" endtime="20210401 20:04:25.557"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:25.558" endtime="20210401 20:04:30.559"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:04:30.559" endtime="20210401 20:04:30.579"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:04:30.600" level="INFO">Element 'paperSize-listbox-item-envelope9' attribute 'title' contains value 'Envelope #9'.</msg>
-<status status="PASS" starttime="20210401 20:04:30.579" endtime="20210401 20:04:30.600"/>
-</kw>
-<status status="PASS" starttime="20210401 20:04:14.997" endtime="20210401 20:04:30.601"/>
-</kw>
-<status status="PASS" starttime="20210401 20:04:14.996" endtime="20210401 20:04:30.602"/>
-</test>
-<test id="s1-t18" name="Validation of Paper Size combobox setting page size as Envelope #10">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-envelope10</arg>
-<arg>Envelope #10</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:04:30.611" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:04:30.611" endtime="20210401 20:04:30.612"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:30.612" endtime="20210401 20:04:32.613"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:32.614" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:04:32.613" endtime="20210401 20:04:32.802"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:32.803" endtime="20210401 20:04:34.805"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:34.806" level="INFO">Clicking element 'paperSize-listbox-item-envelope10'.</msg>
-<status status="PASS" starttime="20210401 20:04:34.805" endtime="20210401 20:04:34.946"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:34.946" endtime="20210401 20:04:36.946"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:36.948" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:04:36.947" endtime="20210401 20:04:37.098"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:37.098" endtime="20210401 20:04:41.102"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:41.106" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:04:41.103" endtime="20210401 20:04:41.244"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:41.245" endtime="20210401 20:04:46.245"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:04:46.246" endtime="20210401 20:04:46.279"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:04:46.302" level="INFO">Element 'paperSize-listbox-item-envelope10' attribute 'title' contains value 'Envelope #10'.</msg>
-<status status="PASS" starttime="20210401 20:04:46.279" endtime="20210401 20:04:46.303"/>
-</kw>
-<status status="PASS" starttime="20210401 20:04:30.609" endtime="20210401 20:04:46.303"/>
-</kw>
-<status status="PASS" starttime="20210401 20:04:30.605" endtime="20210401 20:04:46.304"/>
-</test>
-<test id="s1-t19" name="Validation of Paper Size combobox setting page size as Envelope B5">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-envelopeb5</arg>
-<arg>Envelope B5</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:04:46.308" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:04:46.307" endtime="20210401 20:04:46.308"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:46.308" endtime="20210401 20:04:48.309"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:48.312" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:04:48.310" endtime="20210401 20:04:48.431"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:48.431" endtime="20210401 20:04:50.433"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:50.434" level="INFO">Clicking element 'paperSize-listbox-item-envelopeb5'.</msg>
-<status status="PASS" starttime="20210401 20:04:50.433" endtime="20210401 20:04:50.551"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:50.551" endtime="20210401 20:04:52.553"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:52.553" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:04:52.553" endtime="20210401 20:04:52.712"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:52.712" endtime="20210401 20:04:56.714"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:04:56.715" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:04:56.715" endtime="20210401 20:04:56.818"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:04:56.819" endtime="20210401 20:05:01.819"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:05:01.819" endtime="20210401 20:05:01.839"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:05:01.871" level="INFO">Element 'paperSize-listbox-item-envelopeb5' attribute 'title' contains value 'Envelope B5'.</msg>
-<status status="PASS" starttime="20210401 20:05:01.840" endtime="20210401 20:05:01.871"/>
-</kw>
-<status status="PASS" starttime="20210401 20:04:46.307" endtime="20210401 20:05:01.872"/>
-</kw>
-<status status="PASS" starttime="20210401 20:04:46.306" endtime="20210401 20:05:01.873"/>
-</test>
-<test id="s1-t20" name="Validation of Paper Size combobox setting page size as Envelope C5">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-envelopec5</arg>
-<arg>Envelope C5</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:05:01.877" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:05:01.877" endtime="20210401 20:05:01.878"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:01.878" endtime="20210401 20:05:03.879"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:03.880" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:05:03.879" endtime="20210401 20:05:04.015"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:04.015" endtime="20210401 20:05:06.017"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:06.018" level="INFO">Clicking element 'paperSize-listbox-item-envelopec5'.</msg>
-<status status="PASS" starttime="20210401 20:05:06.017" endtime="20210401 20:05:06.142"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:06.143" endtime="20210401 20:05:08.143"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:08.144" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:05:08.143" endtime="20210401 20:05:08.304"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:08.304" endtime="20210401 20:05:12.306"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:12.307" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:05:12.306" endtime="20210401 20:05:12.445"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:12.446" endtime="20210401 20:05:17.447"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:05:17.448" endtime="20210401 20:05:17.477"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:05:17.501" level="INFO">Element 'paperSize-listbox-item-envelopec5' attribute 'title' contains value 'Envelope C5'.</msg>
-<status status="PASS" starttime="20210401 20:05:17.478" endtime="20210401 20:05:17.502"/>
-</kw>
-<status status="PASS" starttime="20210401 20:05:01.877" endtime="20210401 20:05:17.503"/>
-</kw>
-<status status="PASS" starttime="20210401 20:05:01.876" endtime="20210401 20:05:17.504"/>
-</test>
-<test id="s1-t21" name="Validation of Paper Size combobox setting page size as Envelope DL">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-envelopedl</arg>
-<arg>Envelope DL</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:05:17.512" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:05:17.511" endtime="20210401 20:05:17.512"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:17.512" endtime="20210401 20:05:19.513"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:19.518" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:05:19.514" endtime="20210401 20:05:19.762"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:19.762" endtime="20210401 20:05:21.763"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:21.763" level="INFO">Clicking element 'paperSize-listbox-item-envelopedl'.</msg>
-<status status="PASS" starttime="20210401 20:05:21.763" endtime="20210401 20:05:21.904"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:21.904" endtime="20210401 20:05:23.904"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:23.905" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:05:23.904" endtime="20210401 20:05:24.044"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:24.045" endtime="20210401 20:05:28.046"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:28.048" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:05:28.046" endtime="20210401 20:05:28.254"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:28.254" endtime="20210401 20:05:33.256"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:05:33.257" endtime="20210401 20:05:33.289"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:05:33.319" level="INFO">Element 'paperSize-listbox-item-envelopedl' attribute 'title' contains value 'Envelope DL'.</msg>
-<status status="PASS" starttime="20210401 20:05:33.289" endtime="20210401 20:05:33.319"/>
-</kw>
-<status status="PASS" starttime="20210401 20:05:17.508" endtime="20210401 20:05:33.319"/>
-</kw>
-<status status="PASS" starttime="20210401 20:05:17.506" endtime="20210401 20:05:33.320"/>
-</test>
-<test id="s1-t22" name="Validation of Paper Size combobox setting page size as Hagaki">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-hagaki</arg>
-<arg>Hagaki</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:05:33.324" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:05:33.324" endtime="20210401 20:05:33.324"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:33.324" endtime="20210401 20:05:35.325"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:35.326" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:05:35.325" endtime="20210401 20:05:35.448"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:35.448" endtime="20210401 20:05:37.449"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:37.451" level="INFO">Clicking element 'paperSize-listbox-item-hagaki'.</msg>
-<status status="PASS" starttime="20210401 20:05:37.450" endtime="20210401 20:05:37.598"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:37.599" endtime="20210401 20:05:39.599"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:39.601" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:05:39.600" endtime="20210401 20:05:39.866"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:39.866" endtime="20210401 20:05:43.868"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:43.870" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:05:43.868" endtime="20210401 20:05:44.029"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:44.030" endtime="20210401 20:05:49.030"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:05:49.030" endtime="20210401 20:05:49.057"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:05:49.098" level="INFO">Element 'paperSize-listbox-item-hagaki' attribute 'title' contains value 'Hagaki'.</msg>
-<status status="PASS" starttime="20210401 20:05:49.058" endtime="20210401 20:05:49.099"/>
-</kw>
-<status status="PASS" starttime="20210401 20:05:33.323" endtime="20210401 20:05:49.101"/>
-</kw>
-<status status="PASS" starttime="20210401 20:05:33.322" endtime="20210401 20:05:49.103"/>
-</test>
-<test id="s1-t23" name="Validation of Paper Size combobox setting page size as 12 x 18 inches">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-12x18</arg>
-<arg>12 x 18 inches</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:05:49.107" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:05:49.107" endtime="20210401 20:05:49.108"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:49.108" endtime="20210401 20:05:51.108"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:51.111" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:05:51.109" endtime="20210401 20:05:51.253"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:51.253" endtime="20210401 20:05:53.255"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:53.257" level="INFO">Clicking element 'paperSize-listbox-item-12x18'.</msg>
-<status status="PASS" starttime="20210401 20:05:53.255" endtime="20210401 20:05:53.398"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:53.399" endtime="20210401 20:05:55.399"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:55.401" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:05:55.400" endtime="20210401 20:05:55.572"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:55.572" endtime="20210401 20:05:59.574"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:05:59.575" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:05:59.574" endtime="20210401 20:05:59.739"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:05:59.740" endtime="20210401 20:06:04.740"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:06:04.741" endtime="20210401 20:06:04.767"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:06:04.790" level="INFO">Element 'paperSize-listbox-item-12x18' attribute 'title' contains value '12 x 18 inches'.</msg>
-<status status="PASS" starttime="20210401 20:06:04.767" endtime="20210401 20:06:04.790"/>
-</kw>
-<status status="PASS" starttime="20210401 20:05:49.106" endtime="20210401 20:06:04.791"/>
-</kw>
-<status status="PASS" starttime="20210401 20:05:49.105" endtime="20210401 20:06:04.792"/>
-</test>
-<test id="s1-t24" name="Validation of Paper Size combobox setting page size as SRA3">
-<kw name="Validation of Paper size dropdown">
-<arg>paperSize</arg>
-<arg>paperSize-listbox-item-sra3</arg>
-<arg>SRA3</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:06:04.796" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210401 20:06:04.795" endtime="20210401 20:06:04.796"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:06:04.796" endtime="20210401 20:06:06.796"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:06:06.797" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:06:06.796" endtime="20210401 20:06:06.936"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:06:06.936" endtime="20210401 20:06:08.936"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:06:08.937" level="INFO">Clicking element 'paperSize-listbox-item-sra3'.</msg>
-<status status="PASS" starttime="20210401 20:06:08.936" endtime="20210401 20:06:09.060"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:06:09.061" endtime="20210401 20:06:11.061"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:06:11.062" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:06:11.061" endtime="20210401 20:06:11.218"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:06:11.219" endtime="20210401 20:06:15.220"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:06:15.222" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210401 20:06:15.220" endtime="20210401 20:06:15.378"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:06:15.378" endtime="20210401 20:06:20.378"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:06:20.379" endtime="20210401 20:06:20.426"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${PAGE SIZE CONTROL}</arg>
-<arg>title</arg>
-<arg>${PAGE SIZE NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210401 20:06:20.452" level="INFO">Element 'paperSize-listbox-item-sra3' attribute 'title' contains value 'SRA3'.</msg>
-<status status="PASS" starttime="20210401 20:06:20.426" endtime="20210401 20:06:20.452"/>
-</kw>
-<status status="PASS" starttime="20210401 20:06:04.795" endtime="20210401 20:06:20.453"/>
-</kw>
-<status status="PASS" starttime="20210401 20:06:04.793" endtime="20210401 20:06:20.454"/>
-</test>
-<kw name="Reset , Log Out and Close Browsers" type="TEARDOWN">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>paperSize</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:06:20.459" level="INFO">Clicking element 'paperSize'.</msg>
-<status status="PASS" starttime="20210401 20:06:20.459" endtime="20210401 20:06:20.555"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>paperSize-listbox-item-printer</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:06:20.556" level="INFO">Clicking element 'paperSize-listbox-item-printer'.</msg>
-<status status="PASS" starttime="20210401 20:06:20.555" endtime="20210401 20:06:20.665"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:06:20.665" endtime="20210401 20:06:24.667"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210401 20:06:24.668" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210401 20:06:24.667" endtime="20210401 20:06:24.791"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>settingsUpdatingBusySpinner</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:06:24.791" endtime="20210401 20:06:24.813"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:06:24.813" endtime="20210401 20:06:29.814"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${usermenu}</var>
-<arg>userMenu</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:06:29.814" level="INFO">${usermenu} = userMenu</msg>
-<status status="PASS" starttime="20210401 20:06:29.814" endtime="20210401 20:06:29.814"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${logout}</var>
-<arg>link-logout</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210401 20:06:29.815" level="INFO">${logout} = link-logout</msg>
-<status status="PASS" starttime="20210401 20:06:29.814" endtime="20210401 20:06:29.815"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${usermenu}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:06:29.815" level="INFO">Clicking element 'userMenu'.</msg>
-<status status="PASS" starttime="20210401 20:06:29.815" endtime="20210401 20:06:29.894"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${logout}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210401 20:06:29.894" endtime="20210401 20:06:29.908"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:06:29.908" endtime="20210401 20:06:33.908"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${logout}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210401 20:06:33.911" level="INFO">Clicking element 'link-logout'.</msg>
-<status status="PASS" starttime="20210401 20:06:33.909" endtime="20210401 20:06:34.055"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210401 20:06:34.055" endtime="20210401 20:06:39.055"/>
-</kw>
-<kw name="Close All Browsers" library="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20210401 20:06:39.055" endtime="20210401 20:06:41.245"/>
-</kw>
-<status status="PASS" starttime="20210401 20:06:20.458" endtime="20210401 20:06:41.246"/>
-</kw>
-<status status="PASS" starttime="20210401 19:58:26.491" endtime="20210401 20:06:41.246"/>
-</suite>
-<statistics>
-<total>
-<stat pass="24" fail="0" skip="0">All Tests</stat>
-</total>
-<tag>
-</tag>
-<suite>
-<stat pass="24" fail="0" skip="0" id="s1" name="WebUpload CPM TC1 PaperSize">WebUpload CPM TC1 PaperSize</stat>
-</suite>
-</statistics>
-<errors>
-</errors>
-</robot>
+<status status="PASS" starttime="20210406 19:25:20.134" endtime="20210406 19:25:22.146"/>
