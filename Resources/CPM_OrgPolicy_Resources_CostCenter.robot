@@ -5,7 +5,7 @@ Variables    ../PageObjects/Locators.py
 
 *** Variables ***
 #${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
+#${BROWSER}                      Firefox
 #${USER}                     sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
 ${username_nonadmin}            testuser@test.onelxk.co
@@ -392,6 +392,8 @@ Set Color Controls
 
     run keyword     Set Quota Assignment for Cost Center
     sleep_call
+    set selenium timeout    20
+    wait until page contains element     ${btn_quota_select_all}
     click element       ${btn_quota_select_all}
     click element   ${undefined}
     click button    ${btn_delete_quota}
@@ -409,6 +411,8 @@ Set Disable Print
 
     run keyword     Set Quota Assignment for Cost Center
     sleep_call
+    set selenium timeout    20
+    wait until page contains element     ${btn_quota_select_all}
     click element       ${btn_quota_select_all}
     click element   ${undefined}
     click button    ${btn_delete_quota}

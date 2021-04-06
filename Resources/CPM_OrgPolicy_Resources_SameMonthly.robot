@@ -141,6 +141,8 @@ Set Color Controls
     element text should be      ${lst_new_quota_color}      ${quota_color_value}
 
     sleep_call
+    set selenium timeout    20
+    wait until page contains element     ${btn_quota_select_all}
     click element       ${btn_quota_select_all}
     click element   ${undefined}
     click button    ${btn_delete_quota}
@@ -159,6 +161,8 @@ Set Disable Print
     element text should be      ${lst_new_quota_color}      ${quota_color_value}
 
     sleep_call
+    set selenium timeout    20
+    wait until page contains element     ${btn_quota_select_all}
     click element       ${btn_quota_select_all}
     click element   ${undefined}
     click button    ${btn_delete_quota}

@@ -230,7 +230,8 @@ Set Color Controls
     sleep_call
 
    # run keyword     Set Quota Assignment for Personal
-
+    set selenium timeout    20
+    wait until page contains element     ${btn_quota_select_all}
     click element       ${btn_quota_select_all}
     sleep_call_1
     click element   ${undefined}
@@ -260,7 +261,8 @@ Set Disable Print
     sleep_call
 
    # run keyword     Set Quota Assignment for Personal
-
+    set selenium timeout    20
+    wait until page contains element     ${btn_quota_select_all}
     click element       ${btn_quota_select_all}
     sleep_call_1
     click element   ${undefined}
