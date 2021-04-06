@@ -1,446 +1,364 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0 (Python 3.8.3 on win32)" generated="20210406 19:23:46.007" rpa="false" schemaversion="2">
-<suite id="s1" name="WebUpload CPM TC3 OutputBin" source="C:\Users\neogis\D Drive\FREEDOM\Python\CloudAutomation\WebUpload\WebUpload_CPM_TC3_OutputBin.robot">
-<kw name="Check total number of output bins" type="SETUP">
+<robot generator="Robot 4.0 (Python 3.8.3 on win32)" generated="20210406 21:55:02.268" rpa="false" schemaversion="2">
+<suite id="s1" name="WebUpload CPM TC9 DiscardChanges" source="C:\Users\neogis\D Drive\FREEDOM\Python\CloudAutomation\WebUpload\WebUpload_CPM_TC9_DiscardChanges.robot">
+<test id="s1-t1" name="Discard Change dialog validation">
+<kw name="Open Browser To Login Page">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210406 19:23:50.418" level="INFO">Opening browser 'Chrome' to base url 'https://dev.us.cloud.onelxk.co'.</msg>
-<status status="PASS" starttime="20210406 19:23:50.418" endtime="20210406 19:24:00.482"/>
+<msg timestamp="20210406 21:55:03.340" level="INFO">Opening browser 'Chrome' to base url 'https://dev.us.cloud.onelxk.co'.</msg>
+<status status="PASS" starttime="20210406 21:55:03.340" endtime="20210406 21:55:10.953"/>
 </kw>
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>20</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20210406 19:24:00.484" endtime="20210406 19:24:00.487"/>
+<status status="PASS" starttime="20210406 21:55:10.953" endtime="20210406 21:55:10.956"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210406 19:24:00.487" endtime="20210406 19:24:00.663"/>
+<status status="PASS" starttime="20210406 21:55:10.956" endtime="20210406 21:55:11.117"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Lexmark Log In</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210406 19:24:00.663" level="INFO">Page title is 'Lexmark Log In'.</msg>
-<status status="PASS" starttime="20210406 19:24:00.663" endtime="20210406 19:24:00.663"/>
+<msg timestamp="20210406 21:55:11.117" level="INFO">Page title is 'Lexmark Log In'.</msg>
+<status status="PASS" starttime="20210406 21:55:11.117" endtime="20210406 21:55:11.117"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${username_text}</var>
 <arg>id:user_email</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210406 19:24:00.663" level="INFO">${username_text} = id:user_email</msg>
-<status status="PASS" starttime="20210406 19:24:00.663" endtime="20210406 19:24:00.663"/>
+<msg timestamp="20210406 21:55:11.117" level="INFO">${username_text} = id:user_email</msg>
+<status status="PASS" starttime="20210406 21:55:11.117" endtime="20210406 21:55:11.117"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${password_text}</var>
 <arg>id:user_password</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210406 19:24:00.663" level="INFO">${password_text} = id:user_password</msg>
-<status status="PASS" starttime="20210406 19:24:00.663" endtime="20210406 19:24:00.663"/>
+<msg timestamp="20210406 21:55:11.117" level="INFO">${password_text} = id:user_password</msg>
+<status status="PASS" starttime="20210406 21:55:11.117" endtime="20210406 21:55:11.117"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:user_email</arg>
 <arg>${USER}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:00.663" level="INFO">Typing text 'sravantesh.neogi@lexmark.com' into text field 'id:user_email'.</msg>
-<status status="PASS" starttime="20210406 19:24:00.663" endtime="20210406 19:24:00.834"/>
+<msg timestamp="20210406 21:55:11.117" level="INFO">Typing text 'sravantesh.neogi@lexmark.com' into text field 'id:user_email'.</msg>
+<status status="PASS" starttime="20210406 21:55:11.117" endtime="20210406 21:55:11.274"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${nextbtn}</var>
 <arg>btn-email-next</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210406 19:24:00.835" level="INFO">${nextbtn} = btn-email-next</msg>
-<status status="PASS" starttime="20210406 19:24:00.835" endtime="20210406 19:24:00.835"/>
+<msg timestamp="20210406 21:55:11.275" level="INFO">${nextbtn} = btn-email-next</msg>
+<status status="PASS" starttime="20210406 21:55:11.274" endtime="20210406 21:55:11.275"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>btn-email-next</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:00.836" level="INFO">Clicking button 'btn-email-next'.</msg>
-<status status="PASS" starttime="20210406 19:24:00.836" endtime="20210406 19:24:01.995"/>
+<msg timestamp="20210406 21:55:11.276" level="INFO">Clicking button 'btn-email-next'.</msg>
+<status status="PASS" starttime="20210406 21:55:11.275" endtime="20210406 21:55:12.085"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${password_text}</var>
 <arg>id:user_password</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210406 19:24:01.996" level="INFO">${password_text} = id:user_password</msg>
-<status status="PASS" starttime="20210406 19:24:01.996" endtime="20210406 19:24:01.996"/>
+<msg timestamp="20210406 21:55:12.088" level="INFO">${password_text} = id:user_password</msg>
+<status status="PASS" starttime="20210406 21:55:12.086" endtime="20210406 21:55:12.088"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:user_password</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:02.001" level="INFO">Typing text 'Password@1234' into text field 'id:user_password'.</msg>
-<status status="PASS" starttime="20210406 19:24:01.997" endtime="20210406 19:24:02.160"/>
+<msg timestamp="20210406 21:55:12.089" level="INFO">Typing text 'Password@1234' into text field 'id:user_password'.</msg>
+<status status="PASS" starttime="20210406 21:55:12.088" endtime="20210406 21:55:12.218"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${loginbtn}</var>
 <arg>btn-email-login</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210406 19:24:02.161" level="INFO">${loginbtn} = btn-email-login</msg>
-<status status="PASS" starttime="20210406 19:24:02.161" endtime="20210406 19:24:02.162"/>
+<msg timestamp="20210406 21:55:12.219" level="INFO">${loginbtn} = btn-email-login</msg>
+<status status="PASS" starttime="20210406 21:55:12.218" endtime="20210406 21:55:12.219"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>btn-email-login</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:02.162" level="INFO">Clicking button 'btn-email-login'.</msg>
-<status status="PASS" starttime="20210406 19:24:02.162" endtime="20210406 19:24:04.173"/>
+<msg timestamp="20210406 21:55:12.219" level="INFO">Clicking button 'btn-email-login'.</msg>
+<status status="PASS" starttime="20210406 21:55:12.219" endtime="20210406 21:55:14.218"/>
 </kw>
 <kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:04.173" endtime="20210406 19:24:09.174"/>
+<status status="PASS" starttime="20210406 21:55:14.218" endtime="20210406 21:55:19.219"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>//*[@id="card-10"]/cui-card-body/cui-priv-block/div/div</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210406 19:24:09.174" endtime="20210406 19:24:09.253"/>
+<status status="PASS" starttime="20210406 21:55:19.219" endtime="20210406 21:55:19.290"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:09.254" level="INFO">Clicking element 'xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div'.</msg>
-<status status="PASS" starttime="20210406 19:24:09.254" endtime="20210406 19:24:09.560"/>
+<msg timestamp="20210406 21:55:19.291" level="INFO">Clicking element 'xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div'.</msg>
+<status status="PASS" starttime="20210406 21:55:19.291" endtime="20210406 21:55:19.450"/>
 </kw>
 <kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:09.561" endtime="20210406 19:24:13.570"/>
+<status status="PASS" starttime="20210406 21:55:19.450" endtime="20210406 21:55:23.451"/>
 </kw>
 <kw name="Switch Window" library="SeleniumLibrary">
 <arg>Print Management | Lexmark Cloud Services</arg>
 <doc>Switches to browser window matching ``locator``.</doc>
-<status status="PASS" starttime="20210406 19:24:13.570" endtime="20210406 19:24:14.222"/>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Print Management | Lexmark Cloud Services</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210406 19:24:14.280" level="INFO">Page title is 'Print Management | Lexmark Cloud Services'.</msg>
-<status status="PASS" starttime="20210406 19:24:14.222" endtime="20210406 19:24:14.280"/>
+<status status="PASS" starttime="20210406 21:55:23.451" endtime="20210406 21:55:23.733"/>
 </kw>
 <kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:14.280" endtime="20210406 19:24:19.292"/>
+<status status="PASS" starttime="20210406 21:55:23.733" endtime="20210406 21:55:28.751"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>id:link-navPrintQueue</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210406 19:24:19.292" endtime="20210406 19:24:19.361"/>
+<status status="PASS" starttime="20210406 21:55:28.751" endtime="20210406 21:55:28.817"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id:link-navPrintQueue</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:19.361" level="INFO">Clicking element 'id:link-navPrintQueue'.</msg>
-<status status="PASS" starttime="20210406 19:24:19.361" endtime="20210406 19:24:19.473"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>xpath://*[@id="printQueuePageHeaderDropDown_button"]/div</arg>
-<arg>${tab1name}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20210406 19:24:19.530" level="INFO">Element 'xpath://*[@id="printQueuePageHeaderDropDown_button"]/div' contains text 'Print Queue'.</msg>
-<status status="PASS" starttime="20210406 19:24:19.473" endtime="20210406 19:24:19.530"/>
+<msg timestamp="20210406 21:55:28.817" level="INFO">Clicking element 'id:link-navPrintQueue'.</msg>
+<status status="PASS" starttime="20210406 21:55:28.817" endtime="20210406 21:55:28.920"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${default_settings_btn}</var>
 <arg>printQueueDefaultPrintSettingsButton</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210406 19:24:19.531" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210406 19:24:19.530" endtime="20210406 19:24:19.531"/>
+<msg timestamp="20210406 21:55:28.922" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
+<status status="PASS" starttime="20210406 21:55:28.920" endtime="20210406 21:55:28.922"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${default_settings_btn}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210406 19:24:19.531" endtime="20210406 19:24:19.545"/>
+<status status="PASS" starttime="20210406 21:55:28.922" endtime="20210406 21:55:28.946"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${default_settings_btn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:19.545" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210406 19:24:19.545" endtime="20210406 19:24:19.667"/>
+<msg timestamp="20210406 21:55:28.947" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
+<status status="PASS" starttime="20210406 21:55:28.947" endtime="20210406 21:55:29.078"/>
 </kw>
 <kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:19.668" endtime="20210406 19:24:24.668"/>
+<status status="PASS" starttime="20210406 21:55:29.078" endtime="20210406 21:55:34.080"/>
 </kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210406 19:24:24.668" endtime="20210406 19:24:24.689"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>//*[@id="outputBin-listbox-item-printer"]</arg>
-<arg>aria-setsize</arg>
-<arg>14</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210406 19:24:24.705" level="INFO">Element '//*[@id="outputBin-listbox-item-printer"]' attribute 'aria-setsize' contains value '14'.</msg>
-<status status="PASS" starttime="20210406 19:24:24.689" endtime="20210406 19:24:24.705"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:24.705" endtime="20210406 19:24:28.715"/>
-</kw>
-<status status="PASS" starttime="20210406 19:23:50.418" endtime="20210406 19:24:28.715"/>
-</kw>
-<test id="s1-t1" name="Validation of Output Bin combobox setting Output Bin as Use printer setting">
-<kw name="Validation of Output Bin dropdown">
-<arg>outputBin</arg>
-<arg>outputBin-listbox-item-printer</arg>
-<arg>Use printer setting</arg>
 <kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
+<var>${default_title}</var>
+<arg>printSettingsBreadcrumb</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210406 19:24:28.715" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210406 19:24:28.715" endtime="20210406 19:24:28.715"/>
+<msg timestamp="20210406 21:55:34.080" level="INFO">${default_title} = printSettingsBreadcrumb</msg>
+<status status="PASS" starttime="20210406 21:55:34.080" endtime="20210406 21:55:34.080"/>
 </kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210406 21:55:34.080" endtime="20210406 21:55:39.095"/>
+</kw>
+<status status="PASS" starttime="20210406 21:55:03.340" endtime="20210406 21:55:39.095"/>
+</kw>
+<kw name="Increment Copy validation by 1 to 2">
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>20</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20210406 19:24:28.715" endtime="20210406 19:24:28.715"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:28.715" endtime="20210406 19:24:30.715"/>
+<status status="PASS" starttime="20210406 21:55:39.095" endtime="20210406 21:55:39.095"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${OUTPUT BIN}</arg>
+<arg>//*[@id="copies_increment"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:30.716" level="INFO">Clicking element 'outputBin'.</msg>
-<status status="PASS" starttime="20210406 19:24:30.715" endtime="20210406 19:24:30.829"/>
+<msg timestamp="20210406 21:55:39.095" level="INFO">Clicking element '//*[@id="copies_increment"]'.</msg>
+<status status="PASS" starttime="20210406 21:55:39.095" endtime="20210406 21:55:39.272"/>
 </kw>
 <kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:30.830" endtime="20210406 19:24:32.845"/>
+<status status="PASS" starttime="20210406 21:55:39.273" endtime="20210406 21:55:41.286"/>
+</kw>
+<kw name="Textfield Should Contain" library="SeleniumLibrary">
+<arg>//*[@id="copies_input"]</arg>
+<arg>2</arg>
+<doc>Verifies text field ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210406 21:55:41.349" level="INFO">Text field '//*[@id="copies_input"]' contains text '2'.</msg>
+<status status="PASS" starttime="20210406 21:55:41.286" endtime="20210406 21:55:41.349"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${OUTPUT BIN CONTROL}</arg>
+<arg>//*[@id="id-11"]/div/div[1]/p</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:32.845" level="INFO">Clicking element 'outputBin-listbox-item-printer'.</msg>
-<status status="PASS" starttime="20210406 19:24:32.845" endtime="20210406 19:24:32.991"/>
+<msg timestamp="20210406 21:55:41.349" level="INFO">Clicking element '//*[@id="id-11"]/div/div[1]/p'.</msg>
+<status status="PASS" starttime="20210406 21:55:41.349" endtime="20210406 21:55:41.425"/>
 </kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:32.991" endtime="20210406 19:24:35.008"/>
+<status status="PASS" starttime="20210406 21:55:39.095" endtime="20210406 21:55:41.426"/>
+</kw>
+<kw name="Validation of Confirmation dialog by Discarding">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210406 21:55:41.427" endtime="20210406 21:55:41.430"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:link-navPrintQueue</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210406 21:55:41.431" level="INFO">Clicking element 'id:link-navPrintQueue'.</msg>
+<status status="PASS" starttime="20210406 21:55:41.430" endtime="20210406 21:55:41.573"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:confirmation-modal_modalHeader</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210406 21:55:41.573" endtime="20210406 21:55:41.841"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>id:confirmation-modal_modalHeader</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210406 21:55:41.842" endtime="20210406 21:55:41.871"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
+<arg>confirmation-modal_okButton</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:35.008" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210406 19:24:35.008" endtime="20210406 19:24:35.224"/>
+<msg timestamp="20210406 21:55:41.871" level="INFO">Clicking button 'confirmation-modal_okButton'.</msg>
+<status status="PASS" starttime="20210406 21:55:41.871" endtime="20210406 21:55:42.353"/>
 </kw>
 <kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:35.225" endtime="20210406 19:24:39.236"/>
+<status status="PASS" starttime="20210406 21:55:42.353" endtime="20210406 21:55:46.354"/>
 </kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210406 19:24:39.237" endtime="20210406 19:24:39.271"/>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210406 21:55:46.354" endtime="20210406 21:55:50.366"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
+<arg>printQueueDefaultPrintSettingsButton</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:39.271" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210406 19:24:39.271" endtime="20210406 19:24:39.436"/>
+<msg timestamp="20210406 21:55:50.366" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
+<status status="PASS" starttime="20210406 21:55:50.366" endtime="20210406 21:55:50.530"/>
 </kw>
 <kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:39.436" endtime="20210406 19:24:44.438"/>
+<status status="PASS" starttime="20210406 21:55:50.530" endtime="20210406 21:55:55.537"/>
+</kw>
+<kw name="Textfield Should Contain" library="SeleniumLibrary">
+<arg>//*[@id="copies_input"]</arg>
+<arg>1</arg>
+<doc>Verifies text field ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210406 21:55:55.606" level="INFO">Text field '//*[@id="copies_input"]' contains text '1'.</msg>
+<status status="PASS" starttime="20210406 21:55:55.537" endtime="20210406 21:55:55.606"/>
+</kw>
+<status status="PASS" starttime="20210406 21:55:41.426" endtime="20210406 21:55:55.606"/>
+</kw>
+<kw name="Validation of Confirmation Dialog by Saving Changes">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210406 21:55:55.606" endtime="20210406 21:55:55.606"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="copies_increment"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210406 21:55:55.606" level="INFO">Clicking element '//*[@id="copies_increment"]'.</msg>
+<status status="PASS" starttime="20210406 21:55:55.606" endtime="20210406 21:55:55.766"/>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210406 21:55:55.766" endtime="20210406 21:55:57.776"/>
+</kw>
+<kw name="Textfield Should Contain" library="SeleniumLibrary">
+<arg>//*[@id="copies_input"]</arg>
+<arg>2</arg>
+<doc>Verifies text field ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210406 21:55:57.845" level="INFO">Text field '//*[@id="copies_input"]' contains text '2'.</msg>
+<status status="PASS" starttime="20210406 21:55:57.776" endtime="20210406 21:55:57.845"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:link-navPrintQueue</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210406 21:55:57.845" level="INFO">Clicking element 'id:link-navPrintQueue'.</msg>
+<status status="PASS" starttime="20210406 21:55:57.845" endtime="20210406 21:55:57.933"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:confirmation-modal_modalHeader</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210406 21:55:57.933" endtime="20210406 21:55:58.203"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
+<arg>id:confirmation-modal_modalHeader</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210406 19:24:44.438" endtime="20210406 19:24:44.469"/>
+<status status="PASS" starttime="20210406 21:55:58.203" endtime="20210406 21:55:58.230"/>
 </kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${OUTPUT BIN CONTROL}</arg>
-<arg>title</arg>
-<arg>${OUTPUT BIN NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210406 19:24:44.500" level="INFO">Element 'outputBin-listbox-item-printer' attribute 'title' contains value 'Use printer setting'.</msg>
-<status status="PASS" starttime="20210406 19:24:44.469" endtime="20210406 19:24:44.500"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>confirmation-modal_cancelButton</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210406 21:55:58.231" level="INFO">Clicking button 'confirmation-modal_cancelButton'.</msg>
+<status status="PASS" starttime="20210406 21:55:58.230" endtime="20210406 21:55:58.477"/>
 </kw>
-<status status="PASS" starttime="20210406 19:24:28.715" endtime="20210406 19:24:44.500"/>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210406 21:55:58.480" endtime="20210406 21:56:02.494"/>
 </kw>
-<status status="PASS" starttime="20210406 19:24:28.715" endtime="20210406 19:24:44.516"/>
+<kw name="Textfield Should Contain" library="SeleniumLibrary">
+<arg>//*[@id="copies_input"]</arg>
+<arg>2</arg>
+<doc>Verifies text field ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20210406 21:56:02.532" level="INFO">Text field '//*[@id="copies_input"]' contains text '2'.</msg>
+<status status="PASS" starttime="20210406 21:56:02.494" endtime="20210406 21:56:02.532"/>
+</kw>
+<status status="PASS" starttime="20210406 21:55:55.606" endtime="20210406 21:56:02.532"/>
+</kw>
+<kw name="Log Out Close Browsers">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210406 21:56:02.532" endtime="20210406 21:56:02.532"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210406 21:56:02.532" endtime="20210406 21:56:07.532"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${usermenu}</var>
+<arg>userMenu</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210406 21:56:07.532" level="INFO">${usermenu} = userMenu</msg>
+<status status="PASS" starttime="20210406 21:56:07.532" endtime="20210406 21:56:07.533"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${logout}</var>
+<arg>link-logout</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210406 21:56:07.533" level="INFO">${logout} = link-logout</msg>
+<status status="PASS" starttime="20210406 21:56:07.533" endtime="20210406 21:56:07.533"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${usermenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210406 21:56:07.534" level="INFO">Clicking element 'userMenu'.</msg>
+<status status="PASS" starttime="20210406 21:56:07.533" endtime="20210406 21:56:07.615"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${logout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210406 21:56:07.616" endtime="20210406 21:56:07.645"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210406 21:56:07.645" endtime="20210406 21:56:11.652"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210406 21:56:11.652" level="INFO">Clicking element 'link-logout'.</msg>
+<status status="PASS" starttime="20210406 21:56:11.652" endtime="20210406 21:56:11.767"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210406 21:56:11.767" endtime="20210406 21:56:16.789"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210406 21:56:16.789" endtime="20210406 21:56:19.291"/>
+</kw>
+<status status="PASS" starttime="20210406 21:56:02.532" endtime="20210406 21:56:19.291"/>
+</kw>
+<status status="PASS" starttime="20210406 21:55:03.340" endtime="20210406 21:56:19.291"/>
 </test>
-<test id="s1-t2" name="Validation of Output Bin combobox setting Output Bin as Standard bin">
-<kw name="Validation of Output Bin dropdown">
-<arg>outputBin</arg>
-<arg>outputBin-listbox-item-upper</arg>
-<arg>Standard bin</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210406 19:24:44.516" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210406 19:24:44.516" endtime="20210406 19:24:44.516"/>
-</kw>
-<kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<arg>20</arg>
-<doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20210406 19:24:44.516" endtime="20210406 19:24:44.522"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:44.522" endtime="20210406 19:24:46.524"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${OUTPUT BIN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:46.524" level="INFO">Clicking element 'outputBin'.</msg>
-<status status="PASS" starttime="20210406 19:24:46.524" endtime="20210406 19:24:46.673"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:46.673" endtime="20210406 19:24:48.683"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${OUTPUT BIN CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:48.683" level="INFO">Clicking element 'outputBin-listbox-item-upper'.</msg>
-<status status="PASS" starttime="20210406 19:24:48.683" endtime="20210406 19:24:48.833"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:48.833" endtime="20210406 19:24:50.838"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:50.838" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210406 19:24:50.838" endtime="20210406 19:24:51.053"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:51.053" endtime="20210406 19:24:55.074"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210406 19:24:55.074" endtime="20210406 19:24:55.090"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210406 19:24:55.090" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210406 19:24:55.090" endtime="20210406 19:24:55.209"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:24:55.210" endtime="20210406 19:25:00.212"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210406 19:25:00.212" endtime="20210406 19:25:00.243"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${OUTPUT BIN CONTROL}</arg>
-<arg>title</arg>
-<arg>${OUTPUT BIN NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210406 19:25:00.258" level="INFO">Element 'outputBin-listbox-item-upper' attribute 'title' contains value 'Standard bin'.</msg>
-<status status="PASS" starttime="20210406 19:25:00.243" endtime="20210406 19:25:00.258"/>
-</kw>
-<status status="PASS" starttime="20210406 19:24:44.516" endtime="20210406 19:25:00.258"/>
-</kw>
-<status status="PASS" starttime="20210406 19:24:44.516" endtime="20210406 19:25:00.258"/>
-</test>
-<test id="s1-t3" name="Validation of Output Bin combobox setting Output Bin as Bin 1">
-<kw name="Validation of Output Bin dropdown">
-<arg>outputBin</arg>
-<arg>outputBin-listbox-item-optionaloutbin1</arg>
-<arg>Bin 1</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210406 19:25:00.258" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210406 19:25:00.258" endtime="20210406 19:25:00.258"/>
-</kw>
-<kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<arg>20</arg>
-<doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20210406 19:25:00.258" endtime="20210406 19:25:00.274"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:25:00.274" endtime="20210406 19:25:02.280"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${OUTPUT BIN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210406 19:25:02.280" level="INFO">Clicking element 'outputBin'.</msg>
-<status status="PASS" starttime="20210406 19:25:02.280" endtime="20210406 19:25:02.427"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:25:02.428" endtime="20210406 19:25:04.440"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${OUTPUT BIN CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210406 19:25:04.440" level="INFO">Clicking element 'outputBin-listbox-item-optionaloutbin1'.</msg>
-<status status="PASS" starttime="20210406 19:25:04.440" endtime="20210406 19:25:04.561"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:25:04.562" endtime="20210406 19:25:06.563"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210406 19:25:06.563" level="INFO">Clicking button 'saveChangesButton'.</msg>
-<status status="PASS" starttime="20210406 19:25:06.563" endtime="20210406 19:25:06.686"/>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:25:06.686" endtime="20210406 19:25:10.693"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210406 19:25:10.693" endtime="20210406 19:25:10.715"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${default_settings_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210406 19:25:10.715" level="INFO">Clicking button 'printQueueDefaultPrintSettingsButton'.</msg>
-<status status="PASS" starttime="20210406 19:25:10.715" endtime="20210406 19:25:10.822"/>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:25:10.823" endtime="20210406 19:25:15.826"/>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>saveChangesButton</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210406 19:25:15.826" endtime="20210406 19:25:15.833"/>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<arg>${OUTPUT BIN CONTROL}</arg>
-<arg>title</arg>
-<arg>${OUTPUT BIN NAME}</arg>
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<msg timestamp="20210406 19:25:15.849" level="INFO">Element 'outputBin-listbox-item-optionaloutbin1' attribute 'title' contains value 'Bin 1'.</msg>
-<status status="PASS" starttime="20210406 19:25:15.833" endtime="20210406 19:25:15.849"/>
-</kw>
-<status status="PASS" starttime="20210406 19:25:00.258" endtime="20210406 19:25:15.849"/>
-</kw>
-<status status="PASS" starttime="20210406 19:25:00.258" endtime="20210406 19:25:15.849"/>
-</test>
-<test id="s1-t4" name="Validation of Output Bin combobox setting Output Bin as Bin 2">
-<kw name="Validation of Output Bin dropdown">
-<arg>outputBin</arg>
-<arg>outputBin-listbox-item-optionaloutbin2</arg>
-<arg>Bin 2</arg>
-<kw name="Set Variable" library="BuiltIn">
-<var>${default_settings_btn}</var>
-<arg>printQueueDefaultPrintSettingsButton</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210406 19:25:15.849" level="INFO">${default_settings_btn} = printQueueDefaultPrintSettingsButton</msg>
-<status status="PASS" starttime="20210406 19:25:15.849" endtime="20210406 19:25:15.849"/>
-</kw>
-<kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<arg>20</arg>
-<doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20210406 19:25:15.849" endtime="20210406 19:25:15.849"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:25:15.849" endtime="20210406 19:25:17.855"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${OUTPUT BIN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210406 19:25:17.855" level="INFO">Clicking element 'outputBin'.</msg>
-<status status="PASS" starttime="20210406 19:25:17.855" endtime="20210406 19:25:18.000"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:25:18.000" endtime="20210406 19:25:20.002"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${OUTPUT BIN CONTROL}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210406 19:25:20.002" level="INFO">Clicking element 'outputBin-listbox-item-optionaloutbin2'.</msg>
-<status status="PASS" starttime="20210406 19:25:20.002" endtime="20210406 19:25:20.134"/>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210406 19:25:20.134" endtime="20210406 19:25:22.146"/>
+<status status="PASS" starttime="20210406 21:55:02.284" endtime="20210406 21:56:19.291"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="WebUpload CPM TC9 DiscardChanges">WebUpload CPM TC9 DiscardChanges</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

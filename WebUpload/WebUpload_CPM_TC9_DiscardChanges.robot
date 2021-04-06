@@ -4,7 +4,7 @@ Library     CloudLogin.py
 
 *** Variables ***
 #${URL}                    https://dev.us.cloud.onelxk.co
-#${BROWSER}                      headlessChrome
+#${BROWSER}                      Chrome
 #${USER}                     sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
@@ -77,7 +77,6 @@ Open Browser To Login Page
 #Check Print Queue Opens and check Text
     Wait until Element Is Visible   id:link-navPrintQueue
     Click Element   id:link-navPrintQueue
-    element should contain  xpath://*[@id="printQueuePageHeaderDropDown_button"]/div   ${tab1name}
 
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     wait until page contains element   ${default_settings_btn}
@@ -98,11 +97,10 @@ Increment Copy validation by 1 to 2
 Validation of Confirmation dialog by Discarding
     set selenium timeout    20
     Click Element   id:link-navPrintQueue
-    wait until element is visible       //*[@id="confirmation-modal"]/div[2]/div[1]
-    wait until page contains element    //*[@id="confirmation-modal"]/div[2]/div[1]
+    wait until element is visible       id:confirmation-modal_modalHeader
+    wait until page contains element    id:confirmation-modal_modalHeader
     click button        confirmation-modal_okButton
     sleep_call_2
-    element should contain  xpath://*[@id="printQueuePageHeaderDropDown_button"]/div   ${tab1name}
     sleep_call_2
     click button    printQueueDefaultPrintSettingsButton
     sleep_call
@@ -114,8 +112,8 @@ Validation of Confirmation Dialog by Saving Changes
     sleep_call_1
     textfield should contain    //*[@id="copies_input"]  2
     Click Element   id:link-navPrintQueue
-    wait until element is visible       //*[@id="confirmation-modal"]/div[2]/div[1]
-    wait until page contains element    //*[@id="confirmation-modal"]/div[2]/div[1]
+    wait until element is visible       id:confirmation-modal_modalHeader
+    wait until page contains element    id:confirmation-modal_modalHeader
     click button        confirmation-modal_cancelButton
     sleep_call_2
     textfield should contain    //*[@id="copies_input"]  2
