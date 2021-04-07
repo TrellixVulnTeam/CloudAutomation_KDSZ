@@ -4,10 +4,10 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 
 
 *** Keywords ***
@@ -73,18 +73,20 @@ Check Adding Valid and Duplicate Delegates
     element should be disabled      ${btn_delegate_remove}
     ${dummy_click}      set variable        delegatesBreadcrumb
     sleep_call_2
+    wait until page contains element    ${chk_delegate_delete}
     click element     ${chk_delegate_delete}
     sleep_call_2
     click element   ${dummy_click}
     element should be enabled      ${btn_delegate_remove}
+    wait until page contains element    ${btn_delegate_remove}
     click button    ${btn_delegate_remove}
     sleep_call_2
 
     element text should be      ${lbl_delete_delegate}     Remove Delegates
 
-    element should be enabled   ${btn_delegate_delete_cancel}
-    element should be enabled   ${btn_delegate_delete_ok}
-    element should be focused   ${btn_delegate_delete_cancel}
+    #element should be enabled   ${btn_delegate_delete_cancel}
+    #element should be enabled   ${btn_delegate_delete_ok}
+    #element should be focused   ${btn_delegate_delete_cancel}
 
     click button    ${btn_delegate_delete_ok}
     sleep_call_2

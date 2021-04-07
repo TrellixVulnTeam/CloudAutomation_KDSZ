@@ -4,10 +4,10 @@ Variables    ../PageObjects/Locators.py
 #Library     DataDriver  ../TestData/Win_Custom_Package.xlsx
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${PACKAGE NAME}                 customPackage.zip
 ${message}                      Pass
 ${messagefail}                  Fail

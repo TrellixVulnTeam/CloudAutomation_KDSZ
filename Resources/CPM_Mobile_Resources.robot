@@ -5,10 +5,10 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-#${URL}                   https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                   https://dev.us.cloud.onelxk.co/
+${BROWSER}                      headlessChrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${mobile_job}                   mobile.doc
 
 *** Keywords ***
@@ -61,7 +61,10 @@ Mobile submission
     element attribute value should be      //*[@id="documents-row-0-client"]/lpm-source-renderer/div     title        Mobile
 
     #element text should be     //*[@id="documents-row-0-client"]/lpm-source-renderer/div      Mobile
-
+    sleep_call
+    reload page
+    sleep_call
+    sleep_call
     element text should be      ${email_job1_status}        Ready
 
 #Call the Print Device Automation Python script for releasing the first job
