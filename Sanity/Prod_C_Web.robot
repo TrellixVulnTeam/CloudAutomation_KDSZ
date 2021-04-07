@@ -32,7 +32,7 @@ Verify portal upload using ${TEST CASE}
 
 *** Keywords ***
 Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}
 
 #Maximise Browser
     Maximize Browser Window
