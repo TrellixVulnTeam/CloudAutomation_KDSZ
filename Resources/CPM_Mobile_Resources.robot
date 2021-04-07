@@ -5,10 +5,10 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-${URL}                   https://dev.us.cloud.onelxk.co/
-${BROWSER}                      headlessChrome
-${USER}                     sravantesh.neogi@lexmark.com
-${PASSWORD}                     Password@1234
+#${URL}                   https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      headlessChrome
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 ${mobile_job}                   mobile.doc
 
 *** Keywords ***

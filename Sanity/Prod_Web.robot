@@ -8,10 +8,10 @@ Test Template   Change Default Settings
 Suite Teardown     Log Out Close Browsers
 
 *** Variables ***
-${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
-${username}                     sravantesh.neogi@lexmark.com
-${password}                     Password@1234
+#${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${username}                     sravantesh.neogi@lexmark.com
+#${password}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${tab1name}                     Print Queue

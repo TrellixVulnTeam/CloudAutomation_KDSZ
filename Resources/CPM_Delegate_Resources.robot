@@ -4,10 +4,10 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-${URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
-${USER}                     sravantesh.neogi@lexmark.com
-${PASSWORD}                     Password@1234
+#${URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 
 
 *** Keywords ***
