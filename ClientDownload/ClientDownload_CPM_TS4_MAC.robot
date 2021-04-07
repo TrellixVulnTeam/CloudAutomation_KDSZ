@@ -74,8 +74,8 @@ Download MAC Default Packages
 
 #Click CPM and verify Page Opens
     sleep_call
-    Wait Until Element Is Visible   xpath://*[@id="card-12"]/cui-card-body/cui-priv-block/div/div
-    Click Element   xpath://*[@id="card-12"]/cui-card-body/cui-priv-block/div/div
+    Wait Until Element Is Visible   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
+    Click Element   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
