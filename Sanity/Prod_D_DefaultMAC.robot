@@ -13,7 +13,6 @@ Suite Teardown     Log out
 #${BROWSER}                      Chrome
 #${USER}                     sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
-${CPM_URL}                      https://qa.us.iss.lexmark.com/cpm
 
 *** Test Cases ***
 Verify Default Client Download packge for MAC ${NAME}
@@ -74,8 +73,8 @@ Download MAC Default Packages
 
 #Click CPM and verify Page Opens
     sleep_call
-    Wait Until Element Is Visible   xpath://*[@id="card-12"]/cui-card-body/cui-priv-block/div/div
-    Click Element   xpath://*[@id="card-12"]/cui-card-body/cui-priv-block/div/div
+    Wait Until Element Is Visible   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
+    Click Element   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
