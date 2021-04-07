@@ -32,6 +32,7 @@ Verify portal upload using ${TEST CASE}
 
 *** Keywords ***
 Open Browser To Login Page
+    set selenium timeout    20
     Open Browser    ${LOGIN URL}    ${BROWSER}
 
 #Maximise Browser
@@ -94,7 +95,7 @@ Open Browser To Login Page
 
 Change Default Settings
     [Arguments]        ${FILE PATH}     ${FILE NAME}       ${DUPLEX VALUE}     ${DUPLEX STRING}       ${NUP VALUE}         ${NUP STRING}       ${COPIES VALUE}        ${COLOR VALUE}       ${COLOR STRING}
-
+    set selenium timeout    20
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
     click button    ${default_settings_btn}
