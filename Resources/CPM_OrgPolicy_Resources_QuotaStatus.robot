@@ -117,43 +117,56 @@ Check Quota Status
     reload page
     sleep_call_2
     reload page
-    wait until element is visible   ${header_quota_preview}
-    sleep_call
-    element text should be      ${header_quota_preview}     Quota remaining: ${total} total quota (${color} for color printing)
-
+    wait until page contains element    ${lbl_quotausername}
     element should contain      ${lbl_quotausername}       ${USER}
     element should contain      ${lbl_totalquotaremaining}    ${total}
     element should contain      ${lbl_colorquotaremaining}     ${color}
     element attribute value should be      ${icon_condition}     class   glyphicon icon-valid text-primary
+    sleep_call_2
+    click element   ${name_printqueue}
+    wait until element is visible   ${header_quota_preview}
+    sleep_call
+    element text should be      ${header_quota_preview}     Quota remaining: ${total} total quota (${color} for color printing)
+
     #element attribute value should be      ${icon_condition}     class   glyphicon icon-warning text-warning
 
-#    ${total}    ${color}=   quota_yellow
-#    reload page
-#    sleep_call_2
-#    reload page
-#    wait until element is visible   ${header_quota_preview}
-#    sleep_call
-#    element text should be      ${header_quota_preview}     Quota remaining: ${total} total quota (${color} for color printing)
-#
-#    element should contain      ${lbl_quotausername}       ${USER}
-#    element should contain      ${lbl_totalquotaremaining}    ${total}
-#    element should contain      ${lbl_colorquotaremaining}     ${color}
-#    #element attribute value should be      ${icon_condition}     class   glyphicon icon-valid text-primary
-#    element attribute value should be      ${icon_condition}     class   glyphicon icon-warning text-warning
-#
-#    ${total}    ${color}=   quota_red
-#    reload page
-#    sleep_call_2
-#    reload page
-#    wait until element is visible   ${header_quota_preview}
-#    sleep_call
-#    element text should be      ${header_quota_preview}     Quota remaining: ${total} total quota (${color} for color printing)
-#
-#    element should contain      ${lbl_quotausername}       ${USER}
-#    element should contain      ${lbl_totalquotaremaining}    ${total}
-#    element should contain      ${lbl_colorquotaremaining}     ${color}
-#    #element attribute value should be      ${icon_condition}     class   glyphicon icon-valid text-primary
-#    element attribute value should be      ${icon_condition}     class   glyphicon icon-notify_alert text-danger
+    run keyword     Open Quota Status Page
+    wait until page contains             User Quota Status
+
+    ${total}    ${color}=   quota_yellow
+    reload page
+    sleep_call_2
+    reload page
+    wait until page contains element    ${lbl_quotausername}
+    element should contain      ${lbl_quotausername}       ${USER}
+    element should contain      ${lbl_totalquotaremaining}    ${total}
+    element should contain      ${lbl_colorquotaremaining}     ${color}
+    #element attribute value should be      ${icon_condition}     class   glyphicon icon-valid text-primary
+    element attribute value should be      ${icon_condition}     class   glyphicon icon-warning text-warning
+    sleep_call_2
+    click element   ${name_printqueue}
+    wait until element is visible   ${header_quota_preview}
+    sleep_call
+    element text should be      ${header_quota_preview}     Quota remaining: ${total} total quota (${color} for color printing)
+
+    run keyword     Open Quota Status Page
+    wait until page contains             User Quota Status
+    ${total}    ${color}=   quota_red
+    reload page
+    sleep_call_2
+    reload page
+
+    wait until page contains element    ${lbl_quotausername}
+    element should contain      ${lbl_quotausername}       ${USER}
+    element should contain      ${lbl_totalquotaremaining}    ${total}
+    element should contain      ${lbl_colorquotaremaining}     ${color}
+    #element attribute value should be      ${icon_condition}     class   glyphicon icon-valid text-primary
+    element attribute value should be      ${icon_condition}     class   glyphicon icon-notify_alert text-danger
+    sleep_call_2
+    click element   ${name_printqueue}
+    wait until element is visible   ${header_quota_preview}
+    sleep_call
+    element text should be      ${header_quota_preview}     Quota remaining: ${total} total quota (${color} for color printing)
 
     # all browsers
 
