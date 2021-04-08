@@ -9,10 +9,10 @@ Test Template   Download Default Packages for Windows
 Suite Teardown     Log out
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co
-#${BROWSER}                      Chrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co
+${BROWSER}                      headlessChrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${CPM_URL}                      https://dev.us.cloud.onelxk.co
 
 *** Test Cases ***
@@ -22,6 +22,7 @@ Verify Default Client Download packge for Windows ${NAME}
 *** Keywords ***
 #Open Browser To Login Page
 Download Default Packages for Windows
+
     Open Browser    ${URL}    ${BROWSER}
 
 #Maximise Browser
@@ -89,7 +90,7 @@ Download Default Packages for Windows
 
 #Download Default Packages for Windows
     [Arguments]        ${NAME}     ${LINK}      ${PACKAGE NAME}
-
+    set selenium timeout    20
     ${download_btn}     set variable    win_download_btn
     ${download_list}    set variable    windowsPackageType
 
@@ -104,7 +105,7 @@ Download Default Packages for Windows
     #sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
-    wait until page contains element    ${logout}
+    wait until page contains element    ${usermenu}
     click element   ${usermenu}
     wait until page contains element    ${logout}
     sleep_call_2
