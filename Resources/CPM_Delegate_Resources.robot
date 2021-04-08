@@ -48,7 +48,9 @@ Check Adding Valid and Duplicate Delegates
     input text      ${txt_delegate_input}    ${EMAIL USER}
     wait until element is visible   ${lst_delegate}
     element should be visible   ${lst_delegate}
-    element should contain      ${lst_delegate}       ${EMAIL USER}
+    #sleep_call_2
+    wait until element contains  ${lst_delegate}       ${EMAIL USER}
+    #element should contain      ${lst_delegate}       ${EMAIL USER}
     Press Keys    ${lst_delegate}    ENTER
     sleep_call_2
     element should be enabled   ${dlg_btn_delegate_add}
