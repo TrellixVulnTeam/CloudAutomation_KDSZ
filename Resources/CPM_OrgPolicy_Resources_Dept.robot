@@ -218,9 +218,7 @@ Set Color Controls
     run keyword     Set Quota Assignment for Department
     run keyword     Delete Quota
     run keyword     Check Quota Assignment is removed
-    run keyword     Open Organisational Policy Page
-    run keyword     Select Department or Personal
-    run keyword     Open Quota Definition Page
+
 
 Delete Quota
     sleep_call
@@ -244,9 +242,7 @@ Set Disable Print
     run keyword     Set Quota Assignment for Department
     run keyword     Delete Quota
     run keyword     Check Quota Assignment is removed
-    run keyword     Open Organisational Policy Page
-    run keyword     Select Department or Personal
-    run keyword     Open Quota Definition Page
+
 
 Set Custom Color
     click element   ${txt_color_value}
