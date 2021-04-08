@@ -16,8 +16,8 @@ def quota_green():
         username) + "\",\r\n  \"password\": \"" + str(password) + "\"\r\n}"
     headers = {'Content-Type': 'application/json'}
     response = requests.request("POST", auth_url, headers=headers, data=payload)
-    print(response.status_code)
-    print(response.content)
+    #print(response.status_code)
+    #print(response.content)
     json_response = json.loads(response.content)
 
     # Get Access token
@@ -167,8 +167,8 @@ def quota_yellow():
         username) + "\",\r\n  \"password\": \"" + str(password) + "\"\r\n}"
     headers = {'Content-Type': 'application/json'}
     response = requests.request("POST", auth_url, headers=headers, data=payload)
-    print(response.status_code)
-    print(response.content)
+    #print(response.status_code)
+    #print(response.content)
     json_response = json.loads(response.content)
 
     # Get Access token
@@ -316,8 +316,8 @@ def quota_red():
         username) + "\",\r\n  \"password\": \"" + str(password) + "\"\r\n}"
     headers = {'Content-Type': 'application/json'}
     response = requests.request("POST", auth_url, headers=headers, data=payload)
-    print(response.status_code)
-    print(response.content)
+    #print(response.status_code)
+    #print(response.content)
     json_response = json.loads(response.content)
 
     # Get Access token
