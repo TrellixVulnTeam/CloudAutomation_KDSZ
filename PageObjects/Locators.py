@@ -10,7 +10,7 @@ lnk_cpm_nonadmin="xpath://*[@id='card-14']/cui-card-body/cui-priv-block/div/div"
 
 name_printqueue = "id:link-navPrintQueue"
 
-txt_nojob= "xpath://*[@id='documents']/ag-grid-angular/div/div[1]/div/div[6]/div/div/span"
+txt_nojob= "id:documents-row-0-id"
 
 job_name="id:document_link_0"
 job_status= "id:documents-row-0-documentStatus"

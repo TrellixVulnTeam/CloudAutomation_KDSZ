@@ -46,7 +46,7 @@ Check Adding Valid and Duplicate Delegates
     element should be enabled   ${dlg_btn_delegate_cancel}
     click element   ${txt_delegate_email}
     input text      ${txt_delegate_input}    ${EMAIL USER}
-    sleep_call_2
+    wait until element is visible   ${lst_delegate}
     element should be visible   ${lst_delegate}
     element should contain      ${lst_delegate}       ${EMAIL USER}
     Press Keys    ${lst_delegate}    ENTER

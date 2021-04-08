@@ -73,7 +73,7 @@ Download Default Packages for Windows
    go to   ${URL}
 
 #Click CPM and verify Page Opens
-    sleep_call
+    #sleep_call
     Wait Until Element Is Visible   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
     Click Element   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
     sleep_call_2
@@ -101,9 +101,10 @@ Download Default Packages for Windows
     sleep_call_2
     click button    ${download_btn}
     sleep_call_2
-    sleep_call
+    #sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
+    wait until page contains element    ${logout}
     click element   ${usermenu}
     wait until page contains element    ${logout}
     sleep_call_2

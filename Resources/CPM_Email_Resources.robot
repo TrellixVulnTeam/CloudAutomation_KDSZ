@@ -42,14 +42,13 @@ Email submission with
     sleep_call_2
     ${joblist}=     run keyword and return status   element text should be      ${txt_nojob}     No data available
     run keyword if  ${joblist}   reload page
-    sleep_call
+    wait until page contains element    ${email_job1_status}
     ${pagestatus}=  run keyword and return status   element text should be  ${email_job1_status}  Processing
     run keyword if  ${pagestatus}   reload page
-    sleep_call
+    wait until page contains element    ${email_job2_status}
     ${pagestatus}=  run keyword and return status   element text should be  ${email_job2_status}  Processing
     run keyword if  ${pagestatus}   reload page
 
-    sleep_call
     Wait until Element Is Visible   ${name_printqueue}
     #click element   ${name_printqueue}
     wait until element is visible       ${tbl_printqueue}
@@ -73,24 +72,22 @@ Email submission with
     log     {print_job_status}
 
     sleep_call
-    sleep_call
+
 
 #Check Print Job History table
     Switch Window       Print Management | Lexmark Cloud Services
     Title Should Be     Print Management | Lexmark Cloud Services
     reload page
-    sleep_call
-    Title Should Be     Print Management | Lexmark Cloud Services
-    sleep_call
     Wait until Element Is Visible   ${name_printqueue}
+    wait until page does not contain element    ${FILENAME}
     sleep_call_2
     click element   link-navJobHistory
-    sleep_call_2
-    #page should contain
+    wait until page contains    Print Job History
     reload page
-    sleep_call
-    sleep_call
+    wait until page contains    Print Job History
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
+    wait until element contains     ${print_job_name1}     ${FILENAME}
+
 
     element text should be      ${print_job_name1}     ${FILENAME}
     sleep_call_2
@@ -110,16 +107,15 @@ Email submission with
     Switch Window       Print Management | Lexmark Cloud Services
     Title Should Be     Print Management | Lexmark Cloud Services
     reload page
-    Title Should Be     Print Management | Lexmark Cloud Services
-    sleep_call
     Wait until Element Is Visible   ${name_printqueue}
+    wait until page does not contain element    Test Mail.html
     sleep_call_2
     click element   link-navJobHistory
+    wait until page contains    Print Job History
     reload page
-    sleep_call
-    sleep_call
-    #page should contain
+    wait until page contains    Print Job History
     ${print_job_name}   set variable    dataGridMyPrintJobsId-row-0-jobName
+    wait until element contains     ${print_job_name}     ${FILENAME}
 
     element text should be      ${print_job_name}     Test Mail.html
     sleep_call_2
