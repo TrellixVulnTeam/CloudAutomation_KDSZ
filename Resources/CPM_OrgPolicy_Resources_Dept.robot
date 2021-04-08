@@ -282,7 +282,8 @@ Set Quota Assignment for Department
     sleep_call_2
     click button    ${btn_vary_ok}
     sleep_call
-    wait until element is visible   ${tbl_costcenter_quota}
+    #wait until element is visible   ${tbl_costcenter_quota}
+    wait until element is visible   ${tbl_costcenter_quota_name}
     element text should be      ${tbl_costcenter_quota_name}    ${quota_name}
 
     sleep_call_1
