@@ -240,5 +240,10 @@ tbl_email_quota_name="id:userAssignmentGrid-row-0-quotaDefinition.name"
 
 email_quota_link="xpath://*[@id='userAssignmentGrid-row-0-quotaDefinition.name']/lpm-definition-summary-renderer"
 
+lbl_quota_status="id:link-navAdminDropdownUserQuotaStatus"
+lbl_totalquotaremaining="id:quotaStatusGrid-row-0-totalQuotaRemaining"
+lbl_colorquotaremaining="id:quotaStatusGrid-row-0-colorQuotaRemaining"
+icon_condition="xpath://*[@id='quotaStatusGrid-row-0-condition']/lpm-quota-condition-renderer/div/cui-icon"
+lbl_quotausername="id:quotaStatusGrid-row-0-identityEmail"
 
 
