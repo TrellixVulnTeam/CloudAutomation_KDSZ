@@ -108,9 +108,8 @@ Create Custom quota monthly
     Set Global Variable   ${quota_interval_value}
     Set Global Variable   ${quota_total_value}
 
+    wait until page contains element  ${btn_create_quota}
 
-    sleep_call
-    sleep_call
     click element    ${btn_create_quota}
     sleep_call_2
     clear element text  ${txt_quotaname}

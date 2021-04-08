@@ -5,7 +5,7 @@ Variables    ../PageObjects/Locators.py
 
 *** Variables ***
 ${URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
+${BROWSER}                      headlessChrome
 ${USER}                     sravantesh.neogi@lexmark.com
 ${PASSWORD}                     Password@1234
 ${username_nonadmin}            automateuser@test.onelxk.co
@@ -185,8 +185,8 @@ Create Custom quota vary
     Set Global Variable   ${monthly_color_id}
     Set Global Variable   ${monthly_color_value}
 
-    sleep_call
-    sleep_call
+    wait until page contains element  ${btn_create_quota}
+
     click element    ${btn_create_quota}
     sleep_call_2
     clear element text  ${txt_quotaname}
