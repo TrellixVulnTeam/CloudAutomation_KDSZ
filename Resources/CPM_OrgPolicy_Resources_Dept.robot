@@ -53,8 +53,8 @@ Open Browser To Login Page using non admin disable
     sleep_call_2
     Click Element   ${lnk_cpm_quotauser}
     sleep_call_2
-    Switch Window       Print Management | Lexmark Cloud Services
-    sleep_call
+    #Switch Window       Print Management | Lexmark Cloud Services
+    wait until element is visible   ${header_quota_preview}
     element text should be      ${header_quota_preview}     Quota remaining: Printing disabled
     close all browsers
 
@@ -71,7 +71,8 @@ Open Browser To Login Page using non admin no color
     sleep_call_2
     Click Element   ${lnk_cpm_quotauser}
     sleep_call_2
-    Switch Window       Print Management | Lexmark Cloud Services
+    #Switch Window       Print Management | Lexmark Cloud Services
+    wait until element is visible   ${header_quota_preview}
     sleep_call
     element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (no color printing)
     close all browsers
@@ -89,7 +90,8 @@ Open Browser To Login Page using non admin normal
     sleep_call_2
     Click Element   ${lnk_cpm_quotauser}
     sleep_call_2
-    Switch Window       Print Management | Lexmark Cloud Services
+    #Switch Window       Print Management | Lexmark Cloud Services
+    wait until element is visible   ${header_quota_preview}
     sleep_call
     element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (${monthly_color_value} for color printing)
     close all browsers
@@ -218,6 +220,9 @@ Set Color Controls
     run keyword     Set Quota Assignment for Department
     run keyword     Delete Quota
     run keyword     Check Quota Assignment is removed
+    run keyword     Open Organisational Policy Page
+    run keyword     Reset Quota choice
+    run keyword     Open Quota Definition Page
 
 
 Delete Quota
@@ -231,6 +236,16 @@ Delete Quota
     click button    ${btn_delete_def}
     sleep_call
 
+Reset Quota choice
+    set selenium timeout    20
+    wait until page contains element    ${chk_costcenter}
+    click element     ${chk_costcenter}
+    wait until page contains element        ${btn_confirmchange}
+    click element       ${btn_confirmchange}
+    sleep_call_2
+    click element       ${btn_save}
+    sleep_call
+
 Set Disable Print
     set selenium timeout    20
     click button    ${btn_vary_ok}
@@ -242,6 +257,9 @@ Set Disable Print
     run keyword     Set Quota Assignment for Department
     run keyword     Delete Quota
     run keyword     Check Quota Assignment is removed
+    run keyword     Open Organisational Policy Page
+    run keyword     Reset Quota choice
+    run keyword     Open Quota Definition Page
 
 
 Set Custom Color
@@ -280,10 +298,12 @@ Set Quota Assignment for Department
     sleep_call
     #wait until element is visible   ${tbl_costcenter_quota}
     wait until element is visible   ${tbl_costcenter_quota_name}
-    element text should be      ${tbl_costcenter_quota_name}    ${quota_name}
+    sleep_call_2
+    #element text should be      ${tbl_costcenter_quota_name}    ${quota_name}
+    element should contain      ${tbl_costcenter_quota_name}    ${quota_name}
 
     sleep_call_1
-    element text should be      ${costcenter_name}      ${costcenter}
+    element should contain      ${costcenter_name}      ${costcenter}
     click element       ${quota_name_link}
     sleep_call_1
 
@@ -293,7 +313,7 @@ Set Quota Assignment for Department
     run keyword     Open Quota Definition Page
 
 
-    element text should be      ${dept_assignment_count}      1
+    element should contain      ${dept_assignment_count}      1
     sleep_call_2
 
 Check Quota Assignment is removed

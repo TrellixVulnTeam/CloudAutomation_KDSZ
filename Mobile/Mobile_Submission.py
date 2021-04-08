@@ -1,14 +1,17 @@
 import requests
 import json
 import jsonpath
-
+import http.client
+import re
 
 def mobile_submit():
+    global document_id
+    global identity_id
     username = "sravantesh.neogi@lexmark.com"
     password = "Password@1234"
 
     # Get Auth token
-    auth_url = "https://idp.dev.us.cloud.onelxk.co/oauth/token"
+    auth_url = "https://idp.dev.eu.cloud.onelxk.co/oauth/token"
     payload = "{\r\n  \"grant_type\": \"password\",\r\n  \"username\": \"" + str(
         username) + "\",\r\n  \"password\": \"" + str(password) + "\"\r\n}"
     headers = {'Content-Type': 'application/json'}
@@ -20,7 +23,7 @@ def mobile_submit():
     access_token = access_token[0]
 
     # Get Org ID
-    org_url = "https://idp.dev.us.cloud.onelxk.co/rest/users/email/sravantesh.neogi@lexmark.com"
+    org_url = "https://idp.dev.eu.cloud.onelxk.co/rest/users/email/sravantesh.neogi@lexmark.com"
     payload = {}
     headers = {'Authorization': ''}
     auth_token = str("Bearer " + access_token)
@@ -34,7 +37,7 @@ def mobile_submit():
 
 
     #def mobile_submit(org_id, user_id, access_token):
-    base_url = "https://apis.dev.us.cloud.onelxk.co/cpm/print-management-service/v3.0/organizations"
+    base_url = "https://apis.dev.eu.cloud.onelxk.co/cpm/print-management-service/v3.0/organizations"
     url = base_url + "/" + org_id[0] + "/users/" + user_id[0] + "/documents/"
 
     payload = "{\n    \"name\": \"mobile.doc\",\n    \"title\": \"My mobile title\",\n    \"description\": \"A test " \
@@ -52,6 +55,11 @@ def mobile_submit():
 
     json_response = json.loads(response.content)
     file_link = jsonpath.jsonpath(json_response, 'fileLink')
+    document_id_raw=jsonpath.jsonpath(json_response, 'id')
+    document_id=document_id_raw[0]
+    #print(document_id)
+    #print(json_response)
+    #document_id=jsonpath.jsonpath(json_response, 'document_')
 
     payload = "<file contents here>"
     headers = {
@@ -60,34 +68,95 @@ def mobile_submit():
 
     response=requests.request("PUT", file_link[0], headers=headers, data=payload)
     status_code=response.status_code
-#return url, access_token,status_code
 
 
-# def get_documents(status_code,url, access_token):
-#   if status_code==201:
-#     payload = {}
-#     headers = {
-#         'Authorization': 'Bearer ' + access_token
-#     }
-#
-#     response = requests.request("GET", url, headers=headers, data=payload)
-#
-#     json_response = json.loads(response.content)
-#     content = jsonpath.jsonpath(json_response, 'content')
-#     if content == [[]]:
-#         print("No documents")
-#     else:
-#         content = content[0]
-#         title = 'name'
-#         lenth = len(content)
-#         for i in range(0, lenth):
-#             for key, value in content[i].items():
-#                 if title in key:
-#                     print("Name of the document:", value)
+def user_quota_status():
+
+    username = "sravantesh.neogi@lexmark.com"
+    password = "Password@1234"
+
+    # Get Auth token
+    auth_url = "https://idp.dev.eu.cloud.onelxk.co/oauth/token"
+    payload = "{\r\n  \"grant_type\": \"password\",\r\n  \"username\": \"" + str(username) + "\",\r\n  \"password\": \"" + str(password) + "\"\r\n}"
+    headers = {'Content-Type': 'application/json'}
+    response = requests.request("POST", auth_url, headers=headers, data=payload)
+    json_response = json.loads(response.content)
+
+    # Get Access token
+    access_token = jsonpath.jsonpath(json_response, 'access_token')
+    access_token = access_token[0]
+
+    # Get Org ID
+    org_url = "https://idp.dev.eu.cloud.onelxk.co/rest/users/email/sravantesh.neogi@lexmark.com"
+    payload = {}
+    headers = {'Authorization': ''}
+    auth_token = str("Bearer " + access_token)
+
+    #Get user ID
+    headers['Authorization'] = auth_token
+    response = requests.request("GET", org_url, headers=headers, data=payload)
+    json_resonse = json.loads(response.content)
+    org_id = jsonpath.jsonpath(json_resonse, 'organizationId')
+    user_id = jsonpath.jsonpath(json_resonse, 'id')
+    identity_id=user_id[0]
+
+    base_url = "https://apis.dev.eu.cloud.onelxk.co/cpm/print-management-service/v3.0/organizations"
+
+    #get current quota status and compare with CPM Portal UI
+    url = base_url + "/" + org_id[0] + "/users/" + user_id[0] + "/quota/"
+    conn = http.client.HTTPSConnection("apis.dev.eu.cloud.onelxk.co")
+
+    payload = ""
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + access_token
+    }
+    response = requests.request("GET", url, headers=headers, data=payload)
+    data=response.text
+    list=re.findall('\d+', data)
+    total_remaining_current=list[0]
+    color_remaining_current=list[2]
+    print("Total original : " + total_remaining_current)
+    print("Color original : " + color_remaining_current)
+
+    user_total_impression=10
+    user_color_impression=10
+
+    #Release the mobile job
+    payload = "{\n   \"type\":  \"printRelease\",\n   \"identityId\":\"" + str(user_id[0])+"\",\n   \"totalImpressions\":\"" + str(user_total_impression)+"\",\n   \"colorImpressions\":\"" + str(user_color_impression)+"\",\n   \"physicalPageCount\": 5,\n   \"duplex\": \"simplex\",\n   \"color\": true,\n   \"paperTypeId\": 5,\n   \"paperSizeId\": 5,\n   \"copyCount\": 5,\n   \"printedState\": \"\",\n   \"documentId\": \"" + str(document_id) + "\",\n   \"nUp\": 5,\n   \"staple\": \"front\",\n   \"holePunch\": \"off\",\n   \"fold\": \"trifold\",\n   \"esfAppName\": \"customESF\",\n   \"printerJobId\": \"12345\",\n   \"device\": {\n        \"serialNo\": \"DEV123456\",\n        \"ipAddress\": \"127.0.0.1\",\n        \"modelName\": \"test1\",\n        \"hostName\": \"host1\",\n        \"domainName\": \"name1\",\n        \"macAddress\": \"B8AC6F9B1157\",\n        \"capabilities\": {\n            \"duplex\": true,\n            \"color\": true,\n            \"mfp\": true,\n            \"finisher\": false\n        }\n    },\n    \"client\": {\n        \"name\": \"LexDAS\",\n        \"version\": \"2.0\"\n    }\n}"
+    url_job = base_url + "/" + org_id[0] + "/jobs/"
+    response = requests.request("POST", url_job, headers=headers, data=payload)
+
+    #get new quota status and compare with CPM Portal UI
+    url = base_url + "/" + org_id[0] + "/users/" + user_id[0] + "/quota/"
+    conn = http.client.HTTPSConnection("apis.dev.eu.cloud.onelxk.co")
+
+    payload = ""
+    headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + access_token
+    }
+    response = requests.request("GET", url, headers=headers, data=payload)
+    data=response.text
+    list_values=re.findall('\d+', data)
+    total_remaining_new=list_values[0]
+    color_remaining_new=list_values[2]
+    print("Total New : " + total_remaining_new)
+    print("Color new : " + color_remaining_new)
+
+    check_total=int(total_remaining_current)-int(user_total_impression)
+    check_color=int(color_remaining_current)-int(user_color_impression)
+
+    if int(total_remaining_new)==int(check_total) and int(color_remaining_new)==int(check_color):
+        print("Quota reduction is correct")
+    else:
+        print("Incorrect quota reduction")
+
+    #Delete job
+    url_delete_job = base_url + "/" + org_id[0] + "/users/" + user_id[0] + "/documents/" + document_id
+    payload=""
+    requests.request("DELETE",url_delete_job,data=payload, headers=headers)
 
 
-# Call the required functions
-# org_id, user_id, access_token = get_token()
-# url, access_token,status_code = mobile_submit(org_id, user_id, access_token)
-
-#get_documents(status_code,url, access_token)
+mobile_submit()
+user_quota_status()

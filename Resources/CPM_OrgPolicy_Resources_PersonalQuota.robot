@@ -135,6 +135,14 @@ Select Personal
     click element       ${btn_save}
     sleep_call
 
+Open Quota Assignment Page
+    set selenium timeout    20
+    wait until element is visible   ${admin_dropdown}
+    click element       ${admin_dropdown}
+    wait until page contains element    ${lbl_quotaassignment}
+    sleep_call_2
+    click element       ${lbl_quotaassignment}
+    sleep_call_2
 
 Open Quota Definition Page
     set selenium timeout    20
@@ -165,6 +173,25 @@ Open Browser and Quota Page
     sleep_call_2
     click element       ${lbl_quotadefinition}
     sleep_call_2
+
+Reset Quota choice
+    set selenium timeout    20
+    wait until page contains element    ${chk_costcenter}
+    click element     ${chk_costcenter}
+    sleep_call_2
+    click element       ${btn_save}
+    sleep_call
+
+Delete Quota
+    sleep_call
+    set selenium timeout    25
+    wait until page contains element     ${btn_quota_select_all}
+    click element       ${btn_quota_select_all}
+    click element   ${undefined}
+    click button    ${btn_delete_quota}
+    sleep_call_2
+    click button    ${btn_delete_def}
+    sleep_call
 
 
 Create Custom quota vary
@@ -226,20 +253,12 @@ Set Color Controls
     sleep_call
     sleep_call
 
-    run keyword     Open Organisational Policy Page
-    run keyword     Select Personal
-    run keyword     Open Quota Definition Page
     run keyword     Set Quota Assignment for Personal
-    sleep_call
-    set selenium timeout    20
-    wait until page contains element     ${btn_quota_select_all}
-    click element       ${btn_quota_select_all}
-    click element   ${undefined}
-    click button    ${btn_delete_quota}
-    sleep_call_2
-    click button    ${btn_delete_def}
-    sleep_call
+    run keyword     Delete Quota
     run keyword     Check Quota Assignment is removed
+    run keyword     Open Organisational Policy Page
+    run keyword     Reset Quota choice
+    run keyword     Open Quota Definition Page
 
 Set Disable Print
     set selenium timeout    20
@@ -250,18 +269,11 @@ Set Disable Print
     sleep_call
 
     run keyword     Set Quota Assignment for Personal
-
-    sleep_call
-    set selenium timeout    20
-    wait until page contains element     ${btn_quota_select_all}
-    click element       ${btn_quota_select_all}
-    click element   ${undefined}
-    click button    ${btn_delete_quota}
-    sleep_call_2
-    click button    ${btn_delete_def}
-    sleep_call
-
+    run keyword     Delete Quota
     run keyword     Check Quota Assignment is removed
+    run keyword     Open Organisational Policy Page
+    run keyword     Reset Quota choice
+    run keyword     Open Quota Definition Page
 
 Set Custom Color
     click element   ${txt_color_value}
@@ -297,6 +309,10 @@ Check Header Text
 Set Quota Assignment for Personal
 
     set selenium timeout    20
+    run keyword     Open Organisational Policy Page
+    run keyword     Select Personal
+    run keyword     Open Quota Assignment Page
+    sleep_call
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     sleep_call_2
@@ -336,6 +352,7 @@ Set Quota Assignment for Personal
     run keyword     Open Browser To Login Page using Admin
     run keyword     Open Organisational Policy Page
     run keyword     Open Quota Definition Page
+
 
     element text should be      ${personal_assignment_count}      1
     sleep_call_2
