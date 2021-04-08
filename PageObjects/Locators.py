@@ -7,6 +7,7 @@ btn_login = "id:btn-email-login"
 
 lnk_cpm = "xpath://*[@id='card-10']/cui-card-body/cui-priv-block/div/div"
 lnk_cpm_nonadmin="xpath://*[@id='card-14']/cui-card-body/cui-priv-block/div/div"
+lnk_cpm_quotauser="xpath://*[@id='card-8']/cui-card-body/cui-priv-block/div/div"
 
 name_printqueue = "id:link-navPrintQueue"
 

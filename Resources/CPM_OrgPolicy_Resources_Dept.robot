@@ -4,11 +4,11 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
-${username_nonadmin}            simpleuser@test.onelxk.co
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
+${username_nonadmin}            automateuser@test.onelxk.co
 ${email_text}                   In addition to uploading a file, you may also e-mail it to lcp.dev2@lexmark.com to place it in your print queue.
 ${costcenter}                   rnd
 ${noquotaassignment}            No custom quota definitions for assigning.
@@ -40,7 +40,59 @@ Open Organisational Policy Page
     wait until page contains element       ${page_header}
     sleep_call_2
 
+Open Browser To Login Page using non admin disable
+    set selenium timeout    20
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Input Text    ${txt_username}    ${username_nonadmin}
+    Click Button    ${btn_next}
+    Input Text    ${txt_password}    ${PASSWORD}
+    Click Button    ${btn_login}
+    sleep_call
+    Wait Until Element Is Visible   ${lnk_cpm_quotauser}
+    sleep_call_2
+    Click Element   ${lnk_cpm_quotauser}
+    sleep_call_2
+    Switch Window       Print Management | Lexmark Cloud Services
+    sleep_call
+    element text should be      ${header_quota_preview}     Quota remaining: Printing disabled
+    close all browsers
 
+Open Browser To Login Page using non admin no color
+    set selenium timeout    20
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Input Text    ${txt_username}    ${username_nonadmin}
+    Click Button    ${btn_next}
+    Input Text    ${txt_password}    ${PASSWORD}
+    Click Button    ${btn_login}
+    sleep_call
+    Wait Until Element Is Visible   ${lnk_cpm_quotauser}
+    sleep_call_2
+    Click Element   ${lnk_cpm_quotauser}
+    sleep_call_2
+    Switch Window       Print Management | Lexmark Cloud Services
+    sleep_call
+    element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (no color printing)
+    close all browsers
+
+Open Browser To Login Page using non admin normal
+    set selenium timeout    20
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Input Text    ${txt_username}    ${username_nonadmin}
+    Click Button    ${btn_next}
+    Input Text    ${txt_password}    ${PASSWORD}
+    Click Button    ${btn_login}
+    sleep_call
+    Wait Until Element Is Visible   ${lnk_cpm_quotauser}
+    sleep_call_2
+    Click Element   ${lnk_cpm_quotauser}
+    sleep_call_2
+    Switch Window       Print Management | Lexmark Cloud Services
+    sleep_call
+    element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (${monthly_color_value} for color printing)
+    close all browsers
 
 ####################################################################################################
 
@@ -72,14 +124,6 @@ Select Department or Personal
     click element       ${btn_save}
     sleep_call
 
-Select Cost Center or Personal
-    set selenium timeout    20
-    click element     ${chk_costcenter}
-    wait until page contains element        ${btn_confirmchange}
-    click element       ${btn_confirmchange}
-    sleep_call_2
-    click element       ${btn_save}
-    sleep_call
 
 Open Quota Definition Page
     set selenium timeout    20
@@ -111,38 +155,6 @@ Open Browser and Quota Page
     click element       ${lbl_quotadefinition}
     sleep_call_2
 
-
-Create Custom quota monthly
-    sleep_call
-    [Arguments]        ${quota_name}     ${quota_interval}      ${quota_total}      ${quota_color}  ${quota_interval_value}      ${quota_total_value}      ${quota_color_value}
-    set selenium timeout    20
-    Set Global Variable   ${quota_color_value}
-    Set Global Variable   ${quota_color}
-
-    Set Global Variable   ${quota_name}
-    Set Global Variable   ${quota_interval_value}
-    Set Global Variable   ${quota_total_value}
-
-
-    sleep_call
-    sleep_call
-    click element    ${btn_create_quota}
-    sleep_call_2
-    clear element text  ${txt_quotaname}
-    input text      ${txt_quotaname}        ${quota_name}
-    click element   ${lst_quotalimit}
-    sleep_call_1
-    click element   ${quota_interval}
-    sleep_call_1
-    click element   ${lst_total_quota}
-    sleep_call_1
-    click element   ${quota_total}
-    sleep_call_1
-    ${is_disable}=     run keyword and return status   element attribute value should be   ${quota_total}   title   Disable all printing
-    ${is_custom}=     run keyword and return status   element attribute value should be   ${quota_total}   title   Set custom quota
-    run keyword if  ${is_disable}      Set Disable Print
-    ...     ELSE IF    ${is_custom}      Set Custom Total
-    ...     ELSE    Set Color Controls
 
 
 Create Custom quota vary
@@ -207,7 +219,7 @@ Set Color Controls
     run keyword     Delete Quota
     run keyword     Check Quota Assignment is removed
     run keyword     Open Organisational Policy Page
-    run keyword     Select Cost Center or Personal
+    run keyword     Select Department or Personal
     run keyword     Open Quota Definition Page
 
 Delete Quota
@@ -233,7 +245,7 @@ Set Disable Print
     run keyword     Delete Quota
     run keyword     Check Quota Assignment is removed
     run keyword     Open Organisational Policy Page
-    run keyword     Select Cost Center or Personal
+    run keyword     Select Department or Personal
     run keyword     Open Quota Definition Page
 
 Set Custom Color
@@ -279,6 +291,10 @@ Set Quota Assignment for Department
     sleep_call_1
 
     run keyword     Check the table values
+    run keyword     Open Browser To Login Page using Admin
+    run keyword     Open Organisational Policy Page
+    run keyword     Open Quota Definition Page
+
 
     element text should be      ${dept_assignment_count}      1
     sleep_call_2
@@ -299,9 +315,10 @@ Check Quota Assignment is removed
 Check Header Text
     set selenium timeout    20
     ${iscolordisable}=    Run Keyword And Return Status    Should Be Equal As Strings    ${quota_color_value}    ${totaldisable}
-    Run Keyword If  ${iscolordisable}  element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (no color printing)
 
-    ...     ELSE    run keyword        element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (${monthly_color_value} for color printing)
+    Run Keyword If  ${iscolordisable}  Open Browser To Login Page using non admin no color
+    ...     ELSE    run keyword     Open Browser To Login Page using non admin normal
+
 
 Check the table values
     set selenium timeout    20
@@ -315,15 +332,11 @@ Check the table values
     sleep_call_2
 
     ${isdisable}=    Run Keyword And Return Status    Should Be Equal As Strings    ${monthly_total_value}    ${totaldisable}
+    #${iscolorcustom}=    Run Keyword And Return Status    Should Be Equal As Strings    ${quota_color_value}    ${totaldisable}
 
-    Run Keyword If     ${isdisable}    element text should be      ${header_quota_preview}     Quota remaining: Printing disabled
+
+    Run Keyword If     ${isdisable}   Open Browser To Login Page using non admin disable
     ...     ELSE    run keyword     Check Header Text
-
-
-    click element       ${admin_dropdown}
-    sleep_call_2
-    click element       ${lbl_quotadefinition}
-    sleep_call
 ########################################################################################################################
 
 
