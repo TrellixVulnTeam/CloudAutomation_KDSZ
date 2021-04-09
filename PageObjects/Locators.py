@@ -246,4 +246,12 @@ lbl_colorquotaremaining="id:quotaStatusGrid-row-0-colorQuotaRemaining"
 icon_condition="xpath://*[@id='quotaStatusGrid-row-0-condition']/lpm-quota-condition-renderer/div/cui-icon"
 lbl_quotausername="id:quotaStatusGrid-row-0-identityEmail"
 
+quota_interval="id:definitionLimitsSelectControl-listbox-item-2"
+month="id:individualQuotaValuesId-row-checkbox-3"
+quota_total="id:definitionTotalSelectControl-listbox-item-3"
+quota_color="id:customRadioOption_radio_input"
 
+
+btn_upload="id:printQueueUploadButton"
+queue_dropdown="id:printQueuePageHeaderDropDown_button"
+txt_search="id:userFilterInput"
