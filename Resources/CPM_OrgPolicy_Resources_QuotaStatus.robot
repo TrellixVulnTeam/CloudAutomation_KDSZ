@@ -4,10 +4,10 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${username_nonadmin}            automateuser@test.onelxk.co
 ${email_text}                   In addition to uploading a file, you may also e-mail it to lcp.dev2@lexmark.com to place it in your print queue.
 ${costcenter}                   stl
@@ -444,7 +444,9 @@ Set Quota Assignment for Cost Center
     element should be visible   ${lst_costcentername}
     Press Keys    ${lst_costcentername}    ENTER
     click element   ${txt_quota_def}
+    sleep_call_1
     press keys      ${lst_quota_def}    ARROW_DOWN
+    sleep_call_1
     Press Keys    ${lst_quota_def}    ENTER
     sleep_call_1
     #select from list by value       ${lst_quota_def}        ${quota_name}

@@ -6,7 +6,7 @@ Variables    ../PageObjects/Locators.py
 
 *** Variables ***
 #${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
+#${BROWSER}                      Chrome
 #${USER}                     sravantesh.neogi@lexmark.com
 #${password}                     Password@1234
 ${FILENAME2}                    Test Mail.html
@@ -87,6 +87,7 @@ Email submission with
     sleep_call
     reload page
     wait until page contains    Print Job History
+    sleep_call_2
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
     wait until element contains     ${print_job_name1}     ${FILENAME}
 
@@ -117,6 +118,7 @@ Email submission with
     reload page
     wait until page contains    Print Job History
     ${print_job_name}   set variable    dataGridMyPrintJobsId-row-0-jobName
+    sleep_call_2
     wait until element contains     ${print_job_name}     ${FILENAME2}
 
     element text should be      ${print_job_name}     Test Mail.html
