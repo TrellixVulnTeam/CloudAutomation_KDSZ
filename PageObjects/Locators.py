@@ -247,6 +247,7 @@ icon_condition="xpath://*[@id='quotaStatusGrid-row-0-condition']/lpm-quota-condi
 lbl_quotausername="id:quotaStatusGrid-row-0-identityEmail"
 
 quota_interval="id:definitionLimitsSelectControl-listbox-item-2"
+quota_interval_1="id:definitionLimitsSelectControl-listbox-item-1"
 month="id:individualQuotaValuesId-row-checkbox-3"
 quota_total="id:definitionTotalSelectControl-listbox-item-3"
 quota_color="id:customRadioOption_radio_input"
@@ -255,3 +256,5 @@ quota_color="id:customRadioOption_radio_input"
 btn_upload="id:printQueueUploadButton"
 queue_dropdown="id:printQueuePageHeaderDropDown_button"
 txt_search="id:userFilterInput"
+
+lnk_history="id:link-navJobHistory"
