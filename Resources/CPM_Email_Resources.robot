@@ -8,7 +8,7 @@ Variables    ../PageObjects/Locators.py
 #${URL}                    https://dev.us.cloud.onelxk.co/
 #${BROWSER}                      Chrome
 #${USER}                     sravantesh.neogi@lexmark.com
-#${password}                     Password@1234
+${password}                     Password@1234
 ${FILENAME2}                    Test Mail.html
 ${FILENAME3}                    emailBody.html
 
@@ -81,13 +81,13 @@ Email submission with
     Wait until Element Is Visible   ${name_printqueue}
     wait until page does not contain element    ${FILENAME}
     sleep_call_2
-    click element   link-navJobHistory
-    wait until page contains    Print Job History
     reload page
     sleep_call
     reload page
+    sleep_call
     wait until page contains    Print Job History
     sleep_call_2
+    click element   link-navJobHistory
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
     wait until element contains     ${print_job_name1}     ${FILENAME}
 
