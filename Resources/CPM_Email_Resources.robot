@@ -84,6 +84,8 @@ Email submission with
     click element   link-navJobHistory
     wait until page contains    Print Job History
     reload page
+    sleep_call
+    reload page
     wait until page contains    Print Job History
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
     wait until element contains     ${print_job_name1}     ${FILENAME}
