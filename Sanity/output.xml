@@ -1,0 +1,1269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.8.3 on win32)" generated="20210409 11:42:30.765" rpa="false" schemaversion="2">
+<suite id="s1" name="Prod L Personal" source="C:\Users\neogis\D Drive\FREEDOM\Python\CloudAutomation\Sanity\Prod_L_Personal.robot">
+<kw name="Open Browser and Quota Page" library="CPM_OrgPolicy_Resources_PersonalQuota" type="SETUP">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:42:33.256" endtime="20210409 11:42:33.256"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210409 11:42:33.256" level="INFO">Opening browser 'headlessChrome' to base url 'https://dev.us.cloud.onelxk.co/'.</msg>
+<status status="PASS" starttime="20210409 11:42:33.256" endtime="20210409 11:42:42.282"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210409 11:42:42.283" endtime="20210409 11:42:42.401"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_username}</arg>
+<arg>${USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210409 11:42:42.401" level="INFO">Typing text 'sravantesh.neogi@lexmark.com' into text field 'id:user_email'.</msg>
+<status status="PASS" starttime="20210409 11:42:42.401" endtime="20210409 11:42:42.604"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_next}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:42:42.605" level="INFO">Clicking button 'id:btn-email-next'.</msg>
+<status status="PASS" starttime="20210409 11:42:42.605" endtime="20210409 11:42:43.343"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_password}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210409 11:42:43.344" level="INFO">Typing text 'Password@1234' into text field 'id:user_password'.</msg>
+<status status="PASS" starttime="20210409 11:42:43.344" endtime="20210409 11:42:43.438"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:42:43.438" level="INFO">Clicking button 'id:btn-email-login'.</msg>
+<status status="PASS" starttime="20210409 11:42:43.438" endtime="20210409 11:42:45.383"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:42:45.383" endtime="20210409 11:42:50.397"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${lnk_cpm}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 11:42:50.397" endtime="20210409 11:42:50.463"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lnk_cpm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:42:50.479" level="INFO">Clicking element 'xpath://*[@id='card-10']/cui-card-body/cui-priv-block/div/div'.</msg>
+<status status="PASS" starttime="20210409 11:42:50.479" endtime="20210409 11:42:50.630"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:42:50.631" endtime="20210409 11:42:54.632"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>Print Management | Lexmark Cloud Services</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20210409 11:42:54.632" endtime="20210409 11:42:54.712"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:42:54.712" endtime="20210409 11:42:59.726"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 11:42:59.726" endtime="20210409 11:42:59.773"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:42:59.773" level="INFO">Clicking element 'id:navAdminDropdown'.</msg>
+<status status="PASS" starttime="20210409 11:42:59.773" endtime="20210409 11:42:59.847"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${lbl_quotadefinition}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:42:59.848" endtime="20210409 11:42:59.861"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:42:59.861" endtime="20210409 11:43:03.871"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lbl_quotadefinition}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:03.871" level="INFO">Clicking element 'id:navAdminDropdownQuotaDefinition'.</msg>
+<status status="PASS" starttime="20210409 11:43:03.871" endtime="20210409 11:43:03.977"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:03.977" endtime="20210409 11:43:07.989"/>
+</kw>
+<status status="PASS" starttime="20210409 11:42:33.256" endtime="20210409 11:43:07.989"/>
+</kw>
+<test id="s1-t1" name="Personal Quota Assignment : Vary_Unlimited_Color1">
+<kw name="Check Custom quota vary">
+<arg>Vary_Unlimited_Color1</arg>
+<arg>definitionLimitsSelectControl-listbox-item-2</arg>
+<arg>individualQuotaValuesId-row-checkbox-3</arg>
+<arg>definitionTotalSelectControl-listbox-item-1</arg>
+<arg>customRadioOption_radio_input</arg>
+<arg>Monthly</arg>
+<arg>Unlimited</arg>
+<arg>1</arg>
+<arg>individualQuotaValuesId-row-3-totalQuota</arg>
+<arg>Unlimited</arg>
+<arg>individualQuotaValuesId-row-3-colorQuota</arg>
+<arg>1</arg>
+<kw name="Create Custom quota vary" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<arg>${quota_name}</arg>
+<arg>${quota_interval}</arg>
+<arg>${month}</arg>
+<arg>${quota_total}</arg>
+<arg>${quota_color}</arg>
+<arg>${quota_interval_value}</arg>
+<arg>${quota_total_value}</arg>
+<arg>${quota_color_value}</arg>
+<arg>${monthly_total_id}</arg>
+<arg>${monthly_total_value}</arg>
+<arg>${monthly_color_id}</arg>
+<arg>${monthly_color_value}</arg>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:07.989" endtime="20210409 11:43:13.001"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:43:13.001" endtime="20210409 11:43:13.001"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${quota_color_value}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210409 11:43:13.001" level="INFO">${quota_color_value} = 1</msg>
+<status status="PASS" starttime="20210409 11:43:13.001" endtime="20210409 11:43:13.001"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${quota_color}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210409 11:43:13.001" level="INFO">${quota_color} = customRadioOption_radio_input</msg>
+<status status="PASS" starttime="20210409 11:43:13.001" endtime="20210409 11:43:13.001"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${quota_name}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210409 11:43:13.001" level="INFO">${quota_name} = Vary_Unlimited_Color1</msg>
+<status status="PASS" starttime="20210409 11:43:13.001" endtime="20210409 11:43:13.001"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${quota_interval_value}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210409 11:43:13.001" level="INFO">${quota_interval_value} = Monthly</msg>
+<status status="PASS" starttime="20210409 11:43:13.001" endtime="20210409 11:43:13.001"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${quota_total_value}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210409 11:43:13.016" level="INFO">${quota_total_value} = Unlimited</msg>
+<status status="PASS" starttime="20210409 11:43:13.001" endtime="20210409 11:43:13.016"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${month}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210409 11:43:13.016" level="INFO">${month} = individualQuotaValuesId-row-checkbox-3</msg>
+<status status="PASS" starttime="20210409 11:43:13.016" endtime="20210409 11:43:13.016"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${monthly_total_id}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210409 11:43:13.016" level="INFO">${monthly_total_id} = individualQuotaValuesId-row-3-totalQuota</msg>
+<status status="PASS" starttime="20210409 11:43:13.016" endtime="20210409 11:43:13.016"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${monthly_total_value}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210409 11:43:13.016" level="INFO">${monthly_total_value} = Unlimited</msg>
+<status status="PASS" starttime="20210409 11:43:13.016" endtime="20210409 11:43:13.016"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${monthly_color_id}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210409 11:43:13.016" level="INFO">${monthly_color_id} = individualQuotaValuesId-row-3-colorQuota</msg>
+<status status="PASS" starttime="20210409 11:43:13.016" endtime="20210409 11:43:13.016"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${monthly_color_value}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210409 11:43:13.032" level="INFO">${monthly_color_value} = 1</msg>
+<status status="PASS" starttime="20210409 11:43:13.016" endtime="20210409 11:43:13.032"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${btn_create_quota}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:43:13.032" endtime="20210409 11:43:13.039"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_create_quota}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:13.039" level="INFO">Clicking element 'id:createQuotaDefinition'.</msg>
+<status status="PASS" starttime="20210409 11:43:13.039" endtime="20210409 11:43:13.141"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:13.142" endtime="20210409 11:43:17.144"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${txt_quotaname}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210409 11:43:17.144" endtime="20210409 11:43:17.257"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_quotaname}</arg>
+<arg>${quota_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:17.258" level="INFO">Typing text 'Vary_Unlimited_Color1' into text field 'id:definitionName'.</msg>
+<status status="PASS" starttime="20210409 11:43:17.258" endtime="20210409 11:43:17.563"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lst_quotalimit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:17.564" level="INFO">Clicking element 'id:definitionLimitsSelectControl'.</msg>
+<status status="PASS" starttime="20210409 11:43:17.563" endtime="20210409 11:43:17.623"/>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:17.623" endtime="20210409 11:43:18.635"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${quota_interval}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:18.635" level="INFO">Clicking element 'definitionLimitsSelectControl-listbox-item-2'.</msg>
+<status status="PASS" starttime="20210409 11:43:18.635" endtime="20210409 11:43:18.900"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:18.900" endtime="20210409 11:43:22.901"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${month}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:22.901" level="INFO">Clicking element 'individualQuotaValuesId-row-checkbox-3'.</msg>
+<status status="PASS" starttime="20210409 11:43:22.901" endtime="20210409 11:43:23.024"/>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:23.024" endtime="20210409 11:43:24.037"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${txt_quotaname}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:24.037" level="INFO">Clicking element 'id:definitionName'.</msg>
+<status status="PASS" starttime="20210409 11:43:24.037" endtime="20210409 11:43:24.135"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_monthly}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:24.135" level="INFO">Clicking button 'id:updateQuotaLimitsGrid'.</msg>
+<status status="PASS" starttime="20210409 11:43:24.135" endtime="20210409 11:43:24.253"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:24.253" endtime="20210409 11:43:28.269"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lst_total_quota}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:28.269" level="INFO">Clicking element 'id:definitionTotalSelectControl'.</msg>
+<status status="PASS" starttime="20210409 11:43:28.269" endtime="20210409 11:43:28.376"/>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:28.377" endtime="20210409 11:43:29.392"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${quota_total}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:29.392" level="INFO">Clicking element 'definitionTotalSelectControl-listbox-item-1'.</msg>
+<status status="PASS" starttime="20210409 11:43:29.392" endtime="20210409 11:43:29.496"/>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:29.497" endtime="20210409 11:43:30.518"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_disable}</var>
+<arg>element attribute value should be</arg>
+<arg>${quota_total}</arg>
+<arg>title</arg>
+<arg>Disable all printing</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<arg>${quota_total}</arg>
+<arg>title</arg>
+<arg>Disable all printing</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210409 11:43:30.834" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210409 11:43:30.564" endtime="20210409 11:43:30.834"/>
+</kw>
+<msg timestamp="20210409 11:43:30.834" level="FAIL">Element 'definitionTotalSelectControl-listbox-item-1' attribute should have value 'Disable all printing' (str) but its value was 'Allow unlimited printing' (str).</msg>
+<status status="FAIL" starttime="20210409 11:43:30.518" endtime="20210409 11:43:30.834"/>
+</kw>
+<msg timestamp="20210409 11:43:30.834" level="INFO">${is_disable} = False</msg>
+<status status="PASS" starttime="20210409 11:43:30.518" endtime="20210409 11:43:30.834"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${is_custom}</var>
+<arg>element attribute value should be</arg>
+<arg>${quota_total}</arg>
+<arg>title</arg>
+<arg>Set custom quota</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<arg>${quota_total}</arg>
+<arg>title</arg>
+<arg>Set custom quota</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210409 11:43:31.134" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-28.png"&gt;&lt;img src="selenium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210409 11:43:30.850" endtime="20210409 11:43:31.134"/>
+</kw>
+<msg timestamp="20210409 11:43:31.134" level="FAIL">Element 'definitionTotalSelectControl-listbox-item-1' attribute should have value 'Set custom quota' (str) but its value was 'Allow unlimited printing' (str).</msg>
+<status status="FAIL" starttime="20210409 11:43:30.834" endtime="20210409 11:43:31.134"/>
+</kw>
+<msg timestamp="20210409 11:43:31.134" level="INFO">${is_custom} = False</msg>
+<status status="PASS" starttime="20210409 11:43:30.834" endtime="20210409 11:43:31.134"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${is_disable}</arg>
+<arg>Set Disable Print</arg>
+<arg>ELSE IF</arg>
+<arg>${is_custom}</arg>
+<arg>Set Custom Total</arg>
+<arg>ELSE</arg>
+<arg>Set Color Controls</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Color Controls" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:43:31.134" endtime="20210409 11:43:31.150"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:31.150" endtime="20210409 11:43:35.165"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${quota_color}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:35.165" level="INFO">Clicking element 'customRadioOption_radio_input'.</msg>
+<status status="PASS" starttime="20210409 11:43:35.165" endtime="20210409 11:43:35.336"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:35.336" endtime="20210409 11:43:39.351"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${custom_color}</var>
+<arg>element attribute value should be</arg>
+<arg>${radio_customcolor}</arg>
+<arg>aria-checked</arg>
+<arg>true</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<arg>${radio_customcolor}</arg>
+<arg>aria-checked</arg>
+<arg>true</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<msg timestamp="20210409 11:43:39.397" level="INFO">Element 'id:customRadioOption_radio_input' attribute 'aria-checked' contains value 'true'.</msg>
+<status status="PASS" starttime="20210409 11:43:39.351" endtime="20210409 11:43:39.397"/>
+</kw>
+<msg timestamp="20210409 11:43:39.397" level="INFO">${custom_color} = True</msg>
+<status status="PASS" starttime="20210409 11:43:39.351" endtime="20210409 11:43:39.397"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${custom_color}</arg>
+<arg>Set Custom Color</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Custom Color" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${txt_color_value}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:39.397" level="INFO">Clicking element 'id:colorQuotaLabel_input'.</msg>
+<status status="PASS" starttime="20210409 11:43:39.397" endtime="20210409 11:43:39.493"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${txt_color_value}</arg>
+<arg>\DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210409 11:43:39.494" level="INFO">Sending key(s) ('DELETE',) to id:colorQuotaLabel_input element.</msg>
+<msg timestamp="20210409 11:43:39.802" level="INFO">Pressing special key DELETE to element.</msg>
+<msg timestamp="20210409 11:43:39.802" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20210409 11:43:39.493" endtime="20210409 11:43:39.856"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_color_value}</arg>
+<arg>${quota_color_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:39.856" level="INFO">Typing text '1' into text field 'id:colorQuotaLabel_input'.</msg>
+<status status="PASS" starttime="20210409 11:43:39.856" endtime="20210409 11:43:39.940"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:39.397" endtime="20210409 11:43:39.940"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:39.397" endtime="20210409 11:43:39.940"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_vary_ok}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:39.941" level="INFO">Clicking button 'id:definition_ok_button'.</msg>
+<status status="PASS" starttime="20210409 11:43:39.940" endtime="20210409 11:43:40.112"/>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:40.112" endtime="20210409 11:43:41.123"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_create_def}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:41.123" level="INFO">Clicking button 'id:updateQuotaDefinition'.</msg>
+<status status="PASS" starttime="20210409 11:43:41.123" endtime="20210409 11:43:41.255"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:41.255" endtime="20210409 11:43:46.259"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:46.259" endtime="20210409 11:43:51.265"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Set Quota Assignment for Personal</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Set Quota Assignment for Personal" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:43:51.265" endtime="20210409 11:43:51.265"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Open Organisational Policy Page</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Open Organisational Policy Page" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:43:51.265" endtime="20210409 11:43:51.281"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 11:43:51.281" endtime="20210409 11:43:51.318"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:51.318" level="INFO">Clicking element 'id:navAdminDropdown'.</msg>
+<status status="PASS" starttime="20210409 11:43:51.318" endtime="20210409 11:43:51.397"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${org_policy}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:43:51.397" endtime="20210409 11:43:51.409"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:51.409" endtime="20210409 11:43:55.420"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${org_policy}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:55.420" level="INFO">Clicking element 'id:navAdminDropdownOrganizationalPolicy'.</msg>
+<status status="PASS" starttime="20210409 11:43:55.420" endtime="20210409 11:43:55.685"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${page_header}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:43:55.685" endtime="20210409 11:43:55.705"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:55.705" endtime="20210409 11:43:59.712"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:51.265" endtime="20210409 11:43:59.712"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:51.265" endtime="20210409 11:43:59.712"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Select Personal</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Select Personal" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:43:59.719" endtime="20210409 11:43:59.719"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${radio_personal}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:59.719" level="INFO">Clicking element 'id:usePersonalOption_radio_input'.</msg>
+<status status="PASS" starttime="20210409 11:43:59.719" endtime="20210409 11:43:59.890"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${btn_confirmchange}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:43:59.890" endtime="20210409 11:43:59.904"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_confirmchange}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:43:59.905" level="INFO">Clicking element 'id:confirmation-modal_okButton'.</msg>
+<status status="PASS" starttime="20210409 11:43:59.904" endtime="20210409 11:43:59.975"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:43:59.975" endtime="20210409 11:44:03.980"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_save}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:44:03.980" level="INFO">Clicking element 'id:save_changes_btn'.</msg>
+<status status="PASS" starttime="20210409 11:44:03.980" endtime="20210409 11:44:04.108"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:04.108" endtime="20210409 11:44:09.116"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:59.712" endtime="20210409 11:44:09.116"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:59.712" endtime="20210409 11:44:09.116"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Open Quota Assignment Page</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Open Quota Assignment Page" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:44:09.116" endtime="20210409 11:44:09.116"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 11:44:09.116" endtime="20210409 11:44:09.154"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:44:09.154" level="INFO">Clicking element 'id:navAdminDropdown'.</msg>
+<status status="PASS" starttime="20210409 11:44:09.154" endtime="20210409 11:44:09.230"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${lbl_quotaassignment}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:44:09.230" endtime="20210409 11:44:09.244"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:09.244" endtime="20210409 11:44:13.244"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lbl_quotaassignment}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:44:13.246" level="INFO">Clicking element 'id:navAdminDropdownQuotaAssignments'.</msg>
+<status status="PASS" starttime="20210409 11:44:13.244" endtime="20210409 11:44:13.349"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:13.349" endtime="20210409 11:44:17.361"/>
+</kw>
+<status status="PASS" starttime="20210409 11:44:09.116" endtime="20210409 11:44:17.361"/>
+</kw>
+<status status="PASS" starttime="20210409 11:44:09.116" endtime="20210409 11:44:17.361"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:17.361" endtime="20210409 11:44:22.376"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 11:44:22.376" endtime="20210409 11:44:22.445"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:44:22.445" level="INFO">Clicking element 'id:navAdminDropdown'.</msg>
+<status status="PASS" starttime="20210409 11:44:22.445" endtime="20210409 11:44:22.499"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:22.500" endtime="20210409 11:44:26.507"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lbl_quotaassignment}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:44:26.507" level="INFO">Clicking element 'id:navAdminDropdownQuotaAssignments'.</msg>
+<status status="PASS" starttime="20210409 11:44:26.507" endtime="20210409 11:44:26.611"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>25</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:44:26.612" endtime="20210409 11:44:26.614"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${btn_assignquota}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:44:26.614" endtime="20210409 11:44:26.629"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_assignquota}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:44:26.630" level="INFO">Clicking button 'id:createUserAssignment'.</msg>
+<status status="PASS" starttime="20210409 11:44:26.629" endtime="20210409 11:44:26.730"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:26.731" endtime="20210409 11:44:30.745"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${txt_email}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:44:30.745" level="INFO">Clicking element 'xpath://*[@id='userSelectControl']/div'.</msg>
+<status status="PASS" starttime="20210409 11:44:30.745" endtime="20210409 11:44:30.868"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_email_input}</arg>
+<arg>${username_nonadmin}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210409 11:44:30.869" level="INFO">Typing text 'automateuser@test.onelxk.co' into text field 'id:userSelectControl_Input'.</msg>
+<status status="PASS" starttime="20210409 11:44:30.869" endtime="20210409 11:44:31.164"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:31.165" endtime="20210409 11:44:35.174"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${lst_email}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210409 11:44:35.178" level="INFO">Sending key(s) ('ENTER',) to id:userSelectControl-listbox element.</msg>
+<msg timestamp="20210409 11:44:35.531" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20210409 11:44:35.531" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20210409 11:44:35.174" endtime="20210409 11:44:35.546"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:35.547" endtime="20210409 11:44:39.550"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${txt_quota_def}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:44:39.550" level="INFO">Clicking element 'xpath://*[@id='selectQuotaDefinitionControl']/div'.</msg>
+<status status="PASS" starttime="20210409 11:44:39.550" endtime="20210409 11:44:39.699"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${lst_quota_def}</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210409 11:44:39.701" level="INFO">Sending key(s) ('ARROW_DOWN',) to id:selectQuotaDefinitionControl-listbox element.</msg>
+<msg timestamp="20210409 11:44:40.034" level="INFO">Pressing special key ARROW_DOWN to element.</msg>
+<msg timestamp="20210409 11:44:40.034" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<status status="PASS" starttime="20210409 11:44:39.700" endtime="20210409 11:44:40.052"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${lst_quota_def}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210409 11:44:40.053" level="INFO">Sending key(s) ('ENTER',) to id:selectQuotaDefinitionControl-listbox element.</msg>
+<msg timestamp="20210409 11:44:40.372" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20210409 11:44:40.372" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20210409 11:44:40.052" endtime="20210409 11:44:40.394"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:40.394" endtime="20210409 11:44:44.407"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${btn_vary_ok}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210409 11:44:44.407" endtime="20210409 11:44:44.469"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:44.469" endtime="20210409 11:44:48.485"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_vary_ok}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:44:48.485" level="INFO">Clicking button 'id:definition_ok_button'.</msg>
+<status status="PASS" starttime="20210409 11:44:48.485" endtime="20210409 11:44:48.631"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:48.632" endtime="20210409 11:44:53.637"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${tbl_email_quota}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 11:44:53.637" endtime="20210409 11:44:53.699"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${tbl_personal_name}</arg>
+<arg>${username_nonadmin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210409 11:44:53.715" level="INFO">Verifying element 'id:userAssignmentGrid-row-0-identityEmail' contains exact text 'automateuser@test.onelxk.co'.</msg>
+<status status="PASS" starttime="20210409 11:44:53.715" endtime="20210409 11:44:53.737"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:53.737" endtime="20210409 11:44:58.754"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${tbl_email_quota_name}</arg>
+<arg>${quota_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210409 11:44:58.754" level="INFO">Verifying element 'id:userAssignmentGrid-row-0-quotaDefinition.name' contains exact text 'Vary_Unlimited_Color1'.</msg>
+<status status="PASS" starttime="20210409 11:44:58.754" endtime="20210409 11:44:58.801"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${email_quota_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:44:58.801" level="INFO">Clicking element 'xpath://*[@id='userAssignmentGrid-row-0-quotaDefinition.name']/lpm-definition-summary-renderer'.</msg>
+<status status="PASS" starttime="20210409 11:44:58.801" endtime="20210409 11:44:59.008"/>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:44:59.008" endtime="20210409 11:45:00.024"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Check the table values</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Check the table values" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:45:00.024" endtime="20210409 11:45:00.024"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${monthly_total_id}</arg>
+<arg>${monthly_total_value}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210409 11:45:00.024" level="INFO">Verifying element 'individualQuotaValuesId-row-3-totalQuota' contains exact text 'Unlimited'.</msg>
+<status status="PASS" starttime="20210409 11:45:00.024" endtime="20210409 11:45:00.060"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${monthly_color_id}</arg>
+<arg>${monthly_color_value}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210409 11:45:00.060" level="INFO">Verifying element 'individualQuotaValuesId-row-3-colorQuota' contains exact text '1'.</msg>
+<status status="PASS" starttime="20210409 11:45:00.060" endtime="20210409 11:45:00.092"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_summary_close}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:45:00.092" level="INFO">Clicking button 'id:definition_summary_close_id'.</msg>
+<status status="PASS" starttime="20210409 11:45:00.092" endtime="20210409 11:45:00.199"/>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:45:00.199" endtime="20210409 11:45:01.211"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${name_printqueue}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:45:01.211" level="INFO">Clicking element 'id:link-navPrintQueue'.</msg>
+<status status="PASS" starttime="20210409 11:45:01.211" endtime="20210409 11:45:01.434"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:45:01.434" endtime="20210409 11:45:05.444"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isdisable}</var>
+<arg>Should Be Equal As Strings</arg>
+<arg>${monthly_total_value}</arg>
+<arg>${totaldisable}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${monthly_total_value}</arg>
+<arg>${totaldisable}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210409 11:45:05.444" level="FAIL">Unlimited != 0</msg>
+<status status="FAIL" starttime="20210409 11:45:05.444" endtime="20210409 11:45:05.444"/>
+</kw>
+<msg timestamp="20210409 11:45:05.444" level="INFO">${isdisable} = False</msg>
+<status status="PASS" starttime="20210409 11:45:05.444" endtime="20210409 11:45:05.444"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${isdisable}</arg>
+<arg>Open Browser To Login Page using non admin disable</arg>
+<arg>ELSE</arg>
+<arg>run keyword</arg>
+<arg>Check Header Text Non Admin</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Check Header Text Non Admin</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Check Header Text Non Admin" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:45:05.444" endtime="20210409 11:45:05.444"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${iscolordisable}</var>
+<arg>Should Be Equal As Strings</arg>
+<arg>${quota_color_value}</arg>
+<arg>${totaldisable}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${quota_color_value}</arg>
+<arg>${totaldisable}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210409 11:45:05.459" level="FAIL">1 != 0</msg>
+<status status="FAIL" starttime="20210409 11:45:05.459" endtime="20210409 11:45:05.459"/>
+</kw>
+<msg timestamp="20210409 11:45:05.459" level="INFO">${iscolordisable} = False</msg>
+<status status="PASS" starttime="20210409 11:45:05.459" endtime="20210409 11:45:05.459"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${iscolordisable}</arg>
+<arg>Open Browser To Login Page using non admin no color</arg>
+<arg>ELSE</arg>
+<arg>run keyword</arg>
+<arg>Open Browser To Login Page using non admin normal</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Open Browser To Login Page using non admin normal</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Open Browser To Login Page using non admin normal" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:45:05.466" endtime="20210409 11:45:05.466"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210409 11:45:05.466" level="INFO">Opening browser 'headlessChrome' to base url 'https://dev.us.cloud.onelxk.co/'.</msg>
+<status status="PASS" starttime="20210409 11:45:05.466" endtime="20210409 11:45:13.222"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210409 11:45:13.222" endtime="20210409 11:45:13.337"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_username}</arg>
+<arg>${username_nonadmin}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210409 11:45:13.337" level="INFO">Typing text 'automateuser@test.onelxk.co' into text field 'id:user_email'.</msg>
+<status status="PASS" starttime="20210409 11:45:13.337" endtime="20210409 11:45:13.463"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_next}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:45:13.464" level="INFO">Clicking button 'id:btn-email-next'.</msg>
+<status status="PASS" starttime="20210409 11:45:13.464" endtime="20210409 11:45:14.199"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_password}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210409 11:45:14.200" level="INFO">Typing text 'Password@1234' into text field 'id:user_password'.</msg>
+<status status="PASS" starttime="20210409 11:45:14.200" endtime="20210409 11:45:14.311"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:45:14.312" level="INFO">Clicking button 'id:btn-email-login'.</msg>
+<status status="PASS" starttime="20210409 11:45:14.312" endtime="20210409 11:45:16.030"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:45:16.030" endtime="20210409 11:45:21.034"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${lnk_cpm_quotauser}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 11:45:21.034" endtime="20210409 11:45:21.088"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:45:21.088" endtime="20210409 11:45:25.102"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lnk_cpm_quotauser}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:45:25.102" level="INFO">Clicking element 'xpath://*[@id='card-8']/cui-card-body/cui-priv-block/div/div'.</msg>
+<status status="PASS" starttime="20210409 11:45:25.102" endtime="20210409 11:45:25.239"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:45:25.239" endtime="20210409 11:45:29.241"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>Print Management | Lexmark Cloud Services</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20210409 11:45:29.242" endtime="20210409 11:45:29.360"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:45:29.361" endtime="20210409 11:45:34.368"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${header_quota_preview}</arg>
+<arg>Quota remaining: ${monthly_total_value} total quota (${monthly_color_value} for color printing)</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210409 11:45:34.368" level="INFO">Verifying element 'id:quotaPreviewDiv' contains exact text 'Quota remaining: Unlimited total quota (1 for color printing)'.</msg>
+<status status="PASS" starttime="20210409 11:45:34.368" endtime="20210409 11:45:34.456"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210409 11:45:34.456" endtime="20210409 11:45:38.943"/>
+</kw>
+<status status="PASS" starttime="20210409 11:45:05.459" endtime="20210409 11:45:38.943"/>
+</kw>
+<status status="PASS" starttime="20210409 11:45:05.459" endtime="20210409 11:45:38.943"/>
+</kw>
+<status status="PASS" starttime="20210409 11:45:05.459" endtime="20210409 11:45:38.943"/>
+</kw>
+<status status="PASS" starttime="20210409 11:45:05.444" endtime="20210409 11:45:38.943"/>
+</kw>
+<status status="PASS" starttime="20210409 11:45:05.444" endtime="20210409 11:45:38.943"/>
+</kw>
+<status status="PASS" starttime="20210409 11:45:05.444" endtime="20210409 11:45:38.943"/>
+</kw>
+<status status="PASS" starttime="20210409 11:45:00.024" endtime="20210409 11:45:38.943"/>
+</kw>
+<status status="PASS" starttime="20210409 11:45:00.024" endtime="20210409 11:45:38.943"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Open Browser To Login Page using Admin</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Open Browser To Login Page using Admin" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:45:38.943" endtime="20210409 11:45:38.943"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210409 11:45:38.943" level="INFO">Opening browser 'headlessChrome' to base url 'https://dev.us.cloud.onelxk.co/'.</msg>
+<status status="PASS" starttime="20210409 11:45:38.943" endtime="20210409 11:45:44.203"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210409 11:45:44.204" endtime="20210409 11:45:44.325"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_username}</arg>
+<arg>${USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210409 11:45:44.325" level="INFO">Typing text 'sravantesh.neogi@lexmark.com' into text field 'id:user_email'.</msg>
+<status status="PASS" starttime="20210409 11:45:44.325" endtime="20210409 11:45:44.445"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_next}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:45:44.446" level="INFO">Clicking button 'id:btn-email-next'.</msg>
+<status status="PASS" starttime="20210409 11:45:44.445" endtime="20210409 11:45:45.192"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_password}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210409 11:45:45.193" level="INFO">Typing text 'Password@1234' into text field 'id:user_password'.</msg>
+<status status="PASS" starttime="20210409 11:45:45.192" endtime="20210409 11:45:45.290"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:45:45.290" level="INFO">Clicking button 'id:btn-email-login'.</msg>
+<status status="PASS" starttime="20210409 11:45:45.290" endtime="20210409 11:45:46.988"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:45:46.988" endtime="20210409 11:45:51.990"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${lnk_cpm}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 11:45:51.990" endtime="20210409 11:45:52.074"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lnk_cpm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:45:52.074" level="INFO">Clicking element 'xpath://*[@id='card-10']/cui-card-body/cui-priv-block/div/div'.</msg>
+<status status="PASS" starttime="20210409 11:45:52.074" endtime="20210409 11:45:52.179"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:45:52.180" endtime="20210409 11:45:56.186"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>Print Management | Lexmark Cloud Services</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20210409 11:45:56.186" endtime="20210409 11:45:56.282"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:45:56.282" endtime="20210409 11:46:01.289"/>
+</kw>
+<status status="PASS" starttime="20210409 11:45:38.943" endtime="20210409 11:46:01.289"/>
+</kw>
+<status status="PASS" starttime="20210409 11:45:38.943" endtime="20210409 11:46:01.289"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Open Quota Definition Page</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Open Quota Definition Page" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:46:01.289" endtime="20210409 11:46:01.289"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 11:46:01.289" endtime="20210409 11:46:01.358"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:01.358" level="INFO">Clicking element 'id:navAdminDropdown'.</msg>
+<status status="PASS" starttime="20210409 11:46:01.358" endtime="20210409 11:46:01.495"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${lbl_quotadefinition}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:46:01.496" endtime="20210409 11:46:01.508"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:01.508" endtime="20210409 11:46:05.517"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lbl_quotadefinition}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:05.517" level="INFO">Clicking element 'id:navAdminDropdownQuotaDefinition'.</msg>
+<status status="PASS" starttime="20210409 11:46:05.517" endtime="20210409 11:46:05.638"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:05.638" endtime="20210409 11:46:09.641"/>
+</kw>
+<status status="PASS" starttime="20210409 11:46:01.289" endtime="20210409 11:46:09.641"/>
+</kw>
+<status status="PASS" starttime="20210409 11:46:01.289" endtime="20210409 11:46:09.641"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${personal_assignment_count}</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210409 11:46:09.641" level="INFO">Verifying element 'id:quotaDefinitionGrid-row-0-assignments.individualAssignments' contains exact text '1'.</msg>
+<status status="PASS" starttime="20210409 11:46:09.641" endtime="20210409 11:46:09.718"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:09.718" endtime="20210409 11:46:13.719"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Open Organisational Policy Page</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Open Organisational Policy Page" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:46:13.721" endtime="20210409 11:46:13.725"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 11:46:13.726" endtime="20210409 11:46:13.783"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:13.784" level="INFO">Clicking element 'id:navAdminDropdown'.</msg>
+<status status="PASS" starttime="20210409 11:46:13.783" endtime="20210409 11:46:13.857"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${org_policy}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:46:13.857" endtime="20210409 11:46:13.877"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:13.877" endtime="20210409 11:46:17.889"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${org_policy}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:17.889" level="INFO">Clicking element 'id:navAdminDropdownOrganizationalPolicy'.</msg>
+<status status="PASS" starttime="20210409 11:46:17.889" endtime="20210409 11:46:18.097"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${page_header}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:46:18.098" endtime="20210409 11:46:18.123"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:18.124" endtime="20210409 11:46:22.129"/>
+</kw>
+<status status="PASS" starttime="20210409 11:46:13.720" endtime="20210409 11:46:22.129"/>
+</kw>
+<status status="PASS" starttime="20210409 11:46:13.719" endtime="20210409 11:46:22.129"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Reset Quota choice</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Reset Quota choice" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:46:22.129" endtime="20210409 11:46:22.129"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${chk_costcenter}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:46:22.129" endtime="20210409 11:46:22.167"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${chk_costcenter}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:22.167" level="INFO">Clicking element 'id:useCostCenterOption_radio_input'.</msg>
+<status status="PASS" starttime="20210409 11:46:22.167" endtime="20210409 11:46:22.289"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:22.290" endtime="20210409 11:46:26.291"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_save}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:26.291" level="INFO">Clicking element 'id:save_changes_btn'.</msg>
+<status status="PASS" starttime="20210409 11:46:26.291" endtime="20210409 11:46:26.411"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:26.411" endtime="20210409 11:46:31.421"/>
+</kw>
+<status status="PASS" starttime="20210409 11:46:22.129" endtime="20210409 11:46:31.421"/>
+</kw>
+<status status="PASS" starttime="20210409 11:46:22.129" endtime="20210409 11:46:31.421"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Open Quota Definition Page</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Open Quota Definition Page" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:46:31.421" endtime="20210409 11:46:31.421"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210409 11:46:31.421" endtime="20210409 11:46:31.474"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${admin_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:31.474" level="INFO">Clicking element 'id:navAdminDropdown'.</msg>
+<status status="PASS" starttime="20210409 11:46:31.474" endtime="20210409 11:46:31.556"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${lbl_quotadefinition}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:46:31.557" endtime="20210409 11:46:31.567"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:31.567" endtime="20210409 11:46:35.573"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lbl_quotadefinition}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:35.573" level="INFO">Clicking element 'id:navAdminDropdownQuotaDefinition'.</msg>
+<status status="PASS" starttime="20210409 11:46:35.573" endtime="20210409 11:46:35.694"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:35.695" endtime="20210409 11:46:39.701"/>
+</kw>
+<status status="PASS" starttime="20210409 11:46:31.421" endtime="20210409 11:46:39.701"/>
+</kw>
+<status status="PASS" starttime="20210409 11:46:31.421" endtime="20210409 11:46:39.701"/>
+</kw>
+<kw name="Run Keyword" library="BuiltIn">
+<arg>Delete Quota</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<kw name="Delete Quota" library="CPM_OrgPolicy_Resources_PersonalQuota">
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:39.701" endtime="20210409 11:46:44.714"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>25</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:46:44.730" endtime="20210409 11:46:44.763"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${btn_quota_select_all}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:46:44.763" endtime="20210409 11:46:44.833"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_quota_select_all}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:44.834" level="INFO">Clicking element 'id:quotaDefinitionGrid-select-all'.</msg>
+<status status="PASS" starttime="20210409 11:46:44.833" endtime="20210409 11:46:44.989"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${undefined}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:44.990" level="INFO">Clicking element 'id:undefined'.</msg>
+<status status="PASS" starttime="20210409 11:46:44.989" endtime="20210409 11:46:45.119"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_delete_quota}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:45.120" level="INFO">Clicking button 'id:deleteDefinitionButton'.</msg>
+<status status="PASS" starttime="20210409 11:46:45.120" endtime="20210409 11:46:45.343"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:45.343" endtime="20210409 11:46:49.351"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_delete_def}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:49.351" level="INFO">Clicking button 'id:confirmation-modal_okButton'.</msg>
+<status status="PASS" starttime="20210409 11:46:49.351" endtime="20210409 11:46:49.480"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:49.480" endtime="20210409 11:46:54.492"/>
+</kw>
+<status status="PASS" starttime="20210409 11:46:39.701" endtime="20210409 11:46:54.492"/>
+</kw>
+<status status="PASS" starttime="20210409 11:46:39.701" endtime="20210409 11:46:54.492"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:51.265" endtime="20210409 11:46:54.492"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:51.265" endtime="20210409 11:46:54.492"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:31.134" endtime="20210409 11:46:54.492"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:31.134" endtime="20210409 11:46:54.492"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:07.989" endtime="20210409 11:46:54.492"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:07.989" endtime="20210409 11:46:54.492"/>
+</kw>
+<status status="PASS" starttime="20210409 11:43:07.989" endtime="20210409 11:46:54.492"/>
+</test>
+<kw name="Log out" library="CPM_OrgPolicy_Resources_PersonalQuota" type="TEARDOWN">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>20</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20210409 11:46:54.492" endtime="20210409 11:46:54.492"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lnk_username}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:54.492" level="INFO">Clicking element 'id:userMenu'.</msg>
+<status status="PASS" starttime="20210409 11:46:54.492" endtime="20210409 11:46:54.573"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${lnl_logout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210409 11:46:54.573" endtime="20210409 11:46:54.587"/>
+</kw>
+<kw name="Sleep Call 2" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:54.587" endtime="20210409 11:46:58.591"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lnl_logout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210409 11:46:58.591" level="INFO">Clicking element 'id:link-logout'.</msg>
+<status status="PASS" starttime="20210409 11:46:58.591" endtime="20210409 11:46:58.736"/>
+</kw>
+<kw name="Sleep Call" library="CloudLogin">
+<status status="PASS" starttime="20210409 11:46:58.737" endtime="20210409 11:47:03.737"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210409 11:47:03.737" endtime="20210409 11:47:06.177"/>
+</kw>
+<status status="PASS" starttime="20210409 11:46:54.492" endtime="20210409 11:47:06.177"/>
+</kw>
+<status status="PASS" starttime="20210409 11:42:30.765" endtime="20210409 11:47:06.177"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Prod L Personal">Prod L Personal</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

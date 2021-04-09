@@ -254,11 +254,11 @@ Set Color Controls
     sleep_call
 
     run keyword     Set Quota Assignment for Personal
-    run keyword     Delete Quota
-    run keyword     Check Quota Assignment is removed
-    run keyword     Open Organisational Policy Page
-    run keyword     Reset Quota choice
-    run keyword     Open Quota Definition Page
+#    run keyword     Delete Quota
+#    run keyword     Check Quota Assignment is removed
+#    run keyword     Open Organisational Policy Page
+#    run keyword     Reset Quota choice
+#    run keyword     Open Quota Definition Page
 
 Set Disable Print
     set selenium timeout    20
@@ -269,11 +269,11 @@ Set Disable Print
     sleep_call
 
     run keyword     Set Quota Assignment for Personal
-    run keyword     Delete Quota
-    run keyword     Check Quota Assignment is removed
-    run keyword     Open Organisational Policy Page
-    run keyword     Reset Quota choice
-    run keyword     Open Quota Definition Page
+#    run keyword     Delete Quota
+#    run keyword     Check Quota Assignment is removed
+#    run keyword     Open Organisational Policy Page
+#    run keyword     Reset Quota choice
+#    run keyword     Open Quota Definition Page
 
 Set Custom Color
     click element   ${txt_color_value}
@@ -350,12 +350,14 @@ Set Quota Assignment for Personal
     run keyword     Check the table values
 
     run keyword     Open Browser To Login Page using Admin
-    run keyword     Open Organisational Policy Page
     run keyword     Open Quota Definition Page
-
-
     element text should be      ${personal_assignment_count}      1
     sleep_call_2
+    run keyword     Open Organisational Policy Page
+    run keyword     Reset Quota choice
+    run keyword     Open Quota Definition Page
+    run keyword     Delete Quota
+
 
 ##########################################################################################
 Check Header Text Non Admin

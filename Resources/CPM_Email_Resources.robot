@@ -117,7 +117,7 @@ Email submission with
     reload page
     wait until page contains    Print Job History
     ${print_job_name}   set variable    dataGridMyPrintJobsId-row-0-jobName
-    wait until element contains     ${print_job_name}     ${FILENAME}
+    wait until element contains     ${print_job_name}     ${FILENAME2}
 
     element text should be      ${print_job_name}     Test Mail.html
     sleep_call_2

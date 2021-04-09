@@ -5,7 +5,7 @@ Variables    ../PageObjects/Locators.py
 
 *** Variables ***
 #${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
+#${BROWSER}                      Chrome
 #${USER}                     sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
 ${username_nonadmin}            automateuser@test.onelxk.co
@@ -53,7 +53,7 @@ Open Browser To Login Page using non admin disable
     sleep_call_2
     Click Element   ${lnk_cpm_quotauser}
     sleep_call_2
-    #Switch Window       Print Management | Lexmark Cloud Services
+    Switch Window       Print Management | Lexmark Cloud Services
     wait until element is visible   ${header_quota_preview}
     element text should be      ${header_quota_preview}     Quota remaining: Printing disabled
     close all browsers
@@ -70,8 +70,8 @@ Open Browser To Login Page using non admin no color
     Wait Until Element Is Visible   ${lnk_cpm_quotauser}
     sleep_call_2
     Click Element   ${lnk_cpm_quotauser}
-    sleep_call_2
-    #Switch Window       Print Management | Lexmark Cloud Services
+    sleep_call
+    Switch Window       Print Management | Lexmark Cloud Services
     wait until element is visible   ${header_quota_preview}
     sleep_call
     element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (no color printing)
@@ -89,8 +89,8 @@ Open Browser To Login Page using non admin normal
     Wait Until Element Is Visible   ${lnk_cpm_quotauser}
     sleep_call_2
     Click Element   ${lnk_cpm_quotauser}
-    sleep_call_2
-    #Switch Window       Print Management | Lexmark Cloud Services
+    sleep_call
+    Switch Window       Print Management | Lexmark Cloud Services
     wait until element is visible   ${header_quota_preview}
     sleep_call
     element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (${monthly_color_value} for color printing)
@@ -218,11 +218,11 @@ Set Color Controls
     sleep_call
 
     run keyword     Set Quota Assignment for Department
-    run keyword     Delete Quota
+#    run keyword     Delete Quota
     run keyword     Check Quota Assignment is removed
-    run keyword     Open Organisational Policy Page
-    run keyword     Reset Quota choice
-    run keyword     Open Quota Definition Page
+#    run keyword     Open Organisational Policy Page
+#    run keyword     Reset Quota choice
+#    run keyword     Open Quota Definition Page
 
 
 Delete Quota
@@ -255,11 +255,11 @@ Set Disable Print
     sleep_call
 
     run keyword     Set Quota Assignment for Department
-    run keyword     Delete Quota
+#    run keyword     Delete Quota
     run keyword     Check Quota Assignment is removed
-    run keyword     Open Organisational Policy Page
-    run keyword     Reset Quota choice
-    run keyword     Open Quota Definition Page
+#    run keyword     Open Organisational Policy Page
+#    run keyword     Reset Quota choice
+#    run keyword     Open Quota Definition Page
 
 
 Set Custom Color
@@ -309,12 +309,14 @@ Set Quota Assignment for Department
 
     run keyword     Check the table values
     run keyword     Open Browser To Login Page using Admin
-    run keyword     Open Organisational Policy Page
     run keyword     Open Quota Definition Page
-
-
     element should contain      ${dept_assignment_count}      1
     sleep_call_2
+    run keyword     Open Organisational Policy Page
+    run keyword     Reset Quota choice
+    run keyword     Open Quota Definition Page
+    run keyword     Delete Quota
+
 
 Check Quota Assignment is removed
     sleep_call_1
