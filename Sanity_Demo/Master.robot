@@ -12,11 +12,11 @@ Resource     ../Resources/Master.robot
 
 
 *** Variables ***
-#${LOGIN URL}                    https://dev.us.cloud.onelxk.co
-#${URL}                          https://dev.us.cloud.onelxk.co
-#${BROWSER}                      Chrome
-#${USER}                         sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
+${URL}                          https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                         sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${username_blank}
 ${username_invalid}             sravantesh@lexmark.com
 ${password_blank}
@@ -54,6 +54,7 @@ ${hybrid_unprinted_jobs_value}          20
 ${latebind}                             True
 ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
+${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/Attachments/Attachment.txt
 
 *** Test Cases ***
 Correct Login verification
@@ -65,7 +66,11 @@ Logout from portal for admin
 Delegate addition using ${EMAIL USER}
     Open Browser To Login Page
     Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
+Web Upload verification for Text file
+    Open Browser To Login Page
+    Web upload
 Mobile Job Submission
+    Open Browser To Login Page
     Mobile submission
 Email submission with different file using ${FILENAME}
     Email submission with  ${FILENAME}
@@ -116,5 +121,4 @@ Verification download of Windows Default Packages for Hybrid ${WINHYBRID_PACKAGE
     Download Default Packages for Windows for Hybrid      ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}
 Verification of custom package for Windows
     Create Custom Package for Windows   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
-
-###################################################################
+####################################################################

@@ -76,7 +76,7 @@ def user_quota_status():
     password = "Password@1234"
 
     # Get Auth token
-    auth_url = "https://idp.dev.eu.cloud.onelxk.co/oauth/token"
+    auth_url = "https://idp.dev.us.cloud.onelxk.co/oauth/token"
     payload = "{\r\n  \"grant_type\": \"password\",\r\n  \"username\": \"" + str(username) + "\",\r\n  \"password\": \"" + str(password) + "\"\r\n}"
     headers = {'Content-Type': 'application/json'}
     response = requests.request("POST", auth_url, headers=headers, data=payload)
@@ -87,7 +87,7 @@ def user_quota_status():
     access_token = access_token[0]
 
     # Get Org ID
-    org_url = "https://idp.dev.eu.cloud.onelxk.co/rest/users/email/sravantesh.neogi@lexmark.com"
+    org_url = "https://idp.dev.us.cloud.onelxk.co/rest/users/email/sravantesh.neogi@lexmark.com"
     payload = {}
     headers = {'Authorization': ''}
     auth_token = str("Bearer " + access_token)
@@ -100,7 +100,7 @@ def user_quota_status():
     user_id = jsonpath.jsonpath(json_resonse, 'id')
     identity_id=user_id[0]
 
-    base_url = "https://apis.dev.eu.cloud.onelxk.co/cpm/print-management-service/v3.0/organizations"
+    base_url = "https://apis.dev.us.cloud.onelxk.co/cpm/print-management-service/v3.0/organizations"
 
     #get current quota status and compare with CPM Portal UI
     url = base_url + "/" + org_id[0] + "/users/" + user_id[0] + "/quota/"
@@ -129,7 +129,7 @@ def user_quota_status():
 
     #get new quota status and compare with CPM Portal UI
     url = base_url + "/" + org_id[0] + "/users/" + user_id[0] + "/quota/"
-    conn = http.client.HTTPSConnection("apis.dev.eu.cloud.onelxk.co")
+    conn = http.client.HTTPSConnection("apis.dev.us.cloud.onelxk.co")
 
     payload = ""
     headers = {

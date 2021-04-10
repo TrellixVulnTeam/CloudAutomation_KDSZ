@@ -37,7 +37,7 @@ ${hybrid_unprinted_jobs_value}          20
 ${latebind}                             True
 ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
-
+${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/Attachments/Attachment.txt
 *** Keywords ***
 
 Open CPM portal and Login Verification
@@ -136,7 +136,6 @@ Check Adding Valid and Duplicate Delegates
 
     element text should be      ${lbl_delete_delegate}     Remove Delegates
 
-
     click button    ${btn_delegate_delete_ok}
     sleep_call_2
 
@@ -154,15 +153,13 @@ Open Browser To Login Page
     Click Button    ${btn_next}
     Input Text    ${txt_password}    ${password}
     Click Button    ${btn_login}
-    sleep_call
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Cloud Services Home
     set selenium timeout    20
-    #Wait Until Element Is Visible   ${lnk_cpm}
-    #Click Element   ${lnk_cpm}
     go to       ${lnk_cpm}
 
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
-    sleep_call
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${name_printqueue}
     Wait until Element Is Visible   ${name_printqueue}
     page should contain     No data available
     Wait until Element Is Visible   ${name_printqueue}
@@ -170,19 +167,38 @@ Open Browser To Login Page
     #Wait until Element Is Visible   ${txt_delegate}
     sleep_call_2
 
+Web upload
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
+    set selenium timeout    20
+    click button   id:printQueueUploadButton
+    sleep_call_2
+    Wait until Element Is Visible   xpath://*[@id="printQueueUploadModalModalHeader"]
+    choose file     id:multiFileSelectUpload    ${FILEPATH}
+    ${progress_bar}     set variable    //*[@id="_bar"]/progressbar/bar
+    ${progress_value}   set variable    //*[@id="_Content"]/div
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${progress_value}
+    Wait Until Element Contains     ${progress_value}    100%   timeout=15
+
+    ${progress_value_actual}     Set Variable    xpath://*[@id="_bar"]/progressbar/bar
+
+    element attribute value should be   ${progress_value_actual}    aria-valuenow   100
+    ${done_btn}     set variable    printQueueUploadModalDoneButton
+    click button    ${done_btn}
+
+    ${job_status}   set variable    documents-row-0-documentStatus
+    Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${job_status}        Ready
+    #####WRITE CODE FOR PRINT################
+
 Email submission with
     [Arguments]        ${FILENAME}
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     ${email_status}=   send_email_singleattachment      ${FILENAME}
     log     ${email_status}
-    sleep_call
 
-    reload page
-    sleep_call_2
-    reload page
-    sleep_call
     click element   ${name_printqueue}
+    Wait Until Keyword Succeeds    20 sec    5 sec    element text should be      ${email_job1_status}        Ready
+    Wait Until Keyword Succeeds    20 sec    5 sec    element text should be      ${email_job2_status}        Ready
 
     element text should be      ${email_job1_description}      Test Mail
     element text should be      ${email_job2_description}      Test Mail
@@ -195,64 +211,39 @@ Email submission with
     element should be visible   ${email_icon_job2}
     element attribute value should be      //*[@id="documents-row-1-client"]/lpm-source-renderer/div     title        E-Mail
 
-    reload page
-    sleep_call
-    reload page
-    sleep_call
-
-    element text should be      ${email_job1_status}        Ready
-    element text should be      ${email_job2_status}        Ready
-
 #Call the Print Device Automation Python script for releasing the first job
     ${print_job_status} =   printer_automation  ${FILENAME}
     log     {print_job_status}
-    sleep_call
 
 #Check Print Job History table
     Switch Window       Print Management | Lexmark Cloud Services
     Title Should Be     Print Management | Lexmark Cloud Services
-    reload page
     Wait until Element Is Visible   ${name_printqueue}
-    wait until page does not contain element    ${FILENAME}
     sleep_call_2
-    reload page
-    sleep_call
-    reload page
-    sleep_call
     #wait until page contains    Print Job History
-    sleep_call_2
     click element   link-navJobHistory
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
-    wait until element contains     ${print_job_name1}     ${FILENAME}
+    Wait Until Keyword Succeeds    20 sec    5 sec    element should contain      ${print_job_name1}        ${FILENAME}
+    #wait until element contains     ${print_job_name1}     ${FILENAME}
 
     element text should be      ${print_job_name1}     ${FILENAME}
     sleep_call_2
-
     Click Element   link-navPrintQueue
 
 #Now call printer simulation for second job
-    sleep_call
 
     ${print_job_status} =   printer_automation  ${FILENAME2}
     log     {print_job_status}
 
-    sleep_call
-    sleep_call
-
 #Check Print Job History table
     Switch Window       Print Management | Lexmark Cloud Services
     Title Should Be     Print Management | Lexmark Cloud Services
-    reload page
     Wait until Element Is Visible   ${name_printqueue}
-    wait until page does not contain element    Test Mail.html
     sleep_call_2
     click element   link-navJobHistory
     wait until page contains    Print Job History
-    reload page
-    wait until page contains    Print Job History
     ${print_job_name}   set variable    dataGridMyPrintJobsId-row-0-jobName
-    sleep_call_2
-    wait until element contains     ${print_job_name}     ${FILENAME2}
+    Wait Until Keyword Succeeds    20 sec    5 sec    element should contain      ${print_job_name}        Test Mail.html
 
     element text should be      ${print_job_name}     Test Mail.html
     sleep_call_2
@@ -261,19 +252,14 @@ Email submission with
 
 Mobile submission
     #[Arguments]        ${FILENAME}
-    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
+    #${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     ${mobile_status}=   mobile_submit
-    reload page
-    sleep_call
-    reload page
-    sleep_call
-    wait until page contains element    ${email_job1_description}
+    Wait Until Keyword Succeeds    25 sec    5 sec    element text should be      ${email_job1_status}        Ready
     element text should be      ${email_job1_description}      A test document to upload
     element should contain      ${tbl_printqueue}        mobile.doc
     element should be visible   ${email_icon_job1}
     element attribute value should be      //*[@id="documents-row-0-client"]/lpm-source-renderer/div     title        Mobile
-    element text should be      ${email_job1_status}        Ready
 
 #Call the Print Device Automation Python script for releasing the first job
     ${print_job_status} =   printer_automation  ${mobile_job}
@@ -285,24 +271,20 @@ Mobile submission
 #Check Print Job History table
     Switch Window       Print Management | Lexmark Cloud Services
     Title Should Be     Print Management | Lexmark Cloud Services
-    reload page
     Wait until Element Is Visible   ${name_printqueue}
-    wait until page does not contain element    ${mobile_job}
     sleep_call_2
     click element   link-navJobHistory
     wait until page contains    Print Job History
-    #reload page
     #wait until page contains    Print Job History
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
-    wait until element is visible     ${print_job_name1}
-    element text should be      ${print_job_name1}     ${mobile_job}
+    Wait Until Keyword Succeeds    25 sec    5 sec    element text should be      ${print_job_name1}        ${mobile_job}
     sleep_call_2
     click element       ${name_printqueue}
 
 Open Browser To Login Page using admin
 #Call python
     set selenium timeout    20
-    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
+    ${lnk_cpm} =   Catenate    SEPARATOR=/   ${URL}   cpm
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
@@ -336,6 +318,7 @@ Select Personal
     sleep_call_2
     click element       ${btn_save}
     sleep_call
+
 
 Open Quota Definition Page
     set selenium timeout    20
@@ -472,17 +455,15 @@ Check Status Table for normal
     set selenium timeout    25
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     ${total}    ${color}=   quota_green
-    reload page
-    sleep_call_2
-    reload page
+
     Open Quota Status Page
     wait until page contains             User Quota Status
-
     wait until page contains element    ${lbl_quotausername}
     element should contain      ${lbl_quotausername}       ${username_nonadmin}
     element should contain      ${lbl_totalquotaremaining}    ${total}
     element should contain      ${lbl_colorquotaremaining}     ${color}
-    element attribute value should be      ${icon_condition}     class   glyphicon icon-valid text-primary
+    Wait Until Keyword Succeeds    25 sec    5 sec    element attribute value should be      ${icon_condition}     class   glyphicon icon-valid text-primary
+    #element attribute value should be      ${icon_condition}     class   glyphicon icon-valid text-primary
     sleep_call_2
     click element   ${name_printqueue}
     wait until element is visible   ${btn_upload}
@@ -507,9 +488,7 @@ Check Status Table for warning
     set selenium timeout    25
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     ${total}    ${color}=   quota_yellow
-    reload page
     sleep_call_2
-    reload page
     Open Quota Status Page
     wait until page contains             User Quota Status
 
@@ -517,7 +496,7 @@ Check Status Table for warning
     element should contain      ${lbl_quotausername}       ${username_nonadmin}
     element should contain      ${lbl_totalquotaremaining}    ${total}
     element should contain      ${lbl_colorquotaremaining}     ${color}
-    element attribute value should be      ${icon_condition}     class   glyphicon icon-warning text-warning
+    Wait Until Keyword Succeeds    25 sec    5 sec    element attribute value should be      ${icon_condition}     class   glyphicon icon-warning text-warning
     sleep_call_2
     click element   ${name_printqueue}
     wait until element is visible   ${btn_upload}
@@ -542,9 +521,7 @@ Check Status Table for exceeded
     set selenium timeout    25
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     ${total}    ${color}=   quota_red
-    reload page
     sleep_call_2
-    reload page
     Open Quota Status Page
     wait until page contains             User Quota Status
 
@@ -552,7 +529,7 @@ Check Status Table for exceeded
     element should contain      ${lbl_quotausername}       ${username_nonadmin}
     element should contain      ${lbl_totalquotaremaining}    ${total}
     element should contain      ${lbl_colorquotaremaining}     ${color}
-    element attribute value should be      ${icon_condition}     class   glyphicon icon-notify_alert text-danger
+    Wait Until Keyword Succeeds    25 sec    5 sec    element attribute value should be      ${icon_condition}     class   glyphicon icon-notify_alert text-danger
     sleep_call_2
     click element   ${name_printqueue}
     wait until element is visible   ${btn_upload}

@@ -262,3 +262,5 @@ monthly_total_id="id:individualQuotaValuesId-row-3-totalQuota"
 monthly_color_id="id:individualQuotaValuesId-row-3-colorQuota"
 
 tbl_cc_quota_name="id:collections-row-0-quotaDefinition.name"
+
+fileupload="xpath://*[@id='_Content']/div"
