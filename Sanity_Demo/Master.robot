@@ -60,7 +60,7 @@ Correct Login verification
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
 Verification of dashboard title
     Dashboard Should Open
-Logout from portal
+Logout from portal for admin
     Exit
 Delegate addition using ${EMAIL USER}
     Open Browser To Login Page
@@ -70,7 +70,6 @@ Mobile Job Submission
 Email submission with different file using ${FILENAME}
     Email submission with  ${FILENAME}
 Verify quota creation Total 50 and Color 50 for current month
-    Open Browser To Login Page using admin
     Open Organisational Policy Page
     Open Quota Definition Page
     Create Quota different for month
