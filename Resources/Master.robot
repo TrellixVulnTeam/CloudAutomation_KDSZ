@@ -459,11 +459,12 @@ Set Quota Assignment for Personal
 Check Status Table for normal
     set selenium timeout    25
     ${total}    ${color}=   quota_green
-    Open Quota Status Page
-    wait until page contains             User Quota Status
     reload page
     sleep_call_2
     reload page
+    Open Quota Status Page
+    wait until page contains             User Quota Status
+
     wait until page contains element    ${lbl_quotausername}
     element should contain      ${lbl_quotausername}       ${username_nonadmin}
     element should contain      ${lbl_totalquotaremaining}    ${total}
@@ -492,11 +493,12 @@ Check Status Table for normal
 Check Status Table for warning
     set selenium timeout    25
     ${total}    ${color}=   quota_yellow
-    Open Quota Status Page
-    wait until page contains             User Quota Status
     reload page
     sleep_call_2
     reload page
+    Open Quota Status Page
+    wait until page contains             User Quota Status
+
     wait until page contains element    ${lbl_quotausername}
     element should contain      ${lbl_quotausername}       ${username_nonadmin}
     element should contain      ${lbl_totalquotaremaining}    ${total}
@@ -525,11 +527,12 @@ Check Status Table for warning
 Check Status Table for exceeded
     set selenium timeout    25
     ${total}    ${color}=   quota_red
-    Open Quota Status Page
-    wait until page contains             User Quota Status
     reload page
     sleep_call_2
     reload page
+    Open Quota Status Page
+    wait until page contains             User Quota Status
+
     wait until page contains element    ${lbl_quotausername}
     element should contain      ${lbl_quotausername}       ${username_nonadmin}
     element should contain      ${lbl_totalquotaremaining}    ${total}
