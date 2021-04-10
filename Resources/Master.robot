@@ -37,12 +37,12 @@ ${hybrid_unprinted_jobs_value}          20
 ${latebind}                             True
 ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
-${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
 
 *** Keywords ***
 
 Open CPM portal and Login Verification
     [Arguments]    ${username}      ${password}
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     wait until page contains    E-mail
@@ -76,7 +76,8 @@ Dashboard Should Open
 
 
 Check Adding Valid and Duplicate Delegates
-   [Arguments]        ${EMAIL USER}
+    [Arguments]        ${EMAIL USER}
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     Wait until Element Is Visible   ${lbl_delegate}
     page should contain     No data available
@@ -146,6 +147,7 @@ Check Adding Valid and Duplicate Delegates
 
 
 Open Browser To Login Page
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
@@ -170,6 +172,7 @@ Open Browser To Login Page
 
 Email submission with
     [Arguments]        ${FILENAME}
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     ${email_status}=   send_email_singleattachment      ${FILENAME}
     log     ${email_status}
@@ -258,6 +261,7 @@ Email submission with
 
 Mobile submission
     #[Arguments]        ${FILENAME}
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     ${mobile_status}=   mobile_submit
     reload page
@@ -298,6 +302,7 @@ Mobile submission
 Open Browser To Login Page using admin
 #Call python
     set selenium timeout    20
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
@@ -314,6 +319,7 @@ Open Browser To Login Page using admin
 
 Open Organisational Policy Page
     set selenium timeout    20
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     wait until page contains element    ${org_policy}
@@ -351,6 +357,7 @@ Open Quota Status Page
 
 Create Quota different for month
     sleep_call
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     wait until page contains element  ${btn_create_quota}
     click element    ${btn_create_quota}
@@ -388,6 +395,7 @@ Create Quota different for month
 
 Create Custom Quota
     sleep_call
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     wait until page contains element  ${btn_create_quota}
     click element    ${btn_create_quota}
@@ -430,6 +438,7 @@ Create Custom Quota
 
 Set Quota Assignment for Personal
     set selenium timeout    20
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     sleep_call
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
@@ -461,6 +470,7 @@ Set Quota Assignment for Personal
 
 Check Status Table for normal
     set selenium timeout    25
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     ${total}    ${color}=   quota_green
     reload page
     sleep_call_2
@@ -495,6 +505,7 @@ Check Status Table for normal
 
 Check Status Table for warning
     set selenium timeout    25
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     ${total}    ${color}=   quota_yellow
     reload page
     sleep_call_2
@@ -529,6 +540,7 @@ Check Status Table for warning
 
 Check Status Table for exceeded
     set selenium timeout    25
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     ${total}    ${color}=   quota_red
     reload page
     sleep_call_2
@@ -562,6 +574,7 @@ Check Status Table for exceeded
     sleep_call_2
 
 Delete Quota
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     ${deleted}=   delete_user
     run keyword     Open Quota Definition Page
     set selenium timeout    20
@@ -574,6 +587,7 @@ Delete Quota
     sleep_call
 
 Reset to Cost center
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     run keyword     Open Organisational Policy Page
     wait until element is visible       ${btn_save}
     click element       ${radio_costcenter}
@@ -581,6 +595,7 @@ Reset to Cost center
     click button        ${btn_save}
 
 Logoutadmin
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     scroll element into view        singlechk
     sleep_call_2
@@ -602,6 +617,7 @@ Exit
     close all browsers
 
 Check Table Values
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     sleep_call_2
     element text should be      ${monthly_total_id}   50
@@ -613,6 +629,7 @@ Check Table Values
     sleep_call_1
 
 Create Monthly Quota
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     sleep_call
     set selenium timeout    20
     wait until page contains element  ${btn_create_quota}
@@ -672,6 +689,7 @@ Open Quota Assignment Page
     sleep_call_2
 
 Set Quota Assignment for Cost Center
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    25
     sleep_call
     wait until page contains element   ${btn_assignquota}
@@ -713,6 +731,7 @@ Select Department or Personal
     sleep_call
 
 Set Quota Assignment for Department
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     sleep_call
     set selenium timeout    20
     wait until page contains element    ${btn_assignquota}
@@ -750,6 +769,7 @@ Set Quota Assignment for Department
 
 
 Check Dialog Values
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     wait until element is visible       ${btn_summary_close}
     page should contain         Same limits for each month
     page should contain         Total quota (color + black-and-white): 50
@@ -845,6 +865,7 @@ Download MAC Default Packages for SAAS
     close browser
 
 Download MAC Default Packages for Hybrid
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
@@ -928,6 +949,7 @@ Download MAC Default Packages for Hybrid
 
 
 Download Default Packages for Windows for SAAS
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
@@ -1014,6 +1036,7 @@ Download Default Packages for Windows for SAAS
 
 
 Download Default Packages for Windows for Hybrid
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
@@ -1099,7 +1122,7 @@ Download Default Packages for Windows for Hybrid
     close browser
 
 Create Custom Package for Windows
-
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     [Arguments]   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
     Set Global Variable      ${unused_client_value_delete_span}
     Open Browser    ${URL}    ${NORMALBROWSER}
@@ -1262,7 +1285,7 @@ Create Custom Package for Windows
     close browser
 
 Set Unused Client Folder values
-
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     ${unused_client_value_delete_span_temp}    get value   ${txt_noprint_span}
     sleep_call_2
 
@@ -1278,6 +1301,7 @@ Set Unused Client Folder values
     ${unused_client_value_delete_span}      get text    ${txt_noprint_span}
 
 Check default state
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     click element    ${lnk_custompackage}
     sleep_call_2
     wait until element is visible   ${lbl_clientdownload}
