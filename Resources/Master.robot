@@ -37,6 +37,7 @@ ${hybrid_unprinted_jobs_value}          20
 ${latebind}                             True
 ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
+${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
 
 *** Keywords ***
 
