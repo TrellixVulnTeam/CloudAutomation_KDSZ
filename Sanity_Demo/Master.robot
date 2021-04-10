@@ -56,54 +56,56 @@ ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
 
 *** Test Cases ***
-#Correct Login verification
-#    Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
-#Verification of dashboard title
-#    Dashboard Should Open
-#Logout from portal
-#    Exit
-#Delegate addition using ${EMAIL USER}
-#    Open Browser To Login Page
-#    Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
-#Mobile Job Submission
-#    Mobile submission
-#Email submission with different file using ${FILENAME}
-#    Email submission with  ${FILENAME}
-#Verify quota creation Total 50 and Color 50 for current month
-#    Open Browser To Login Page using admin
-#    Open Organisational Policy Page
-#    Open Quota Definition Page
-#    Create Quota different for month
-#Verify Cost Center Assignment
-#    Open Organisational Policy Page
-#    Select Cost Center or Personal First
-#    Open Quota Assignment Page
-#    Set Quota Assignment for Cost Center
-#    Delete Quota
-#Verify quota creation Total 50 and Color 50 for all month
-#    Open Quota Definition Page
-#    Create Monthly Quota
-#Verify Department Quota Assignment
-#    Open Organisational Policy Page
-#    Select Department or Personal
-#    Open Quota Assignment Page
-#    Set Quota Assignment for Department
-#    Delete Quota
-#Reset Quota to Cost Center
-#    Open Organisational Policy Page
-#    Select Cost Center or Personal
-Verify User Quota Status by personal assignment
+Correct Login verification
+    Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
+Verification of dashboard title
+    Dashboard Should Open
+Logout from portal
+    Exit
+Delegate addition using ${EMAIL USER}
+    Open Browser To Login Page
+    Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
+Mobile Job Submission
+    Mobile submission
+Email submission with different file using ${FILENAME}
+    Email submission with  ${FILENAME}
+Verify quota creation Total 50 and Color 50 for current month
     Open Browser To Login Page using admin
     Open Organisational Policy Page
+    Open Quota Definition Page
+    Create Quota different for month
+Verify Cost Center Assignment
+    Open Organisational Policy Page
+    Select Cost Center or Personal First
+    Open Quota Assignment Page
+    Set Quota Assignment for Cost Center
+    Delete Quota
+Verify quota creation Total 50 and Color 50 for all month
+    Open Quota Definition Page
+    Create Monthly Quota
+Verify Department Quota Assignment
+    Open Organisational Policy Page
+    Select Department or Personal
+    Open Quota Assignment Page
+    Set Quota Assignment for Department
+    Delete Quota
+Reset Quota to Cost Center
+    Open Organisational Policy Page
+    Select Cost Center or Personal
+Verify User Quota Status by personal assignment
     Select Personal
     Open Quota Definition Page
     Create Custom Quota
     Set Quota Assignment for Personal
+Verify user status for normal reduction
     Check Status Table for normal
+Verify user status for warning reduction
     Check Status Table for warning
+Verify user status for exceeded reduction
     Check Status Table for exceeded
     Delete Quota
     Reset to Cost center
+Log out from portal
     Logoutadmin
 Verfication download of MAC Default SAAS package ${SAAS_PACKAGE NAME}
     Download MAC Default Packages for SAAS      ${MACSAASNAME}     ${MACSAASLINK}     ${MACSAAS_PACKAGE NAME}
