@@ -153,8 +153,10 @@ Open Browser To Login Page
     Click Button    ${btn_login}
     sleep_call
     set selenium timeout    20
-    Wait Until Element Is Visible   ${lnk_cpm}
-    Click Element   ${lnk_cpm}
+    #Wait Until Element Is Visible   ${lnk_cpm}
+    #Click Element   ${lnk_cpm}
+    go to       ${lnk_cpm}
+
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
@@ -302,9 +304,9 @@ Open Browser To Login Page using admin
     Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
-    Wait Until Element Is Visible   ${lnk_cpm}
-    sleep_call_2
-    Click Element   ${lnk_cpm}
+    #Wait Until Element Is Visible   ${lnk_cpm}
+    #Click Element   ${lnk_cpm}
+    go to       ${lnk_cpm}
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
@@ -757,7 +759,9 @@ Check Dialog Values
     sleep_call_1
 
 Download MAC Default Packages for SAAS
-    Open Browser    ${URL}    ${BROWSER}
+    ${lnk_cpm} =   Catenate    SEPARATOR=/   ${URL}   cpm
+
+    Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
     Maximize Browser Window
@@ -840,7 +844,7 @@ Download MAC Default Packages for SAAS
     close browser
 
 Download MAC Default Packages for Hybrid
-    Open Browser    ${URL}    ${BROWSER}
+    Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
     Maximize Browser Window
@@ -923,7 +927,7 @@ Download MAC Default Packages for Hybrid
 
 
 Download Default Packages for Windows for SAAS
-    Open Browser    ${URL}    ${BROWSER}
+    Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
     Maximize Browser Window
@@ -1009,7 +1013,7 @@ Download Default Packages for Windows for SAAS
 
 
 Download Default Packages for Windows for Hybrid
-    Open Browser    ${URL}    ${BROWSER}
+    Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
     Maximize Browser Window
@@ -1097,7 +1101,7 @@ Create Custom Package for Windows
 
     [Arguments]   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
     Set Global Variable      ${unused_client_value_delete_span}
-    Open Browser    ${URL}    ${BROWSER}
+    Open Browser    ${URL}    ${NORMALBROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
     Click Button    ${btn_next}
@@ -1111,8 +1115,9 @@ Create Custom Package for Windows
     go to   ${URL}
 
     sleep_call
-    Wait Until Element Is Visible   ${lnk_cpm}
-    Click Element   ${lnk_cpm}
+    #Wait Until Element Is Visible   ${lnk_cpm}
+    #Click Element   ${lnk_cpm}
+    go to       ${lnk_cpm}
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
