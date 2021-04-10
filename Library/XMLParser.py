@@ -4,12 +4,12 @@ import os
 import shutil
 
 
-def download_wait(filename):
-    path_to_downloads = "C://Users//neogis//Downloads"
-    while not os.path.exists(path_to_downloads + "//" + filename):
-        pass
-    if os.path.isfile(path_to_downloads + '//' + filename):
-        return filename + " File Downloaded"
+# def download_wait(filename):
+#     path_to_downloads = "C://Users//neogis//Downloads"
+#     while not os.path.exists(path_to_downloads + "//" + filename):
+#         pass
+#     if os.path.isfile(path_to_downloads + '//' + filename):
+#         return filename + " File Downloaded"
 
 
 def delete_file(filename):
@@ -103,3 +103,5 @@ def check_values(notification_flag_original, delete_folder_check, unused_client_
     os.remove(path)
 
     return "Settings completed"
+
+

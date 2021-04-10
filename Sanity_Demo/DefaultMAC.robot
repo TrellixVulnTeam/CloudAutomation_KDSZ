@@ -14,13 +14,14 @@ Suite Teardown     Log out
 #${USER}                     sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
 
+
 *** Test Cases ***
 Verify Default Client Download packge for MAC ${NAME}
 
 
 *** Keywords ***
 #Open Browser To Login Page
-Download MAC Default Packages
+Download MAC Default Packages for SAAS
     Open Browser    ${URL}    ${BROWSER}
 
 #Maximise Browser
