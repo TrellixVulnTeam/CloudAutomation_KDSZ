@@ -786,8 +786,20 @@ Set Quota Assignment for Department
     element should contain      ${costcenter_name}      ${dept}
     click element       ${quota_name_link}
     sleep_call_1
-    run keyword     Check Table Values
+    run keyword     Check Dialog Values
 
     run keyword     Open Quota Definition Page
     element should contain      ${dept_assignment_count}      1
     sleep_call_2
+
+
+Check Dialog Values
+    wait until element is visible       ${btn_summary_close}
+    page should contain         Same limits for each month
+    page should contain         Total quota (color + black-and-white): 50
+    page should contain         Color printing limit: 50
+    click button    ${btn_summary_close}
+    wait until page contains element        ${tbl_cc_quota_name}
+    element text should be      ${tbl_cc_quota_name}    ${quota_name}
+
+    sleep_call_1
