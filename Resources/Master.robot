@@ -759,7 +759,7 @@ Check Dialog Values
     sleep_call_1
 
 Download MAC Default Packages for SAAS
-    ${lnk_cpm} =   Catenate    SEPARATOR=/   ${URL}   cpm
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
 
     Open Browser    ${URL}    ${NORMALBROWSER}
 
