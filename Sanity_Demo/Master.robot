@@ -93,6 +93,7 @@ ${saas}                                 True
 #    Open Organisational Policy Page
 #    Select Cost Center or Personal
 Verify User Quota Status by personal assignment
+    Open Browser To Login Page using admin
     Open Organisational Policy Page
     Select Personal
     Open Quota Definition Page
