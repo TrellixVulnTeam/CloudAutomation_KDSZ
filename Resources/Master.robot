@@ -431,7 +431,7 @@ Create Quota different for month
     click button    ${btn_vary_ok}
     wait until page contains element        ${btn_create_def}
     click button    ${btn_create_def}
-    sleep_call_2
+    sleep_call
 
 Create Custom Quota
     sleep_call
@@ -468,7 +468,7 @@ Create Custom Quota
     click button    ${btn_vary_ok}
     wait until page contains element        ${btn_create_def}
     click button    ${btn_create_def}
-    sleep_call_2
+    sleep_call
 
 #Create user
     ${user}=   create_user
@@ -647,14 +647,13 @@ Exit
 
 Check Table Values
     set selenium timeout    20
-    sleep_call
-    wait until page contains element        ${tbl_email_quota_name}
-    element text should be      ${tbl_email_quota_name}    ${quota_name}
-    click element       ${email_quota_link}
     sleep_call_2
-    element text should be      ${monthly_total_id}   ${monthly_total_value}
-    element text should be      ${monthly_color_id}   ${monthly_color_value}
+    element text should be      ${monthly_total_id}   50
+    element text should be      ${monthly_color_id}   50
     click button    ${btn_summary_close}
+    wait until page contains element        ${tbl_cc_quota_name}
+    element text should be      ${tbl_cc_quota_name}    ${quota_name}
+
     sleep_call_1
 
 Create Monthly Quota
@@ -684,14 +683,23 @@ Create Monthly Quota
     click element   ${txt_color_value}
     press keys      ${txt_color_value}      \DELETE
     input text      ${txt_color_value}      50
-    click button    ${btn_vary_ok}
+    #click button    ${btn_vary_ok}
     wait until page contains element        ${btn_create_def}
     click button    ${btn_create_def}
+    sleep_call
+
+Select Cost Center or Personal First
+    set selenium timeout    20
+    click element    ${chk_costcenter}
+    #wait until page contains element        ${btn_confirmchange}
+    #click element       ${btn_confirmchange}
     sleep_call_2
+    click element       ${btn_save}
+    sleep_call
 
 Select Cost Center or Personal
     set selenium timeout    20
-    select checkbox     ${chk_costcenter}
+    click element     ${chk_costcenter}
     wait until page contains element        ${btn_confirmchange}
     click element       ${btn_confirmchange}
     sleep_call_2
@@ -709,24 +717,7 @@ Open Quota Assignment Page
 
 Set Quota Assignment for Cost Center
     set selenium timeout    25
-    wait until element is visible   ${admin_dropdown}
-    click element       ${admin_dropdown}
-    wait until page contains element    ${org_policy}
-    sleep_call_2
-    click element       ${org_policy}
-    wait until page contains element       ${page_header}
-    sleep_call_2
-    click element   ${chk_costcenter}
-    click button    ${btn_save}
-    sleep_call_2
-    wait until element is visible   ${admin_dropdown}
-    click element       ${admin_dropdown}
-    sleep_call_2
-    click element       ${lbl_quotaassignment}
     sleep_call
-    sleep_call
-    #Assign Quota by Cost Center
-    set selenium timeout    20
     wait until page contains element   ${btn_assignquota}
     click button    ${btn_assignquota}
     sleep_call_1
@@ -750,6 +741,7 @@ Set Quota Assignment for Cost Center
     sleep_call_1
     element text should be      ${costcenter_name}      ${costcenter}
     click element       ${quota_name_link}
+    run keyword     Check Table Values
     sleep_call_1
     run keyword     Open Quota Definition Page
     element text should be      ${costcenter_assignment_count}      1
@@ -794,6 +786,7 @@ Set Quota Assignment for Department
     element should contain      ${costcenter_name}      ${dept}
     click element       ${quota_name_link}
     sleep_call_1
+    run keyword     Check Table Values
 
     run keyword     Open Quota Definition Page
     element should contain      ${dept_assignment_count}      1

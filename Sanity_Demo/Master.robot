@@ -13,7 +13,7 @@ Resource     ../Resources/Master.robot
 *** Variables ***
 ${LOGIN URL}                    https://dev.us.cloud.onelxk.co
 ${URL}                          https://dev.us.cloud.onelxk.co
-${BROWSER}                      headlessChrome
+${BROWSER}                      Chrome
 ${USER}                         sravantesh.neogi@lexmark.com
 ${PASSWORD}                     Password@1234
 ${username_blank}
@@ -49,22 +49,20 @@ Mobile Job Submission
     Mobile submission
 Email submission with different file using ${FILENAME}
     Email submission with  ${FILENAME}
-Verify quota creation different for each month
+Verify quota creation Total 50 and Color 50 for current month
+    Open Browser To Login Page using admin
     Open Organisational Policy Page
     Open Quota Definition Page
     Create Quota different for month
-    Check Table Values
 Verify Cost Center Assignment
     Open Organisational Policy Page
-    Select Cost Center or Personal
+    Select Cost Center or Personal First
     Open Quota Assignment Page
     Set Quota Assignment for Cost Center
     Delete Quota
-Verify quota creation same for all month
+Verify quota creation Total 50 and Color 50 for all month
     Open Quota Definition Page
     Create Monthly Quota
-    Check Table Values
-    Delete Quota
 Verify Department Quota Assignment
     Open Organisational Policy Page
     Select Department or Personal
