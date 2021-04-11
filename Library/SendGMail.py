@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 
-from_address="sravantesh.neogi@lexmark.com"
+from_address="stlcpmautomation@gmail.com"
 to_address="sravantesh.neogi@lexmark.com"
 
 msg=MIMEMultipart()
@@ -27,7 +27,7 @@ p.add_header('Content-Disposition',"attachment;filename=%s" % filename)
 msg.attach(p)
 
 
-s=smtplib.SMTP('smtp.office365.com',587)
+s=smtplib.SMTP('smtp.gmail.com',587)
 
 s.starttls()
 s.login(from_address,"Stlcpm@1234")
