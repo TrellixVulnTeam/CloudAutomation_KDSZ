@@ -38,6 +38,7 @@ ${latebind}                             True
 ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
 ${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/Attachments/Attachment.txt
+${WEBFILENAME}                          Attachment.txt
 *** Keywords ***
 
 Open CPM portal and Login Verification
@@ -188,6 +189,24 @@ Web upload
     ${job_status}   set variable    documents-row-0-documentStatus
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${job_status}        Ready
     #####WRITE CODE FOR PRINT################
+#Call the Print Device Automation Python script for releasing the first job
+    ${print_job_status} =   printer_automation  ${WEBFILENAME}
+    log     {print_job_status}
+
+#Check Print Job History table
+    Switch Window       Print Management | Lexmark Cloud Services
+    Title Should Be     Print Management | Lexmark Cloud Services
+    Wait until Element Is Visible   ${name_printqueue}
+    sleep_call_2
+    #wait until page contains    Print Job History
+    click element   link-navJobHistory
+    ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
+    Wait Until Keyword Succeeds    40 sec    5 sec    element should contain      ${print_job_name1}        ${WEBFILENAME}
+    #wait until element contains     ${print_job_name1}     ${FILENAME}
+
+    element text should be      ${print_job_name1}     ${WEBFILENAME}
+    sleep_call_2
+    Click Element   link-navPrintQueue
 
 Email submission with
     [Arguments]        ${FILENAME}
@@ -1344,3 +1363,7 @@ Change Security Settings
     sleep_call_2
     Press Keys    None      ARROW_UP
     sleep_call_2
+#    ${list} =     Create List    --disable-web-security
+#    ${args} =     Create Dictionary    args=${list}
+#    ${desired caps} =     Create Dictionary    platform=${OS}     chromeOptions=${args}
+#    Open Browser    https://www.google.com    remote_url=${grid_url}    browser=${BROWSER}    desired_capabilities=${desired caps}

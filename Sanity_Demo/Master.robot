@@ -69,6 +69,7 @@ Delegate addition using ${EMAIL USER}
 Web Upload verification for Text file
     Open Browser To Login Page
     Web upload
+
 Mobile Job Submission
     Open Browser To Login Page
     Mobile submission
