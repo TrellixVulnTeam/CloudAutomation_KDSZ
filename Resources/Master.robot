@@ -168,7 +168,8 @@ Open Browser To Login Page
     #Wait until Element Is Visible   ${txt_delegate}
     sleep_call_2
 
-Web upload
+Web upload with
+    [Arguments]        ${WEBFILENAME}
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     click button   id:printQueueUploadButton

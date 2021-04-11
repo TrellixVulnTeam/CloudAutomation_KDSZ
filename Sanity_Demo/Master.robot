@@ -55,6 +55,7 @@ ${latebind}                             True
 ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
 ${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/Attachments/Attachment.txt
+${WEBFILENAME}                          Attachment.txt
 
 *** Test Cases ***
 Correct Login verification
@@ -68,10 +69,8 @@ Delegate addition using ${EMAIL USER}
     Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
 Web Upload verification for Text file
     Open Browser To Login Page
-    Web upload
-
+    Web upload with  ${WEBFILENAME}
 Mobile Job Submission
-    Open Browser To Login Page
     Mobile submission
 Email submission with different file using ${FILENAME}
     Email submission with  ${FILENAME}
