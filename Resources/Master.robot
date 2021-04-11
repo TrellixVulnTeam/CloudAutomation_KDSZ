@@ -39,6 +39,9 @@ ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
 ${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/Attachments/Attachment.txt
 ${WEBFILENAME}                          Attachment.txt
+${IP}
+${PIN}
+
 *** Keywords ***
 
 Open CPM portal and Login Verification
@@ -1364,7 +1367,3 @@ Change Security Settings
     sleep_call_2
     Press Keys    None      ARROW_UP
     sleep_call_2
-#    ${list} =     Create List    --disable-web-security
-#    ${args} =     Create Dictionary    args=${list}
-#    ${desired caps} =     Create Dictionary    platform=${OS}     chromeOptions=${args}
-#    Open Browser    https://www.google.com    remote_url=${grid_url}    browser=${BROWSER}    desired_capabilities=${desired caps}

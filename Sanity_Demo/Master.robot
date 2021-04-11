@@ -56,6 +56,8 @@ ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
 ${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/Attachments/Attachment.txt
 ${WEBFILENAME}                          Attachment.txt
+${IP}
+${PIN}
 
 *** Test Cases ***
 Correct Login verification
@@ -69,11 +71,11 @@ Delegate addition using ${EMAIL USER}
     Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
 Web Upload verification for Text file
     Open Browser To Login Page
-    Web upload with  ${WEBFILENAME}
+    Web upload with     ${IP}   ${PIN}  ${WEBFILENAME}
 Mobile Job Submission
-    Mobile submission
+    Mobile submission   ${IP}   ${PIN}
 Email submission with different file using ${FILENAME}
-    Email submission with  ${FILENAME}
+    Email submission with  ${IP}   ${PIN}   ${FILENAME}
 Verify quota creation Total 50 and Color 50 for current month
     Open Organisational Policy Page
     Open Quota Definition Page
