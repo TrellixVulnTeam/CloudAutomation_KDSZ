@@ -782,7 +782,11 @@ Check Dialog Values
 Download MAC Default Packages for SAAS
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
 
-    Open Browser    ${URL}    ${NORMALBROWSER}
+    ${list} =     Create List    --start-maximized    --disable-web-security
+    ${args} =     Create Dictionary    args=${list}
+    ${desired caps} =     Create Dictionary    chromeOptions=${args}
+    Open Browser    ${URL}    ${BROWSER}    desired_capabilities=${desired caps}
+    #Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
     Maximize Browser Window
@@ -813,7 +817,7 @@ Download MAC Default Packages for SAAS
     Click Button    btn-email-login
     sleep_call
 
-    run keyword     Change Security Settings
+    #run keyword     Change Security Settings
 #OPen Dashboard
    go to   ${URL}
 
@@ -866,7 +870,11 @@ Download MAC Default Packages for SAAS
 
 Download MAC Default Packages for Hybrid
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
-    Open Browser    ${URL}    ${NORMALBROWSER}
+
+    ${list} =     Create List    --start-maximized    --disable-web-security
+    ${args} =     Create Dictionary    args=${list}
+    ${desired caps} =     Create Dictionary    chromeOptions=${args}
+    Open Browser    ${URL}    ${BROWSER}    desired_capabilities=${desired caps}
 
 #Maximise Browser
     Maximize Browser Window
@@ -896,7 +904,7 @@ Download MAC Default Packages for Hybrid
 #Click Login Button
     Click Button    btn-email-login
     sleep_call
-    run keyword     Change Security Settings
+    #run keyword     Change Security Settings
 
 #OPen Dashboard
    go to   ${URL}
@@ -950,7 +958,11 @@ Download MAC Default Packages for Hybrid
 
 Download Default Packages for Windows for SAAS
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
-    Open Browser    ${URL}    ${NORMALBROWSER}
+
+    ${list} =     Create List    --start-maximized    --disable-web-security
+    ${args} =     Create Dictionary    args=${list}
+    ${desired caps} =     Create Dictionary    chromeOptions=${args}
+    Open Browser    ${URL}    ${BROWSER}    desired_capabilities=${desired caps}
 
 #Maximise Browser
     Maximize Browser Window
@@ -981,7 +993,7 @@ Download Default Packages for Windows for SAAS
     Click Button    btn-email-login
     sleep_call
 #Dashboard Should Open
-    run keyword     Change Security Settings
+    #run keyword     Change Security Settings
 
 
 #OPen Dashboard
@@ -1037,7 +1049,11 @@ Download Default Packages for Windows for SAAS
 
 Download Default Packages for Windows for Hybrid
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
-    Open Browser    ${URL}    ${NORMALBROWSER}
+
+    ${list} =     Create List    --start-maximized    --disable-web-security
+    ${args} =     Create Dictionary    args=${list}
+    ${desired caps} =     Create Dictionary    chromeOptions=${args}
+    Open Browser    ${URL}    ${BROWSER}    desired_capabilities=${desired caps}
 
 #Maximise Browser
     Maximize Browser Window
@@ -1068,7 +1084,7 @@ Download Default Packages for Windows for Hybrid
     Click Button    btn-email-login
     sleep_call
 #Dashboard Should Open
-    run keyword     Change Security Settings
+    #run keyword     Change Security Settings
 
 
 #OPen Dashboard
@@ -1125,7 +1141,10 @@ Create Custom Package for Windows
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     [Arguments]   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
     Set Global Variable      ${unused_client_value_delete_span}
-    Open Browser    ${URL}    ${NORMALBROWSER}
+    ${list} =     Create List    --start-maximized    --disable-web-security
+    ${args} =     Create Dictionary    args=${list}
+    ${desired caps} =     Create Dictionary    chromeOptions=${args}
+    Open Browser    ${URL}    ${BROWSER}    desired_capabilities=${desired caps}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
     Click Button    ${btn_next}
@@ -1134,7 +1153,7 @@ Create Custom Package for Windows
     sleep_call
 
 #Update Secuirty policy
-    run keyword     Change Security Settings
+    #run keyword     Change Security Settings
 
     go to   ${URL}
 
@@ -1352,18 +1371,18 @@ Check default state
     element attribute value should be     ${rad_hybrid}    aria-checked    false
     element attribute value should be    ${rad_exclude}     aria-checked    false
 
-Change Security Settings
-    #Change security preferences to allow EXE downloads
-    go to   chrome://settings/security
-    sleep_call_2
-
-#Navigate to Standard Security Policy
-    Press Keys    None      TAB
-    Press Keys    None      TAB
-    Press Keys    None      TAB
-    Press Keys    None      TAB
-    Press Keys    None      TAB
-    Press Keys    None      TAB
-    sleep_call_2
-    Press Keys    None      ARROW_UP
-    sleep_call_2
+#Change Security Settings
+#    #Change security preferences to allow EXE downloads
+#    go to   chrome://settings/security
+#    sleep_call_2
+#
+##Navigate to Standard Security Policy
+#    Press Keys    None      TAB
+#    Press Keys    None      TAB
+#    Press Keys    None      TAB
+#    Press Keys    None      TAB
+#    Press Keys    None      TAB
+#    Press Keys    None      TAB
+#    sleep_call_2
+#    Press Keys    None      ARROW_UP
+#    sleep_call_2
