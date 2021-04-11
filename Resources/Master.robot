@@ -41,6 +41,7 @@ ${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/C
 ${WEBFILENAME}                          Attachment.txt
 ${IP}
 ${PIN}
+${NORMALBROWSER}
 
 *** Keywords ***
 
@@ -785,7 +786,7 @@ Download MAC Default Packages for SAAS
     ${list} =     Create List    --start-maximized    --disable-web-security
     ${args} =     Create Dictionary    args=${list}
     ${desired caps} =     Create Dictionary    chromeOptions=${args}
-    Open Browser    ${URL}    ${BROWSER}    desired_capabilities=${desired caps}
+    Open Browser    ${URL}    ${NORMALBROWSER}    desired_capabilities=${desired caps}
     #Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
@@ -874,7 +875,7 @@ Download MAC Default Packages for Hybrid
     ${list} =     Create List    --start-maximized    --disable-web-security
     ${args} =     Create Dictionary    args=${list}
     ${desired caps} =     Create Dictionary    chromeOptions=${args}
-    Open Browser    ${URL}    ${BROWSER}    desired_capabilities=${desired caps}
+    Open Browser    ${URL}    ${NORMALBROWSER}    desired_capabilities=${desired caps}
 
 #Maximise Browser
     Maximize Browser Window
@@ -962,7 +963,7 @@ Download Default Packages for Windows for SAAS
     ${list} =     Create List    --start-maximized    --disable-web-security
     ${args} =     Create Dictionary    args=${list}
     ${desired caps} =     Create Dictionary    chromeOptions=${args}
-    Open Browser    ${URL}    ${BROWSER}    desired_capabilities=${desired caps}
+    Open Browser    ${URL}    ${NORMALBROWSER}    desired_capabilities=${desired caps}
 
 #Maximise Browser
     Maximize Browser Window
@@ -1053,7 +1054,7 @@ Download Default Packages for Windows for Hybrid
     ${list} =     Create List    --start-maximized    --disable-web-security
     ${args} =     Create Dictionary    args=${list}
     ${desired caps} =     Create Dictionary    chromeOptions=${args}
-    Open Browser    ${URL}    ${BROWSER}    desired_capabilities=${desired caps}
+    Open Browser    ${URL}    ${NORMALBROWSER}    desired_capabilities=${desired caps}
 
 #Maximise Browser
     Maximize Browser Window
@@ -1144,7 +1145,7 @@ Create Custom Package for Windows
     ${list} =     Create List    --start-maximized    --disable-web-security
     ${args} =     Create Dictionary    args=${list}
     ${desired caps} =     Create Dictionary    chromeOptions=${args}
-    Open Browser    ${URL}    ${BROWSER}    desired_capabilities=${desired caps}
+    Open Browser    ${URL}    ${NORMALBROWSER}    desired_capabilities=${desired caps}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
     Click Button    ${btn_next}

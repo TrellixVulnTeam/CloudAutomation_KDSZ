@@ -17,6 +17,7 @@ Resource     ../Resources/Master.robot
 #${BROWSER}                      Chrome
 #${USER}                         sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
+#{NORMALBROWSER}                 Chrome
 ${username_blank}
 ${username_invalid}             sravantesh@lexmark.com
 ${password_blank}
