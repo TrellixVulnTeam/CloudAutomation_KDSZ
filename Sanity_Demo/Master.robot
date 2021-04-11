@@ -62,7 +62,7 @@ ${WEBFILENAME}                          Attachment.txt
 
 
 *** Test Cases ***
-Verification of correct login
+Verification of correct cloud login
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
 Verification of dashboard title
     Dashboard Should Open
