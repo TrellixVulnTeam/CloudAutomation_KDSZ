@@ -132,6 +132,3 @@ def blank_body():
             print("Email submission failed")
             last_message.Delete()
     return email_status
-
-
-send_email_singleattachment("Attachment.txt")
