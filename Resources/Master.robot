@@ -783,10 +783,6 @@ Check Dialog Values
 Download MAC Default Packages for SAAS
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
 
-#    ${list} =     Create List    --start-maximized    --disable-web-security
-#    ${args} =     Create Dictionary    args=${list}
-#    ${desired caps} =     Create Dictionary    chromeOptions=${args}
-#    Open Browser    ${URL}    ${NORMALBROWSER}    desired_capabilities=${desired caps}
     Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
@@ -872,10 +868,6 @@ Download MAC Default Packages for SAAS
 Download MAC Default Packages for Hybrid
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
 
- #    ${list} =     Create List    --start-maximized    --disable-web-security
-#    ${args} =     Create Dictionary    args=${list}
-#    ${desired caps} =     Create Dictionary    chromeOptions=${args}
-#    Open Browser    ${URL}    ${NORMALBROWSER}    desired_capabilities=${desired caps}
     Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
@@ -906,7 +898,6 @@ Download MAC Default Packages for Hybrid
 #Click Login Button
     Click Button    btn-email-login
     sleep_call
-    #run keyword     Change Security Settings
 
 #OPen Dashboard
    go to   ${URL}
@@ -961,10 +952,7 @@ Download MAC Default Packages for Hybrid
 Download Default Packages for Windows for SAAS
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
 
-#    ${list} =     Create List    --start-maximized    --disable-web-security
-#    ${args} =     Create Dictionary    args=${list}
-#    ${desired caps} =     Create Dictionary    chromeOptions=${args}
-#    Open Browser    ${URL}    ${NORMALBROWSER}    desired_capabilities=${desired caps}
+
     Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
@@ -1004,9 +992,7 @@ Download Default Packages for Windows for SAAS
 
 #Click CPM and verify Page Opens
     sleep_call
-#    Wait Until Element Is Visible   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
-#    Click Element   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
-#    sleep_call_2
+
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
 
@@ -1053,10 +1039,6 @@ Download Default Packages for Windows for SAAS
 Download Default Packages for Windows for Hybrid
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
 
-#    ${list} =     Create List    --start-maximized    --disable-web-security
-#    ${args} =     Create Dictionary    args=${list}
-#    ${desired caps} =     Create Dictionary    chromeOptions=${args}
-#    Open Browser    ${URL}    ${NORMALBROWSER}    desired_capabilities=${desired caps}
     Open Browser    ${URL}    ${NORMALBROWSER}
 
 #Maximise Browser
@@ -1096,9 +1078,7 @@ Download Default Packages for Windows for Hybrid
 
 #Click CPM and verify Page Opens
     sleep_call
-    #Wait Until Element Is Visible   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
-    #Click Element   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
-    #sleep_call_2
+
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
 
