@@ -279,7 +279,7 @@ Mobile submission
     #${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     ${mobile_status}=   mobile_submit
-    Wait Until Keyword Succeeds    25 sec    5 sec    element text should be      ${email_job1_status}        Ready
+    Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job1_status}        Ready
     element text should be      ${email_job1_description}      A test document to upload
     element should contain      ${tbl_printqueue}        mobile.doc
     element should be visible   ${email_icon_job1}
@@ -301,7 +301,7 @@ Mobile submission
     wait until page contains    Print Job History
     #wait until page contains    Print Job History
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
-    Wait Until Keyword Succeeds    25 sec    5 sec    element text should be      ${print_job_name1}        ${mobile_job}
+    Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${print_job_name1}        ${mobile_job}
     sleep_call_2
     click element       ${name_printqueue}
 
