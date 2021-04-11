@@ -8,12 +8,12 @@ import time
 
 
 
-def printer_automation(text):
+def printer_automation(ip,pin,text):
 
 
-    ip_address = "10.195.6.123"
+    #ip_address = "10.195.6.123"
 
-    ups = UPS(printer_ip="10.195.6.123")
+    ups = UPS(printer_ip=ip)
     ups.initialize()
     time.sleep(2)
     ups.regex('do "press key KEYCODE_HOME"')
@@ -31,7 +31,7 @@ def printer_automation(text):
     ups.regex('Find widget "text-id=\'DIALOG_OK_ID\'" Do "wait_until_found"')
     time.sleep(10)
     # Enter PIN and login
-    lxk_universal_panel_step.core.universal_panel_step.type_text("1234")
+    lxk_universal_panel_step.core.universal_panel_step.type_text(pin)
     ups.regex('Find widget "text-id=\'DIALOG_OK_ID\'" do "press"')
     time.sleep(5)
 

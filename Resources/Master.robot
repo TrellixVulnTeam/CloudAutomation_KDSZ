@@ -191,7 +191,7 @@ Web upload with
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${job_status}        Ready
     #####WRITE CODE FOR PRINT################
 #Call the Print Device Automation Python script for releasing the first job
-    ${print_job_status} =   printer_automation  ${WEBFILENAME}
+    ${print_job_status} =   printer_automation  ${IP}   ${PIN}  ${WEBFILENAME}
     log     {print_job_status}
 
 #Check Print Job History table
@@ -232,7 +232,7 @@ Email submission with
     element attribute value should be      //*[@id="documents-row-1-client"]/lpm-source-renderer/div     title        E-Mail
 
 #Call the Print Device Automation Python script for releasing the first job
-    ${print_job_status} =   printer_automation  ${FILENAME}
+    ${print_job_status} =   printer_automation  ${IP}   ${PIN}    ${FILENAME}
     log     {print_job_status}
 
 #Check Print Job History table
@@ -252,7 +252,7 @@ Email submission with
 
 #Now call printer simulation for second job
 
-    ${print_job_status} =   printer_automation  ${FILENAME2}
+    ${print_job_status} =   printer_automation  ${IP}   ${PIN}    ${FILENAME2}
     log     {print_job_status}
 
 #Check Print Job History table
@@ -282,7 +282,7 @@ Mobile submission
     element attribute value should be      //*[@id="documents-row-0-client"]/lpm-source-renderer/div     title        Mobile
 
 #Call the Print Device Automation Python script for releasing the first job
-    ${print_job_status} =   printer_automation  ${mobile_job}
+    ${print_job_status} =   printer_automation  ${IP}   ${PIN}    ${mobile_job}
     log     {print_job_status}
 
     sleep_call
