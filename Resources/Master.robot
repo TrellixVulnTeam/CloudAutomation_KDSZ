@@ -169,7 +169,7 @@ Open Browser To Login Page
     sleep_call_2
 
 Web upload with
-    [Arguments]        ${WEBFILENAME}
+    [Arguments]        ${IP}   ${PIN}  ${WEBFILENAME}
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     click button   id:printQueueUploadButton
@@ -210,7 +210,7 @@ Web upload with
     Click Element   link-navPrintQueue
 
 Email submission with
-    [Arguments]        ${FILENAME}
+    [Arguments]        ${IP}   ${PIN}   ${FILENAME}
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     ${email_status}=   send_email_singleattachment  ${FILENAME}
@@ -271,7 +271,7 @@ Email submission with
     Click Element   link-navPrintQueue
 
 Mobile submission
-    #[Arguments]        ${FILENAME}
+    [Arguments]        ${IP}   ${PIN}
     #${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     ${mobile_status}=   mobile_submit
