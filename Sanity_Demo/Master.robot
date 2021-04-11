@@ -60,6 +60,7 @@ ${WEBFILENAME}                          Attachment.txt
 #${IP}                                   10.195.6.123
 #${PIN}                                  1234
 
+
 *** Test Cases ***
 Verification of correct login
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
