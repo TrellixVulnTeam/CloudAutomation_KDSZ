@@ -14,10 +14,10 @@ Resource     ../Resources/Master.robot
 *** Variables ***
 #${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
 #${URL}                          https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
+#${BROWSER}                      headlessChrome
 #${USER}                         sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
-#{NORMALBROWSER}                 Chrome
+#${NORMALBROWSER}                 Chrome
 ${username_blank}
 ${username_invalid}             sravantesh@lexmark.com
 ${password_blank}
