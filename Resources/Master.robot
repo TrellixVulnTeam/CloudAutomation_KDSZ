@@ -279,6 +279,7 @@ Mobile submission
     #${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     ${mobile_status}=   mobile_submit
+    sleep_call_2
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job1_status}        Ready
     element text should be      ${email_job1_description}      A test document to upload
     element should contain      ${tbl_printqueue}        mobile.doc
