@@ -213,7 +213,7 @@ Email submission with
     [Arguments]        ${FILENAME}
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
-    ${email_status}=   send_email_singleattachment      ${FILENAME}
+    ${email_status}=   send_email_singleattachment  ${FILENAME}
     log     ${email_status}
 
     click element   ${name_printqueue}
