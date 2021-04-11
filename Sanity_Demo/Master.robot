@@ -57,8 +57,8 @@ ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
 ${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/Attachments/Attachment.txt
 ${WEBFILENAME}                          Attachment.txt
-${IP}
-${PIN}
+#${IP}                                   10.195.6.123
+#${PIN}                                  1234
 
 *** Test Cases ***
 Correct Login verification
