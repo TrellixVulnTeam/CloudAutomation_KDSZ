@@ -20,6 +20,7 @@ ${color}
 
 Open Browser To Login Page using admin
 #Call python
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
@@ -28,9 +29,9 @@ Open Browser To Login Page using admin
     Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
-    Wait Until Element Is Visible   ${lnk_cpm}
-    sleep_call_2
-    Click Element   ${lnk_cpm}
+    #Wait Until Element Is Visible   ${lnk_cpm}
+    #Click Element   ${lnk_cpm}
+    go to   ${lnk_cpm}
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call

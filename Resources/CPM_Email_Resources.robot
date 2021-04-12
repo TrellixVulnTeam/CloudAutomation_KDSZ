@@ -14,6 +14,7 @@ ${FILENAME3}                    emailBody.html
 
 *** Keywords ***
 Open Browser To Login Page
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
@@ -22,8 +23,9 @@ Open Browser To Login Page
     Click Button    ${btn_login}
     sleep_call
     set selenium timeout    20
-    Wait Until Element Is Visible   ${lnk_cpm}
-    Click Element   ${lnk_cpm}
+    #Wait Until Element Is Visible   ${lnk_cpm}
+    #Click Element   ${lnk_cpm}
+    go to   ${lnk_cpm}
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call

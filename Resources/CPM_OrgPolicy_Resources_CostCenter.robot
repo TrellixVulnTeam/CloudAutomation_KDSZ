@@ -16,6 +16,7 @@ ${totaldisable}                 0
 
 *** Keywords ***
 Open Browser To Login Page using Admin
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
@@ -24,8 +25,9 @@ Open Browser To Login Page using Admin
     Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
-    Wait Until Element Is Visible   ${lnk_cpm}
-    Click Element   ${lnk_cpm}
+    #Wait Until Element Is Visible   ${lnk_cpm}
+    #Click Element   ${lnk_cpm}
+    go to   ${lnk_cpm}
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
@@ -53,6 +55,7 @@ Check new state of client download
 
 
 Open Browser To Login Page using non admin
+    ${lnk_cpm_nonadmin} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
@@ -61,14 +64,15 @@ Open Browser To Login Page using non admin
     Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
-    Wait Until Element Is Visible   ${lnk_cpm_nonadmin}
-    sleep_call_2
-    Click Element   ${lnk_cpm_nonadmin}
+    #Wait Until Element Is Visible   ${lnk_cpm}
+    #Click Element   ${lnk_cpm}
+    go to   ${lnk_cpm_nonadmin}
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
 
 Open Browser To Login Page using non admin disable
+    ${lnk_cpm_quotauser} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
@@ -77,9 +81,9 @@ Open Browser To Login Page using non admin disable
     Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
-    Wait Until Element Is Visible   ${lnk_cpm_quotauser}
-    sleep_call_2
-    Click Element   ${lnk_cpm_quotauser}
+    #Wait Until Element Is Visible   ${lnk_cpm}
+    #Click Element   ${lnk_cpm}
+    go to   ${lnk_cpm_quotauser}
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
@@ -87,6 +91,7 @@ Open Browser To Login Page using non admin disable
     close all browsers
 
 Open Browser To Login Page using non admin no color
+    ${lnk_cpm_quotauser} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
@@ -95,9 +100,9 @@ Open Browser To Login Page using non admin no color
     Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
-    Wait Until Element Is Visible   ${lnk_cpm_quotauser}
-    sleep_call_2
-    Click Element   ${lnk_cpm_quotauser}
+    #Wait Until Element Is Visible   ${lnk_cpm}
+    #Click Element   ${lnk_cpm}
+    go to   ${lnk_cpm_quotauser}
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
@@ -105,6 +110,7 @@ Open Browser To Login Page using non admin no color
     close all browsers
 
 Open Browser To Login Page using non admin normal
+    ${lnk_cpm_quotauser} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
@@ -113,9 +119,9 @@ Open Browser To Login Page using non admin normal
     Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
     sleep_call
-    Wait Until Element Is Visible   ${lnk_cpm_quotauser}
-    sleep_call_2
-    Click Element   ${lnk_cpm_quotauser}
+    #Wait Until Element Is Visible   ${lnk_cpm}
+    #Click Element   ${lnk_cpm}
+    go to   ${lnk_cpm_quotauser}
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
@@ -350,6 +356,7 @@ Check default quota definition
     click button        ${btn_cancel_changes}
 
 Open Browser and Quota Page
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
