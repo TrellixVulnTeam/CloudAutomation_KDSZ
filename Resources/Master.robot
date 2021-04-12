@@ -192,7 +192,8 @@ Web upload with
     element attribute value should be   ${progress_value_actual}    aria-valuenow   100
     ${done_btn}     set variable    printQueueUploadModalDoneButton
     click button    ${done_btn}
-
+    reload page
+    sleep_call
     ${job_status}   set variable    documents-row-0-documentStatus
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${job_status}        Ready
     #####WRITE CODE FOR PRINT################
@@ -223,8 +224,10 @@ Email submission with
     log     ${email_status}
 
     click element   ${name_printqueue}
-    Wait Until Keyword Succeeds    20 sec    5 sec    element text should be      ${email_job1_status}        Ready
-    Wait Until Keyword Succeeds    20 sec    5 sec    element text should be      ${email_job2_status}        Ready
+    reload page
+    sleep_call
+    Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job1_status}        Ready
+    Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job2_status}        Ready
 
     element text should be      ${email_job1_description}      Test Mail
     element text should be      ${email_job2_description}      Test Mail
@@ -249,7 +252,7 @@ Email submission with
     #wait until page contains    Print Job History
     click element   link-navJobHistory
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
-    Wait Until Keyword Succeeds    20 sec    5 sec    element should contain      ${print_job_name1}        ${FILENAME}
+    Wait Until Keyword Succeeds    40 sec    5 sec    element should contain      ${print_job_name1}        ${FILENAME}
     #wait until element contains     ${print_job_name1}     ${FILENAME}
 
     element text should be      ${print_job_name1}     ${FILENAME}
@@ -269,7 +272,7 @@ Email submission with
     click element   link-navJobHistory
     wait until page contains    Print Job History
     ${print_job_name}   set variable    dataGridMyPrintJobsId-row-0-jobName
-    Wait Until Keyword Succeeds    20 sec    5 sec    element should contain      ${print_job_name}        Test Mail.html
+    Wait Until Keyword Succeeds    40 sec    5 sec    element should contain      ${print_job_name}        Test Mail.html
 
     element text should be      ${print_job_name}     Test Mail.html
     sleep_call_2
@@ -282,6 +285,8 @@ Mobile submission
     set selenium timeout    20
     ${mobile_status}=   mobile_submit
     sleep_call_2
+    reload page
+    sleep_call
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job1_status}        Ready
     element text should be      ${email_job1_description}      A test document to upload
     element should contain      ${tbl_printqueue}        mobile.doc
