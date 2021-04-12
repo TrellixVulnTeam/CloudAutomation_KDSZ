@@ -2,7 +2,7 @@
 Library  SeleniumLibrary
 Library     ../Delegates/CloudLogin.py
 Library     ../QuotaStatus/CreateDelete.py
-Resource     ../Resources/New_Status.robot
+Resource     ../Resources/CPM_OrgPolicy_QuotaStatus.robot
 
 
 *** Variables ***

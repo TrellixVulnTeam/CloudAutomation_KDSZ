@@ -98,45 +98,45 @@ Change Default Settings
     set selenium timeout    20
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
-    click button    ${default_settings_btn}
-    sleep_call
-    ${default_title}            set variable    printSettingsBreadcrumb
-    ${copies_text}              set variable    copies_input
-    ${nup_listbox}              set variable    nup_Inputlistbox
-    ${duplex_input}             set variable    duplex
-    ${duplex_value}             set variable    ${DUPLEX VALUE}
-    ${nup_input}                set variable    nup
-    ${nup_value}                set variable    ${NUP VALUE}
-    ${bw_radio}                 set variable    ${COLOR VALUE}
-    ${save_btn}                 set variable    saveChangesButton
+#    click button    ${default_settings_btn}
+#    sleep_call
+#    ${default_title}            set variable    printSettingsBreadcrumb
+#    ${copies_text}              set variable    copies_input
+#    ${nup_listbox}              set variable    nup_Inputlistbox
+#    ${duplex_input}             set variable    duplex
+#    ${duplex_value}             set variable    ${DUPLEX VALUE}
+#    ${nup_input}                set variable    nup
+#    ${nup_value}                set variable    ${NUP VALUE}
+#    ${bw_radio}                 set variable    ${COLOR VALUE}
+#    ${save_btn}                 set variable    saveChangesButton
     ${file_path}                set variable    ${FILE PATH}
     ${file_name_actual}         set variable    ${FILE NAME}
 
 
-    sleep_call
-
-    element attribute value should be   ${default_title}    aria-label   ${default_title_actual}
-    press keys   ${copies_text}  \DELETE
-    press keys   ${copies_text}  \DELETE
-    press keys   ${copies_text}  \DELETE
-    sleep_call_2
-    input text  ${copies_text}  ${COPIES VALUE}
-
-    click element   ${duplex_input}
-    wait until page contains element    ${duplex_value}
-    click element   ${duplex_value}
-
-    click element   ${nup_input}
-    wait until page contains element    ${nup_value}
-    click element   ${nup_value}
-
-    click element   ${COLOR VALUE}
-
-    click button    ${save_btn}
-    sleep_call
+#    sleep_call
+#
+#    element attribute value should be   ${default_title}    aria-label   ${default_title_actual}
+#    press keys   ${copies_text}  \DELETE
+#    press keys   ${copies_text}  \DELETE
+#    press keys   ${copies_text}  \DELETE
+#    sleep_call_2
+#    input text  ${copies_text}  ${COPIES VALUE}
+#
+#    click element   ${duplex_input}
+#    wait until page contains element    ${duplex_value}
+#    click element   ${duplex_value}
+#
+#    click element   ${nup_input}
+#    wait until page contains element    ${nup_value}
+#    click element   ${nup_value}
+#
+#    click element   ${COLOR VALUE}
+#
+#    click button    ${save_btn}
+#    sleep_call
 
 #Verify File upload Button Feature
-    sleep_call
+   # sleep_call
     Wait until Element Is Visible   id:link-navPrintQueue
     Click Element   id:link-navPrintQueue
     Wait until Element Is Visible   id:printQueueUploadButton
@@ -145,65 +145,83 @@ Change Default Settings
 
 #Verify Portal upload
     Click Element   id:printQueueUploadButton
+
+    sleep_call
     Wait until Element Is Visible   xpath://*[@id="printQueueUploadModalModalHeader"]
-    Click Element   xpath://*[@id="multiFileSelectUploadDragDrop"]/div[1]/cui-button/span/button
-
-    file_name   ${file_path}
-    sleep_call
-
-
-#Verify progress dialog and other parameters
+    choose file     id:multiFileSelectUpload    ${file_path}
     ${progress_bar}     set variable    //*[@id="_bar"]/progressbar/bar
     ${progress_value}   set variable    //*[@id="_Content"]/div
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${progress_value}
+    Wait Until Element Contains     ${progress_value}    100%   timeout=15
 
-#Click Done button when upload is complete
     ${progress_value_actual}     Set Variable    xpath://*[@id="_bar"]/progressbar/bar
-    ${percentage_progress}=      get element attribute   ${progress_value_actual}    aria-valuenow
 
-    FOR    ${percentage_progress}    IN RANGE    999999
-       ${percentage_progress}=      get element attribute   ${progress_value_actual}    aria-valuenow
-       Exit For Loop If    ${percentage_progress} == 100
-    END
-
-    sleep_call
     element attribute value should be   ${progress_value_actual}    aria-valuenow   100
-
-    ${file_name}    set variable    //*[@id="table-row-0"]/th
-    ${file_size}    set variable    //*[@id="table-row-0"]/td[1]
-    ${progress_bar}     set variable    //*[@id="_bar"]/progressbar/bar
-    ${progress_value}   set variable    //*[@id="_Content"]/div
-    ${cancel_btn}       set variable    //*[@id="fileUploadModalCancelRemainingButton"]/span/button
     ${done_btn}     set variable    printQueueUploadModalDoneButton
-
-    element should be visible   ${file_name}
-    element should be visible   ${file_size}
-    element should be visible   ${progress_bar}
-    element should be visible   ${progress_value}
-    element should not be visible       ${cancel_btn}
-    element should be visible   ${done_btn}
-    element should be enabled   ${done_btn}
     click button    ${done_btn}
-    sleep_call
-
-#Check Job Paramters
-    reload page
-    reload page
     reload page
     sleep_call
+    ${job_status}   set variable    documents-row-0-documentStatus
+    Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${job_status}        Ready
+#    Wait until Element Is Visible   xpath://*[@id="printQueueUploadModalModalHeader"]
+#    Click Element   xpath://*[@id="multiFileSelectUploadDragDrop"]/div[1]/cui-button/span/button
+#
+#    file_name   ${file_path}
+#    sleep_call
+#
+#
+##Verify progress dialog and other parameters
+#    ${progress_bar}     set variable    //*[@id="_bar"]/progressbar/bar
+#    ${progress_value}   set variable    //*[@id="_Content"]/div
+#
+##Click Done button when upload is complete
+#    ${progress_value_actual}     Set Variable    xpath://*[@id="_bar"]/progressbar/bar
+#    ${percentage_progress}=      get element attribute   ${progress_value_actual}    aria-valuenow
+#
+#    FOR    ${percentage_progress}    IN RANGE    999999
+#       ${percentage_progress}=      get element attribute   ${progress_value_actual}    aria-valuenow
+#       Exit For Loop If    ${percentage_progress} == 100
+#    END
+#
+#    sleep_call
+#    element attribute value should be   ${progress_value_actual}    aria-valuenow   100
+#
+#    ${file_name}    set variable    //*[@id="table-row-0"]/th
+#    ${file_size}    set variable    //*[@id="table-row-0"]/td[1]
+#    ${progress_bar}     set variable    //*[@id="_bar"]/progressbar/bar
+#    ${progress_value}   set variable    //*[@id="_Content"]/div
+#    ${cancel_btn}       set variable    //*[@id="fileUploadModalCancelRemainingButton"]/span/button
+#    ${done_btn}     set variable    printQueueUploadModalDoneButton
+#
+#    element should be visible   ${file_name}
+#    element should be visible   ${file_size}
+#    element should be visible   ${progress_bar}
+#    element should be visible   ${progress_value}
+#    element should not be visible       ${cancel_btn}
+#    element should be visible   ${done_btn}
+#    element should be enabled   ${done_btn}
+#    click button    ${done_btn}
+#    sleep_call
+#
+##Check Job Paramters
+#    reload page
+#    reload page
+#    reload page
+#    sleep_call
     ${job_name}     set variable    document_link_0
     ${job_status}   set variable    documents-row-0-documentStatus
-    ${job_copies}   set variable    documents-row-0-printOptions.copies.value
-    ${job_color}    set variable    documents-row-0-printOptions.color.value
-    ${job_duplex}   set variable    documents-row-0-printOptions.duplex.value
-    ${job_nup}      set variable    documents-row-0-printOptions.nUp.value
+#    ${job_copies}   set variable    documents-row-0-printOptions.copies.value
+#    ${job_color}    set variable    documents-row-0-printOptions.color.value
+#    ${job_duplex}   set variable    documents-row-0-printOptions.duplex.value
+#    ${job_nup}      set variable    documents-row-0-printOptions.nUp.value
 
     element text should be      ${job_name}      ${file_name_actual}
 
     element text should be      ${job_status}    ${job_status_actual}
-    element text should be      ${job_color}     ${COLOR STRING}
-    element text should be      ${job_duplex}    ${DUPLEX STRING}
-    element text should be      ${job_nup}       ${NUP STRING}
-    element text should be      ${job_copies}    ${COPIES VALUE}
+#    element text should be      ${job_color}     ${COLOR STRING}
+#    element text should be      ${job_duplex}    ${DUPLEX STRING}
+#    element text should be      ${job_nup}       ${NUP STRING}
+#    element text should be      ${job_copies}    ${COPIES VALUE}
     element attribute value should be      //*[@id="documents-row-0-client"]/lpm-source-renderer/div     title        Web
 
     sleep_call
@@ -211,23 +229,40 @@ Change Default Settings
 #Call the Print Device Automation Python script for releasing the jobs
     ${print_job_status} =   printer_automation  ${file_name_actual}
     log     {print_job_status}
-
-    sleep_call
+    reload page
     sleep_call
 
 #Check Print Job History table
     Switch Window       Print Management | Lexmark Cloud Services
     Title Should Be     Print Management | Lexmark Cloud Services
-    reload page
-    sleep_call
+    #Wait until Element Is Visible   ${name_printqueue}
+    sleep_call_2
+    #wait until page contains    Print Job History
     click element   link-navJobHistory
-    #reload page
-    sleep_call
-    sleep_call
     ${print_job_name}   set variable    dataGridMyPrintJobsId-row-0-jobName
+    Wait Until Keyword Succeeds    40 sec    5 sec    element should contain      ${print_job_name}        ${file_name_actual}
+    #wait until element contains     ${print_job_name}     ${FILENAME}
+
     element text should be      ${print_job_name}     ${file_name_actual}
     sleep_call_2
     Click Element   link-navPrintQueue
+
+
+
+
+#Check Print Job History table
+#    Switch Window       Print Management | Lexmark Cloud Services
+#    Title Should Be     Print Management | Lexmark Cloud Services
+#    reload page
+#    sleep_call
+#    click element   link-navJobHistory
+#    #reload page
+#    sleep_call
+#    sleep_call
+#    ${print_job_name}   set variable    dataGridMyPrintJobsId-row-0-jobName
+#    element text should be      ${print_job_name}     ${file_name_actual}
+#    sleep_call_2
+#    Click Element   link-navPrintQueue
 
 
 

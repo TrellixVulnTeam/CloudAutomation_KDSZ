@@ -4,10 +4,10 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 
 
 *** Keywords ***
@@ -29,12 +29,10 @@ Open Browser To Login Page
 Check Adding Valid and Duplicate Delegates
    [Arguments]        ${EMAIL USER}
     set selenium timeout    20
-    Wait until Element Is Visible   ${lbl_delegate}
-    page should contain     No data available
-    Wait until Element Is Visible   ${lbl_delegate}
-    Click Element   ${lbl_delegate}
+    click element   ${lbl_delegate}
     Wait until Element Is Visible   ${txt_delegate}
     sleep_call_2
+    page should contain     No data available
 
     element should be enabled   ${btn_delegate_add}
     element should be visible   ${btn_delegate_add}
@@ -99,10 +97,10 @@ Check Adding Valid and Duplicate Delegates
 Check Adding Invalid Delegates
    [Arguments]        ${EMAIL USER}
     set selenium timeout     20
-    Wait until Element Is Visible   ${lbl_delegate}
+    click element   ${lbl_delegate}
+    Wait until Element Is Visible   ${txt_delegate}
+    sleep_call_2
     page should contain     No data available
-    Wait until Element Is Visible   ${lbl_delegate}
-    Click Element   ${lbl_delegate}
     Wait until Element Is Visible   ${txt_delegate}
     sleep_call_2
 

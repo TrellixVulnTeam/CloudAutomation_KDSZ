@@ -78,8 +78,7 @@ Verify File upload Button Feature
     Click Element   id:printQueueUploadButton
     Wait until Element Is Visible   xpath://*[@id="printQueueUploadModalModalHeader"]
     Click Element   xpath://*[@id="multiFileSelectUploadDragDrop"]/div[1]/cui-button/span/button
-
-    file_name   ${file_path}
+    choose file     id:multiFileSelectUpload    ${file_path}
     sleep_call_2
 
 #Verify incorrect file format message

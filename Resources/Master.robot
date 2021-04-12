@@ -85,11 +85,10 @@ Check Adding Valid and Duplicate Delegates
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     Wait until Element Is Visible   ${lbl_delegate}
-    page should contain     No data available
-    Wait until Element Is Visible   ${lbl_delegate}
-    Click Element   ${lbl_delegate}
+    click element   ${lbl_delegate}
     Wait until Element Is Visible   ${txt_delegate}
     sleep_call_2
+    page should contain     No data available
 
     element should be enabled   ${btn_delegate_add}
     element should be visible   ${btn_delegate_add}
@@ -297,7 +296,6 @@ Mobile submission
     ${print_job_status} =   printer_automation  ${IP}   ${PIN}    ${mobile_job}
     log     {print_job_status}
 
-    sleep_call
     sleep_call
 
 #Check Print Job History table

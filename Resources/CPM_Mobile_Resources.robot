@@ -38,52 +38,76 @@ Mobile submission
     set selenium timeout    20
     ${mobile_status}=   mobile_submit
     log     ${mobile_status}
-    sleep_call_2
-    wait until element is visible     ${txt_nojob}
-    #${joblist}=     run keyword and return status   element text should be      ${txt_nojob}     No data available
-    #run keyword if  ${joblist}   reload page
-    #reload page
-    wait until element is visible   ${email_job1_status}
-    ${pagestatus}=  run keyword and return status   element text should be  ${email_job1_status}  Processing
-    run keyword if  ${pagestatus}   reload page
-
-
-    Wait until Element Is Visible   ${name_printqueue}
-    wait until element is visible       ${tbl_printqueue}
-
+    reload page
+    sleep_call
+    Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job1_status}        Ready
     element text should be      ${email_job1_description}      A test document to upload
     element should contain      ${tbl_printqueue}        mobile.doc
     element should be visible   ${email_icon_job1}
     element attribute value should be      //*[@id="documents-row-0-client"]/lpm-source-renderer/div     title        Mobile
 
+
+
+#    sleep_call_2
+#    wait until element is visible     ${txt_nojob}
+#    #${joblist}=     run keyword and return status   element text should be      ${txt_nojob}     No data available
+#    #run keyword if  ${joblist}   reload page
+#    #reload page
+#    wait until element is visible   ${email_job1_status}
+#    ${pagestatus}=  run keyword and return status   element text should be  ${email_job1_status}  Processing
+#    run keyword if  ${pagestatus}   reload page
+#
+#
+#    Wait until Element Is Visible   ${name_printqueue}
+#    wait until element is visible       ${tbl_printqueue}
+#
+#    element text should be      ${email_job1_description}      A test document to upload
+#    element should contain      ${tbl_printqueue}        mobile.doc
+#    element should be visible   ${email_icon_job1}
+#    element attribute value should be      //*[@id="documents-row-0-client"]/lpm-source-renderer/div     title        Mobile
+
     #element text should be     //*[@id="documents-row-0-client"]/lpm-source-renderer/div      Mobile
     #sleep_call
-    reload page
-    wait until element is visible   ${email_job1_status}
-    element text should be      ${email_job1_status}        Ready
+    #reload page
+    #wait until element is visible   ${email_job1_status}
+    #element text should be      ${email_job1_status}        Ready
 
 #Call the Print Device Automation Python script for releasing the first job
     ${print_job_status} =   printer_automation  ${mobile_job}
     log     {print_job_status}
 
     sleep_call
-    sleep_call
+    #sleep_call
 
 #Check Print Job History table
     Switch Window       Print Management | Lexmark Cloud Services
     Title Should Be     Print Management | Lexmark Cloud Services
-    reload page
     Wait until Element Is Visible   ${name_printqueue}
-    wait until page does not contain element    ${mobile_job}
     sleep_call_2
     click element   link-navJobHistory
     wait until page contains    Print Job History
-    #reload page
     #wait until page contains    Print Job History
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
-    wait until element is visible     ${print_job_name1}
-    element text should be      ${print_job_name1}     ${mobile_job}
+    Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${print_job_name1}        ${mobile_job}
     sleep_call_2
+    click element       ${name_printqueue}
+
+
+##Check Print Job History table
+#    Switch Window       Print Management | Lexmark Cloud Services
+#    Title Should Be     Print Management | Lexmark Cloud Services
+#    reload page
+#    Wait until Element Is Visible   ${name_printqueue}
+#    wait until page does not contain element    ${mobile_job}
+#    sleep_call_2
+#    click element   link-navJobHistory
+#    wait until page contains    Print Job History
+#    #reload page
+#    #wait until page contains    Print Job History
+#    ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
+#    wait until element is visible     ${print_job_name1}
+#    element text should be      ${print_job_name1}     ${mobile_job}
+#    sleep_call_2
 
 Log out
     set selenium timeout    20
