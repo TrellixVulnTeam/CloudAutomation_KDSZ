@@ -135,23 +135,23 @@ Open Browser To Login Page using non admin normal
 #    click element       ${btn_save}
 #    sleep_call
 
-#Check client download tab is visible for non admin
-#    set selenium timeout    20
-#    page should contain element         ${tab_clientdownload}
-#    click element       ${tab_clientdownload}
-#    sleep_call_2
-#    wait until page contains element        ${header_clientdownload}
-#    element should not be visible     ${lnk_customwin}
-#    element should not be visible     ${lnk_custommac}
+Check client download tab is visible for non admin
+    set selenium timeout    20
+    page should contain element         ${tab_clientdownload}
+    click element       ${tab_clientdownload}
+    sleep_call_2
+    wait until page contains element        ${header_clientdownload}
+    element should not be visible     ${lnk_customwin}
+    element should not be visible     ${lnk_custommac}
 
-#Check client download tab is not visible for non admin
-#    set selenium timeout    20
-#    page should not contain element         ${tab_clientdownload}
+Check client download tab is not visible for non admin
+    set selenium timeout    20
+    page should not contain element         ${tab_clientdownload}
 
-#Reset Client Download
-#    select checkbox       ${chk_clientdownload}
-#    click element       ${btn_save}
-#    sleep_call
+Reset Client Download
+    select checkbox       ${chk_clientdownload}
+    click element       ${btn_save}
+    sleep_call
 
 ####################################################################################################
     ################DELEGATES###########################
