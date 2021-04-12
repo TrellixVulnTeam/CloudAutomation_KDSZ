@@ -72,7 +72,7 @@ Delegate addition using ${EMAIL USER}
     Open Browser To Login Page
     Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
 Web Upload verification for Text file
-    Open Browser To Login Page
+    #Open Browser To Login Page
     Web upload with     ${IP}   ${PIN}  ${WEBFILENAME}
 Mobile Job Submission
     Mobile submission   ${IP}   ${PIN}
