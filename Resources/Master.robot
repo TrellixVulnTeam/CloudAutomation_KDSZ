@@ -173,9 +173,11 @@ Open Browser To Login Page
     sleep_call_2
 
 Web upload with
-    [Arguments]        ${IP}   ${PIN}  ${WEBFILENAME}
-    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
+    [Arguments]        ${IP}   ${PIN}  ${WEBFILENAME}
+    click element       ${name_printqueue}
+    wait until element is visible       ${btn_upload}
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     click button   id:printQueueUploadButton
     sleep_call_2
     Wait until Element Is Visible   xpath://*[@id="printQueueUploadModalModalHeader"]
