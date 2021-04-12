@@ -29,6 +29,7 @@ Open Browser To Login Page
 Check Adding Valid and Duplicate Delegates
    [Arguments]        ${EMAIL USER}
     set selenium timeout    20
+    sleep_call
     click element   ${lbl_delegate}
     Wait until Element Is Visible   ${txt_delegate}
     sleep_call_2
