@@ -123,6 +123,6 @@ Verification download of Windows Default Packages for SAAS
     Download Default Packages for Windows for SAAS    ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}
 Verification download of Windows Default Packages for Hybrid
     Download Default Packages for Windows for Hybrid    ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}
-Verification of custom package for Windows
-    Create Custom Package for Windows   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
+#Verification of custom package for Windows
+    #Create Custom Package for Windows   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
 ####################################################################
