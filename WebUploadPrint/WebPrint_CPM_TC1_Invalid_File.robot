@@ -13,7 +13,7 @@ Test Template   Verify File upload Button Feature
 Suite Teardown     Log Out Close Browsers
 
 *** Variables ***
-#${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
+#${URL}                    https://dev.us.cloud.onelxk.co/
 #${BROWSER}                      Chrome
 #${username}                     sravantesh.neogi@lexmark.com
 #${password}                     Password@1234
@@ -25,7 +25,7 @@ Verify Invalid file upload using ${TEST CASE}
 
 *** Keywords ***
 Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}
 
 #Maximise Browser
     Maximize Browser Window

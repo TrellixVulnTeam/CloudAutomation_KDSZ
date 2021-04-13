@@ -13,7 +13,7 @@ Test Template   Change Default Settings
 Suite Teardown     Log Out Close Browsers
 
 *** Variables ***
-#${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
+#${URL}                    https://dev.us.cloud.onelxk.co/
 #${BROWSER}                      Chrome
 #${username}                     sravantesh.neogi@lexmark.com
 #${password}                     Password@1234
@@ -38,7 +38,7 @@ Verify portal upload using ${FILE NAME}
 *** Keywords ***
 Open Browser To Login Page
     set selenium timeout    20
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}
 
 #Maximise Browser
     Maximize Browser Window
