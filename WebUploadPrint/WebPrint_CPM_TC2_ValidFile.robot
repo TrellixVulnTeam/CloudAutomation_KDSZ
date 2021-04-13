@@ -27,7 +27,7 @@ ${delete_dlg_title_actual}      Delete Print Jobs
 
 
 *** Test Cases ***
-Verify portal upload using ${TEST CASE}
+Verify portal upload using ${FILE NAME}
 
 
 *** Keywords ***
