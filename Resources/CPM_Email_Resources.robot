@@ -137,7 +137,7 @@ Email submission with
 #Now call printer simulation for second job
     sleep_call
 
-    ${print_job_status} =   printer_automation  ${FILENAME2}
+    ${print_job_status} =   printer_automation  ${IP}   ${PIN}  ${FILENAME2}
     log     {print_job_status}
 
     sleep_call
@@ -148,7 +148,7 @@ Email submission with
 
 #Now call printer simulation for second job
 
-    ${print_job_status} =   printer_automation    ${FILENAME2}
+    ${print_job_status} =   printer_automation    ${IP}   ${PIN}  ${FILENAME2}
     log     {print_job_status}
 
 #Check Print Job History table
