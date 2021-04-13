@@ -38,7 +38,7 @@ Open Browser To Login Page
     ${password_text}    set variable    id:user_password
 
 #Input Username
-    Input Text    id:user_email    ${USERNAME}
+    Input Text    id:user_email    ${USER}
 
 #Verify Next Button is enabled and verify value
     ${nextbtn}  set variable    btn-email-next
