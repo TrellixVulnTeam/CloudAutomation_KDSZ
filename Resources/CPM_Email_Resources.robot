@@ -235,7 +235,7 @@ Check blank subject email job
     ${print_job_name}   set variable    dataGridMyPrintJobsId-row-0-jobName
     Wait Until Keyword Succeeds    40 sec    5 sec    element should contain      ${print_job_name}        emailBody.html
 
-    element text should be      ${print_job_name}     ${FILENAME2}
+    element text should be      ${print_job_name}     ${FILENAME3}
 
 ##Check Print Job History table
 #    Switch Window       Print Management | Lexmark Cloud Services
