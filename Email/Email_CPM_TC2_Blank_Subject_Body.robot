@@ -12,7 +12,7 @@ Resource     ../Resources/CPM_Email_Resources.robot
 *** Test Cases ***
 Email job verification with blank subject and body
     Open Browser To Login Page
-    Check blank subject email job
+    Check blank subject email job   ${IP}   ${PIN}
     Log out
     Open Browser To Login Page
     Check blank body email job
