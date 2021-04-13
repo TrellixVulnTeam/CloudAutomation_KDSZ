@@ -15,8 +15,8 @@ Suite Teardown     Log Out Close Browsers
 *** Variables ***
 #${URL}                    https://dev.us.cloud.onelxk.co/
 #${BROWSER}                      Chrome
-#${username}                     sravantesh.neogi@lexmark.com
-#${password}                     Password@1234
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${tab1name}                     Print Queue

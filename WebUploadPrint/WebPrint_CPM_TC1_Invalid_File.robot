@@ -15,8 +15,8 @@ Suite Teardown     Log Out Close Browsers
 *** Variables ***
 #${URL}                    https://dev.us.cloud.onelxk.co/
 #${BROWSER}                      Chrome
-#${username}                     sravantesh.neogi@lexmark.com
-#${password}                     Password@1234
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 
 
 *** Test Cases ***
