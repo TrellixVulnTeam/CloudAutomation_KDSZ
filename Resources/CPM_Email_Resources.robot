@@ -267,7 +267,7 @@ Check blank body email job
     reload page
     sleep_call
     element should not be visible   ${txt_table}
-    Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${txt_nojob}        No data available
+    Wait Until Keyword Succeeds    40 sec    5 sec    page should contain        No data available
 
 
 
