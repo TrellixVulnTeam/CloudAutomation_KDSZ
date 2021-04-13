@@ -3,6 +3,10 @@ Library  SeleniumLibrary
 Library     ../Library/ChromeExtension.py
 Library     ../Library/CloudLogin.py
 Library     ../Library/Printerautomation.py
+Library     ../Library/CreateDelete.py
+Library     ../Library/Mobile_Submission.py
+Library     ../Library/send_email.py
+Library     ../Library/XMLParser.py
 Resource     ../Resources/CPM_Delegate_Resources.robot
 Library     DataDriver  ../TestData/Delegate_ValidDuplicate.xlsx
 Suite Setup     Open Browser To Login Page

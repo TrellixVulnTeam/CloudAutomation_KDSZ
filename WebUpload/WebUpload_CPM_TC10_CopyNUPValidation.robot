@@ -1,6 +1,12 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     ../Library/loudLogin.py
+Library     ../Library/ChromeExtension.py
+Library     ../Library/CloudLogin.py
+Library     ../Library/Printerautomation.py
+Library     ../Library/CreateDelete.py
+Library     ../Library/Mobile_Submission.py
+Library     ../Library/send_email.py
+Library     ../Library/XMLParser.py
 
 *** Variables ***
 #${URL}                    https://dev.us.cloud.onelxk.co

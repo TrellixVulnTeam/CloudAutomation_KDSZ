@@ -1,6 +1,12 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library     ../Library/ChromeExtension.py
 Library     ../Library/CloudLogin.py
+Library     ../Library/Printerautomation.py
+Library     ../Library/CreateDelete.py
+Library     ../Library/Mobile_Submission.py
+Library     ../Library/send_email.py
+Library     ../Library/XMLParser.py
 Library     DataDriver  ../TestData/Holepunch.xlsx
 Suite Setup     Check total number of holepunch options
 Test Template   Validation of Holepunch dropdown

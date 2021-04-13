@@ -2,8 +2,11 @@
 Library  SeleniumLibrary
 Library     ../Library/ChromeExtension.py
 Library     ../Library/CloudLogin.py
-Library     ../Library/send_email.py
 Library     ../Library/Printerautomation.py
+Library     ../Library/CreateDelete.py
+Library     ../Library/Mobile_Submission.py
+Library     ../Library/send_email.py
+Library     ../Library/XMLParser.py
 Resource     ../Resources/CPM_Email_Resources.robot
 
 *** Test Cases ***

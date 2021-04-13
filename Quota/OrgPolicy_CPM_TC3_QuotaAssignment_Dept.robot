@@ -1,8 +1,12 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     ../Delegates/ChromeExtension.py
-Library     ../Delegates/CloudLogin.py
-Library     ../Email/Printerautomation.py
+Library     ../Library/ChromeExtension.py
+Library     ../Library/CloudLogin.py
+Library     ../Library/Printerautomation.py
+Library     ../Library/CreateDelete.py
+Library     ../Library/Mobile_Submission.py
+Library     ../Library/send_email.py
+Library     ../Library/XMLParser.py
 Resource     ../Resources/CPM_OrgPolicy_Resources_Dept.robot
 Library     DataDriver  ../TestData/Custom_Quota_Vary.xlsx
 Suite Setup     Open Browser and Quota Page
