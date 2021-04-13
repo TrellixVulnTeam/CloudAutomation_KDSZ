@@ -239,6 +239,7 @@ Change Default Settings
     sleep_call_2
     #wait until page contains    Print Job History
     click element   link-navJobHistory
+    Wait Until Keyword Succeeds    40 sec    5 sec    element element should be visible      dataGridMyPrintJobsId-row-0-jobName
     ${print_job_name}   set variable    dataGridMyPrintJobsId-row-0-jobName
     Wait Until Keyword Succeeds    40 sec    5 sec    element should contain      ${print_job_name}        ${file_name_actual}
     #wait until element contains     ${print_job_name}     ${FILENAME}
