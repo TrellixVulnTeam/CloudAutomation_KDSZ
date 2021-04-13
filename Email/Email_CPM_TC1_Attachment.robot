@@ -19,8 +19,8 @@ Email submission with different file using ${FILENAME}
 
 *** Keyword ***
 Email submission
-    [Arguments]         ${FILENAME}
-    Email submission with  ${FILENAME}
+    [Arguments]         ${IP}   ${PIN}  ${FILENAME}
+    Email submission with  ${IP}   ${PIN}  ${FILENAME}
 
 
 ###################################################################

@@ -20,7 +20,7 @@ ${correct}                      Correct Number of Pages listed
 *** Test Cases ***
 Mobile Job Submission
     Open Browser To Login Page
-    Mobile submission
+    Mobile submission   ${IP}   ${PIN}
     Log out
     #Validation of Paper size dropdown
     #Reset , Log Out and Close Browsers
