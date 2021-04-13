@@ -55,7 +55,7 @@ Open Browser To Login Page
     element should not be visible   ${password_text}
 
 #Input Username
-    Input Text    id:user_email    ${username}
+    Input Text    id:user_email    ${USERNAME}
 
 #Verify Next Button is enabled and verify value
     ${nextbtn}  set variable    btn-email-next
@@ -72,7 +72,7 @@ Open Browser To Login Page
     element should be visible   ${password_text}
 
 #Input Password
-    Input Text    id:user_password    ${password}
+    Input Text    id:user_password    ${PASSWORD}
 
 #Verify Login Button is enabled and verify value
     ${loginbtn}  set variable    btn-email-login
