@@ -5,10 +5,10 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-${URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
-${USER}                     sravantesh.neogi@lexmark.com
-${password}                     Password@1234
+#${URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${USER}                     sravantesh.neogi@lexmark.com
+#${password}                     Password@1234
 ${FILENAME2}                    Test Mail.html
 ${FILENAME3}                    emailBody.html
 
@@ -37,7 +37,7 @@ Open Browser To Login Page
     sleep_call_2
 
 Email submission with
-    [Arguments]        ${FILENAME}
+    [Arguments]        ${IP}   ${PIN}  ${FILENAME}
     set selenium timeout    20
     ${email_status}=   send_email_singleattachment      ${FILENAME}
     log     ${email_status}
@@ -89,7 +89,7 @@ Email submission with
 #    element text should be      ${email_job2_status}        Ready
 
 #Call the Print Device Automation Python script for releasing the first job
-    ${print_job_status} =   printer_automation  ${FILENAME}
+    ${print_job_status} =   printer_automation  ${IP}   ${PIN}  ${FILENAME}
     log     {print_job_status}
 
     sleep_call
@@ -193,6 +193,7 @@ Email submission with
 
 Check blank subject email job
     set selenium timeout    20
+    [Arguments]        ${IP}   ${PIN}
     ${email_status}=   blank_subject
     log     ${email_status}
     reload page
@@ -222,7 +223,7 @@ Check blank subject email job
     sleep_call
 
 #Call the Print Device Automation Python script for releasing the jobs
-    ${print_job_status} =   printer_automation  ${FILENAME3}
+    ${print_job_status} =   printer_automation  ${IP}   ${PIN}  ${FILENAME3}
     log     {print_job_status}
 
 #Check Print Job History table

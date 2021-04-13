@@ -8,10 +8,10 @@ Test Template   Verify File upload Button Feature
 Suite Teardown     Log Out Close Browsers
 
 *** Variables ***
-${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
-${username}                     sravantesh.neogi@lexmark.com
-${password}                     Password@1234
+#${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${username}                     sravantesh.neogi@lexmark.com
+#${password}                     Password@1234
 
 
 *** Test Cases ***

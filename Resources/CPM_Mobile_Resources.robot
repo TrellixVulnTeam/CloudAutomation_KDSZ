@@ -36,7 +36,7 @@ Open Browser To Login Page
     sleep_call_2
 
 Mobile submission
-    #[Arguments]        ${FILENAME}
+    [Arguments]        ${IP}   ${PIN}
     set selenium timeout    20
     ${mobile_status}=   mobile_submit
     log     ${mobile_status}
@@ -75,7 +75,7 @@ Mobile submission
     #element text should be      ${email_job1_status}        Ready
 
 #Call the Print Device Automation Python script for releasing the first job
-    ${print_job_status} =   printer_automation  ${mobile_job}
+    ${print_job_status} =   printer_automation  ${IP}   ${PIN}  ${mobile_job}
     log     {print_job_status}
 
     sleep_call

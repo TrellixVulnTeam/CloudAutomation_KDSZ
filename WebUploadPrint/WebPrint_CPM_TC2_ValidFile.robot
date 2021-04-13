@@ -8,10 +8,10 @@ Test Template   Change Default Settings
 Suite Teardown     Log Out Close Browsers
 
 *** Variables ***
-${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
-${username}                     sravantesh.neogi@lexmark.com
-${password}                     Password@1234
+#${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${username}                     sravantesh.neogi@lexmark.com
+#${password}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${tab1name}                     Print Queue
@@ -94,7 +94,7 @@ Open Browser To Login Page
 
 
 Change Default Settings
-    [Arguments]        ${FILE PATH}     ${FILE NAME}       ${DUPLEX VALUE}     ${DUPLEX STRING}       ${NUP VALUE}         ${NUP STRING}       ${COPIES VALUE}        ${COLOR VALUE}       ${COLOR STRING}
+    [Arguments]        ${IP}   ${PIN}  ${FILE PATH}     ${FILE NAME}       ${DUPLEX VALUE}     ${DUPLEX STRING}       ${NUP VALUE}         ${NUP STRING}       ${COPIES VALUE}        ${COLOR VALUE}       ${COLOR STRING}
     set selenium timeout    20
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
@@ -227,7 +227,7 @@ Change Default Settings
     sleep_call
 
 #Call the Print Device Automation Python script for releasing the jobs
-    ${print_job_status} =   printer_automation  ${file_name_actual}
+    ${print_job_status} =   printer_automation  ${IP}   ${PIN}  ${file_name_actual}
     log     {print_job_status}
     reload page
     sleep_call
