@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     CloudLogin.py
+Library     ../Library/CloudLogin.py
 Library     DataDriver  ../TestData/PageSize.xlsx
 Suite Setup     Check total number of paper sizes
 Test Template   Validation of Paper size dropdown

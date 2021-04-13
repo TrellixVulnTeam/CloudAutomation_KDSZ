@@ -1,8 +1,8 @@
 *** Settings ***
 Library  SeleniumLibrary
 Library     DataDriver  ../TestData/InvalidFileType.xlsx
-Library     CloudLogin.py
-Library     ../Email/Printerautomation.py
+Library     ../Library/CloudLogin.py
+Library     ../Library/Printerautomation.py
 Suite Setup     Open Browser To Login Page
 Test Template   Verify File upload Button Feature
 Suite Teardown     Log Out Close Browsers

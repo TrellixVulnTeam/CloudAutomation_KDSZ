@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     CloudLogin.py
+Library     ../Library/loudLogin.py
 
 *** Variables ***
 #${URL}                    https://dev.us.cloud.onelxk.co

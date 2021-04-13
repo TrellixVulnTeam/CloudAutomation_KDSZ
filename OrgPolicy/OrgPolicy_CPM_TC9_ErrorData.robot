@@ -1,8 +1,8 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     ../Delegates/ChromeExtension.py
-Library     ../Delegates/CloudLogin.py
-Library     ../Email/Printerautomation.py
+Library     ../Library/ChromeExtension.py
+Library     ../Library/CloudLogin.py
+Library     ../Library/Printerautomation.py
 Resource     ../Resources/CPM_OrgPolicy_Resources_PersonalQuota.robot
 
 

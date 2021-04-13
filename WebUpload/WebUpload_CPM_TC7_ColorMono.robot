@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     CloudLogin.py
+Library     ../Library/CloudLogin.py
 
 
 *** Variables ***

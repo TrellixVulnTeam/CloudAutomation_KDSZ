@@ -1,9 +1,9 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     ../ChromeExtension/ChromeExtension.py
-Library     ../ChromeExtension/CloudLogin.py
-Library     ../Email/send_email.py
-Library     Printerautomation.py
+Library     ../Library/ChromeExtension.py
+Library     ../Library/CloudLogin.py
+Library     ../Library/send_email.py
+Library     ../Library/Printerautomation.py
 Resource     ../Resources/CPM_Email_Resources.robot
 
 *** Test Cases ***

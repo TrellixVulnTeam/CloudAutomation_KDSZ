@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     CloudLogin.py
+Library     ../Library/CloudLogin.py
 Library     DataDriver  ../TestData/PaperType.xlsx
 Suite Setup     Check total number of paper types
 Test Template   Validation of Paper type dropdown

@@ -1,8 +1,8 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     CloudLogin.py
-Library     Mobile_Submission.py
-Library     ../Email/Printerautomation.py
+Library     ../Library/CloudLogin.py
+Library     ../Library/Mobile_Submission.py
+Library     ../Library/Printerautomation.py
 Resource     ../Resources/CPM_Mobile_Resources.robot
 
 *** Variables ***

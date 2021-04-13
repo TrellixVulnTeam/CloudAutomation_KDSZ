@@ -1,7 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
 #Library     DataDriver  ../TestData/FileUpload_Data.xlsx
-Library     CloudLogin.py
+Library     ../Library/CloudLogin.py
 #Suite Setup     Open Browser To Login Page
 #Test Template   Change Default Settings
 #Suite Teardown     Verify deletion of jobs

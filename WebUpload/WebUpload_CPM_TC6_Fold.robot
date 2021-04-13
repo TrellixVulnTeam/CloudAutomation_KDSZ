@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     CloudLogin.py
+Library     ../Library/CloudLogin.py
 Library     DataDriver  ../TestData/Fold.xlsx
 Suite Setup     Check total number of Fold options
 Test Template   Validation of Fold dropdown

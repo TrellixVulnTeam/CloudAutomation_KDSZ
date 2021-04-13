@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     CloudLogin.py
+Library     ../Library/CloudLogin.py
 Library     DataDriver  ../TestData/OutputBin.xlsx
 Suite Setup     Check total number of output bins
 Test Template   Validation of Output Bin dropdown

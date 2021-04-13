@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     CloudLogin.py
+Library     ../Library/CloudLogin.py
 Library     DataDriver  ../TestData/Staple.xlsx
 Suite Setup     Check total number of staple bins
 Test Template   Validation of Staple dropdown

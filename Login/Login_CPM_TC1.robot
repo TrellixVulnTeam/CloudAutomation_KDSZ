@@ -1,8 +1,8 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     ChromeExtension.py
-Library     CloudLogin.py
-Library     ../Email/Printerautomation.py
+Library     ../Library/ChromeExtension.py
+Library     ../Library/CloudLogin.py
+Library     ../Library/Printerautomation.py
 Resource     ../Resources/CPM_LoginPage_resources.robot
 
 *** Variables ***
