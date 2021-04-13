@@ -6,9 +6,9 @@ Library     ../Email/Printerautomation.py
 Library     ../QuotaStatus/Print_Quota.py
 Resource     ../Resources/CPM_OrgPolocy_Resources_QuotaStatus.robot
 Library     DataDriver  ../TestData/Custom_Quota_Status.xlsx
-Suite Setup     Open Browser and Quota Page
-Test Template   Check Custom quota vary
-Suite Teardown     Log out
+#Suite Setup     Open Browser and Quota Page
+#Test Template   Check Custom quota vary
+#Suite Teardown     Log out
 
 
 *** Variables ***
