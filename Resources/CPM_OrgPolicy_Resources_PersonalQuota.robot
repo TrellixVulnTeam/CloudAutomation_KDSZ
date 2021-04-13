@@ -76,7 +76,7 @@ Open Browser To Login Page using non admin disable
     sleep_call
     #Wait Until Element Is Visible   ${lnk_cpm}
     #Click Element   ${lnk_cpm}
-    go to   ${lnk_cpm_quotauser}
+    go to   ${lnk_cpm_nonadmin}
     sleep_call_2
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
