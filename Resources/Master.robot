@@ -445,7 +445,7 @@ Create Custom Quota
     sleep_call
 
 #Create user
-    ${user}=   create_user_all  ${USER}     ${PASSWORD}     ${URL}      ${NEWUSER}
+    ${user}=   create_user_all  ${USER}     ${PASSWORD}     ${URL}      ${NONADMIN}
     log     ${user}
 
 
@@ -582,7 +582,7 @@ Check Status Table for exceeded
 
 Delete Quota
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
-    ${deleted}=   delete_user_all     ${USER}     ${PASSWORD}     ${URL}    ${NEWUSER}
+    ${deleted}=   delete_user_all     ${USER}     ${PASSWORD}     ${URL}    ${NONADMIN}
     run keyword     Open Quota Definition Page
     set selenium timeout    20
     wait until page contains element     ${btn_quota_select_all}
