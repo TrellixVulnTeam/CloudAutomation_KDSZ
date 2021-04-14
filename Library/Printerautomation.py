@@ -21,8 +21,8 @@ def printer_automation(ip,pin,text):
 
     # Click PIN login
     # ups.regex('Find widget "text-id=\'STRING_IDLEBUTTON_ID_1\'" do "press"')
-    ups.regex('Find widget "text-id=\'idle_text\'" do "press"')
-    time.sleep(5)
+    #ups.regex('Find widget "text-id=\'idle_text\'" do "press"')
+    #time.sleep(5)
     ups.regex('on text "PIN Login" do "press" ')
     ups.regex('Find widget "text-id=\'pin_login_ui_pinvalue\'" Do "wait_until_found"')
     time.sleep(10)
