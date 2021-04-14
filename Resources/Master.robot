@@ -467,7 +467,8 @@ Set Quota Assignment for Personal
     input text      ${txt_email_input}   ${username_nonadmin}
     sleep_call_2
     #element should be visible   ${lst_email}
-    Press Keys    ${lst_email}    ENTER
+    #Press Keys    ${lst_email}    ENTER
+    click element   userAssignmentModalHeader
     sleep_call_2
     click element   ${txt_quota_def}
     press keys      ${lst_quota_def}    ARROW_DOWN
@@ -707,7 +708,9 @@ Set Quota Assignment for Cost Center
     input text      ${txt_costcentername_input}       ${costcenter}
     sleep_call_2
     element should be visible   ${lst_costcentername}
-    Press Keys    ${lst_costcentername}    ENTER
+    sleep_call_2
+    click element   collectionAssignmentModalHeader
+    #Press Keys    ${lst_costcentername}    ENTER
     click element   ${txt_quota_def}
     press keys      ${lst_quota_def}    ARROW_DOWN
     Press Keys    ${lst_quota_def}    ENTER
@@ -749,6 +752,8 @@ Set Quota Assignment for Department
     input text      ${txt_costcentername_input}       ${dept}
     sleep_call_2
     element should be visible   ${lst_costcentername}
+    sleep_call_2
+    click element   collectionAssignmentModalHeader
     Press Keys    ${lst_costcentername}    ENTER
     click element   ${txt_quota_def}
     press keys      ${lst_quota_def}    ARROW_DOWN

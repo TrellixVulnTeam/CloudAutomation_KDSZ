@@ -31,7 +31,6 @@ ${totaldisable}                 0
 ${total}
 ${color}
 ${mobile_job}                   mobile.doc
-${costcenter}                   stl
 ${quota_name}                   Quota_Total50_Color50
 ${dept}                         rnd
 ${FILENAME2}                    Test Mail.html
