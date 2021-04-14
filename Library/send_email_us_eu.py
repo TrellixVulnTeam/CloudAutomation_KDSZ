@@ -65,13 +65,14 @@ def send_email_singleattachment_all(env,file):
 
 
 def blank_subject(env):
+    global email_status, to_address, from_address
+
     if 'us' in env and 'dev' in env:
         to_address="lcp.dev2@lexmark.com"
         from_address="no-reply@cloud.onelxk.co"
     elif 'eu' in env and 'dev' in env:
         to_address="lcp.dev1@lexmark.com"
         from_address = "no-reply@cloud.onelxk.co"
-    global email_status, to_address, from_address
     outlook = client.Dispatch('Outlook.Application')
     message = outlook.CreateItem(0)
     message.Display()
