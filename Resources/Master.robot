@@ -710,6 +710,7 @@ Set Quota Assignment for Cost Center
     element should be visible   ${lst_costcentername}
     sleep_call_2
     click element   collectionAssignmentModalHeader
+    sleep_call_2
     #Press Keys    ${lst_costcentername}    ENTER
     click element   ${txt_quota_def}
     press keys      ${lst_quota_def}    ARROW_DOWN
@@ -754,7 +755,8 @@ Set Quota Assignment for Department
     element should be visible   ${lst_costcentername}
     sleep_call_2
     click element   collectionAssignmentModalHeader
-    Press Keys    ${lst_costcentername}    ENTER
+    sleep_call_2
+    #Press Keys    ${lst_costcentername}    ENTER
     click element   ${txt_quota_def}
     press keys      ${lst_quota_def}    ARROW_DOWN
     Press Keys    ${lst_quota_def}    ENTER
