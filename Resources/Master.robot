@@ -216,10 +216,10 @@ Web upload with
     Click Element   link-navPrintQueue
 
 Email submission with
-    [Arguments]        ${IP}   ${PIN}   ${FILENAME}
+    [Arguments]        ${FILENAME}
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
-    ${email_status}=   send_email_singleattachment  ${FILENAME}
+    ${email_status}=   send_email_singleattachment_all  ${URL}  ${FILENAME}
     log     ${email_status}
 
     click element   ${name_printqueue}

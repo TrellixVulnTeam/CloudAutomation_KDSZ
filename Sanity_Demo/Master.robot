@@ -7,6 +7,7 @@ Library     ../Library/CreateDelete.py
 Library     ../Library/Mobile_Submission.py
 Library     ../Library/Mobile_Submission_all.py
 Library     ../Library/send_email.py
+Library     ../Library/send_email_us_eu.py
 Library     ../Library/XMLParser.py
 #Resource     ../Resources/CPM_LoginPage_resources.robot
 Resource     ../Resources/Master.robot
@@ -77,10 +78,11 @@ ${WEBFILENAME}                          Attachment.txt
 #    #Open Browser To Login Page
 #    Web upload with     ${IP}   ${PIN}  ${WEBFILENAME}
 Mobile Job Submission
+    #Open Browser To Login Page
+    #Mobile submission
+Email submission with different file using ${FILENAME}
     Open Browser To Login Page
-    Mobile submission
-#Email submission with different file using ${FILENAME}
-#    Email submission with  ${IP}   ${PIN}   ${FILENAME}
+    Email submission with  ${FILENAME}
 #Verify quota creation Total 50 and Color 50 for current month
 #    Open Organisational Policy Page
 #    Open Quota Definition Page

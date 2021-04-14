@@ -3,7 +3,7 @@ import pathlib
 import time
 
 
-def send_email_singleattachment(env,file):
+def send_email_singleattachment_all(env,file):
     if 'us' in env and 'dev' in env:
         to_address="lcp.dev2@lexmark.com"
         from_address="no-reply@cloud.onelxk.co"
