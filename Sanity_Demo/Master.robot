@@ -5,6 +5,7 @@ Library     ../Library/CloudLogin.py
 Library     ../Library/Printerautomation.py
 Library     ../Library/CreateDelete.py
 Library     ../Library/Mobile_Submission.py
+Library     ../Library/Mobile_Submission_all.py
 Library     ../Library/send_email.py
 Library     ../Library/XMLParser.py
 #Resource     ../Resources/CPM_LoginPage_resources.robot
