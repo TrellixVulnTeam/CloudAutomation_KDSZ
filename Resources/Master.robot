@@ -282,7 +282,7 @@ Mobile submission
     #[Arguments]        ${IP}   ${PIN}
     #${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
-    ${mobile_status}=   mobile_submit_all   ${USER}     ${PASSWORD}     ${ENVIRONMENT}
+    ${mobile_status}=   mobile_submit_all   ${USER}     ${PASSWORD}     ${URL}
     sleep_call_2
     reload page
     sleep_call

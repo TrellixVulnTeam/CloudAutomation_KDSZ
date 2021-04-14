@@ -62,6 +62,7 @@ ${WEBFILENAME}                          Attachment.txt
 #${PIN}                                  1234
 
 
+
 *** Test Cases ***
 #Verification of correct cloud login
 #    Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
