@@ -4,7 +4,7 @@ import jsonpath
 import http.client
 import re
 
-def create_user(username,password,env,nonadmin):
+def create_user_all(username,password,env,nonadmin):
     global locale, setup
     if "us" in env and "dev" in env:
         locale = "us"
@@ -69,7 +69,7 @@ def create_user(username,password,env,nonadmin):
     return nonadmin
 
 
-def quota_green(username,password,env):
+def quota_green_all(username,password,env):
     global document_id, setup, locale
 
     if "us" in env and "dev" in env:
@@ -225,7 +225,7 @@ def quota_green(username,password,env):
     return total_remaining_new,color_remaining_new
 
 
-def quota_yellow(username,password,env):
+def quota_yellow_all(username,password,env):
     global document_id, setup, locale
 
     if "us" in env and "dev" in env:
@@ -381,7 +381,7 @@ def quota_yellow(username,password,env):
     return total_remaining_new,color_remaining_new
 
 
-def quota_red(username,password,env):
+def quota_red_all(username,password,env):
     global document_id, setup, locale
 
     if "us" in env and "dev" in env:
@@ -537,7 +537,7 @@ def quota_red(username,password,env):
     return total_remaining_new,color_remaining_new
 
 
-def delete_user(username,password,env,nonadmin):
+def delete_user_all(username,password,env,nonadmin):
     global setup, locale
 
     if "us" in env and "dev" in env:

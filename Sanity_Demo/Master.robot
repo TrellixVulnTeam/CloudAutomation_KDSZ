@@ -4,6 +4,8 @@ Library     ../Library/ChromeExtension.py
 Library     ../Library/CloudLogin.py
 Library     ../Library/Printerautomation.py
 Library     ../Library/CreateDelete.py
+Library     ../Library/CreateDelete_all.py
+
 Library     ../Library/Mobile_Submission.py
 Library     ../Library/Mobile_Submission_all.py
 Library     ../Library/send_email.py
@@ -77,12 +79,10 @@ ${WEBFILENAME}                          Attachment.txt
 #Web Upload verification for Text file
 #    #Open Browser To Login Page
 #    Web upload with     ${IP}   ${PIN}  ${WEBFILENAME}
-Mobile Job Submission
-    #Open Browser To Login Page
+#Mobile Job Submission
     #Mobile submission
-Email submission with different file using ${FILENAME}
-    Open Browser To Login Page
-    Email submission with  ${FILENAME}
+#Email submission with different file using ${FILENAME}
+ #   Email submission with  ${FILENAME}
 #Verify quota creation Total 50 and Color 50 for current month
 #    Open Organisational Policy Page
 #    Open Quota Definition Page
@@ -105,21 +105,21 @@ Email submission with different file using ${FILENAME}
 #Reset Quota to Cost Center
 #    Open Organisational Policy Page
 #    Select Cost Center or Personal
-#Verify User Quota Status by personal assignment
-#    Select Personal
-#    Open Quota Definition Page
-#    Create Custom Quota
-#    Set Quota Assignment for Personal
-#Verify user status for normal reduction
-#    Check Status Table for normal
-#Verify user status for warning reduction
-#    Check Status Table for warning
-#Verify user status for exceeded reduction
-#    Check Status Table for exceeded
-#    Delete Quota
-#    Reset to Cost center
-#Log out from portal
-#    Logoutadmin
+Verify User Quota Status by personal assignment
+    Select Personal
+    Open Quota Definition Page
+    Create Custom Quota
+    Set Quota Assignment for Personal
+Verify user status for normal reduction
+    Check Status Table for normal
+Verify user status for warning reduction
+    Check Status Table for warning
+Verify user status for exceeded reduction
+    Check Status Table for exceeded
+    Delete Quota
+    Reset to Cost center
+Log out from portal
+    Logoutadmin
 #Verfication download of MAC Default SAAS package
 #    Download MAC Default Packages for SAAS    ${MACSAASNAME}     ${MACSAASLINK}     ${MACSAAS_PACKAGE NAME}
 #Verfication download of MAC Default Hybrid package
