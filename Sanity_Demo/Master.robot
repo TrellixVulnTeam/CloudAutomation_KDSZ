@@ -3,15 +3,10 @@ Library  SeleniumLibrary
 Library     ../Library/ChromeExtension.py
 Library     ../Library/CloudLogin.py
 Library     ../Library/Printerautomation.py
-Library     ../Library/CreateDelete.py
 Library     ../Library/CreateDelete_all.py
-
-Library     ../Library/Mobile_Submission.py
 Library     ../Library/Mobile_Submission_all.py
-#Library     ../Library/send_email.py
-#Library     ../Library/send_email_us_eu.py
+Library     ../Library/send_email_us_eu.py
 Library     ../Library/XMLParser.py
-#Resource     ../Resources/CPM_LoginPage_resources.robot
 Resource     ../Resources/Master.robot
 
 
@@ -69,13 +64,42 @@ ${WEBFILENAME}                          Attachment.txt
 *** Test Cases ***
 Verification of correct cloud login
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
-#Verification of dashboard title
-#    Dashboard Should Open
+Verification of dashboard title
+    Dashboard Should Open
 Logout from portal for admin
     Exit
-
-Verify User Quota Status by personal assignment
+Delegate addition using ${EMAIL USER}
     Open Browser To Login Page
+    Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
+Web Upload verification for Text file
+    Web upload with     ${IP}   ${PIN}  ${WEBFILENAME}
+Mobile Job Submission
+    Mobile submission
+Email submission with different file using ${FILENAME}
+    Email submission with  ${FILENAME}
+Verify quota creation Total 50 and Color 50 for current month
+    Open Organisational Policy Page
+    Open Quota Definition Page
+    Create Quota different for month
+Verify Cost Center Assignment
+    Open Organisational Policy Page
+    Select Cost Center or Personal First
+    Open Quota Assignment Page
+    Set Quota Assignment for Cost Center
+    Delete Quota
+Verify quota creation Total 50 and Color 50 for all month
+    Open Quota Definition Page
+    Create Monthly Quota
+Verify Department Quota Assignment
+    Open Organisational Policy Page
+    Select Department or Personal
+    Open Quota Assignment Page
+    Set Quota Assignment for Department
+    Delete Quota
+Reset Quota to Cost Center
+    Open Organisational Policy Page
+    Select Cost Center or Personal
+Verify User Quota Status by personal assignment
     Open Organisational Policy Page
     Select Personal
     Open Quota Definition Page
@@ -88,7 +112,7 @@ Verify user status for warning reduction
 Verify user status for exceeded reduction
     Check Status Table for exceeded
     Delete Quota
-    Reset to Cost center
+    #Reset to Cost center
 Log out from portal
     Logoutadmin
 #Verfication download of MAC Default SAAS package
