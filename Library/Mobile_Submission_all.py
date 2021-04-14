@@ -5,7 +5,7 @@ import http.client
 import re
 
 
-def mobile_submit(username, password, env):
+def mobile_submit_all(username, password, env):
     global document_id, setup, locale
     global identity_id
     # username = "sravantesh.neogi@lexmark.com"

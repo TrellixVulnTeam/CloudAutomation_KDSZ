@@ -279,10 +279,10 @@ Email submission with
     Click Element   link-navPrintQueue
 
 Mobile submission
-    [Arguments]        ${IP}   ${PIN}
+    #[Arguments]        ${IP}   ${PIN}
     #${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
-    ${mobile_status}=   mobile_submit
+    ${mobile_status}=   mobile_submit_all   ${USER}     ${PASSWORD}     ${ENVIRONMENT}
     sleep_call_2
     reload page
     sleep_call
