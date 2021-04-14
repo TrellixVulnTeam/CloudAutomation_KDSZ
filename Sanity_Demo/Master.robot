@@ -112,7 +112,7 @@ Verify user status for warning reduction
 Verify user status for exceeded reduction
     Check Status Table for exceeded
     Delete Quota
-    #Reset to Cost center
+    Reset to Cost center
 Log out from portal
     Logoutadmin
 #Verfication download of MAC Default SAAS package
