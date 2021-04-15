@@ -12,7 +12,7 @@ def printer_automation(ip,pin,text):
 
 
     #ip_address = "10.195.6.123"
-
+    print(ip)
     ups = UPS(printer_ip=ip)
     ups.initialize()
     time.sleep(2)
