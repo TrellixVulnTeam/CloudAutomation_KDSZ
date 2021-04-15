@@ -61,7 +61,7 @@ ${SUITENAME}                             Environment is:
 ${ENV}
 
 *** Settings ***
-Force Tags      Environment: ${URL}
+Force Tags      Environment-${URL}
 
 *** Test Cases ***
 Verification of correct cloud login
