@@ -105,3 +105,17 @@ def check_values(notification_flag_original, delete_folder_check, unused_client_
     return "Settings completed"
 
 
+def delete_folder(foldername):
+    parent = r"C:/Users/neogis/D Drive/FREEDOM/Python/"
+    directory = foldername + "@tmp"
+    folder_path = os.path.join(parent, directory)
+
+    os.rmdir(folder_path)
+
+
+def delete_ws_folder(foldername):
+    parent = r"C:/Users/neogis/.jenkins/workspace/"
+    directory = foldername + "@tmp"
+    folder_path = os.path.join(parent, directory)
+
+    os.rmdir(folder_path)
