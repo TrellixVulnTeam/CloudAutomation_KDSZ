@@ -58,12 +58,13 @@ ${WEBFILENAME}                          Attachment.txt
 #${IP}                                   10.195.6.123
 #${PIN}                                  1234
 ${SUITENAME}                             Environment is:
+${ENV}
 
+*** Settings ***
+Force Tags      Environment: ${URL}
 
 *** Test Cases ***
 Verification of correct cloud login
-    ${ENV} =   Catenate    SEPARATOR=--   Environment   ${URL}
-    [tags]  ${ENV}
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
 #Verification of dashboard title
 #    Dashboard Should Open
