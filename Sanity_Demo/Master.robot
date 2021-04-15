@@ -57,12 +57,12 @@ ${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/C
 ${WEBFILENAME}                          Attachment.txt
 #${IP}                                   10.195.6.123
 #${PIN}                                  1234
-
+${SUITENAME}                             Environment is:
 
 
 *** Test Cases ***
 Verification of correct cloud login
-    [tags]  ${URL}
+    [tags]  ${SUITENAME}    ${URL}
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
 #Verification of dashboard title
 #    Dashboard Should Open
