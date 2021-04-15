@@ -62,7 +62,8 @@ ${SUITENAME}                             Environment is:
 
 *** Test Cases ***
 Verification of correct cloud login
-    [tags]  ${SUITENAME}    ${URL}
+    ${ENV} =   Catenate    SEPARATOR=--   Environment   ${URL}
+    [tags]  ${ENV}
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
 #Verification of dashboard title
 #    Dashboard Should Open
