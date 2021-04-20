@@ -26,5 +26,3 @@ def set_edgedriver():
     os.environ["PATH"] += os.pathsep + app_path
     result=os.environ['PATH']
     return result
-
-set_chromedriver()
