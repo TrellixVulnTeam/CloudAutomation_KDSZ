@@ -16,7 +16,7 @@ Resource     ../Resources/Master.robot
 *** Variables ***
 ${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
 ${URL}                          https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Firefox
+${BROWSER}                      Chrome
 ${USER}                         sravantesh.neogi@lexmark.com
 ${PASSWORD}                     Password@1234
 ${NORMALBROWSER}                Chrome
@@ -67,8 +67,8 @@ ${ENV}
 Force Tags      Environment-${URL}
 
 *** Test Cases ***
-Install chrome driver
-    ${result}=  set_chromedriver
+#Install chrome driver
+#    ${result}=  set_chromedriver
 Verification of correct cloud login
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
 ###Verification of dashboard title
