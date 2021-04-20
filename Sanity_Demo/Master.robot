@@ -65,8 +65,8 @@ ${ENV}
 Force Tags      Environment-${URL}
 
 *** Test Cases ***
-Install chrome
-    Set webdriver
+#Install chrome
+#    Set webdriver
 Verification of correct cloud login
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
 ###Verification of dashboard title
