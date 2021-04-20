@@ -9,6 +9,7 @@ Library     ../Library/send_email_us_eu.py
 Library     ../Library/XMLParser.py
 Library     ../Library/ChromeWebDriver.py
 Resource     ../Resources/Master.robot
+Library     OperatingSystem
 
 
 *** Variables ***
@@ -65,8 +66,8 @@ ${ENV}
 Force Tags      Environment-${URL}
 
 *** Test Cases ***
-#Install chrome
-#    Set webdriver
+Install chrome
+    set environment variable    webdriver.chrome.driver     C:\\Users\\neogis\\Downloads\\chromedriver_win32\\chromedriver.exe
 Verification of correct cloud login
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
 ###Verification of dashboard title
