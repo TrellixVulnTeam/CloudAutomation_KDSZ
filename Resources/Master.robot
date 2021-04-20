@@ -4,8 +4,8 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-${URL}                          https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
+#${URL}                          https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Chrome
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${next}                         Next
@@ -45,8 +45,7 @@ ${PIN}
 ${NORMALBROWSER}
 
 *** Keywords ***
-#Set webdriver
-#    ${result}=  set_chromedriver
+
 Open CPM portal and Login Verification
     [Arguments]    ${username}      ${password}
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
