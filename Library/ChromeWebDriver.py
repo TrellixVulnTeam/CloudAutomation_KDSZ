@@ -3,7 +3,7 @@ import webdriver_manager
 from webdriver_manager.chrome import ChromeDriverManager
 import zipfile
 import os
-from msedge.selenium_tools import Edge,EdgeOptions
+#from msedge.selenium_tools import Edge,EdgeOptions
 
 def set_chromedriver():
 
@@ -17,12 +17,12 @@ def set_chromedriver():
     result=os.environ['PATH']
     return result
 
-def set_edgedriver():
-    options=EdgeOptions()
-    options.use_chromium=True
-    driver=Edge(options=options,executable_path=r"C:\Users\scmselenium\jenkins\workspace\print-management-ui\CPM_ProdValidation_Pipeline_US@2\venv\Lib\site-packages\MicrosoftWebDriver.exe")
-    driver.get('http://google.com/')
-    app_path = r"C:\Users\scmselenium\jenkins\workspace\print-management-ui\CPM_ProdValidation_Pipeline_US@2\venv\Lib\site-packages\MicrosoftWebDriver.exe"
-    os.environ["PATH"] += os.pathsep + app_path
-    result=os.environ['PATH']
-    return result
+# def set_edgedriver():
+#     options=EdgeOptions()
+#     options.use_chromium=True
+#     driver=Edge(options=options,executable_path=r"C:\Users\scmselenium\jenkins\workspace\print-management-ui\CPM_ProdValidation_Pipeline_US@2\venv\Lib\site-packages\MicrosoftWebDriver.exe")
+#     driver.get('http://google.com/')
+#     app_path = r"C:\Users\scmselenium\jenkins\workspace\print-management-ui\CPM_ProdValidation_Pipeline_US@2\venv\Lib\site-packages\MicrosoftWebDriver.exe"
+#     os.environ["PATH"] += os.pathsep + app_path
+#     result=os.environ['PATH']
+#     return result
