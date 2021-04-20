@@ -1,11 +1,11 @@
 *** Settings ***
 Library  SeleniumLibrary
 Variables    ../PageObjects/Locators.py
-Library     OperatingSystem
+
 
 *** Variables ***
 ${URL}                          https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Edge
+${BROWSER}                      Chrome
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${next}                         Next
@@ -38,14 +38,14 @@ ${hybrid_unprinted_jobs_value}          20
 ${latebind}                             True
 ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
-${FILEPATH}                             ${WS}\\Attachments\\Attachment.txt
+${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/Attachments/Attachment.txt
 ${WEBFILENAME}                          Attachment.txt
 ${IP}
 ${PIN}
 ${NORMALBROWSER}
-${WS}
 
 *** Keywords ***
+
 Open CPM portal and Login Verification
     [Arguments]    ${username}      ${password}
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
@@ -174,7 +174,7 @@ Open Browser To Login Page
 
 Web upload with
     set selenium timeout    20
-    [Arguments]        ${IP}   ${PIN}  ${FILEPATH}
+    [Arguments]        ${IP}   ${PIN}  ${WEBFILENAME}
     click element       ${name_printqueue}
     wait until element is visible       ${btn_upload}
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
@@ -606,7 +606,7 @@ Reset to Cost center
 Logoutadmin
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
-    scroll element into view        useCostCenterOption_radio_input
+    scroll element into view        singlechk
     sleep_call_2
     click element   ${lnk_username}
     wait until page contains element    ${lnl_logout}

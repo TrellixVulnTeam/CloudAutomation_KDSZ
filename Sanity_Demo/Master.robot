@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+#Library     ../Library/ChromeExtension.py
 Library     ../Library/CloudLogin.py
 Library     ../Library/Printerautomation.py
 Library     ../Library/CreateDelete_all.py
@@ -7,17 +8,15 @@ Library     ../Library/Mobile_Submission_all.py
 Library     ../Library/send_email_us_eu.py
 Library     ../Library/XMLParser.py
 Resource     ../Resources/Master.robot
-Library     OperatingSystem
-Library     ../Library/ChromeWebDriver.py
 
 
 *** Variables ***
-#${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-${URL}                          https://dev.eu.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
-#${USER}                         sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
-#${NORMALBROWSER}                Chrome
+${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
+${URL}                          https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                         sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
+${NORMALBROWSER}                Chrome
 ${username_blank}
 ${username_invalid}             sravantesh@lexmark.com
 ${password_blank}
@@ -54,35 +53,32 @@ ${hybrid_unprinted_jobs_value}          20
 ${latebind}                             True
 ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
-#${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/Attachments/Attachment.txt
+${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/Attachments/Attachment.txt
 ${WEBFILENAME}                          Attachment.txt
 #${IP}                                   10.195.6.123
 #${PIN}                                  1234
 ${SUITENAME}                             Environment is:
 ${ENV}
-${EXEPATH}
-${WS}
-${FILEPATH}                             ${WS}\\Attachments\\Attachment.txt
 
 *** Settings ***
-Force Tags      Environment-${URL} Browser-${BROWSER}
+Force Tags      Environment-${URL}
 
 *** Test Cases ***
 Verification of correct cloud login
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
-Verification of dashboard title
-    Dashboard Should Open
-Logout from portal for admin
-    Exit
+###Verification of dashboard title
+##    Dashboard Should Open
+#Logout from portal for admin
+#####    Exit
 #Delegate addition using ${EMAIL USER}
-#    Open Browser To Login Page
+##    Open Browser To Login Page
 #    Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
 #Web Upload verification for Text file
-#    Web upload with     ${IP}   ${PIN}  ${FILEPATH}
+#    Web upload with     ${IP}   ${PIN}  ${WEBFILENAME}
 #Mobile Job Submission
 #    Mobile submission
-##Email submission with different file using ${FILENAME}
-##    Email submission with  ${FILENAME}
+#Email submission with different file using ${FILENAME}
+#    Email submission with  ${FILENAME}
 #Verify quota creation Total 50 and Color 50 for current month
 #    Open Organisational Policy Page
 #    Open Quota Definition Page
