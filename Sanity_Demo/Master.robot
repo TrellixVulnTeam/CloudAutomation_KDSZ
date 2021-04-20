@@ -66,8 +66,6 @@ ${ENV}
 Force Tags      Environment-${URL}
 
 *** Test Cases ***
-Install chrome
-    set environment variable    webdriver.chrome.driver     C:\\Users\\neogis\\Downloads\\chromedriver_win32\\chromedriver.exe
 Verification of correct cloud login
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
 ###Verification of dashboard title
