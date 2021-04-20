@@ -45,7 +45,8 @@ ${PIN}
 ${NORMALBROWSER}
 
 *** Keywords ***
-
+#Set chrome
+#    ${result}=      set_chromedriver
 Open CPM portal and Login Verification
     [Arguments]    ${username}      ${password}
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm

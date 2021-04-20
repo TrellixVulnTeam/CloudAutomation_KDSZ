@@ -7,7 +7,7 @@ import os
 
 def set_chromedriver():
 
-    webdriver.Chrome(ChromeDriverManager(version="90.0.4430.24").install())
+    #webdriver.Chrome(ChromeDriverManager(version="90.0.4430.24").install())
     driver = webdriver.Chrome(executable_path=r'C:\Users\neogis\D Drive\FREEDOM\Python\STL_Automation\venv\WebDriverManager\chrome\90.0.4430.24\chromedriver_win32\chromedriver.exe')
     driver.get('http://google.com/')
     #driver = webdriver.Chrome(r"C:\Users\\scmselenium\\.wdm\\drivers\\chromedriver\\win32\\90.0.4430.24\\chromedriver.exe")
@@ -28,4 +28,3 @@ def set_chromedriver():
 #     return result
 
 
-set_chromedriver()
