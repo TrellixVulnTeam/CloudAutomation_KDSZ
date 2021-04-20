@@ -11,7 +11,7 @@ Resource     ../Resources/Master.robot
 
 
 *** Variables ***
-#${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
+##${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
 #${URL}                          https://dev.us.cloud.onelxk.co/
 #${BROWSER}                      headlessChrome
 #${USER}                         sravantesh.neogi@lexmark.com
