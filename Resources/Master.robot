@@ -208,6 +208,7 @@ Web upload with
     sleep_call_2
     #wait until page contains    Print Job History
     click element   link-navJobHistory
+    ait until page contains    Print Job History
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
     Wait Until Keyword Succeeds    40 sec    5 sec    element should contain      ${print_job_name1}        ${WEBFILENAME}
     #wait until element contains     ${print_job_name1}     ${FILENAME}
@@ -253,6 +254,7 @@ Email submission with
     sleep_call_2
     #wait until page contains    Print Job History
     click element   link-navJobHistory
+    ait until page contains    Print Job History
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
     Wait Until Keyword Succeeds    40 sec    5 sec    element should contain      ${print_job_name1}        ${FILENAME}
     #wait until element contains     ${print_job_name1}     ${FILENAME}
