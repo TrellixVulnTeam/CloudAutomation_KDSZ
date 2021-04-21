@@ -54,7 +54,7 @@ def mobile_submit_all(username, password, env):
               "\"1.2.11.2\",\n        \"osName\": \"ios\",\n        \"osVersion\": \"11.1.1\",\n        \"model\": " \
               "\"tablet\"\n    },\n    \"metadata\": {\n    },\n    \"requestedOptions\": [\n        {\n            " \
               "\"name\": \"duplex\",\n            \"value\": \"simplex\"\n        },\n        {\n            " \
-              "\"name\": \"copies\",\n            \"value\": \"5\"\n        }\n    ]\n} "
+              "\"name\": \"copies\",\n            \"value\": \"1\"\n        }\n    ]\n} "
     headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + access_token
