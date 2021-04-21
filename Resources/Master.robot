@@ -213,6 +213,8 @@ Web upload with
     #wait until element contains     ${print_job_name1}     ${FILENAME}
 
     element text should be      ${print_job_name1}     ${WEBFILENAME}
+    element text should not be      ${impression_count}     0
+
     sleep_call_2
     Click Element   link-navPrintQueue
 
@@ -256,6 +258,7 @@ Email submission with
     #wait until element contains     ${print_job_name1}     ${FILENAME}
 
     element text should be      ${print_job_name1}     ${FILENAME}
+    element text should not be      ${impression_count}     0
     sleep_call_2
     Click Element   link-navPrintQueue
 
@@ -276,6 +279,7 @@ Email submission with
 
     element text should be      ${print_job_name}     Test Mail.html
     sleep_call_2
+    element text should not be      ${impression_count}     0
 
     Click Element   link-navPrintQueue
 
@@ -310,6 +314,7 @@ Mobile submission
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${print_job_name1}        ${mobile_job}
     sleep_call_2
+    element text should not be      ${impression_count}     0
     click element       ${name_printqueue}
 
 Open Browser To Login Page using admin
