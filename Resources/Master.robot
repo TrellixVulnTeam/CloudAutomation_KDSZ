@@ -606,7 +606,7 @@ Reset to Cost center
 Logoutadmin
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
-    scroll element into view        singlechk
+    scroll element into view        useCostCenterOption_radio_input
     sleep_call_2
     click element   ${lnk_username}
     wait until page contains element    ${lnl_logout}
