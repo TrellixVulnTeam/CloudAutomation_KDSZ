@@ -2,7 +2,7 @@ import zipfile
 import xml.etree.ElementTree as ET
 import os
 import shutil
-
+import pyautogui as pg
 
 # def download_wait(filename):
 #     path_to_downloads = "C://Users//neogis//Downloads"
@@ -119,3 +119,8 @@ def delete_ws_folder(foldername):
     folder_path = os.path.join(parent, directory)
 
     os.rmdir(folder_path)
+
+def click_download_wait():
+    pg.press('tab')
+    pg.press('enter')
+

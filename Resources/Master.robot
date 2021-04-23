@@ -1006,7 +1006,7 @@ Download Default Packages for Windows for SAAS
     Click Button    btn-email-login
     sleep_call
 #Dashboard Should Open
-    run keyword     Change Security Settings
+    #run keyword     Change Security Settings
 
 
 #OPen Dashboard
@@ -1040,6 +1040,8 @@ Download Default Packages for Windows for SAAS
     click button    ${download_btn}
     sleep_call_2
     sleep_call
+    ${agree}=   click_download_wait
+    sleep_call_2
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}
@@ -1092,7 +1094,7 @@ Download Default Packages for Windows for Hybrid
     Click Button    btn-email-login
     sleep_call
 #Dashboard Should Open
-    run keyword     Change Security Settings
+    #run keyword     Change Security Settings
 
 
 #OPen Dashboard
@@ -1124,8 +1126,9 @@ Download Default Packages for Windows for Hybrid
 #Click Download button
     sleep_call_2
     click button    ${download_btn}
-    sleep_call_2
     sleep_call
+    ${agree}=   click_download_wait
+    sleep_call_2
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}
