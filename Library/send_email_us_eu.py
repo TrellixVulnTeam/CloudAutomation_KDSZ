@@ -15,7 +15,7 @@ def send_email_singleattachment_all(env,file):
     #     to_address="lcp.qa1@lexmark.com"
     #     from_address="no-reply@qa.iss.lexmark.com"
 
-    filename = "C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/TestData/" + file
+    filename = "C:/Users/neogis/D Drive/FREEDOM/Python/STL_Automation/Attachments/" + file
     file_path_txt = pathlib.Path(filename)
     file_name = file_path_txt.name
     print(file_name)

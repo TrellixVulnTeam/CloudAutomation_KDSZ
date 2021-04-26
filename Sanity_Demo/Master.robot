@@ -55,7 +55,7 @@ ${hybrid_unprinted_jobs_value}          20
 ${latebind}                             True
 ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
-${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/Attachments/Attachment.txt
+${FILEPATH}                             C:\\Users\\neogis\\D Drive\\FREEDOM\\Python\\STL_Automation\\Attachments\\Attachment.txt
 ${WEBFILENAME}                          Attachment.txt
 ${SUITENAME}                             Environment is:
 ${ENV}
@@ -117,14 +117,14 @@ Verify user status for exceeded reduction
     Reset to Cost center
 Log out from portal
     Logoutadmin
-#Verfication download of MAC Default SAAS package
-#    Download MAC Default Packages for SAAS    ${MACSAASNAME}     ${MACSAASLINK}     ${MACSAAS_PACKAGE NAME}
-#Verfication download of MAC Default Hybrid package
-#    Download MAC Default Packages for Hybrid    ${MACHYBRIDNAME}     ${MACHYBRIDLINK}     ${MACHYBRID_PACKAGE NAME}
-#Verification download of Windows Default Packages for SAAS
-#    Download Default Packages for Windows for SAAS    ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}
-#Verification download of Windows Default Packages for Hybrid
-#    Download Default Packages for Windows for Hybrid    ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}
-#Verification of custom package for Windows
-#    Create Custom Package for Windows   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
+Verfication download of MAC Default SAAS package
+    Download MAC Default Packages for SAAS    ${MACSAASNAME}     ${MACSAASLINK}     ${MACSAAS_PACKAGE NAME}
+Verfication download of MAC Default Hybrid package
+    Download MAC Default Packages for Hybrid    ${MACHYBRIDNAME}     ${MACHYBRIDLINK}     ${MACHYBRID_PACKAGE NAME}
+Verification download of Windows Default Packages for SAAS
+    Download Default Packages for Windows for SAAS    ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}
+Verification download of Windows Default Packages for Hybrid
+    Download Default Packages for Windows for Hybrid    ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}
+Verification of custom package for Windows
+    Create Custom Package for Windows   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
 ####################################################################

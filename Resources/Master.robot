@@ -5,7 +5,7 @@ Variables    ../PageObjects/Locators.py
 
 *** Variables ***
 #${URL}                          https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
+#${BROWSER}                      Chrome
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${next}                         Next
@@ -38,7 +38,7 @@ ${hybrid_unprinted_jobs_value}          20
 ${latebind}                             True
 ${hybrid_printed_jobs_value}            120
 ${saas}                                 True
-${FILEPATH}                             C:/Users/neogis/D Drive/FREEDOM/Python/CloudAutomation/Attachments/Attachment.txt
+${FILEPATH}                             C:\\Users\\neogis\\D Drive\\FREEDOM\\Python\\STL_Automation\\Attachments\\Attachment.txt
 ${WEBFILENAME}                          Attachment.txt
 ${IP}
 ${PIN}
