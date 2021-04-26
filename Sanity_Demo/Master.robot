@@ -13,12 +13,12 @@ Library     OperatingSystem
 
 
 *** Variables ***
-${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-${URL}                          https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Firefox
-${USER}                         sravantesh.neogi@lexmark.com
-${PASSWORD}                     Password@1234
-${NORMALBROWSER}                Edge
+#${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
+#${URL}                          https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Firefox
+#${USER}                         sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
+#${NORMALBROWSER}                Edge
 ${username_blank}
 ${username_invalid}             sravantesh@lexmark.com
 ${password_blank}

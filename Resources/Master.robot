@@ -5,7 +5,7 @@ Variables    ../PageObjects/Locators.py
 
 *** Variables ***
 #${URL}                          https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
+#${BROWSER}                      headlessChrome
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${next}                         Next
@@ -1160,7 +1160,7 @@ Create Custom Package for Windows
     sleep_call
 
 #Update Secuirty policy
-    run keyword     Change Security Settings
+    #run keyword     Change Security Settings
 
     go to   ${URL}
 
