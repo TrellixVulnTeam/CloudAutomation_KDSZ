@@ -70,14 +70,14 @@ Verification of dashboard title
     Dashboard Should Open
 Logout from portal for admin
     Exit
-Delegate addition using ${EMAIL USER}
+Delegate addition and deletion using ${EMAIL USER}
     Open Browser To Login Page
     Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
-Web Upload verification for Text file
+Web Upload and print verification for Text file
     Web upload with     ${IP}   ${PIN}  ${WEBFILENAME}
-Mobile Job Submission
+Mobile Job Submission and print verification
     Mobile submission
-Email submission with different file using ${FILENAME}
+Email submission and print verification with different file using ${FILENAME}
     Email submission with  ${FILENAME}
 Verify quota creation Total 50 and Color 50 for current month
     Open Organisational Policy Page
