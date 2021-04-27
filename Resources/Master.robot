@@ -224,7 +224,7 @@ Email submission with
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     ${email_status}=   send_email_singleattachment_all  ${URL}  ${FILENAME}
-    log     ${email_status}
+    #log     ${email_status}
 
     click element   ${name_printqueue}
     reload page
