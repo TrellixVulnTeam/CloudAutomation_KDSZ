@@ -1146,7 +1146,7 @@ Download Default Packages for Windows for Hybrid
     sleep_call_2
     close browser
 
-Create Custom Package for Windows
+Mobile submission
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     [Arguments]   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
     Set Global Variable      ${unused_client_value_delete_span}
