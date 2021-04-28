@@ -5,7 +5,7 @@ Variables    ../PageObjects/Locators.py
 
 *** Variables ***
 #${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
+#${DOWNLOADBROWSER}                      Chrome
 #${USER}                     sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
 ${PACKAGE NAME}                 customPackage.zip
@@ -27,7 +27,7 @@ ${CPM URL}                              https://dev.us.cloud.onelxk.co/cpm
 *** Keywords ***
 
 Open Browser To Login Page
-    Open Browser    ${URL}    ${BROWSER}
+    Open Browser    ${URL}    ${DOWNLOADBROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
     Click Button    ${btn_next}
@@ -54,7 +54,7 @@ Open Browser To Login Page
 Create Custom Package
     [Arguments]   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
     Set Global Variable      ${unused_client_value_delete_span}
-    Open Browser    ${URL}    ${BROWSER}
+    Open Browser    ${URL}    ${DOWNLOADBROWSER}
     Maximize Browser Window
     Input Text    ${txt_username}    ${USER}
     Click Button    ${btn_next}
@@ -64,20 +64,20 @@ Create Custom Package
 
 #Update Secuirty policy
 #Change security preferences to allow EXE downloads
-    go to   chrome://settings/security
-    sleep_call_2
-
-#Navigate to Standard Security Policy
-    Press Keys    None      TAB
-    Press Keys    None      TAB
-    Press Keys    None      TAB
-    Press Keys    None      TAB
-    Press Keys    None      TAB
-    Press Keys    None      TAB
-
-    sleep_call_2
-    Press Keys    None      ARROW_UP
-    sleep_call_2
+#    #go to   chrome://settings/security
+#    sleep_call_2
+#
+##Navigate to Standard Security Policy
+#    Press Keys    None      TAB
+#    Press Keys    None      TAB
+#    Press Keys    None      TAB
+#    Press Keys    None      TAB
+#    Press Keys    None      TAB
+#    Press Keys    None      TAB
+#
+#    sleep_call_2
+#    Press Keys    None      ARROW_UP
+#    sleep_call_2
 
     go to   ${URL}
 
