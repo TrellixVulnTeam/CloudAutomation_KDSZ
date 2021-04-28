@@ -157,17 +157,18 @@ Change Default Settings
     ${progress_bar}     set variable    //*[@id="_bar"]/progressbar/bar
     ${progress_value}   set variable    //*[@id="_Content"]/div
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${progress_value}
-    Wait Until Element Contains     ${progress_value}    100%   timeout=15
+    Wait Until Element Contains     ${progress_value}    100%   timeout=30
 
     ${progress_value_actual}     Set Variable    xpath://*[@id="_bar"]/progressbar/bar
 
     element attribute value should be   ${progress_value_actual}    aria-valuenow   100
     ${done_btn}     set variable    printQueueUploadModalDoneButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${done_btn}
     click button    ${done_btn}
-    reload page
-    sleep_call
+    #reload page
+    #sleep_call
     ${job_status}   set variable    documents-row-0-documentStatus
-    Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${job_status}        Ready
+    Wait Until Keyword Succeeds    60 sec    10 sec    element text should be      ${job_status}        Ready
 #    Wait until Element Is Visible   xpath://*[@id="printQueueUploadModalModalHeader"]
 #    Click Element   xpath://*[@id="multiFileSelectUploadDragDrop"]/div[1]/cui-button/span/button
 #
