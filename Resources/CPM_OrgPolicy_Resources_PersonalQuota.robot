@@ -4,10 +4,10 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${username_nonadmin}            automateuser@test.onelxk.co
 ${email_text}                   In addition to uploading a file, you may also e-mail it to lcp.dev2@lexmark.com to place it in your print queue.
 ${costcenter}                   stl
@@ -112,6 +112,8 @@ Select Personal
     click element       ${btn_confirmchange}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_save}
     click element       ${btn_save}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_save}
+
 
 Open Quota Assignment Page
     set selenium timeout    20
@@ -284,8 +286,7 @@ Set Quota Assignment for Personal
     set selenium timeout    20
     run keyword     Open Organisational Policy Page
     run keyword     Select Personal
-    run keyword     Open Quota Assignment Page
-    sleep_call
+    #run keyword     Open Quota Assignment Page
     wait until element is visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     sleep_call_2
@@ -323,13 +324,21 @@ Set Quota Assignment for Personal
     run keyword     Check the table values
 
     #run keyword     Open Browser To Login Page using Admin
-    run keyword     Open Quota Definition Page
+    set selenium timeout    20
+    wait until element is visible   ${admin_dropdown}
+    click element       ${admin_dropdown}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${lbl_quotadefinition}
+    click element       ${lbl_quotadefinition}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${personal_assignment_count}
     element text should be      ${personal_assignment_count}      1
     sleep_call_2
     run keyword     Open Organisational Policy Page
     run keyword     Reset Quota choice
-    run keyword     Open Quota Definition Page
+    set selenium timeout    20
+    wait until element is visible   ${admin_dropdown}
+    click element       ${admin_dropdown}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${lbl_quotadefinition}
+    click element       ${lbl_quotadefinition}
     #run keyword     Delete Quota
 
 

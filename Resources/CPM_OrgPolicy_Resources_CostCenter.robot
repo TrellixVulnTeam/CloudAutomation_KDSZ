@@ -4,10 +4,10 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${username_nonadmin}            automateuser@test.onelxk.co
 ${email_text}                   In addition to uploading a file, you may also e-mail it to lcp.dev2@lexmark.com to place it in your print queue.
 ${costcenter}                   stl
@@ -534,8 +534,11 @@ Set Quota Assignment for Cost Center
 
     #run keyword     Open Browser To Login Page using Admin
     run keyword     Open Organisational Policy Page
-    run keyword     Open Quota Definition Page
-
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${admin_dropdown}
+    click element       ${admin_dropdown}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${lbl_quotadefinition}
+    click element       ${lbl_quotadefinition}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${costcenter_assignment_count}
     element text should be      ${costcenter_assignment_count}      1
 
 Set cost center
