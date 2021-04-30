@@ -34,10 +34,7 @@ Check Error validations for Quota
     Set Color Value as Characters
     Set Color Value as Decimal
     Set Total Value less than Color Value
-
-
-    Log out
-
+    Log out quota
 
 
 ###################################################################
