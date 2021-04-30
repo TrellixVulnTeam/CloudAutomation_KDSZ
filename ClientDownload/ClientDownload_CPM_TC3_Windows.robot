@@ -22,7 +22,7 @@ Verify Default Client Download packge for Windows ${NAME}
 *** Keywords ***
 #Open Browser To Login Page
 Download Default Packages for Windows
-    Open Browser    ${URL}    ${BROWSER}
+    Open Browser    ${URL}    ${DOWNLOADBROWSER}
     Maximize Browser Window
     ${username_text}    set variable    id:user_email
     ${password_text}    set variable    id:user_password
