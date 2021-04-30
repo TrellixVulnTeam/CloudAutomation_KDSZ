@@ -9,7 +9,6 @@ Library     ../Library/send_email.py
 Library     ../Library/XMLParser.py
 Library     DataDriver  ../TestData/PageSize.xlsx
 Library     DataDriver  ../TestData/Staple.xlsx
-Library     ../PageObjects/Locators.py
 
 Suite Setup     Check total number of paper sizes
 Test Template   Validation of Paper size dropdown

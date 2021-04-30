@@ -8,7 +8,6 @@ Library     ../Library/Mobile_Submission.py
 Library     ../Library/send_email.py
 Library     ../Library/XMLParser.py
 Library     DataDriver  ../TestData/Staple.xlsx
-Library     ../PageObjects/Locators.py
 Suite Setup     Check total number of staple bins
 Test Template   Validation of Staple dropdown
 Suite Teardown     Reset , Log Out and Close Browsers
