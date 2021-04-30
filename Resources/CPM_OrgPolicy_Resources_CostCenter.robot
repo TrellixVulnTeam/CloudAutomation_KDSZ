@@ -331,7 +331,7 @@ Open Quota Definition Page
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain element      ${btn_create_quota}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${btn_create_quota}
 
 Check default quota definition
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${icon_definition}

@@ -127,7 +127,7 @@ Open Quota Definition Page
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
-    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible    createDefinitionButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${btn_create_quota}
 
 Open Browser and Quota Page
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
