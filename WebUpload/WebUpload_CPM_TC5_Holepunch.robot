@@ -105,8 +105,8 @@ Reset , Log Out and Close Browsers
     sleep_call_1
     click element   holePunch
     click element   holePunch-listbox-item-printer
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
     click button    saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      userMenu
