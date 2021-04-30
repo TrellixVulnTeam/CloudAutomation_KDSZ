@@ -75,7 +75,7 @@ Check total number of holepunch options
 
 #Open Print default settings
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     click button    ${default_settings_btn}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
 
@@ -94,7 +94,7 @@ Validation of Holepunch dropdown
     click element   ${HOLEPUNCH CONTROL}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     click button    saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     click button    ${default_settings_btn}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     element attribute value should be   ${HOLEPUNCH CONTROL}   title   ${HOLEPUNCH NAME}
@@ -107,7 +107,7 @@ Reset , Log Out and Close Browsers
     click element   holePunch
     click element   holePunch-listbox-item-printer
     click button    saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      userMenu

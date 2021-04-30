@@ -74,7 +74,7 @@ Check total number of fold options
 
 #Open Print default settings
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     click button    ${default_settings_btn}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
 
@@ -95,7 +95,7 @@ Validation of Fold dropdown
     click element   ${FOLD CONTROL}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     click button    saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     click button    ${default_settings_btn}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     element attribute value should be   ${FOLD CONTROL}   title   ${FOLD NAME}
@@ -106,7 +106,7 @@ Reset , Log Out and Close Browsers
     click element   fold
     click element   fold-listbox-item-printer
     click button    saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      userMenu

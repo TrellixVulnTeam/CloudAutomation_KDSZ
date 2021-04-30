@@ -74,7 +74,7 @@ Open Browser and Login
 
 #Open Print default settings
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     click button    ${default_settings_btn}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
 
@@ -90,7 +90,7 @@ Validation of Color Mono default state
 
     click element     ${mono}
     click button        saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     click button    ${default_settings_btn}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
 
@@ -107,7 +107,7 @@ Validation of Color Mono new state
     click element       ${color}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     click button        saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     click button    ${default_settings_btn}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     element attribute value should be       ${color}    aria-checked    true

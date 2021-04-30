@@ -66,7 +66,7 @@ Check total number of paper sizes
     element should contain  xpath://*[@id="printQueuePageHeaderDropDown_button"]/div   ${tab1name}
 #Open Print default settings
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     click button    ${default_settings_btn}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
 #Check page size count
@@ -80,7 +80,7 @@ Validation of Paper size dropdown
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${PAGE SIZE CONTROL}
     click element   ${PAGE SIZE CONTROL}
     click button    saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     click button    ${default_settings_btn}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     element attribute value should be   ${PAGE SIZE CONTROL}   title   ${PAGE SIZE NAME}
@@ -90,7 +90,7 @@ Reset , Log Out and Close Browsers
     click element   paperSize
     click element   paperSize-listbox-item-printer
     click button    saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      userMenu

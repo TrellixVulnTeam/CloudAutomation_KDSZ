@@ -74,7 +74,7 @@ Check total number of output bins
 
 #Open Print default settings
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     click button    ${default_settings_btn}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
 #Check page size count
@@ -91,7 +91,7 @@ Validation of Output Bin dropdown
 
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     click button    saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     click button    ${default_settings_btn}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     element attribute value should be   ${OUTPUT BIN CONTROL}   title   ${OUTPUT BIN NAME}
@@ -102,7 +102,7 @@ Reset , Log Out and Close Browsers
     click element   outputBin
     click element   outputBin-listbox-item-printer
     click button    saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     printQueueUploadButton
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      userMenu
