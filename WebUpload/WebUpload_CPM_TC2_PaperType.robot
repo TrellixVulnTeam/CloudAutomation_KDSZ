@@ -73,10 +73,10 @@ Check total number of paper types
 
 #Open Print default settings
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    wait until page contains element   ${default_settings_btn}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
     click button    ${default_settings_btn}
     #wait until page contains element    settingsUpdatingBusySpinner
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
 
 #Check page size count
     element attribute value should be   //*[@id="paperType-listbox-item-printer"]   aria-setsize   24
@@ -92,13 +92,11 @@ Validation of Paper type dropdown
     click element   ${PAPER TYPE CONTROL}
 
     run keyword if  ${CHECK}==True     page should contain   ${ERROR_TEXT}
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+
     click button    saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${default_settings_btn}
-    wait until page contains element   ${default_settings_btn}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
-    #Icon ID gets generated run time, hence cannot track it.
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     element attribute value should be   ${PAPER TYPE CONTROL}   title   ${PAPER TYPE NAME}
 
 

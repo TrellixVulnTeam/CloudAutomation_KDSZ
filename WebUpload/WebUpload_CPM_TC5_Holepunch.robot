@@ -74,9 +74,9 @@ Check total number of holepunch options
 
 #Open Print default settings
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    wait until page contains element   ${default_settings_btn}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
 
 #Check page size count
     element attribute value should be   //*[@id="holePunch-listbox-item-printer"]   aria-setsize   5
@@ -93,9 +93,9 @@ Validation of Holepunch dropdown
     click element   ${HOLEPUNCH CONTROL}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     click button    saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${default_settings_btn}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     element attribute value should be   ${HOLEPUNCH CONTROL}   title   ${HOLEPUNCH NAME}
 
 

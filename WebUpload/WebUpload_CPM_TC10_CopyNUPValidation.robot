@@ -96,16 +96,16 @@ Open Browser To Login Page
     element should contain  xpath://*[@id="printQueuePageHeaderDropDown_button"]/div   ${tab1name}
 
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${default_settings_btn}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     ${default_title}            set variable    printSettingsBreadcrumb
 
     #element attribute value should be   ${default_title}    aria-label   ${default_title_actual}
 
 Increment Copy validation by 1 to 2
     set selenium timeout    20
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     textfield should contain    //*[@id="copies_input"]  1
     click element   //*[@id="copies_increment"]
     sleep_call_1
@@ -114,19 +114,19 @@ Increment Copy validation by 1 to 2
 
 Decrement Copy Validation from 2 to 1
     set selenium timeout    20
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     click element   //*[@id="copies"]/div/div[1]
     sleep_call_1
     textfield should contain    //*[@id="copies_input"]  1
 
 Collate Checkbox disable validation on making copy 1
     set selenium timeout    20
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     element should be disabled   id:collateCheckbox
 
 Collate Checkbox enable validation on making copy more than 1
     set selenium timeout    20
-    wWait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     click element   //*[@id="copies_increment"]
     sleep_call_1
 
@@ -136,7 +136,7 @@ Collate Checkbox enable validation on making copy more than 1
 
 Collate checkbox validation by checking and unchecking
     set selenium timeout    20
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     unselect checkbox       id:collateCheckbox
     sleep_call_1
     checkbox should not be selected     id:collateCheckbox
@@ -152,7 +152,7 @@ Collate checkbox validation by checking and unchecking
 
 Validation with incorrect copies value more than 999
     set selenium timeout    20
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     input text      //*[@id="copies_input"]     1000
     sleep_call_1
     click element   //*[@id="id-11"]/div/div[1]/p
@@ -163,7 +163,7 @@ Validation with incorrect copies value more than 999
 
 Validation with incorrect copies value of 0
     set selenium timeout    20
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     click element   //*[@id="copies"]/div/div[1]
     sleep_call_1
     press keys      //*[@id="copies_input"]      \DELETE
@@ -180,7 +180,7 @@ Validation with incorrect copies value of 0
 
 Validate NUp orientation is disabled
     set selenium timeout    20
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     element attribute value should be   //*[@id="nupOrientation"]/div    disabled   true
     sleep_call_1
     click element   nup
@@ -190,7 +190,7 @@ Validate NUp orientation is disabled
 
 Validate NUp orientation is enabled with NUP value
     set selenium timeout    20
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     element attribute value should be   //*[@id="nupOrientation"]/div    aria-disabled   false
     click element   nupOrientation
     wait until page contains element    nupOrientation-listbox-item-shortedge
@@ -206,7 +206,7 @@ Validate NUp orientation is enabled with NUP value
 
 Validate NUp orientation is disabled with NUP value as 1
     set selenium timeout    20
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     sleep_call_1
     click element   nup
     wait until page contains element    nup-listbox-item-1
@@ -216,7 +216,7 @@ Validate NUp orientation is disabled with NUP value as 1
 
 Validation of Paper size dropdown
     set selenium timeout    20
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     scroll element into view        saveChangesButton
     sleep_call_1
     click element       paperSize

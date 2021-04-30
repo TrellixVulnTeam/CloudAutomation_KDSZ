@@ -75,9 +75,9 @@ Check total number of staple bins
 
 #Open Print default settings
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    wait until page contains element   ${default_settings_btn}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
 #Check page size count
     element attribute value should be   //*[@id="staple-listbox-item-printer"]   aria-setsize   15
 
@@ -92,9 +92,9 @@ Validation of Staple dropdown
     click element   ${STAPLE CONTROL}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     click button    saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${default_settings_btn}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     element attribute value should be   ${STAPLE CONTROL}   title   ${STAPLE NAME}
 
 

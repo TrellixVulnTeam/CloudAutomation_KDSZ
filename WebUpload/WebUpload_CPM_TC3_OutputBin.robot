@@ -73,9 +73,9 @@ Check total number of output bins
 
 #Open Print default settings
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    wait until page contains element   ${default_settings_btn}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
 #Check page size count
     element attribute value should be   //*[@id="outputBin-listbox-item-printer"]   aria-setsize   14
 
@@ -90,10 +90,9 @@ Validation of Output Bin dropdown
 
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     click button    saveChangesButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${default_settings_btn}
-    wait until page contains element   ${default_settings_btn}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     element attribute value should be   ${OUTPUT BIN CONTROL}   title   ${OUTPUT BIN NAME}
 
 

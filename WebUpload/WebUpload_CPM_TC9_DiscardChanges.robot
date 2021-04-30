@@ -83,9 +83,9 @@ Open Browser To Login Page
     Click Element   id:link-navPrintQueue
 
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${default_settings_btn}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_upload}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     ${default_title}            set variable    printSettingsBreadcrumb
 
     #element attribute value should be   ${default_title}    aria-label   ${default_title_actual}
