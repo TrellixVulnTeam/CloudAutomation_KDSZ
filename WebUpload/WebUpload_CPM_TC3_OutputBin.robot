@@ -8,6 +8,7 @@ Library     ../Library/Mobile_Submission.py
 Library     ../Library/send_email.py
 Library     ../Library/XMLParser.py
 Library     DataDriver  ../TestData/OutputBin.xlsx
+Library     ../PageObjects/Locators.py
 Suite Setup     Check total number of output bins
 Test Template   Validation of Output Bin dropdown
 Suite Teardown     Reset , Log Out and Close Browsers

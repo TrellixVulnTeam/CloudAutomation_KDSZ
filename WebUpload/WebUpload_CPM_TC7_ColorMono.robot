@@ -7,7 +7,7 @@ Library     ../Library/CreateDelete.py
 Library     ../Library/Mobile_Submission.py
 Library     ../Library/send_email.py
 Library     ../Library/XMLParser.py
-
+Library     ../PageObjects/Locators.py
 
 *** Variables ***
 #${URL}                    https://dev.us.cloud.onelxk.co/

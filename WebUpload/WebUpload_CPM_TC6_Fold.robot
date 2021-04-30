@@ -7,6 +7,7 @@ Library     ../Library/CreateDelete.py
 Library     ../Library/Mobile_Submission.py
 Library     ../Library/send_email.py
 Library     ../Library/XMLParser.py
+Library     ../PageObjects/Locators.py
 Library     DataDriver  ../TestData/Fold.xlsx
 Suite Setup     Check total number of Fold options
 Test Template   Validation of Fold dropdown
