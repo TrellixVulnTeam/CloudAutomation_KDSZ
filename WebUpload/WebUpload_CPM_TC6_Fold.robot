@@ -75,7 +75,7 @@ Check total number of fold options
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
 
 #Check page size count
     element attribute value should be   //*[@id="fold-listbox-item-printer"]   aria-setsize   5
@@ -92,11 +92,11 @@ Validation of Fold dropdown
     click element   ${FOLD}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${FOLD CONTROL}
     click element   ${FOLD CONTROL}
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     click button    saveChangesButton
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${default_settings_btn}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     element attribute value should be   ${FOLD CONTROL}   title   ${FOLD NAME}
 
 

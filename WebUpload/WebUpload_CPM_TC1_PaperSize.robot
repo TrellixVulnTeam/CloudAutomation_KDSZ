@@ -67,7 +67,7 @@ Check total number of paper sizes
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
 #Check page size count
     element attribute value should be   //*[@id="paperSize-listbox-item-printer"]   aria-setsize   24
 
@@ -78,11 +78,11 @@ Validation of Paper size dropdown
     click element   ${PAGE SIZE}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${PAGE SIZE CONTROL}
     click element   ${PAGE SIZE CONTROL}
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     click button    saveChangesButton
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${default_settings_btn}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     element attribute value should be   ${PAGE SIZE CONTROL}   title   ${PAGE SIZE NAME}
 
 Reset , Log Out and Close Browsers

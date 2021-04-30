@@ -76,7 +76,7 @@ Check total number of paper types
     wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
     #wait until page contains element    settingsUpdatingBusySpinner
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
 
 #Check page size count
     element attribute value should be   //*[@id="paperType-listbox-item-printer"]   aria-setsize   24

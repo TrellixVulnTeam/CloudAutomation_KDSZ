@@ -76,7 +76,7 @@ Open Browser and Login
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
 
 Validation of Color Mono default state
     set selenium timeout    20
@@ -89,11 +89,11 @@ Validation of Color Mono default state
     element attribute value should be       ${mono}    aria-checked    false
 
     click element     ${mono}
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     click button        saveChangesButton
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${default_settings_btn}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
 
 Validation of Color Mono new state
     set selenium timeout    20
@@ -106,11 +106,11 @@ Validation of Color Mono new state
     element attribute value should be       ${color}    aria-checked    false
 
     click element       ${color}
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     click button        saveChangesButton
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${default_settings_btn}
     click button    ${default_settings_btn}
-    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     element attribute value should be       ${color}    aria-checked    true
     element attribute value should be       ${mono}    aria-checked    false
 
