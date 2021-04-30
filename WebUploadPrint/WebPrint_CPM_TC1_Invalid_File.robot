@@ -92,8 +92,7 @@ Verify File upload Button Feature
     element should be enabled       ${done_btn}
     click button    ${done_btn}
     ${table_entry}      set variable    //*[@id="document_link_0"]
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${table_entry}
-    element should not be visible   ${table_entry}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should not be visible      ${table_entry}
 
 Log Out Close Browsers
     ${usermenu}     set variable    userMenu
