@@ -9,8 +9,8 @@ Library     ../Library/send_email.py
 Library     ../Library/XMLParser.py
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co
-#${BROWSER}                      Chrome
+#${URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      headlessChrome
 #${USER}                     sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
@@ -69,15 +69,13 @@ Open Browser To Login Page
 
 #Click Login Button
     Click Button    btn-email-login
-
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Cloud Services Home
 #Click CPM and verify Page Opens
-    sleep_call
-    Wait Until Element Is Visible   //*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
-    Click Element   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
-    sleep_call_2
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
+    go to       ${lnk_cpm}
+    Wait Until Keyword Succeeds     25 sec  5 sec   title should be     Print Management | Lexmark Cloud Services
     Switch Window       Print Management | Lexmark Cloud Services
-    #Title Should Be     Print Management | Lexmark Cloud Services
-    sleep_call
+    Title should be     Print Management | Lexmark Cloud Services
 
 
 #Check Print Queue Opens and check Text
@@ -85,11 +83,10 @@ Open Browser To Login Page
     Click Element   id:link-navPrintQueue
 
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    wait until page contains element   ${default_settings_btn}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${default_settings_btn}
     click button    ${default_settings_btn}
-    sleep_call
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
     ${default_title}            set variable    printSettingsBreadcrumb
-    sleep_call
 
     #element attribute value should be   ${default_title}    aria-label   ${default_title_actual}
 
@@ -106,10 +103,9 @@ Validation of Confirmation dialog by Discarding
     wait until element is visible       id:confirmation-modal_modalHeader
     wait until page contains element    id:confirmation-modal_modalHeader
     click button        confirmation-modal_okButton
-    sleep_call_2
-    sleep_call_2
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      printQueueDefaultPrintSettingsButton
     click button    printQueueDefaultPrintSettingsButton
-    sleep_call
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      copies_input
     textfield should contain    //*[@id="copies_input"]  1
 
 Validation of Confirmation Dialog by Saving Changes
@@ -121,22 +117,22 @@ Validation of Confirmation Dialog by Saving Changes
     wait until element is visible       id:confirmation-modal_modalHeader
     wait until page contains element    id:confirmation-modal_modalHeader
     click button        confirmation-modal_cancelButton
-    sleep_call_2
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      copies_input
     textfield should contain    //*[@id="copies_input"]  2
 
 
 
 Log Out Close Browsers
     set selenium timeout    20
-    sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      userMenu
     click element   ${usermenu}
-    wait until page contains element    ${logout}
-    sleep_call_2
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      link-logout
     click element   ${logout}
-    sleep_call
+    Wait Until Keyword Succeeds    35 sec    5 sec    title should be       Lexmark Log In
     close all browsers
+
 
 ###################################################################################################################
 

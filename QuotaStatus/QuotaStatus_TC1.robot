@@ -9,7 +9,7 @@ Library     ../Library/send_email.py
 Library     ../Library/XMLParser.py
 #Library     ../Library/Print_Quota.py
 Library     ../Library/CreateDelete.py
-Resource     ../Resources/CPM_OrgPolocy_Resources_QuotaStatus.robot
+Resource     ../Resources/CPM_OrgPolicy_QuotaStatus.robot
 #Library     DataDriver  ../TestData/Custom_Quota_Status.xlsx
 #Suite Setup     Open Browser and Quota Page
 #Test Template   Check Custom quota vary
@@ -48,7 +48,7 @@ Verify user status for exceeded reduction
     Delete Quota
     Reset to Cost center
 Log out from portal
-    Logoutadmin
+    Log out
 
 
 *** Keywords ***

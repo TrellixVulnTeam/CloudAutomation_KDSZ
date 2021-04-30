@@ -11,7 +11,7 @@ Resource     ../Resources/CPM_OrgPolicy_Resources_SameMonthly.robot
 Library     DataDriver  ../TestData/Custom_Quota.xlsx
 Suite Setup     Open Browser and Quota Page
 Test Template   Check Custom quota monthly
-Suite Teardown     Log out
+Suite Teardown     Log out quota
 
 
 *** Variables ***

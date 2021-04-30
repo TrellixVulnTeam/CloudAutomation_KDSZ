@@ -13,7 +13,7 @@ Test Template   Validation of Paper type dropdown
 Suite Teardown     Reset , Log Out and Close Browsers
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co
+#${URL}                    https://dev.us.cloud.onelxk.co/
 #${BROWSER}                      headlessChrome
 #${USER}                     sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
@@ -22,9 +22,7 @@ ${correct}                      Correct Number of Page Types listed
 
 *** Test Cases ***
 Validation of Paper type combobox setting page type as ${PAPER TYPE NAME}
-    Check total number of paper types
     Validation of Paper type dropdown
-    Reset , Log Out and Close Browsers
 
 
 *** Keywords ***
@@ -60,15 +58,12 @@ Check total number of paper types
 
 #Click Login Button
     Click Button    btn-email-login
-
-#Click CPM and verify Page Opens
-    sleep_call
-    Wait Until Element Is Visible   //*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
-    Click Element   xpath://*[@id="card-10"]/cui-card-body/cui-priv-block/div/div
-    sleep_call_2
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Cloud Services Home
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
+    go to       ${lnk_cpm}
+    Wait Until Keyword Succeeds     25 sec  5 sec   title should be     Print Management | Lexmark Cloud Services
     Switch Window       Print Management | Lexmark Cloud Services
-    Title Should Be     Print Management | Lexmark Cloud Services
-    sleep_call
+    Title should be     Print Management | Lexmark Cloud Services
 
 
 #Check Print Queue Opens and check Text
@@ -80,69 +75,49 @@ Check total number of paper types
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
     wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
-    sleep_call
     #wait until page contains element    settingsUpdatingBusySpinner
-    wait until page contains element    saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
 
 #Check page size count
     element attribute value should be   //*[@id="paperType-listbox-item-printer"]   aria-setsize   24
-    sleep_call_1
 
 Validation of Paper type dropdown
-    #sleep_call
-    #sleep_call
+
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
-    #sleep_call
     [Arguments]        ${PAPER TYPE}     ${PAPER TYPE CONTROL}       ${PAPER TYPE NAME}     ${ERROR_TEXT}   ${CHECK}
     set selenium timeout    20
-    #sleep_call
-    #sleep_call
-   #scroll element into view        holePunch
-    #wait until page contains element    holePunch
-    sleep_call_1
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${PAPER TYPE}
     click element   ${PAPER TYPE}
-    sleep_call_1
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${PAPER TYPE CONTROL}
     click element   ${PAPER TYPE CONTROL}
-    sleep_call_1
+
     run keyword if  ${CHECK}==True     page should contain   ${ERROR_TEXT}
-    sleep_call_2
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     click button    saveChangesButton
-    sleep_call_2
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${default_settings_btn}
     wait until page contains element   ${default_settings_btn}
     click button    ${default_settings_btn}
-    sleep_call
-    #wait until page contains element    settingsUpdatingBusySpinner
-    wait until page contains element    saveChangesButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      saveChangesButton
     #Icon ID gets generated run time, hence cannot track it.
-
     element attribute value should be   ${PAPER TYPE CONTROL}   title   ${PAPER TYPE NAME}
-#    sleep_call_2
-#    ${status}=       run keyword and return status  element attribute value should be   ${PAPER TYPE CONTROL}   title   ${PAPER TYPE NAME}
-#
-#    Run keyword if  ${status}==False    click button    cancelChangesButton
-#    ...         ELSE    click button    saveChangesButton
-#    #wait until page contains element    settingsUpdatingBusySpinner
-#    sleep_call
-#    click button    ${default_settings_btn}
-#    sleep_call
+
 
 Reset , Log Out and Close Browsers
     set selenium timeout    20
     sleep_call_2
     click element   paperType
     click element   paperType-listbox-item-printer
-    sleep_call_2
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Save Changes
     click button    saveChangesButton
-    wait until page contains element    settingsUpdatingBusySpinner
-    sleep_call
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      userMenu
     click element   ${usermenu}
-    wait until page contains element    ${logout}
-    sleep_call_2
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      link-logout
     click element   ${logout}
-    sleep_call
+    Wait Until Keyword Succeeds    35 sec    5 sec    title should be       Lexmark Log In
     close all browsers
+
 
 ###################################################################################################################
 

@@ -21,8 +21,6 @@ Resource     ../Resources/CPM_OrgPolicy_Resources_PersonalQuota.robot
 
 Check Error validations for Quota
     Open Browser To Login Page using Admin
-    #Open organisational policy page
-    #Enable Quota
     Open Quota Definition Page
     Create a quota
     Set Total Value as 0

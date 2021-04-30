@@ -11,7 +11,8 @@ Resource     ../Resources/CPM_OrgPolicy_Resources_CostCenter.robot
 Library     DataDriver  ../TestData/Custom_Quota_Vary.xlsx
 Suite Setup     Open Browser and Quota Page
 Test Template   Check Custom quota vary
-Suite Teardown     Log out
+Suite Teardown     Log out quota
+Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***

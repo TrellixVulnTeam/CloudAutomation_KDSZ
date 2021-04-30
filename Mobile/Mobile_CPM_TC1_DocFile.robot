@@ -10,10 +10,10 @@ Library     ../Library/XMLParser.py
 Resource     ../Resources/CPM_Mobile_Resources.robot
 
 *** Variables ***
-${URL}                    https://dev.us.cloud.onelxk.co
-${BROWSER}                      Chrome
-${URL}                     sravantesh.neogi@lexmark.com
-${PASSWORD}                     Password@1234
+#${URL}                    https://dev.us.cloud.onelxk.co
+#${BROWSER}                      headlessChrome
+#${URL}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 ${tab1name}                     Print Queue
 ${correct}                      Correct Number of Pages listed
 

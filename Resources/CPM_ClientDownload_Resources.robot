@@ -5,23 +5,13 @@ Variables    ../PageObjects/Locators.py
 
 *** Variables ***
 #${URL}                    https://dev.us.cloud.onelxk.co/
-#${DOWNLOADBROWSER}                      Chrome
+#${DOWNLOADBROWSER}                      Edge
 #${USER}                     sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
-${PACKAGE NAME}                 customPackage.zip
+#${PACKAGE NAME}                 customPackage.zip
 ${message}                      Pass
 ${messagefail}                  Fail
 
-#Data parametrization variables
-########################################
-#${notification}                         False
-#${DELETE CLIENT FOLDER}                 False
-#${unused_client_value_delete_span}      30
-#${hybrid_unprinted_jobs_value}          180
-#${latebind}                             False
-#${hybrid_printed_jobs_value}            150
-#${saas}                                 False
-${CPM URL}                              https://dev.us.cloud.onelxk.co/cpm
 ##########################################
 
 *** Keywords ***
@@ -33,23 +23,16 @@ Open Browser To Login Page
     Click Button    ${btn_next}
     Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
-    sleep_call
-    sleep_call
-    Wait Until Element Is Visible   ${lnk_cpm}
-    Click Element   ${lnk_cpm}
-    sleep_call_2
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Cloud Services Home
+#Click CPM and verify Page Opens
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
+    go to       ${lnk_cpm}
+    Wait Until Keyword Succeeds     25 sec  5 sec   title should be     Print Management | Lexmark Cloud Services
     Switch Window       Print Management | Lexmark Cloud Services
-    sleep_call
+    Title should be     Print Management | Lexmark Cloud Services
     Wait until Element Is Visible   ${tab_clientdownload}
     Click Element   ${tab_clientdownload}
-    sleep_call
-    wait until element is visible   ${title_clientdownload}
-    sleep_call_2
-
-    #go to   ${CPM URL}
-    sleep_call
-    #sleep_call
-
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${title_clientdownload}
 
 Create Custom Package
     [Arguments]   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
@@ -60,48 +43,19 @@ Create Custom Package
     Click Button    ${btn_next}
     Input Text    ${txt_password}    ${PASSWORD}
     Click Button    ${btn_login}
-    sleep_call
-
-#Update Secuirty policy
-#Change security preferences to allow EXE downloads
-#    #go to   chrome://settings/security
-#    sleep_call_2
-#
-##Navigate to Standard Security Policy
-#    Press Keys    None      TAB
-#    Press Keys    None      TAB
-#    Press Keys    None      TAB
-#    Press Keys    None      TAB
-#    Press Keys    None      TAB
-#    Press Keys    None      TAB
-#
-#    sleep_call_2
-#    Press Keys    None      ARROW_UP
-#    sleep_call_2
-
-    go to   ${URL}
-
-    sleep_call
-    Wait Until Element Is Visible   ${lnk_cpm}
-    Click Element   ${lnk_cpm}
-    sleep_call_2
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Cloud Services Home
+#Click CPM and verify Page Opens
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
+    go to       ${lnk_cpm}
+    Wait Until Keyword Succeeds     25 sec  5 sec   title should be     Print Management | Lexmark Cloud Services
     Switch Window       Print Management | Lexmark Cloud Services
-    sleep_call
+    Title should be     Print Management | Lexmark Cloud Services
     Wait until Element Is Visible   ${tab_clientdownload}
     Click Element   ${tab_clientdownload}
-    sleep_call
-    wait until element is visible   ${title_clientdownload}
-    sleep_call_2
-
-    log     ${notification}
-    #go to   ${CPM URL}
-    sleep_call
-    #sleep_call
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${title_clientdownload}
     click element    ${lnk_custompackage}
-    sleep_call_2
-    wait until element is visible   ${lbl_clientdownload}
-    sleep_call_2
-
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${lbl_clientdownload}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox     ${chk_status}
 #Setting the value for notifications
     ${isCheck} =    Run Keyword And Return Status    checkbox should be selected   ${chk_status}
     log     ${notification}
@@ -137,9 +91,7 @@ Create Custom Package
     checkbox should be selected     ${chk_saas}
 #Enable hybrid
     select checkbox     ${chk_hybrid}
-    sleep_call_2
     scroll element into view        ${btn_create}
-    sleep_call_2
 
 #Get user input values for Hybrid Unprinted job
 #######################################################################3
@@ -169,7 +121,6 @@ Create Custom Package
 ###############################################################
 
 #Validate late Binding is enabled
-    sleep_call_2
 #Setting value for Late Binding
     ${isCheck} =    Run Keyword And Return Status    checkbox should be selected   ${chk_latebinding}
 
@@ -184,7 +135,6 @@ Create Custom Package
 ###############################################################
 #Check the default queue name as selected by user
 #Check default state which is SAAS. If user provides true, keep as it is. If false, select Hybrid
-    sleep_call_2
 
     ${isCheck} =    Run Keyword And Return Status    element attribute value should be      ${rad_saas}     aria-checked        true
 
@@ -201,37 +151,31 @@ Create Custom Package
     click button        ${btn_create}
 
 #Wait till package is ready
-    sleep_call
-    wait until element is visible   ${dlg_download}
-
-    wait until element is enabled       ${btn_download}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${dlg_download}
+    Wait Until Keyword Succeeds     40 sec  5 sec   element should be enabled     ${btn_download}
     element text should be      ${lbl_complete}     Your custom package is ready for downloading.
-
-    sleep_call_2
 
 #Click Download
     click button        ${btn_download}
     #logout and close browsers
-    sleep_call
-    click element   ${lnk_username}
-    wait until page contains element    ${lnl_logout}
-    sleep_call_2
-    click element   ${lnl_logout}
+    ${usermenu}     set variable    userMenu
+    ${logout}       set variable    link-logout
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      userMenu
+    click element   ${usermenu}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      link-logout
+    click element   ${logout}
+    Wait Until Keyword Succeeds    35 sec    5 sec    title should be       Lexmark Log In
 
     ${download_flag}=   download_wait   customPackage.zip
-    sleep_call
 
     ${validation_flag}=  check_values     ${notification}   ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
 
-
-    sleep_call
     close all browsers
 
 
 Set Unused Client Folder values
 
     ${unused_client_value_delete_span_temp}    get value   ${txt_noprint_span}
-    sleep_call_2
 
 #Set user input values
     ${count}    get length  ${unused_client_value_delete_span_temp}
@@ -246,9 +190,8 @@ Set Unused Client Folder values
 
 Check default state
     click element    ${lnk_custompackage}
-    sleep_call_2
-    wait until element is visible   ${lbl_clientdownload}
-    sleep_call_2
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${lbl_clientdownload}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox     ${chk_status}
 #Validating default state for notifications
     checkbox should be selected     ${chk_status}
     #element should be disabled      ${btn_create}
@@ -256,7 +199,6 @@ Check default state
     checkbox should not be selected     ${chk_deletefolder}
 #Enable unused client folder
     select checkbox     ${chk_deletefolder}
-    sleep_call_2
 
 #Validate SAAS is enabled
     checkbox should be selected     ${chk_saas}
@@ -267,7 +209,6 @@ Check default state
     element should be disabled      ${btn_delete_printed_decrement}
 
     select checkbox     ${chk_hybrid}
-    sleep_call_2
     element should be enabled     ${btn_delete_unprinted_increment}
     element should be enabled      ${btn_delete_unprinted_decrement}
 
@@ -275,7 +216,6 @@ Check default state
 #Check default values
     element attribute value should be       ${txt_unprinted_jobs}    value    48
     element attribute value should be       ${txt_printed_jobs}    value    48
-    sleep_call_1
 
 #Validate late Binding is enabled
     checkbox should be selected     ${chk_latebinding}
@@ -296,22 +236,15 @@ Check default state
     element attribute value should be    ${rad_exclude}     aria-checked    false
 
 Logout
-    click element   ${lnk_username}
-    wait until page contains element    ${lnl_logout}
-    sleep_call_2
-    click element   ${lnl_logout}
-    sleep_call
+    ${usermenu}     set variable    userMenu
+    ${logout}       set variable    link-logout
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      userMenu
+    click element   ${usermenu}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      link-logout
+    click element   ${logout}
+    Wait Until Keyword Succeeds    35 sec    5 sec    title should be       Lexmark Log In
     close all browsers
 
-
-
-
-#Validate package is downloaded
-##PageObjects Python script to confirm correct file has been downloaded
-#    sleep_call_2
-#    ${download_flag}=   download_wait   customPackage.zip
-#    log     ${download_flag}
-#    exception
 
 ###################################################################################################################
 

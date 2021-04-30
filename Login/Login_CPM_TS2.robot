@@ -13,8 +13,8 @@ Library     ../Library/XMLParser.py
 #Suite Teardown     Verify deletion of jobs
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co
-#${BROWSER}                      Chrome
+#${URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      headlessChrome
 #${USER}                     sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
@@ -100,17 +100,16 @@ Verify Login Button is enabled and verify value
 
 Click Login Button
     Click Button    btn-email-login
-
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Cloud Services Home
 Dashboard Should Open
     Title Should Be     Dashboard | Lexmark Cloud Services
-    sleep_call
 
 Logout
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      userMenu
     click element   ${usermenu}
     wait until page contains element    ${logout}
-    sleep_call_2
     click element   ${logout}
-    sleep_call
+    Wait Until Keyword Succeeds    35 sec    5 sec    title should be       Lexmark Log In
     close all browsers

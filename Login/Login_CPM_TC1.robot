@@ -10,8 +10,8 @@ Library     ../Library/XMLParser.py
 Resource     ../Resources/CPM_LoginPage_resources.robot
 
 *** Variables ***
-#${LOGIN URL}                    https://dev.us.cloud.onelxk.co
-#${BROWSER}                      Chrome
+#${URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      headlessChrome
 #${USER}                         sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
 ${username_blank}
