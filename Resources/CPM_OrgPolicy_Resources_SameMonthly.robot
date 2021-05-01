@@ -30,7 +30,7 @@ Open Browser and Quota Page
     Title should be     Print Management | Lexmark Cloud Services
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${admin_dropdown}
     click element       ${admin_dropdown}
-    Wait Until Keyword Succeeds     25 sec  5 sec   page page should contain element   ${lbl_quotadefinition}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
 
 Create Custom quota monthly
