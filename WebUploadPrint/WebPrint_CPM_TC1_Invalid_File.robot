@@ -69,16 +69,16 @@ Open Browser To Login Page
 
 Verify File upload Button Feature
    [Arguments]        ${TEST CASE}      ${FILE PATH}     ${FILE NAME}
-
-    Wait until Element Is Visible   id:link-navPrintQueue
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     link-navPrintQueue
     Click Element   id:link-navPrintQueue
-    Wait until Element Is Visible   id:printQueueUploadButton
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     printQueueUploadButton
     element should be enabled   id:printQueueUploadButton
     element should be disabled  id:printQueueDeleteButton
 
 #Verify Portal upload
     Click Element   id:printQueueUploadButton
-    Wait until Element Is Visible   xpath://*[@id="printQueueUploadModalModalHeader"]
+
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     xpath://*[@id="printQueueUploadModalModalHeader"]
     Click Element   xpath://*[@id="multiFileSelectUploadDragDrop"]/div[1]/cui-button/span/button
     choose file     id:multiFileSelectUpload    ${file_path}
 
@@ -88,6 +88,7 @@ Verify File upload Button Feature
     element should contain      xpath: //*[@id="fileAddError0"]     ${FILE NAME}
 
     ${done_btn}     set variable    printQueueUploadModalDoneButton
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${done_btn}
     element should be visible       ${done_btn}
     element should be enabled       ${done_btn}
     click button    ${done_btn}

@@ -104,9 +104,9 @@ Change Default Settings
 
 #Verify File upload Button Feature
    # sleep_call
-    Wait until Element Is Visible   id:link-navPrintQueue
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     link-navPrintQueue
     Click Element   id:link-navPrintQueue
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      printQueueUploadButton
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     printQueueUploadButton
     element should be enabled   id:printQueueUploadButton
     element should be disabled  id:printQueueDeleteButton
 
