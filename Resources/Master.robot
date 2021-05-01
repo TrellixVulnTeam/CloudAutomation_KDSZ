@@ -609,7 +609,7 @@ Create Monthly Quota
 Select Cost Center or Personal First
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain     General
-    select checkbox     ${chk_costcenter}
+    click element     ${chk_costcenter}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_save}
     click element       ${btn_save}
 
@@ -617,7 +617,7 @@ Select Cost Center or Personal First
 Select Cost Center or Personal
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain     General
-    select checkbox     ${chk_costcenter}
+    click element     ${chk_costcenter}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_confirmchange}
     click element       ${btn_confirmchange}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_save}
