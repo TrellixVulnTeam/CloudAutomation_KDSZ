@@ -1,1095 +1,897 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20210426 17:06:09.017" rpa="false">
+<robot generator="Robot 4.0.1 (Python 3.8.3 on win32)" generated="20210502 00:35:18.674" rpa="false" schemaversion="2">
 <suite id="s1" name="Master" source="C:\Users\neogis\D Drive\FREEDOM\Python\STL_Automation\Sanity_Demo\Master.robot">
-<test id="s1-t1" name="Verification of correct cloud login">
-<kw name="Open CPM portal and Login Verification" library="Master">
-<arguments>
+<test id="s1-t1" name="Verification of custom package for Windows">
+<kw name="Create Custom Package for Windows" library="Master">
+<arg>${notification}</arg>
+<arg>${DELETE CLIENT FOLDER}</arg>
+<arg>${unused_client_value_delete_span}</arg>
+<arg>${hybrid_unprinted_jobs_value}</arg>
+<arg>${latebind}</arg>
+<arg>${hybrid_printed_jobs_value}</arg>
+<arg>${saas}</arg>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${unused_client_value_delete_span}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20210502 00:35:20.283" level="INFO">${unused_client_value_delete_span} = 10</msg>
+<status status="PASS" starttime="20210502 00:35:20.283" endtime="20210502 00:35:20.283"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${DOWNLOADBROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210502 00:35:20.283" level="INFO">Opening browser 'Edge' to base url 'https://dev.us.cloud.onelxk.co/'.</msg>
+<status status="PASS" starttime="20210502 00:35:20.283" endtime="20210502 00:35:26.205"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210502 00:35:26.205" endtime="20210502 00:35:26.412"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_username}</arg>
 <arg>${USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:26.412" level="INFO">Typing text 'sravantesh.neogi@lexmark.com' into text field 'id:user_email'.</msg>
+<status status="PASS" starttime="20210502 00:35:26.412" endtime="20210502 00:35:26.555"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_next}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:26.556" level="INFO">Clicking button 'id:btn-email-next'.</msg>
+<status status="PASS" starttime="20210502 00:35:26.555" endtime="20210502 00:35:27.339"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_password}</arg>
 <arg>${PASSWORD}</arg>
-</arguments>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>SEPARATOR=</arg>
-<arg>${URL}</arg>
-<arg>cpm</arg>
-</arguments>
-<assign>
-<var>${lnk_cpm}</var>
-</assign>
-<msg timestamp="20210426 17:06:10.736" level="INFO">${lnk_cpm} = https://dev.us.cloud.onelxk.co/cpm</msg>
-<status status="PASS" starttime="20210426 17:06:10.736" endtime="20210426 17:06:10.736"></status>
-</kw>
-<kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<doc>Sets the timeout that is used by various keywords.</doc>
-<arguments>
-<arg>20</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:06:10.736" endtime="20210426 17:06:10.736"></status>
-</kw>
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:10.736" level="INFO">Opening browser 'Firefox' to base url 'https://dev.us.cloud.onelxk.co/'.</msg>
-<msg timestamp="20210426 17:06:10.736" level="INFO">Firefox driver log is always forced to to: C:\Users\neogis\D Drive\FREEDOM\Python\STL_Automation\Sanity_Demo\geckodriver-15.log</msg>
-<status status="PASS" starttime="20210426 17:06:10.736" endtime="20210426 17:06:25.062"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>E-mail</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:06:25.062" endtime="20210426 17:06:25.081"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210426 17:06:25.082" endtime="20210426 17:06:25.344"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that the current page title equals ``title``.</doc>
-<arguments>
-<arg>${PORTAL TITLE}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:25.360" level="INFO">Page title is 'Lexmark Log In'.</msg>
-<status status="PASS" starttime="20210426 17:06:25.344" endtime="20210426 17:06:25.360"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>${txt_lgnyear}</arg>
-<arg>${loginyear}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:25.360" level="INFO">Verifying element 'xpath:/html/body/div/div[2]/section/div[2]/div/p' contains exact text '© 2021, Lexmark. All rights reserved.'.</msg>
-<status status="PASS" starttime="20210426 17:06:25.360" endtime="20210426 17:06:25.384"></status>
-</kw>
-<kw name="Element Should Be Enabled" library="SeleniumLibrary">
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<arguments>
-<arg>${txt_username}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:06:25.384" endtime="20210426 17:06:25.416"></status>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${txt_username}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:25.447" level="INFO">Element 'id:user_email' is displayed.</msg>
-<status status="PASS" starttime="20210426 17:06:25.416" endtime="20210426 17:06:25.447"></status>
-</kw>
-<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<arguments>
-<arg>${txt_password}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:25.462" level="INFO">Element 'id:user_password' did not exist.</msg>
-<status status="PASS" starttime="20210426 17:06:25.447" endtime="20210426 17:06:25.462"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${txt_username}</arg>
-<arg>${username}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:25.462" level="INFO">Typing text 'sravantesh.neogi@lexmark.com' into text field 'id:user_email'.</msg>
-<status status="PASS" starttime="20210426 17:06:25.462" endtime="20210426 17:06:25.516"></status>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:06:25.516" endtime="20210426 17:06:26.518"></status>
-</kw>
-<kw name="Element Should Be Enabled" library="SeleniumLibrary">
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<arguments>
-<arg>${btn_next}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:06:26.518" endtime="20210426 17:06:26.565"></status>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${btn_next}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:26.619" level="INFO">Element 'id:btn-email-next' is displayed.</msg>
-<status status="PASS" starttime="20210426 17:06:26.565" endtime="20210426 17:06:26.619"></status>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<arguments>
-<arg>${btn_next}</arg>
-<arg>value</arg>
-<arg>${next}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:26.648" level="INFO">Element 'id:btn-email-next' attribute 'value' contains value 'Next'.</msg>
-<status status="PASS" starttime="20210426 17:06:26.627" endtime="20210426 17:06:26.648"></status>
+<msg timestamp="20210502 00:35:27.342" level="INFO">Typing text 'Password@1234' into text field 'id:user_password'.</msg>
+<status status="PASS" starttime="20210502 00:35:27.339" endtime="20210502 00:35:27.458"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>${btn_next}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:26.650" level="INFO">Clicking button 'id:btn-email-next'.</msg>
-<status status="PASS" starttime="20210426 17:06:26.648" endtime="20210426 17:06:27.395"></status>
-</kw>
-<kw name="Element Should Be Enabled" library="SeleniumLibrary">
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<arguments>
-<arg>${txt_password}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:06:27.397" endtime="20210426 17:06:27.431"></status>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${txt_password}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:27.466" level="INFO">Element 'id:user_password' is displayed.</msg>
-<status status="PASS" starttime="20210426 17:06:27.431" endtime="20210426 17:06:27.466"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${txt_password}</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:27.467" level="INFO">Typing text 'Password@1234' into text field 'id:user_password'.</msg>
-<status status="PASS" starttime="20210426 17:06:27.467" endtime="20210426 17:06:27.507"></status>
-</kw>
-<kw name="Sleep Call 1" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:06:27.507" endtime="20210426 17:06:28.511"></status>
-</kw>
-<kw name="Element Should Be Enabled" library="SeleniumLibrary">
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<arguments>
-<arg>${btn_login}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:06:28.512" endtime="20210426 17:06:28.616"></status>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${btn_login}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:28.675" level="INFO">Element 'id:btn-email-login' is displayed.</msg>
-<status status="PASS" starttime="20210426 17:06:28.617" endtime="20210426 17:06:28.676"></status>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<arguments>
-<arg>${btn_login}</arg>
-<arg>value</arg>
-<arg>${login}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:28.707" level="INFO">Element 'id:btn-email-login' attribute 'value' contains value 'Log In'.</msg>
-<status status="PASS" starttime="20210426 17:06:28.676" endtime="20210426 17:06:28.707"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>${btn_login}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:28.707" level="INFO">Clicking button 'id:btn-email-login'.</msg>
-<status status="PASS" starttime="20210426 17:06:28.707" endtime="20210426 17:06:30.575"></status>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:06:30.575" endtime="20210426 17:06:35.576"></status>
-</kw>
-<status status="PASS" starttime="20210426 17:06:10.736" endtime="20210426 17:06:35.576"></status>
-</kw>
-<tags>
-<tag>Environment-https://dev.us.cloud.onelxk.co/</tag>
-</tags>
-<status status="PASS" starttime="20210426 17:06:10.736" endtime="20210426 17:06:35.576" critical="yes"></status>
-</test>
-<test id="s1-t2" name="Verification of dashboard title">
-<kw name="Dashboard Should Open" library="Master">
-<kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<doc>Sets the timeout that is used by various keywords.</doc>
-<arguments>
-<arg>20</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:06:35.576" endtime="20210426 17:06:35.576"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Cloud Services Home</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:06:35.576" endtime="20210426 17:06:35.591"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that the current page title equals ``title``.</doc>
-<arguments>
-<arg>Dashboard | Lexmark Cloud Services</arg>
-</arguments>
-<msg timestamp="20210426 17:06:35.591" level="INFO">Page title is 'Dashboard | Lexmark Cloud Services'.</msg>
-<status status="PASS" starttime="20210426 17:06:35.591" endtime="20210426 17:06:35.591"></status>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:06:35.591" endtime="20210426 17:06:40.603"></status>
-</kw>
-<status status="PASS" starttime="20210426 17:06:35.576" endtime="20210426 17:06:40.603"></status>
-</kw>
-<tags>
-<tag>Environment-https://dev.us.cloud.onelxk.co/</tag>
-</tags>
-<status status="PASS" starttime="20210426 17:06:35.576" endtime="20210426 17:06:40.603" critical="yes"></status>
-</test>
-<test id="s1-t3" name="Logout from portal for admin">
-<kw name="Exit" library="Master">
-<kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<doc>Sets the timeout that is used by various keywords.</doc>
-<arguments>
-<arg>20</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:06:40.603" endtime="20210426 17:06:40.603"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:06:40.603" endtime="20210426 17:06:44.610"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${lnk_username}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:44.610" level="INFO">Clicking element 'id:userMenu'.</msg>
-<status status="PASS" starttime="20210426 17:06:44.610" endtime="20210426 17:06:44.880"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<arguments>
-<arg>${lnl_logout}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:06:44.880" endtime="20210426 17:06:44.895"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:06:44.895" endtime="20210426 17:06:48.908"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${lnl_logout}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:48.908" level="INFO">Clicking element 'id:link-logout'.</msg>
-<status status="PASS" starttime="20210426 17:06:48.908" endtime="20210426 17:06:49.163"></status>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:06:49.163" endtime="20210426 17:06:54.164"></status>
-</kw>
-<kw name="Close All Browsers" library="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20210426 17:06:54.164" endtime="20210426 17:06:55.452"></status>
-</kw>
-<status status="PASS" starttime="20210426 17:06:40.603" endtime="20210426 17:06:55.452"></status>
-</kw>
-<tags>
-<tag>Environment-https://dev.us.cloud.onelxk.co/</tag>
-</tags>
-<status status="PASS" starttime="20210426 17:06:40.603" endtime="20210426 17:06:55.453" critical="yes"></status>
-</test>
-<test id="s1-t4" name="Delegate addition using user_pallabi@test.onelxk.co">
-<kw name="Open Browser To Login Page" library="Master">
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>SEPARATOR=</arg>
-<arg>${URL}</arg>
-<arg>cpm</arg>
-</arguments>
-<assign>
-<var>${lnk_cpm}</var>
-</assign>
-<msg timestamp="20210426 17:06:55.459" level="INFO">${lnk_cpm} = https://dev.us.cloud.onelxk.co/cpm</msg>
-<status status="PASS" starttime="20210426 17:06:55.458" endtime="20210426 17:06:55.459"></status>
-</kw>
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20210426 17:06:55.460" level="INFO">Opening browser 'Firefox' to base url 'https://dev.us.cloud.onelxk.co/'.</msg>
-<msg timestamp="20210426 17:06:55.462" level="INFO">Firefox driver log is always forced to to: C:\Users\neogis\D Drive\FREEDOM\Python\STL_Automation\Sanity_Demo\geckodriver-16.log</msg>
-<status status="PASS" starttime="20210426 17:06:55.459" endtime="20210426 17:07:07.211"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210426 17:07:07.212" endtime="20210426 17:07:07.490"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${txt_username}</arg>
-<arg>${USER}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:07.491" level="INFO">Typing text 'sravantesh.neogi@lexmark.com' into text field 'id:user_email'.</msg>
-<status status="PASS" starttime="20210426 17:07:07.490" endtime="20210426 17:07:07.570"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>${btn_next}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:07.573" level="INFO">Clicking button 'id:btn-email-next'.</msg>
-<status status="PASS" starttime="20210426 17:07:07.571" endtime="20210426 17:07:08.365"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${txt_password}</arg>
-<arg>${password}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:08.366" level="INFO">Typing text 'Password@1234' into text field 'id:user_password'.</msg>
-<status status="PASS" starttime="20210426 17:07:08.365" endtime="20210426 17:07:08.434"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>${btn_login}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:08.436" level="INFO">Clicking button 'id:btn-email-login'.</msg>
-<status status="PASS" starttime="20210426 17:07:08.435" endtime="20210426 17:07:10.009"></status>
+<msg timestamp="20210502 00:35:27.465" level="INFO">Clicking button 'id:btn-email-login'.</msg>
+<status status="PASS" starttime="20210502 00:35:27.458" endtime="20210502 00:35:30.376"/>
 </kw>
 <kw name="Wait Until Keyword Succeeds" library="BuiltIn">
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<arguments>
 <arg>35 sec</arg>
 <arg>5 sec</arg>
 <arg>page should contain</arg>
 <arg>Cloud Services Home</arg>
-</arguments>
+<doc>Runs the specified keyword and retries if it fails.</doc>
 <kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
 <arg>Cloud Services Home</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210426 17:07:10.125" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210426 17:07:10.033" endtime="20210426 17:07:10.125"></status>
-</kw>
-<msg timestamp="20210426 17:07:10.128" level="FAIL">Page should have contained text 'Cloud Services Home' but did not.</msg>
-<status status="FAIL" starttime="20210426 17:07:10.011" endtime="20210426 17:07:10.129"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
 <doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Cloud Services Home</arg>
-</arguments>
-<msg timestamp="20210426 17:07:15.168" level="INFO">Current page contains text 'Cloud Services Home'.</msg>
-<status status="PASS" starttime="20210426 17:07:15.130" endtime="20210426 17:07:15.168"></status>
+<msg timestamp="20210502 00:35:30.404" level="INFO">Current page contains text 'Cloud Services Home'.</msg>
+<status status="PASS" starttime="20210502 00:35:30.378" endtime="20210502 00:35:30.404"/>
 </kw>
-<status status="PASS" starttime="20210426 17:07:10.010" endtime="20210426 17:07:15.168"></status>
+<status status="PASS" starttime="20210502 00:35:30.377" endtime="20210502 00:35:30.404"/>
 </kw>
-<kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<doc>Sets the timeout that is used by various keywords.</doc>
-<arguments>
-<arg>20</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:15.168" endtime="20210426 17:07:15.184"></status>
+<kw name="Catenate" library="BuiltIn">
+<var>${lnk_cpm}</var>
+<arg>SEPARATOR=</arg>
+<arg>${URL}</arg>
+<arg>cpm</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20210502 00:35:30.406" level="INFO">${lnk_cpm} = https://dev.us.cloud.onelxk.co/cpm</msg>
+<status status="PASS" starttime="20210502 00:35:30.405" endtime="20210502 00:35:30.406"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
 <arg>${lnk_cpm}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:15.184" level="INFO">Opening url 'https://dev.us.cloud.onelxk.co/cpm'</msg>
-<status status="PASS" starttime="20210426 17:07:15.184" endtime="20210426 17:07:16.790"></status>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210502 00:35:30.407" level="INFO">Opening url 'https://dev.us.cloud.onelxk.co/cpm'</msg>
+<status status="PASS" starttime="20210502 00:35:30.406" endtime="20210502 00:35:32.208"/>
 </kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:07:16.790" endtime="20210426 17:07:20.802"></status>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25 sec</arg>
+<arg>5 sec</arg>
+<arg>title should be</arg>
+<arg>Print Management | Lexmark Cloud Services</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Print Management | Lexmark Cloud Services</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210502 00:35:32.218" level="INFO">Page title is 'Print Management | Lexmark Cloud Services'.</msg>
+<status status="PASS" starttime="20210502 00:35:32.208" endtime="20210502 00:35:32.218"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:32.208" endtime="20210502 00:35:32.218"/>
 </kw>
 <kw name="Switch Window" library="SeleniumLibrary">
-<doc>Switches to browser window matching ``locator``.</doc>
-<arguments>
 <arg>Print Management | Lexmark Cloud Services</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:20.802" endtime="20210426 17:07:20.856"></status>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20210502 00:35:32.218" endtime="20210502 00:35:32.244"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Print Management | Lexmark Cloud Services</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210502 00:35:32.260" level="INFO">Page title is 'Print Management | Lexmark Cloud Services'.</msg>
+<status status="PASS" starttime="20210502 00:35:32.244" endtime="20210502 00:35:32.260"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${tab_clientdownload}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210502 00:35:32.260" endtime="20210502 00:35:35.240"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${tab_clientdownload}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:35.241" level="INFO">Clicking element 'id:link-navClientDownload'.</msg>
+<status status="PASS" starttime="20210502 00:35:35.240" endtime="20210502 00:35:35.335"/>
 </kw>
 <kw name="Wait Until Keyword Succeeds" library="BuiltIn">
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<arguments>
-<arg>35 sec</arg>
+<arg>25 sec</arg>
 <arg>5 sec</arg>
 <arg>element should be visible</arg>
-<arg>${name_printqueue}</arg>
-</arguments>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${name_printqueue}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:20.887" level="INFO">Element 'id:link-navPrintQueue' is displayed.</msg>
-<status status="PASS" starttime="20210426 17:07:20.856" endtime="20210426 17:07:20.887"></status>
-</kw>
-<status status="PASS" starttime="20210426 17:07:20.856" endtime="20210426 17:07:20.887"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${name_printqueue}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:20.887" endtime="20210426 17:07:20.918"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>No data available</arg>
-</arguments>
-<msg timestamp="20210426 17:07:20.918" level="INFO">Current page contains text 'No data available'.</msg>
-<status status="PASS" starttime="20210426 17:07:20.918" endtime="20210426 17:07:20.918"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${name_printqueue}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:20.918" endtime="20210426 17:07:20.949"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${name_printqueue}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:20.949" level="INFO">Clicking element 'id:link-navPrintQueue'.</msg>
-<status status="PASS" starttime="20210426 17:07:20.949" endtime="20210426 17:07:21.188"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:07:21.188" endtime="20210426 17:07:25.200"></status>
-</kw>
-<status status="PASS" starttime="20210426 17:06:55.457" endtime="20210426 17:07:25.200"></status>
-</kw>
-<kw name="Check Adding Valid and Duplicate Delegates" library="Master">
-<arguments>
-<arg>${EMAIL USER}</arg>
-</arguments>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>SEPARATOR=</arg>
-<arg>${URL}</arg>
-<arg>cpm</arg>
-</arguments>
-<assign>
-<var>${lnk_cpm}</var>
-</assign>
-<msg timestamp="20210426 17:07:25.200" level="INFO">${lnk_cpm} = https://dev.us.cloud.onelxk.co/cpm</msg>
-<status status="PASS" starttime="20210426 17:07:25.200" endtime="20210426 17:07:25.200"></status>
-</kw>
-<kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<doc>Sets the timeout that is used by various keywords.</doc>
-<arguments>
-<arg>20</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:25.200" endtime="20210426 17:07:25.216"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${lbl_delegate}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:25.216" endtime="20210426 17:07:25.262"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${lbl_delegate}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:25.262" level="INFO">Clicking element 'id:link-navDelegates'.</msg>
-<status status="PASS" starttime="20210426 17:07:25.262" endtime="20210426 17:07:25.516"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${txt_delegate}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:25.516" endtime="20210426 17:07:25.849"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:07:25.849" endtime="20210426 17:07:29.862"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>No data available</arg>
-</arguments>
-<msg timestamp="20210426 17:07:29.884" level="INFO">Current page contains text 'No data available'.</msg>
-<status status="PASS" starttime="20210426 17:07:29.862" endtime="20210426 17:07:29.884"></status>
-</kw>
-<kw name="Element Should Be Enabled" library="SeleniumLibrary">
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<arguments>
-<arg>${btn_delegate_add}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:29.884" endtime="20210426 17:07:29.915"></status>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${btn_delegate_add}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:29.931" level="INFO">Element 'id:delegatesAddButton' is displayed.</msg>
-<status status="PASS" starttime="20210426 17:07:29.915" endtime="20210426 17:07:29.931"></status>
-</kw>
-<kw name="Element Should Be Disabled" library="SeleniumLibrary">
-<doc>Verifies that element identified by ``locator`` is disabled.</doc>
-<arguments>
-<arg>${btn_delegate_remove}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:29.931" endtime="20210426 17:07:29.946"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${btn_delegate_add}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:29.946" level="INFO">Clicking element 'id:delegatesAddButton'.</msg>
-<status status="PASS" starttime="20210426 17:07:29.946" endtime="20210426 17:07:30.254"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:07:30.255" endtime="20210426 17:07:34.256"></status>
-</kw>
-<kw name="Element Should Be Disabled" library="SeleniumLibrary">
-<doc>Verifies that element identified by ``locator`` is disabled.</doc>
-<arguments>
-<arg>${dlg_btn_delegate_add}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:34.257" endtime="20210426 17:07:34.278"></status>
-</kw>
-<kw name="Element Should Be Enabled" library="SeleniumLibrary">
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<arguments>
-<arg>${dlg_btn_delegate_cancel}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:34.278" endtime="20210426 17:07:34.301"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${txt_delegate_email}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:34.302" level="INFO">Clicking element 'xpath://*[@id='delegateUserSelectControl']/div'.</msg>
-<status status="PASS" starttime="20210426 17:07:34.301" endtime="20210426 17:07:35.035"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${txt_delegate_input}</arg>
-<arg>${EMAIL USER}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:35.035" level="INFO">Typing text 'user_pallabi@test.onelxk.co' into text field 'id:delegateUserSelectControl_Input'.</msg>
-<status status="PASS" starttime="20210426 17:07:35.035" endtime="20210426 17:07:35.418"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${lst_delegate}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:35.418" endtime="20210426 17:07:36.131"></status>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${lst_delegate}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:36.169" level="INFO">Element 'id:delegateUserSelectControl-listbox' is displayed.</msg>
-<status status="PASS" starttime="20210426 17:07:36.132" endtime="20210426 17:07:36.170"></status>
-</kw>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<arguments>
-<arg>${lst_delegate}</arg>
-<arg>${EMAIL USER}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:36.170" endtime="20210426 17:07:36.937"></status>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<arguments>
-<arg>${lst_delegate}</arg>
-<arg>ENTER</arg>
-</arguments>
-<msg timestamp="20210426 17:07:36.937" level="INFO">Sending key(s) ('ENTER',) to id:delegateUserSelectControl-listbox element.</msg>
-<msg timestamp="20210426 17:07:37.300" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20210426 17:07:37.300" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20210426 17:07:36.937" endtime="20210426 17:07:37.322"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:07:37.322" endtime="20210426 17:07:41.336"></status>
-</kw>
-<kw name="Element Should Be Enabled" library="SeleniumLibrary">
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<arguments>
-<arg>${dlg_btn_delegate_add}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:41.336" endtime="20210426 17:07:41.352"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>${dlg_btn_delegate_add}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:41.367" level="INFO">Clicking button 'id:addDelegatesModalAdd'.</msg>
-<status status="PASS" starttime="20210426 17:07:41.352" endtime="20210426 17:07:42.113"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:07:42.114" endtime="20210426 17:07:46.114"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>${lst_table_entry}</arg>
-<arg>${EMAIL USER}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:46.116" level="INFO">Verifying element 'xpath://*[@id='delegates-row-0-identityEmail']' contains exact text 'user_pallabi@test.onelxk.co'.</msg>
-<status status="PASS" starttime="20210426 17:07:46.115" endtime="20210426 17:07:46.166"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${btn_delegate_add}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:46.167" level="INFO">Clicking element 'id:delegatesAddButton'.</msg>
-<status status="PASS" starttime="20210426 17:07:46.166" endtime="20210426 17:07:46.450"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:07:46.450" endtime="20210426 17:07:50.463"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${txt_delegate_email}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:50.463" level="INFO">Clicking element 'xpath://*[@id='delegateUserSelectControl']/div'.</msg>
-<status status="PASS" starttime="20210426 17:07:50.463" endtime="20210426 17:07:51.212"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${txt_delegate_input}</arg>
-<arg>${EMAIL USER}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:51.212" level="INFO">Typing text 'user_pallabi@test.onelxk.co' into text field 'id:delegateUserSelectControl_Input'.</msg>
-<status status="PASS" starttime="20210426 17:07:51.212" endtime="20210426 17:07:51.613"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:07:51.613" endtime="20210426 17:07:55.623"></status>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${lst_delegate}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:55.639" level="INFO">Element 'id:delegateUserSelectControl-listbox' is displayed.</msg>
-<status status="PASS" starttime="20210426 17:07:55.623" endtime="20210426 17:07:55.639"></status>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<arguments>
-<arg>${lst_delegate}</arg>
-<arg>${EMAIL USER}</arg>
-</arguments>
-<msg timestamp="20210426 17:07:55.661" level="INFO">Element 'id:delegateUserSelectControl-listbox' contains text 'user_pallabi@test.onelxk.co'.</msg>
-<status status="PASS" starttime="20210426 17:07:55.639" endtime="20210426 17:07:55.661"></status>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<arguments>
-<arg>${lst_delegate}</arg>
-<arg>ENTER</arg>
-</arguments>
-<msg timestamp="20210426 17:07:55.676" level="INFO">Sending key(s) ('ENTER',) to id:delegateUserSelectControl-listbox element.</msg>
-<msg timestamp="20210426 17:07:55.962" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20210426 17:07:55.962" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20210426 17:07:55.661" endtime="20210426 17:07:55.977"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:07:55.977" endtime="20210426 17:07:59.988"></status>
-</kw>
-<kw name="Element Should Be Disabled" library="SeleniumLibrary">
-<doc>Verifies that element identified by ``locator`` is disabled.</doc>
-<arguments>
-<arg>${dlg_btn_delegate_add}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:07:59.988" endtime="20210426 17:08:00.004"></status>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>Delegate already exists</arg>
-</arguments>
-<msg timestamp="20210426 17:08:00.045" level="INFO">Current page contains text 'Delegate already exists'.</msg>
-<status status="PASS" starttime="20210426 17:08:00.004" endtime="20210426 17:08:00.045"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>${dlg_btn_delegate_cancel}</arg>
-</arguments>
-<msg timestamp="20210426 17:08:00.046" level="INFO">Clicking button 'id:addDelegatesModalCancel'.</msg>
-<status status="PASS" starttime="20210426 17:08:00.045" endtime="20210426 17:08:00.302"></status>
-</kw>
-<kw name="Element Should Be Disabled" library="SeleniumLibrary">
-<doc>Verifies that element identified by ``locator`` is disabled.</doc>
-<arguments>
-<arg>${btn_delegate_remove}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:08:00.302" endtime="20210426 17:08:00.302"></status>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>delegatesBreadcrumb</arg>
-</arguments>
-<assign>
-<var>${dummy_click}</var>
-</assign>
-<msg timestamp="20210426 17:08:00.302" level="INFO">${dummy_click} = delegatesBreadcrumb</msg>
-<status status="PASS" starttime="20210426 17:08:00.302" endtime="20210426 17:08:00.302"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:08:00.302" endtime="20210426 17:08:04.303"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<arguments>
-<arg>${chk_delegate_delete}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:08:04.303" endtime="20210426 17:08:04.310"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${chk_delegate_delete}</arg>
-</arguments>
-<msg timestamp="20210426 17:08:04.311" level="INFO">Clicking element 'id:delegates-select-all'.</msg>
-<status status="PASS" starttime="20210426 17:08:04.311" endtime="20210426 17:08:04.570"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:08:04.570" endtime="20210426 17:08:08.583"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${dummy_click}</arg>
-</arguments>
-<msg timestamp="20210426 17:08:08.583" level="INFO">Clicking element 'delegatesBreadcrumb'.</msg>
-<status status="PASS" starttime="20210426 17:08:08.583" endtime="20210426 17:08:08.821"></status>
-</kw>
-<kw name="Element Should Be Enabled" library="SeleniumLibrary">
-<doc>Verifies that element identified by ``locator`` is enabled.</doc>
-<arguments>
-<arg>${btn_delegate_remove}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:08:08.821" endtime="20210426 17:08:08.853"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<arguments>
-<arg>${btn_delegate_remove}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:08:08.853" endtime="20210426 17:08:08.868"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>${btn_delegate_remove}</arg>
-</arguments>
-<msg timestamp="20210426 17:08:08.868" level="INFO">Clicking button 'id:delegatesRemoveButton'.</msg>
-<status status="PASS" starttime="20210426 17:08:08.868" endtime="20210426 17:08:09.153"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:08:09.153" endtime="20210426 17:08:13.165"></status>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>${lbl_delete_delegate}</arg>
-<arg>Remove Delegates</arg>
-</arguments>
-<msg timestamp="20210426 17:08:13.165" level="INFO">Verifying element 'id:confirmation-modal_modalHeader' contains exact text 'Remove Delegates'.</msg>
-<status status="PASS" starttime="20210426 17:08:13.165" endtime="20210426 17:08:13.218"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>${btn_delegate_delete_ok}</arg>
-</arguments>
-<msg timestamp="20210426 17:08:13.218" level="INFO">Clicking button 'id:confirmation-modal_okButton'.</msg>
-<status status="PASS" starttime="20210426 17:08:13.218" endtime="20210426 17:08:13.497"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:08:13.497" endtime="20210426 17:08:17.511"></status>
-</kw>
-<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
-<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
-<arguments>
-<arg>${lst_table_entry}</arg>
-</arguments>
-<msg timestamp="20210426 17:08:17.527" level="INFO">Element 'xpath://*[@id='delegates-row-0-identityEmail']' did not exist.</msg>
-<status status="PASS" starttime="20210426 17:08:17.511" endtime="20210426 17:08:17.527"></status>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:08:17.527" endtime="20210426 17:08:22.529"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${name_printqueue}</arg>
-</arguments>
-<msg timestamp="20210426 17:08:22.529" level="INFO">Clicking element 'id:link-navPrintQueue'.</msg>
-<status status="PASS" starttime="20210426 17:08:22.529" endtime="20210426 17:08:23.052"></status>
-</kw>
-<status status="PASS" starttime="20210426 17:07:25.200" endtime="20210426 17:08:23.052"></status>
-</kw>
-<tags>
-<tag>Environment-https://dev.us.cloud.onelxk.co/</tag>
-</tags>
-<status status="PASS" starttime="20210426 17:06:55.456" endtime="20210426 17:08:23.052" critical="yes"></status>
-</test>
-<test id="s1-t5" name="Web Upload verification for Text file">
-<kw name="Web upload with" library="Master">
-<arguments>
-<arg>${IP}</arg>
-<arg>${PIN}</arg>
-<arg>${WEBFILENAME}</arg>
-</arguments>
-<kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<doc>Sets the timeout that is used by various keywords.</doc>
-<arguments>
-<arg>20</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:08:23.052" endtime="20210426 17:08:23.068"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${name_printqueue}</arg>
-</arguments>
-<msg timestamp="20210426 17:08:23.068" level="INFO">Clicking element 'id:link-navPrintQueue'.</msg>
-<status status="PASS" starttime="20210426 17:08:23.068" endtime="20210426 17:08:23.384"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>${btn_upload}</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:08:23.384" endtime="20210426 17:08:23.400"></status>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<arguments>
-<arg>SEPARATOR=</arg>
-<arg>${URL}</arg>
-<arg>cpm</arg>
-</arguments>
-<assign>
-<var>${lnk_cpm}</var>
-</assign>
-<msg timestamp="20210426 17:08:23.400" level="INFO">${lnk_cpm} = https://dev.us.cloud.onelxk.co/cpm</msg>
-<status status="PASS" starttime="20210426 17:08:23.400" endtime="20210426 17:08:23.400"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>id:printQueueUploadButton</arg>
-</arguments>
-<msg timestamp="20210426 17:08:23.400" level="INFO">Clicking button 'id:printQueueUploadButton'.</msg>
-<status status="PASS" starttime="20210426 17:08:23.400" endtime="20210426 17:08:23.717"></status>
-</kw>
-<kw name="Sleep Call 2" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:08:23.717" endtime="20210426 17:08:27.732"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath://*[@id="printQueueUploadModalModalHeader"]</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:08:27.732" endtime="20210426 17:08:27.770"></status>
-</kw>
-<kw name="Choose File" library="SeleniumLibrary">
-<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
-<arguments>
-<arg>id:multiFileSelectUpload</arg>
-<arg>${FILEPATH}</arg>
-</arguments>
-<msg timestamp="20210426 17:08:27.770" level="INFO">Sending C:\Users\neogis\D Drive\FREEDOM\Python\STL_Automation\Attachments\Attachment.txt to browser.</msg>
-<status status="PASS" starttime="20210426 17:08:27.770" endtime="20210426 17:08:27.801"></status>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>//*[@id="_bar"]/progressbar/bar</arg>
-</arguments>
-<assign>
-<var>${progress_bar}</var>
-</assign>
-<msg timestamp="20210426 17:08:27.801" level="INFO">${progress_bar} = //*[@id="_bar"]/progressbar/bar</msg>
-<status status="PASS" starttime="20210426 17:08:27.801" endtime="20210426 17:08:27.801"></status>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>//*[@id="_Content"]/div</arg>
-</arguments>
-<assign>
-<var>${progress_value}</var>
-</assign>
-<msg timestamp="20210426 17:08:27.801" level="INFO">${progress_value} = //*[@id="_Content"]/div</msg>
-<status status="PASS" starttime="20210426 17:08:27.801" endtime="20210426 17:08:27.801"></status>
-</kw>
-<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>${title_clientdownload}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<arguments>
-<arg>35 sec</arg>
-<arg>5 sec</arg>
-<arg>element should be visible</arg>
-<arg>${progress_value}</arg>
-</arguments>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${title_clientdownload}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${progress_value}</arg>
-</arguments>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210426 17:08:27.933" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210426 17:08:27.817" endtime="20210426 17:08:27.933"></status>
+<msg timestamp="20210502 00:35:35.665" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210502 00:35:35.362" endtime="20210502 00:35:35.665"/>
 </kw>
-<msg timestamp="20210426 17:08:27.933" level="FAIL">Element with locator '//*[@id="_Content"]/div' not found.</msg>
-<status status="FAIL" starttime="20210426 17:08:27.801" endtime="20210426 17:08:27.933"></status>
+<msg timestamp="20210502 00:35:35.669" level="FAIL">Element with locator 'xpath://*[@id='clientDownloadPageHeader']/div[1]/h2' not found.</msg>
+<status status="FAIL" starttime="20210502 00:35:35.336" endtime="20210502 00:35:35.670"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${title_clientdownload}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<arguments>
-<arg>${progress_value}</arg>
-</arguments>
-<msg timestamp="20210426 17:08:32.981" level="INFO">Element '//*[@id="_Content"]/div' is displayed.</msg>
-<status status="PASS" starttime="20210426 17:08:32.943" endtime="20210426 17:08:32.981"></status>
+<msg timestamp="20210502 00:35:40.737" level="INFO">Element 'xpath://*[@id='clientDownloadPageHeader']/div[1]/h2' is displayed.</msg>
+<status status="PASS" starttime="20210502 00:35:40.675" endtime="20210502 00:35:40.737"/>
 </kw>
-<status status="PASS" starttime="20210426 17:08:27.801" endtime="20210426 17:08:32.981"></status>
+<status status="PASS" starttime="20210502 00:35:35.335" endtime="20210502 00:35:40.737"/>
 </kw>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<arguments>
-<arg>${progress_value}</arg>
-<arg>100%</arg>
-<arg>timeout=15</arg>
-</arguments>
-<status status="PASS" starttime="20210426 17:08:32.981" endtime="20210426 17:08:32.996"></status>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>xpath://*[@id="_bar"]/progressbar/bar</arg>
-</arguments>
-<assign>
-<var>${progress_value_actual}</var>
-</assign>
-<msg timestamp="20210426 17:08:32.996" level="INFO">${progress_value_actual} = xpath://*[@id="_bar"]/progressbar/bar</msg>
-<status status="PASS" starttime="20210426 17:08:32.996" endtime="20210426 17:08:32.996"></status>
-</kw>
-<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
-<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
-<arguments>
-<arg>${progress_value_actual}</arg>
-<arg>aria-valuenow</arg>
-<arg>100</arg>
-</arguments>
-<msg timestamp="20210426 17:08:33.025" level="INFO">Element 'xpath://*[@id="_bar"]/progressbar/bar' attribute 'aria-valuenow' contains value '100'.</msg>
-<status status="PASS" starttime="20210426 17:08:32.996" endtime="20210426 17:08:33.025"></status>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>printQueueUploadModalDoneButton</arg>
-</arguments>
-<assign>
-<var>${done_btn}</var>
-</assign>
-<msg timestamp="20210426 17:08:33.025" level="INFO">${done_btn} = printQueueUploadModalDoneButton</msg>
-<status status="PASS" starttime="20210426 17:08:33.025" endtime="20210426 17:08:33.025"></status>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>${done_btn}</arg>
-</arguments>
-<msg timestamp="20210426 17:08:33.025" level="INFO">Clicking button 'printQueueUploadModalDoneButton'.</msg>
-<status status="PASS" starttime="20210426 17:08:33.025" endtime="20210426 17:08:33.357"></status>
-</kw>
-<kw name="Reload Page" library="SeleniumLibrary">
-<doc>Simulates user reloading page.</doc>
-<status status="PASS" starttime="20210426 17:08:33.357" endtime="20210426 17:08:35.107"></status>
-</kw>
-<kw name="Sleep Call" library="CloudLogin">
-<status status="PASS" starttime="20210426 17:08:35.107" endtime="20210426 17:08:40.108"></status>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>documents-row-0-documentStatus</arg>
-</arguments>
-<assign>
-<var>${job_status}</var>
-</assign>
-<msg timestamp="20210426 17:08:40.109" level="INFO">${job_status} = documents-row-0-documentStatus</msg>
-<status status="PASS" starttime="20210426 17:08:40.108" endtime="20210426 17:08:40.109"></status>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lnk_custompackage}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:40.737" level="INFO">Clicking element 'id:createCustomPackageWindows'.</msg>
+<status status="PASS" starttime="20210502 00:35:40.737" endtime="20210502 00:35:40.867"/>
 </kw>
 <kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25 sec</arg>
+<arg>5 sec</arg>
+<arg>element should be visible</arg>
+<arg>${lbl_clientdownload}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<arguments>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${lbl_clientdownload}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210502 00:35:40.901" level="INFO">Element 'xpath:/html/body/lpm-app/div/lpm-driver-config/cui-pageheader/div[1]/div[1]/h2' is displayed.</msg>
+<status status="PASS" starttime="20210502 00:35:40.869" endtime="20210502 00:35:40.901"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:40.867" endtime="20210502 00:35:40.901"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25 sec</arg>
+<arg>5 sec</arg>
+<arg>page should contain checkbox</arg>
+<arg>${chk_status}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
+<arg>${chk_status}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210502 00:35:41.138" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210502 00:35:40.923" endtime="20210502 00:35:41.139"/>
+</kw>
+<msg timestamp="20210502 00:35:41.154" level="FAIL">Page should have contained checkbox 'id:StatusNotification' but did not.</msg>
+<status status="FAIL" starttime="20210502 00:35:40.904" endtime="20210502 00:35:41.155"/>
+</kw>
+<kw name="Page Should Contain Checkbox" library="SeleniumLibrary">
+<arg>${chk_status}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<msg timestamp="20210502 00:35:46.216" level="INFO">Current page contains checkbox 'id:StatusNotification'.</msg>
+<status status="PASS" starttime="20210502 00:35:46.169" endtime="20210502 00:35:46.216"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:40.902" endtime="20210502 00:35:46.216"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isCheck}</var>
+<arg>checkbox should be selected</arg>
+<arg>${chk_status}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${chk_status}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210502 00:35:46.216" level="INFO">Verifying checkbox 'id:StatusNotification' is selected.</msg>
+<status status="PASS" starttime="20210502 00:35:46.216" endtime="20210502 00:35:46.263"/>
+</kw>
+<msg timestamp="20210502 00:35:46.263" level="INFO">${isCheck} = True</msg>
+<status status="PASS" starttime="20210502 00:35:46.216" endtime="20210502 00:35:46.263"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${notification}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210502 00:35:46.263" level="INFO">True</msg>
+<status status="PASS" starttime="20210502 00:35:46.263" endtime="20210502 00:35:46.263"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${isCheck}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210502 00:35:46.263" level="INFO">True</msg>
+<status status="PASS" starttime="20210502 00:35:46.263" endtime="20210502 00:35:46.263"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${notification}</var>
+<arg>${notification}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210502 00:35:46.263" level="INFO">${notification} = True</msg>
+<status status="PASS" starttime="20210502 00:35:46.263" endtime="20210502 00:35:46.263"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${isCheck}</var>
+<arg>${isCheck}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210502 00:35:46.263" level="INFO">${isCheck} = True</msg>
+<status status="PASS" starttime="20210502 00:35:46.263" endtime="20210502 00:35:46.263"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${result}</var>
+<arg>Should Be Equal As Strings</arg>
+<arg>${notification}</arg>
+<arg>${isCheck}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${notification}</arg>
+<arg>${isCheck}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210502 00:35:46.263" endtime="20210502 00:35:46.263"/>
+</kw>
+<msg timestamp="20210502 00:35:46.263" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20210502 00:35:46.263" endtime="20210502 00:35:46.263"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}</arg>
+<arg>select checkbox</arg>
+<arg>${chk_status}</arg>
+<arg>ELSE</arg>
+<arg>unselect checkbox</arg>
+<arg>${chk_status}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${chk_status}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:46.263" level="INFO">Selecting checkbox 'id:StatusNotification'.</msg>
+<status status="PASS" starttime="20210502 00:35:46.263" endtime="20210502 00:35:46.294"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:46.263" endtime="20210502 00:35:46.294"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${navigation}</var>
+<arg>checkbox should be selected</arg>
+<arg>${chk_status}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${chk_status}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210502 00:35:46.294" level="INFO">Verifying checkbox 'id:StatusNotification' is selected.</msg>
+<status status="PASS" starttime="20210502 00:35:46.294" endtime="20210502 00:35:46.310"/>
+</kw>
+<msg timestamp="20210502 00:35:46.310" level="INFO">${navigation} = True</msg>
+<status status="PASS" starttime="20210502 00:35:46.294" endtime="20210502 00:35:46.310"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isCheck}</var>
+<arg>checkbox should not be selected</arg>
+<arg>${chk_deletefolder}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Not Be Selected" library="SeleniumLibrary">
+<arg>${chk_deletefolder}</arg>
+<doc>Verifies checkbox ``locator`` is not selected/checked.</doc>
+<msg timestamp="20210502 00:35:46.310" level="INFO">Verifying checkbox 'id:DeleteClientFolders' is not selected.</msg>
+<status status="PASS" starttime="20210502 00:35:46.310" endtime="20210502 00:35:46.357"/>
+</kw>
+<msg timestamp="20210502 00:35:46.357" level="INFO">${isCheck} = True</msg>
+<status status="PASS" starttime="20210502 00:35:46.310" endtime="20210502 00:35:46.357"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DELETE CLIENT FOLDER}</var>
+<arg>${DELETE CLIENT FOLDER}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210502 00:35:46.357" level="INFO">${DELETE CLIENT FOLDER} = True</msg>
+<status status="PASS" starttime="20210502 00:35:46.357" endtime="20210502 00:35:46.357"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${isCheck}</var>
+<arg>${isCheck}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210502 00:35:46.357" level="INFO">${isCheck} = True</msg>
+<status status="PASS" starttime="20210502 00:35:46.357" endtime="20210502 00:35:46.357"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${result}</var>
+<arg>Should Be Equal As Strings</arg>
+<arg>${DELETE CLIENT FOLDER}</arg>
+<arg>${isCheck}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${DELETE CLIENT FOLDER}</arg>
+<arg>${isCheck}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210502 00:35:46.357" endtime="20210502 00:35:46.357"/>
+</kw>
+<msg timestamp="20210502 00:35:46.357" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20210502 00:35:46.357" endtime="20210502 00:35:46.357"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}</arg>
+<arg>select checkbox</arg>
+<arg>${chk_deletefolder}</arg>
+<arg>ELSE</arg>
+<arg>unselect checkbox</arg>
+<arg>${chk_deletefolder}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${chk_deletefolder}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:46.357" level="INFO">Selecting checkbox 'id:DeleteClientFolders'.</msg>
+<status status="PASS" starttime="20210502 00:35:46.357" endtime="20210502 00:35:46.468"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:46.357" endtime="20210502 00:35:46.468"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${delete_folder_flag}</var>
+<arg>checkbox should be selected</arg>
+<arg>${chk_deletefolder}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${chk_deletefolder}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210502 00:35:46.469" level="INFO">Verifying checkbox 'id:DeleteClientFolders' is selected.</msg>
+<status status="PASS" starttime="20210502 00:35:46.469" endtime="20210502 00:35:46.516"/>
+</kw>
+<msg timestamp="20210502 00:35:46.516" level="INFO">${delete_folder_flag} = True</msg>
+<status status="PASS" starttime="20210502 00:35:46.468" endtime="20210502 00:35:46.516"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${delete_folder_flag}</arg>
+<arg>Set Unused Client Folder values</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set Unused Client Folder values" library="Master">
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${unused_client_value_delete_span_temp}</var>
+<arg>${txt_noprint_span}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:46.544" level="INFO">${unused_client_value_delete_span_temp} = 7</msg>
+<status status="PASS" starttime="20210502 00:35:46.518" endtime="20210502 00:35:46.544"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${count}</var>
+<arg>${unused_client_value_delete_span_temp}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210502 00:35:46.545" level="INFO">Length is 1</msg>
+<msg timestamp="20210502 00:35:46.545" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20210502 00:35:46.544" endtime="20210502 00:35:46.545"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${count}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${txt_noprint_span}</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210502 00:35:46.547" level="INFO">Sending key(s) ('DELETE',) to id:deleteAfterLabel_input element.</msg>
+<msg timestamp="20210502 00:35:46.896" level="INFO">Pressing special key DELETE to element.</msg>
+<msg timestamp="20210502 00:35:46.896" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20210502 00:35:46.545" endtime="20210502 00:35:46.931"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:46.545" endtime="20210502 00:35:46.932"/>
+</iter>
+<status status="PASS" starttime="20210502 00:35:46.545" endtime="20210502 00:35:46.932"/>
+</for>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_noprint_span}</arg>
+<arg>${unused_client_value_delete_span}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:46.933" level="INFO">Typing text '10' into text field 'id:deleteAfterLabel_input'.</msg>
+<status status="PASS" starttime="20210502 00:35:46.932" endtime="20210502 00:35:47.051"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${unused_client_value_delete_span}</var>
+<arg>${txt_noprint_span}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:47.077" level="INFO">${unused_client_value_delete_span} = </msg>
+<status status="PASS" starttime="20210502 00:35:47.051" endtime="20210502 00:35:47.078"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:46.517" endtime="20210502 00:35:47.078"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:46.517" endtime="20210502 00:35:47.078"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${unused_client_value}</var>
+<arg>${txt_noprint_span}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:47.087" level="INFO">${unused_client_value} = 10</msg>
+<status status="PASS" starttime="20210502 00:35:47.078" endtime="20210502 00:35:47.087"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${chk_saas}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210502 00:35:47.087" level="INFO">Verifying checkbox 'id:PrintReleaseCheckbox' is selected.</msg>
+<status status="PASS" starttime="20210502 00:35:47.087" endtime="20210502 00:35:47.119"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${chk_hybrid}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:47.119" level="INFO">Selecting checkbox 'id:enableServerlessPrintReleaseCheckbox'.</msg>
+<status status="PASS" starttime="20210502 00:35:47.119" endtime="20210502 00:35:47.233"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${btn_create}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20210502 00:35:47.234" endtime="20210502 00:35:47.534"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${hybrid_unprinted_jobs_value_temp}</var>
+<arg>${txt_unprinted_jobs}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:47.597" level="INFO">${hybrid_unprinted_jobs_value_temp} = 48</msg>
+<status status="PASS" starttime="20210502 00:35:47.534" endtime="20210502 00:35:47.597"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${count}</var>
+<arg>${hybrid_unprinted_jobs_value_temp}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210502 00:35:47.597" level="INFO">Length is 2</msg>
+<msg timestamp="20210502 00:35:47.597" level="INFO">${count} = 2</msg>
+<status status="PASS" starttime="20210502 00:35:47.597" endtime="20210502 00:35:47.597"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${count}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${txt_unprinted_jobs}</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210502 00:35:47.597" level="INFO">Sending key(s) ('DELETE',) to id:deleteUnprintedJobsAfterId_input element.</msg>
+<msg timestamp="20210502 00:35:47.919" level="INFO">Pressing special key DELETE to element.</msg>
+<msg timestamp="20210502 00:35:47.919" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20210502 00:35:47.597" endtime="20210502 00:35:47.944"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:47.597" endtime="20210502 00:35:47.944"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${txt_unprinted_jobs}</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210502 00:35:47.945" level="INFO">Sending key(s) ('DELETE',) to id:deleteUnprintedJobsAfterId_input element.</msg>
+<msg timestamp="20210502 00:35:48.237" level="INFO">Pressing special key DELETE to element.</msg>
+<msg timestamp="20210502 00:35:48.237" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20210502 00:35:47.944" endtime="20210502 00:35:48.290"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:47.944" endtime="20210502 00:35:48.290"/>
+</iter>
+<status status="PASS" starttime="20210502 00:35:47.597" endtime="20210502 00:35:48.290"/>
+</for>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_unprinted_jobs}</arg>
+<arg>${hybrid_unprinted_jobs_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:48.291" level="INFO">Typing text '20' into text field 'id:deleteUnprintedJobsAfterId_input'.</msg>
+<status status="PASS" starttime="20210502 00:35:48.290" endtime="20210502 00:35:48.383"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${hybrid_unprinted_jobs_value}</var>
+<arg>${txt_unprinted_jobs}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:48.398" level="INFO">${hybrid_unprinted_jobs_value} = 20</msg>
+<status status="PASS" starttime="20210502 00:35:48.383" endtime="20210502 00:35:48.398"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${hybrid_printed_jobs_value_temp}</var>
+<arg>${txt_printed_jobs}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:48.427" level="INFO">${hybrid_printed_jobs_value_temp} = 48</msg>
+<status status="PASS" starttime="20210502 00:35:48.398" endtime="20210502 00:35:48.428"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${count}</var>
+<arg>${hybrid_printed_jobs_value_temp}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20210502 00:35:48.429" level="INFO">Length is 2</msg>
+<msg timestamp="20210502 00:35:48.429" level="INFO">${count} = 2</msg>
+<status status="PASS" starttime="20210502 00:35:48.428" endtime="20210502 00:35:48.429"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${count}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${txt_printed_jobs}</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210502 00:35:48.430" level="INFO">Sending key(s) ('DELETE',) to id:deletePrintedJobsAfterId_input element.</msg>
+<msg timestamp="20210502 00:35:48.761" level="INFO">Pressing special key DELETE to element.</msg>
+<msg timestamp="20210502 00:35:48.762" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20210502 00:35:48.429" endtime="20210502 00:35:48.791"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:48.429" endtime="20210502 00:35:48.791"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${txt_printed_jobs}</arg>
+<arg>DELETE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210502 00:35:48.792" level="INFO">Sending key(s) ('DELETE',) to id:deletePrintedJobsAfterId_input element.</msg>
+<msg timestamp="20210502 00:35:49.097" level="INFO">Pressing special key DELETE to element.</msg>
+<msg timestamp="20210502 00:35:49.097" level="INFO">Releasing special key DELETE.</msg>
+<status status="PASS" starttime="20210502 00:35:48.792" endtime="20210502 00:35:49.130"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:48.791" endtime="20210502 00:35:49.130"/>
+</iter>
+<status status="PASS" starttime="20210502 00:35:48.429" endtime="20210502 00:35:49.130"/>
+</for>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_printed_jobs}</arg>
+<arg>${hybrid_printed_jobs_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:49.132" level="INFO">Typing text '120' into text field 'id:deletePrintedJobsAfterId_input'.</msg>
+<status status="PASS" starttime="20210502 00:35:49.131" endtime="20210502 00:35:49.233"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${hybrid_printed_jobs_value}</var>
+<arg>${txt_printed_jobs}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:49.249" level="INFO">${hybrid_printed_jobs_value} = 120</msg>
+<status status="PASS" starttime="20210502 00:35:49.234" endtime="20210502 00:35:49.249"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isCheck}</var>
+<arg>checkbox should be selected</arg>
+<arg>${chk_latebinding}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${chk_latebinding}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210502 00:35:49.250" level="INFO">Verifying checkbox 'id:allowLateBindingCheckbox' is selected.</msg>
+<status status="PASS" starttime="20210502 00:35:49.250" endtime="20210502 00:35:49.286"/>
+</kw>
+<msg timestamp="20210502 00:35:49.286" level="INFO">${isCheck} = True</msg>
+<status status="PASS" starttime="20210502 00:35:49.250" endtime="20210502 00:35:49.286"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${latebind}</var>
+<arg>${latebind}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210502 00:35:49.286" level="INFO">${latebind} = True</msg>
+<status status="PASS" starttime="20210502 00:35:49.286" endtime="20210502 00:35:49.286"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${isCheck}</var>
+<arg>${isCheck}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210502 00:35:49.286" level="INFO">${isCheck} = True</msg>
+<status status="PASS" starttime="20210502 00:35:49.286" endtime="20210502 00:35:49.286"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${result}</var>
+<arg>Should Be Equal As Strings</arg>
+<arg>${latebind}</arg>
+<arg>${isCheck}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${latebind}</arg>
+<arg>${isCheck}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210502 00:35:49.286" endtime="20210502 00:35:49.286"/>
+</kw>
+<msg timestamp="20210502 00:35:49.286" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20210502 00:35:49.286" endtime="20210502 00:35:49.286"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}</arg>
+<arg>select checkbox</arg>
+<arg>${chk_latebinding}</arg>
+<arg>ELSE</arg>
+<arg>unselect checkbox</arg>
+<arg>${chk_latebinding}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${chk_latebinding}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:49.286" level="INFO">Selecting checkbox 'id:allowLateBindingCheckbox'.</msg>
+<status status="PASS" starttime="20210502 00:35:49.286" endtime="20210502 00:35:49.317"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:49.286" endtime="20210502 00:35:49.317"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${latebind}</var>
+<arg>checkbox should be selected</arg>
+<arg>${chk_latebinding}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${chk_latebinding}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210502 00:35:49.317" level="INFO">Verifying checkbox 'id:allowLateBindingCheckbox' is selected.</msg>
+<status status="PASS" starttime="20210502 00:35:49.317" endtime="20210502 00:35:49.348"/>
+</kw>
+<msg timestamp="20210502 00:35:49.348" level="INFO">${latebind} = True</msg>
+<status status="PASS" starttime="20210502 00:35:49.317" endtime="20210502 00:35:49.348"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isCheck}</var>
+<arg>element attribute value should be</arg>
+<arg>${rad_saas}</arg>
+<arg>aria-checked</arg>
+<arg>true</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<arg>${rad_saas}</arg>
+<arg>aria-checked</arg>
+<arg>true</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<msg timestamp="20210502 00:35:49.364" level="INFO">Element 'id:defaultDriverLpmSaas_radio_input' attribute 'aria-checked' contains value 'true'.</msg>
+<status status="PASS" starttime="20210502 00:35:49.348" endtime="20210502 00:35:49.364"/>
+</kw>
+<msg timestamp="20210502 00:35:49.364" level="INFO">${isCheck} = True</msg>
+<status status="PASS" starttime="20210502 00:35:49.348" endtime="20210502 00:35:49.364"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${saas}</var>
+<arg>${saas}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210502 00:35:49.364" level="INFO">${saas} = True</msg>
+<status status="PASS" starttime="20210502 00:35:49.364" endtime="20210502 00:35:49.364"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${isCheck}</var>
+<arg>${isCheck}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210502 00:35:49.364" level="INFO">${isCheck} = True</msg>
+<status status="PASS" starttime="20210502 00:35:49.364" endtime="20210502 00:35:49.364"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${result}</var>
+<arg>Should Be Equal As Strings</arg>
+<arg>${saas}</arg>
+<arg>${isCheck}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${saas}</arg>
+<arg>${isCheck}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210502 00:35:49.364" endtime="20210502 00:35:49.364"/>
+</kw>
+<msg timestamp="20210502 00:35:49.364" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20210502 00:35:49.364" endtime="20210502 00:35:49.364"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${result}</arg>
+<arg>click element</arg>
+<arg>${rad_saas}</arg>
+<arg>ELSE</arg>
+<arg>click element</arg>
+<arg>${rad_hybrid}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${rad_saas}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:49.364" level="INFO">Clicking element 'id:defaultDriverLpmSaas_radio_input'.</msg>
+<status status="PASS" starttime="20210502 00:35:49.364" endtime="20210502 00:35:49.437"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:49.364" endtime="20210502 00:35:49.437"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${saas}</var>
+<arg>element attribute value should be</arg>
+<arg>${rad_saas}</arg>
+<arg>aria-checked</arg>
+<arg>true</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<arg>${rad_saas}</arg>
+<arg>aria-checked</arg>
+<arg>true</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<msg timestamp="20210502 00:35:49.459" level="INFO">Element 'id:defaultDriverLpmSaas_radio_input' attribute 'aria-checked' contains value 'true'.</msg>
+<status status="PASS" starttime="20210502 00:35:49.438" endtime="20210502 00:35:49.459"/>
+</kw>
+<msg timestamp="20210502 00:35:49.459" level="INFO">${saas} = True</msg>
+<status status="PASS" starttime="20210502 00:35:49.437" endtime="20210502 00:35:49.459"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_create}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:49.460" level="INFO">Clicking button 'id:create_btn'.</msg>
+<status status="PASS" starttime="20210502 00:35:49.459" endtime="20210502 00:35:49.548"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25 sec</arg>
+<arg>5 sec</arg>
+<arg>element should be visible</arg>
+<arg>${dlg_download}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${dlg_download}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210502 00:35:49.783" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210502 00:35:49.568" endtime="20210502 00:35:49.783"/>
+</kw>
+<msg timestamp="20210502 00:35:49.783" level="FAIL">Element with locator 'xpath:/html/body/lpm-app/div/lpm-driver-config/div/cui-form/form/lpm-download-modal/cui-modal/div/div[2]/div[1]/cui-modal-header/div/div[2]/h4' not found.</msg>
+<status status="FAIL" starttime="20210502 00:35:49.549" endtime="20210502 00:35:49.783"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${dlg_download}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210502 00:35:54.888" level="INFO">Element 'xpath:/html/body/lpm-app/div/lpm-driver-config/div/cui-form/form/lpm-download-modal/cui-modal/div/div[2]/div[1]/cui-modal-header/div/div[2]/h4' is displayed.</msg>
+<status status="PASS" starttime="20210502 00:35:54.794" endtime="20210502 00:35:54.888"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:49.548" endtime="20210502 00:35:54.888"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
 <arg>40 sec</arg>
 <arg>5 sec</arg>
-<arg>element text should be</arg>
-<arg>${job_status}</arg>
-<arg>Ready</arg>
-</arguments>
+<arg>element should be enabled</arg>
+<arg>${btn_download}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${btn_download}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210502 00:35:54.888" endtime="20210502 00:35:54.966"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:54.888" endtime="20210502 00:35:54.966"/>
+</kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${lbl_complete}</arg>
+<arg>Your custom package is ready for downloading.</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<arguments>
-<arg>${job_status}</arg>
-<arg>Ready</arg>
-</arguments>
-<msg timestamp="20210426 17:08:40.111" level="INFO">Verifying element 'documents-row-0-documentStatus' contains exact text 'Ready'.</msg>
-<status status="PASS" starttime="20210426 17:08:40.111" endtime="20210426 17:08:40.130"></status>
+<msg timestamp="20210502 00:35:54.966" level="INFO">Verifying element 'xpath:/html/body/lpm-app/div/lpm-driver-config/div/cui-form/form/lpm-download-modal/cui-modal/div/div[2]/div[1]/div/cui-modal-body/cui-priv-block/div/p' contains exact text 'Your custom package is ready for downloading.'.</msg>
+<status status="PASS" starttime="20210502 00:35:54.966" endtime="20210502 00:35:54.997"/>
 </kw>
-<status status="PASS" starttime="20210426 17:08:40.110" endtime="20210426 17:08:40.130"></status>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btn_download}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210502 00:35:54.997" level="INFO">Clicking button 'id:download_btn'.</msg>
+<status status="PASS" starttime="20210502 00:35:54.997" endtime="20210502 00:35:55.162"/>
 </kw>
-<kw name="Printer Automation" library="Printerautomation">
-<arguments>
-<arg>${IP}</arg>
-<arg>${PIN}</arg>
-<arg>${WEBFILENAME}</arg>
-</arguments>
-<assign>
-<var>${print_job_status}</var>
-</assign>
-<msg timestamp="20210426 17:08:42.138" level="INFO">[1;36mdo "press key KEYCODE_HOME"[0m</msg>
-<msg timestamp="20210426 17:08:42.138" level="FAIL">URLError: &lt;urlopen error no host given&gt;</msg>
-<status status="FAIL" starttime="20210426 17:08:40.130" endtime="20210426 17:08:42.138"></status>
+<kw name="Set Variable" library="BuiltIn">
+<var>${usermenu}</var>
+<arg>userMenu</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210502 00:35:55.163" level="INFO">${usermenu} = userMenu</msg>
+<status status="PASS" starttime="20210502 00:35:55.163" endtime="20210502 00:35:55.163"/>
 </kw>
-<status status="FAIL" starttime="20210426 17:08:23.052" endtime="20210426 17:08:42.138"></status>
+<kw name="Set Variable" library="BuiltIn">
+<var>${logout}</var>
+<arg>link-logout</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210502 00:35:55.164" level="INFO">${logout} = link-logout</msg>
+<status status="PASS" starttime="20210502 00:35:55.164" endtime="20210502 00:35:55.164"/>
 </kw>
-<tags>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>35 sec</arg>
+<arg>5 sec</arg>
+<arg>element should be visible</arg>
+<arg>userMenu</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>userMenu</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210502 00:35:55.471" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210502 00:35:55.223" endtime="20210502 00:35:55.471"/>
+</kw>
+<msg timestamp="20210502 00:35:55.472" level="FAIL">The element 'userMenu' should be visible, but it is not.</msg>
+<status status="FAIL" starttime="20210502 00:35:55.165" endtime="20210502 00:35:55.472"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>userMenu</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210502 00:36:00.505" level="INFO">Element 'userMenu' is displayed.</msg>
+<status status="PASS" starttime="20210502 00:36:00.476" endtime="20210502 00:36:00.505"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:55.164" endtime="20210502 00:36:00.505"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${usermenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210502 00:36:00.506" level="INFO">Clicking element 'userMenu'.</msg>
+<status status="PASS" starttime="20210502 00:36:00.505" endtime="20210502 00:36:00.600"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>35 sec</arg>
+<arg>5 sec</arg>
+<arg>element should be visible</arg>
+<arg>link-logout</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>link-logout</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210502 00:36:00.626" level="INFO">Element 'link-logout' is displayed.</msg>
+<status status="PASS" starttime="20210502 00:36:00.601" endtime="20210502 00:36:00.626"/>
+</kw>
+<status status="PASS" starttime="20210502 00:36:00.600" endtime="20210502 00:36:00.626"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210502 00:36:00.627" level="INFO">Clicking element 'link-logout'.</msg>
+<status status="PASS" starttime="20210502 00:36:00.626" endtime="20210502 00:36:00.689"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>35 sec</arg>
+<arg>5 sec</arg>
+<arg>title should be</arg>
+<arg>Lexmark Log In</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Lexmark Log In</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210502 00:36:00.926" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210502 00:36:00.698" endtime="20210502 00:36:00.926"/>
+</kw>
+<msg timestamp="20210502 00:36:00.928" level="FAIL">Title should have been 'Lexmark Log In' but was 'Print Management | Lexmark Cloud Services'.</msg>
+<status status="FAIL" starttime="20210502 00:36:00.690" endtime="20210502 00:36:00.928"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Lexmark Log In</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210502 00:36:05.943" level="INFO">Page title is 'Lexmark Log In'.</msg>
+<status status="PASS" starttime="20210502 00:36:05.930" endtime="20210502 00:36:05.944"/>
+</kw>
+<status status="PASS" starttime="20210502 00:36:00.689" endtime="20210502 00:36:05.944"/>
+</kw>
+<kw name="Download Wait" library="CloudLogin">
+<var>${download_flag}</var>
+<arg>customPackage.zip</arg>
+<msg timestamp="20210502 00:37:53.699" level="INFO">${download_flag} = customPackage.zip File Downloaded</msg>
+<status status="PASS" starttime="20210502 00:36:05.944" endtime="20210502 00:37:53.699"/>
+</kw>
+<kw name="Check Values" library="XMLParser">
+<var>${validation_flag}</var>
+<arg>${notification}</arg>
+<arg>${DELETE CLIENT FOLDER}</arg>
+<arg>${unused_client_value_delete_span}</arg>
+<arg>${hybrid_unprinted_jobs_value}</arg>
+<arg>${latebind}</arg>
+<arg>${hybrid_printed_jobs_value}</arg>
+<arg>${saas}</arg>
+<msg timestamp="20210502 00:37:56.519" level="INFO">Notification set correctly to true
+Delete folder flag set correctly to true
+Delete folder value is 10
+Print and Keep life for unprinted jobs is 20
+Print and Keep life span for printed jobs is 120
+Late Binding flag set to true
+Default queue name set is : LPMCloud</msg>
+<msg timestamp="20210502 00:37:56.519" level="INFO">${validation_flag} = Settings completed</msg>
+<status status="PASS" starttime="20210502 00:37:53.700" endtime="20210502 00:37:56.519"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210502 00:37:56.519" endtime="20210502 00:37:59.191"/>
+</kw>
+<status status="PASS" starttime="20210502 00:35:20.283" endtime="20210502 00:37:59.191"/>
+</kw>
 <tag>Environment-https://dev.us.cloud.onelxk.co/</tag>
-</tags>
-<status status="FAIL" starttime="20210426 17:08:23.052" endtime="20210426 17:08:42.138" critical="yes">URLError: &lt;urlopen error no host given&gt;</status>
+<status status="PASS" starttime="20210502 00:35:20.283" endtime="20210502 00:37:59.193"/>
 </test>
-<status status="FAIL" starttime="20210426 17:06:09.020" endtime="20210426 17:08:42.138"></status>
+<status status="PASS" starttime="20210502 00:35:18.674" endtime="20210502 00:37:59.200"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="1">Critical Tests</stat>
-<stat pass="4" fail="1">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="4" fail="1">Environment-https://dev.us.cloud.onelxk.co/</stat>
+<stat pass="1" fail="0" skip="0">Environment-https://dev.us.cloud.onelxk.co/</stat>
 </tag>
 <suite>
-<stat pass="4" fail="1" id="s1" name="Master">Master</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Master">Master</stat>
 </suite>
 </statistics>
 <errors>
