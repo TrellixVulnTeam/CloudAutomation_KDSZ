@@ -6,6 +6,7 @@ Variables    ../PageObjects/Locators.py
 *** Variables ***
 #${URL}                          https://dev.us.cloud.onelxk.co/
 #${BROWSER}                      Chrome
+#${DOWNLOADBROWSER}              Edge
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${next}                         Next
@@ -43,6 +44,7 @@ ${WEBFILENAME}                          Attachment.txt
 ${IP}
 ${PIN}
 ${NORMALBROWSER}
+${NONADMIN}                             cpmautomation@test.onelxk.co
 
 *** Keywords ***
 
@@ -436,8 +438,9 @@ Set Quota Assignment for Personal
 
 
 Check Status Table for normal
+    [Arguments]     ${USER}     ${PASSWORD}     ${URL}
     set selenium timeout    25
-    ${total}    ${color}=   quota_green
+    ${total}    ${color}=   quota_green_all    ${USER}     ${PASSWORD}     ${URL}
     Open Quota Status Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   User Quota Status
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotausername}
@@ -464,8 +467,9 @@ Check Status Table for normal
     Press Keys    ${txt_search}    ENTER
 
 Check Status Table for warning
+    [Arguments]     ${USER}     ${PASSWORD}     ${URL}
     set selenium timeout    25
-    ${total}    ${color}=   quota_yellow
+    ${total}    ${color}=   quota_yellow_all    ${USER}     ${PASSWORD}     ${URL}
     Open Quota Status Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   User Quota Status
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotausername}
@@ -492,8 +496,9 @@ Check Status Table for warning
     Press Keys    ${txt_search}    ENTER
 
 Check Status Table for exceeded
+    [Arguments]     ${USER}     ${PASSWORD}     ${URL}
     set selenium timeout    25
-    ${total}    ${color}=   quota_red
+    ${total}    ${color}=   quota_red_all    ${USER}     ${PASSWORD}     ${URL}
     Open Quota Status Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   User Quota Status
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotausername}
@@ -520,8 +525,22 @@ Check Status Table for exceeded
     Press Keys    ${txt_search}    ENTER
 
 Delete Quota
+    [Arguments]     ${USER}     ${PASSWORD}     ${URL}    ${NONADMIN}
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     ${deleted}=   delete_user_all     ${USER}     ${PASSWORD}     ${URL}    ${NONADMIN}
+    run keyword     Open Quota Definition Page
+    set selenium timeout    20
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_quota_select_all}
+    click element       ${btn_quota_select_all}
+    click element   ${undefined}
+    click button    ${btn_delete_quota}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_delete_def}
+    click button    ${btn_delete_def}
+
+
+Delete Quota without user
+    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
+    #${deleted}=   delete_user_all     ${USER}     ${PASSWORD}     ${URL}    ${NONADMIN}
     run keyword     Open Quota Definition Page
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_quota_select_all}
@@ -536,8 +555,11 @@ Reset to Cost center
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     run keyword     Open Organisational Policy Page
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_save}
+    scroll element into view    ${radio_costcenter}
     click element       ${radio_costcenter}
     click button        ${btn_save}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain     General
+
 
 Logoutadmin
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
@@ -595,7 +617,6 @@ Create Monthly Quota
     click element   ${txt_total_value}
     press keys      ${txt_total_value}      \DELETE
     input text      ${txt_total_value}      50
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${quota_color}
     click element   ${quota_color}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${txt_color_value}
     click element   ${txt_color_value}
@@ -609,14 +630,15 @@ Create Monthly Quota
 Select Cost Center or Personal First
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain     General
-    click element     ${chk_costcenter}
-    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_save}
-    click element       ${btn_save}
+    ${is_enable}=     run keyword and return status   element attribute value should be   useCostCenterOption_radio_input   aria-checked   true
+    run keyword if  ${is_enable}      Set cost center
+
 
 
 Select Cost Center or Personal
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain     General
+    scroll element into view    ${chk_costcenter}
     click element     ${chk_costcenter}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_confirmchange}
     click element       ${btn_confirmchange}
@@ -632,6 +654,7 @@ Open Quota Assignment Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   Quota Assignments
 
 Set cost center
+    scroll element into view    ${chk_costcenter}
     click element   ${chk_costcenter}
     click button      ${btn_save}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain       General
@@ -671,7 +694,11 @@ Set Quota Assignment for Cost Center
     element text should be      ${costcenter_name}      ${costcenter}
     click element       ${quota_name_link}
 
-    run keyword     Check the table values
+    element text should be      ${monthly_total_id}   50
+    element text should be      ${monthly_color_id}   50
+
+    click button    ${btn_summary_close}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${name_printqueue}
 
     #run keyword     Open Browser To Login Page using Admin
     run keyword     Open Organisational Policy Page
@@ -684,22 +711,22 @@ Set Quota Assignment for Cost Center
 
 Select Department or Personal
     set selenium timeout    20
+    scroll element into view    ${radio_dept}
     click element     ${radio_dept}
-    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_confirmchange}
-    click element       ${btn_confirmchange}
+    sleep_call_1
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain button   ${btn_confirmchange}
+    click button       ${btn_confirmchange}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_save}
-    click element       ${btn_save}
+    click button       ${btn_save}
+    scroll element into view    ${chk_clientdownload}
 
 Set Quota Assignment for Department
-    run keyword     Open Organisational Policy Page
-    run keyword     Select Department or Personal
-    run keyword     Open Quota Assignment Page
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${btn_assignquota}
     click button    ${btn_assignquota}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${txt_costcentername}
     click element   ${txt_costcentername}
-    input text      ${txt_costcentername_input}       ${costcenter}
+    input text      ${txt_costcentername_input}       ${dept}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${lst_costcentername}
     element should be visible   ${lst_costcentername}
     Press Keys    ${lst_costcentername}    ENTER
@@ -713,7 +740,7 @@ Set Quota Assignment for Department
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${tbl_costcenter_quota_name}
     element should contain      ${tbl_costcenter_quota_name}    ${quota_name}
 
-    element should contain      ${costcenter_name}      ${costcenter}
+    element should contain      ${costcenter_name}      ${dept}
     click element       ${quota_name_link}
 
     run keyword     Check Dialog Values
@@ -762,8 +789,8 @@ Download MAC Default Packages for SAAS
     ${download_list}    set variable    macPackageType
 
     click element   ${download_list}
-    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${LINK}
-    click element   ${LINK}
+    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${MACSAASLINK}
+    click element   ${MACSAASLINK}
 
 #Click Download button
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${download_btn}
@@ -810,8 +837,8 @@ Download MAC Default Packages for Hybrid
     ${download_list}    set variable    macPackageType
 
     click element   ${download_list}
-    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${LINK}
-    click element   ${LINK}
+    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${MACHYBRIDLINK}
+    click element   ${MACHYBRIDLINK}
 
 #Click Download button
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${download_btn}
@@ -858,8 +885,8 @@ Download Default Packages for Windows for SAAS
     ${download_list}    set variable    windowsPackageType
 
     click element   ${download_list}
-    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${LINK}
-    click element   ${LINK}
+    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${WINSAASLINK}
+    click element   ${WINSAASLINK}
 
 #Click Download button
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${download_btn}
@@ -907,8 +934,8 @@ Download Default Packages for Windows for Hybrid
     ${download_list}    set variable    windowsPackageType
 
     click element   ${download_list}
-    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${LINK}
-    click element   ${LINK}
+    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${WINHYBRIDLINK}
+    click element   ${WINHYBRIDLINK}
 
 #Click Download button
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${download_btn}
