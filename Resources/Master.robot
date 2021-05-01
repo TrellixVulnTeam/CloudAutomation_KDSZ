@@ -265,13 +265,11 @@ Email submission with
     Click Element   link-navPrintQueue
 
 Mobile submission
-    #[Arguments]        ${IP}   ${PIN}
-    #${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
+    [Arguments]        ${IP}   ${PIN}
     set selenium timeout    20
-    ${mobile_status}=   mobile_submit_all   ${USER}     ${PASSWORD}     ${URL}
-    sleep_call_2
+    ${mobile_status}=   mobile_submit
+    log     ${mobile_status}
     reload page
-    sleep_call
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job1_status}        Ready
     element text should be      ${email_job1_description}      A test document to upload
     element should contain      ${tbl_printqueue}        mobile.doc
@@ -279,23 +277,14 @@ Mobile submission
     element attribute value should be      //*[@id="documents-row-0-client"]/lpm-source-renderer/div     title        Mobile
 
 #Call the Print Device Automation Python script for releasing the first job
-    ${print_job_status} =   printer_automation  ${IP}   ${PIN}    ${mobile_job}
+    ${print_job_status} =   printer_automation  ${IP}   ${PIN}  ${mobile_job}
     log     {print_job_status}
 
-    sleep_call
-
 #Check Print Job History table
-    Switch Window       Print Management | Lexmark Cloud Services
-    Title Should Be     Print Management | Lexmark Cloud Services
-    Wait until Element Is Visible   ${name_printqueue}
-    sleep_call_2
     click element   link-navJobHistory
-    wait until page contains    Print Job History
-    #wait until page contains    Print Job History
+    Wait Until Keyword Succeeds    40 sec    5 sec    page should contain   Print Job History
     ${print_job_name1}   set variable    dataGridMyPrintJobsId-row-0-jobName
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${print_job_name1}        ${mobile_job}
-    sleep_call_2
-    element text should not be      ${impression_count}     0
     click element       ${name_printqueue}
 
 Open Browser To Login Page using admin
