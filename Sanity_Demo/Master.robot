@@ -79,7 +79,7 @@ Delegate addition and deletion using ${EMAIL USER}
 Web Upload and print verification for Text file
     Web upload with     ${IP}   ${PIN}  ${FILEPATH}    ${WEBFILENAME}
 Mobile Job Submission and print verification
-    Mobile submission
+    Mobile submission   ${IP}   ${PIN}
 Email submission and print verification with different file using ${FILENAME}
     Email submission with  ${IP}   ${PIN}   ${FILENAME}
 Verify quota creation Total 50 and Color 50 for current month
