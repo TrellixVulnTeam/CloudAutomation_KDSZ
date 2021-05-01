@@ -78,7 +78,7 @@ Verify quota creation Total 50 and Color 50 for current month
     Create Quota different for month
 Verify Cost Center Assignment
     Open Organisational Policy Page
-    Select Cost Center or Personal First
+    #Select Cost Center or Personal First
     Open Quota Assignment Page
     Set Quota Assignment for Cost Center
     Delete Quota
