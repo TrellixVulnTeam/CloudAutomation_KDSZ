@@ -251,9 +251,6 @@ Email submission with
     element text should be      ${print_job_name1}     ${FILENAME}
     Click Element   link-navPrintQueue
 
-    ${print_job_status} =   printer_automation  ${IP}   ${PIN}  ${FILENAME2}
-    log     {print_job_status}
-
 #Now call printer simulation for second job
     ${print_job_status} =   printer_automation    ${IP}   ${PIN}  ${FILENAME2}
     log     {print_job_status}
