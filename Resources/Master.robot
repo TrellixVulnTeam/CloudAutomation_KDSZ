@@ -203,7 +203,7 @@ Web upload with
 
     element text should be      ${job_name}      ${file_name_actual}
 
-    element text should be      ${job_status}    ${job_status_actual}
+    element text should be      ${job_status}    Ready
     element attribute value should be      //*[@id="documents-row-0-client"]/lpm-source-renderer/div     title        Web
 
 #Call the Print Device Automation Python script for releasing the jobs
@@ -222,7 +222,7 @@ Web upload with
 Email submission with
     [Arguments]        ${IP}   ${PIN}  ${FILENAME}
     set selenium timeout    20
-    ${email_status}=   send_email_singleattachment      ${FILENAME}
+    ${email_status}=   send_email_singleattachment_all      ${FILENAME}
     log     ${email_status}
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job1_status}        Ready
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job2_status}        Ready
@@ -267,7 +267,7 @@ Email submission with
 Mobile submission
     [Arguments]        ${IP}   ${PIN}
     set selenium timeout    20
-    ${mobile_status}=   mobile_submit
+    ${mobile_status}=   mobile_submit_all
     log     ${mobile_status}
     reload page
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job1_status}        Ready
