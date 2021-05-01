@@ -306,7 +306,7 @@ Open Browser To Login Page using admin
 
 Open Organisational Policy Page
     set selenium timeout    20
-    wait until element is visible   ${admin_dropdown}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible    ${admin_dropdown}
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${org_policy}
     click element       ${org_policy}
@@ -323,14 +323,14 @@ Select Personal
 
 Open Quota Definition Page
     set selenium timeout    20
-    wait until element is visible   ${admin_dropdown}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
 
 Open Quota Status Page
     set selenium timeout    20
-    wait until element is visible   ${admin_dropdown}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quota_status}
     click element       ${lbl_quota_status}
@@ -412,7 +412,7 @@ Create Custom Quota
 
 Set Quota Assignment for Personal
     set selenium timeout    20
-    wait until element is visible   ${admin_dropdown}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotaassignment}
     click element       ${lbl_quotaassignment}
@@ -607,6 +607,7 @@ Create Monthly Quota
 
 Select Cost Center or Personal First
     set selenium timeout    20
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${chk_costcenter}
     select checkbox     ${chk_costcenter}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_save}
     click element       ${btn_save}
@@ -614,6 +615,7 @@ Select Cost Center or Personal First
 
 Select Cost Center or Personal
     set selenium timeout    20
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${chk_costcenter
     select checkbox     ${chk_costcenter}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_confirmchange}
     click element       ${btn_confirmchange}
@@ -622,7 +624,7 @@ Select Cost Center or Personal
 
 Open Quota Assignment Page
     set selenium timeout    20
-    wait until element is visible   ${admin_dropdown}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${admin_dropdown}
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotaassignment}
     click element       ${lbl_quotaassignment}
@@ -645,7 +647,7 @@ Set Quota Assignment for Cost Center
     click element       ${lbl_quotaassignment}
     #Assign Quota by Cost Center
     set selenium timeout    20
-    wait until page contains element   ${btn_assignquota}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${btn_assignquota}
     click button    ${btn_assignquota}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${txt_costcentername}
     click element   ${txt_costcentername}
@@ -655,7 +657,7 @@ Set Quota Assignment for Cost Center
     click element   ${txt_quota_def}
     press keys      ${lst_quota_def}    ARROW_DOWN
     Press Keys    ${lst_quota_def}    ENTER
-    wait until element is enabled   ${btn_vary_ok}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be enabled   ${btn_vary_ok}
     click button    ${btn_vary_ok}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${tbl_costcenter_quota}
     Wait Until Keyword Succeeds    35 sec    5 sec    element text should be    ${tbl_costcenter_quota_name}    ${quota_name}
@@ -687,7 +689,7 @@ Set Quota Assignment for Department
     run keyword     Select Department or Personal
     run keyword     Open Quota Assignment Page
     set selenium timeout    20
-    wait until page contains element    ${btn_assignquota}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${btn_assignquota}
     click button    ${btn_assignquota}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${txt_costcentername}
     click element   ${txt_costcentername}
@@ -754,7 +756,7 @@ Download MAC Default Packages for SAAS
     ${download_list}    set variable    macPackageType
 
     click element   ${download_list}
-    wait until page contains element    ${LINK}
+    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${LINK}
     click element   ${LINK}
 
 #Click Download button
@@ -763,7 +765,7 @@ Download MAC Default Packages for SAAS
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}
-    wait until page contains element    ${logout}
+    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${logout}
     click element   ${logout}
 
 #PageObjects Python script to confirm correct file has been downloaded
@@ -802,7 +804,7 @@ Download MAC Default Packages for Hybrid
     ${download_list}    set variable    macPackageType
 
     click element   ${download_list}
-    wait until page contains element    ${LINK}
+    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${LINK}
     click element   ${LINK}
 
 #Click Download button
@@ -811,7 +813,7 @@ Download MAC Default Packages for Hybrid
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}
-    wait until page contains element    ${logout}
+    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${logout}
     click element   ${logout}
 
 #PageObjects Python script to confirm correct file has been downloaded
@@ -850,7 +852,7 @@ Download Default Packages for Windows for SAAS
     ${download_list}    set variable    windowsPackageType
 
     click element   ${download_list}
-    wait until page contains element    ${LINK}
+    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${LINK}
     click element   ${LINK}
 
 #Click Download button
@@ -860,7 +862,7 @@ Download Default Packages for Windows for SAAS
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}
-    wait until page contains element    ${logout}
+    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element  ${logout}
     click element   ${logout}
 
 #PageObjects Python script to confirm correct file has been downloaded
@@ -899,7 +901,7 @@ Download Default Packages for Windows for Hybrid
     ${download_list}    set variable    windowsPackageType
 
     click element   ${download_list}
-    wait until page contains element    ${LINK}
+    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${LINK}
     click element   ${LINK}
 
 #Click Download button
@@ -909,7 +911,7 @@ Download Default Packages for Windows for Hybrid
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}
-    wait until page contains element    ${logout}
+    wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${logout}
     click element   ${logout}
 
 #PageObjects Python script to confirm correct file has been downloaded
