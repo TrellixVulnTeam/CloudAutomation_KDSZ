@@ -358,7 +358,6 @@ Create Quota different for month
     click element   ${txt_total_value}
     press keys      ${txt_total_value}      \DELETE
     input text      ${txt_total_value}      50
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible   ${quota_color}
     click element   ${quota_color}
 
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain element   ${txt_color_value}
@@ -395,7 +394,6 @@ Create Custom Quota
     click element   ${txt_total_value}
     press keys      ${txt_total_value}      \DELETE
     input text      ${txt_total_value}      10
-    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible   ${quota_color}
     click element   ${quota_color}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain element   ${txt_color_value}
     click element   ${txt_color_value}
