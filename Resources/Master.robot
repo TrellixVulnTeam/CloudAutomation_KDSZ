@@ -631,6 +631,11 @@ Open Quota Assignment Page
     click element       ${lbl_quotaassignment}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   Quota Assignments
 
+Set cost center
+    click element   ${chk_costcenter}
+    click button      ${btn_save}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain       General
+
 Set Quota Assignment for Cost Center
     set selenium timeout    25
 
