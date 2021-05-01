@@ -605,6 +605,7 @@ Create Monthly Quota
     click button    ${btn_create_def}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible   createDefinitionButton
 
+
 Select Cost Center or Personal First
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain     General
