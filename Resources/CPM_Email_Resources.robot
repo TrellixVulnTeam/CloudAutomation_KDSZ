@@ -30,14 +30,13 @@ Open Browser To Login Page
     Switch Window       Print Management | Lexmark Cloud Services
     Title should be     Print Management | Lexmark Cloud Services
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${name_printqueue}
-    page should contain     No data available
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should not be visible     ${email_job1_status}
 
 Email submission with
     [Arguments]        ${IP}   ${PIN}  ${FILENAME}
     set selenium timeout    20
     ${email_status}=   send_email_singleattachment      ${FILENAME}
     log     ${email_status}
-    reload page
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job1_status}        Ready
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job2_status}        Ready
 
