@@ -74,6 +74,7 @@ Logout from portal for admin
     Exit
 Delegate addition and deletion using ${EMAIL USER}
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
+    Validate CPM page opens
     Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
 Web Upload and print verification for Text file
     Web upload with     ${IP}   ${PIN}  ${WEBFILENAME}
