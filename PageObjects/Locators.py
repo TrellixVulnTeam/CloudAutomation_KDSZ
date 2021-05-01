@@ -248,8 +248,8 @@ lbl_quotausername="id:quotaStatusGrid-row-0-identityEmail"
 
 quota_interval="id:definitionLimitsSelectControl-listbox-item-2"
 quota_interval_1="id:definitionLimitsSelectControl-listbox-item-1"
-month="id:individualQuotaValuesId-row-checkbox-3"
-quota_total="id:definitionTotalSelectControl-listbox-item-4"
+month="id:individualQuotaValuesId-row-checkbox-4"
+quota_total="id:definitionTotalSelectControl-listbox-item-3"
 quota_color="id:customRadioOption_radio_input"
 
 
