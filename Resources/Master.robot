@@ -4,9 +4,9 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-#${URL}                          https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
-#${DOWNLOADBROWSER}              Edge
+${URL}                          https://dev.eu.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${DOWNLOADBROWSER}              Edge
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${next}                         Next
@@ -679,7 +679,7 @@ Set Quota Assignment for Cost Center
     click element   ${txt_costcentername}
     input text      ${txt_costcentername_input}       ${costcenter}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${lst_costcentername}
-    Press Keys    ${lst_costcentername}    ENTER
+    click element   ${header_costcenter}
     click element   ${txt_quota_def}
     press keys      ${lst_quota_def}    ARROW_DOWN
     Press Keys    ${lst_quota_def}    ENTER

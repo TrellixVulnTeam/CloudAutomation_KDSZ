@@ -13,12 +13,12 @@ Library     OperatingSystem
 
 
 *** Variables ***
-#${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-#${URL}                          https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
-#${USER}                         sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
-#${NORMALBROWSER}                Edge
+${LOGIN URL}                    https://dev.eu.cloud.onelxk.co/
+${URL}                          https://dev.eu.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                         sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
+${NORMALBROWSER}                Edge
 ${username_blank}
 ${username_invalid}             sravantesh@lexmark.com
 ${password_blank}
@@ -72,18 +72,18 @@ Verification of dashboard title
     Dashboard Should Open
 Check CPM page opens
     Validate CPM page opens
-Logout from portal for admin
-    Exit
-Delegate addition and deletion using ${EMAIL USER}
-    Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
-    Validate CPM page opens
-    Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
-Web Upload and print verification for Text file
-    Web upload with     ${IP}   ${PIN}  ${FILEPATH}    ${WEBFILENAME}
-Mobile Job Submission and print verification
-    Mobile submission   ${IP}   ${PIN}
-Email submission and print verification with different file using ${FILENAME}
-    Email submission with  ${IP}   ${PIN}   ${FILENAME}
+#Logout from portal for admin
+#    Exit
+#Delegate addition and deletion using ${EMAIL USER}
+#    Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
+#    Validate CPM page opens
+#    Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
+#Web Upload and print verification for Text file
+#    Web upload with     ${IP}   ${PIN}  ${FILEPATH}    ${WEBFILENAME}
+#Mobile Job Submission and print verification
+#    Mobile submission   ${IP}   ${PIN}
+#Email submission and print verification with different file using ${FILENAME}
+#    Email submission with  ${IP}   ${PIN}   ${FILENAME}
 Verify quota creation Total 50 and Color 50 for current month
     Open Organisational Policy Page
     Open Quota Definition Page
