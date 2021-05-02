@@ -4,9 +4,9 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-${URL}                          https://dev.eu.cloud.onelxk.co/
-${BROWSER}                      Chrome
-${DOWNLOADBROWSER}              Edge
+#${URL}                          https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${DOWNLOADBROWSER}              Edge
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${next}                         Next
@@ -22,16 +22,16 @@ ${FILENAME2}                    Test Mail.html
 ${FILENAME}                     Attachment.txt
 ${SAASNAME}                         Cloud Print Management
 ${SAASLINK}                         macPackageType-listbox-item-default
-${SAAS_PACKAGE NAME}                 LPMCCloudUS_1.1.1417_GenDriver_1.0.66_Mac_Color_1.1.197.pkg
+${SAAS_PACKAGE NAME}                 LPMCCloudEU_1.1.1417_GenDriver_1.0.66_Mac_Color_1.1.182.pkg
 ${HYBRIDNAME}                         Hybrid Print Management
 ${HYBRIDLINK}                         macPackageType-listbox-item-serverless
-${HYBRID_PACKAGE NAME}                 LPMCServerlessUS_1.1.1417_GenDriver_1.0.66_Mac_Color_1.1.188.pkg
+${HYBRID_PACKAGE NAME}                 LPMCServerlessEU_1.1.1417_GenDriver_1.0.66_Mac_Color_1.1.183.pkg
 ${WINSAASNAME}                      Cloud Print Management
 ${WINSAASLINK}                      windowsPackageType-listbox-item-default
-${WINSAAS_PACKAGE NAME}             LPMC_CloudUS_2.3.960.0_UPD_2.15_Win_PCLXL_1.0.289.exe
+${WINSAAS_PACKAGE NAME}             LPMC_CloudEU_2.3.960.0_UPD_2.15_Win_PCLXL_1.0.289.exe
 ${WINHYBRIDNAME}                      Hybrid Print Management
 ${WINHYBRIDLINK}                      windowsPackageType-listbox-item-serverless
-${WINHYBRID_PACKAGE NAME}             LPMC_ServerlessUS_2.3.960.0_UPD_2.15_Win_PCLXL_1.0.289.exe
+${WINHYBRID_PACKAGE NAME}             LPMC_ServerlessEU_2.3.960.0_UPD_2.15_Win_PCLXL_1.0.289.exe
 ${notification}                         True
 ${DELETE CLIENT FOLDER}                 True
 ${unused_client_value_delete_span}      10
@@ -455,9 +455,9 @@ Check Status Table for normal
     Press Keys    ${txt_search}    ENTER
 
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${header_quota_preview}
-    element text should be      ${header_quota_preview}     Quota remaining: ${total} total quota (${color} for color printing)
+    Wait Until Keyword Succeeds     25 sec  5 sec   element text should be      ${header_quota_preview}     Quota remaining: ${total} total quota (${color} for color printing)
     click element   ${queue_dropdown}
-    Wait Until Keyword Succeeds     25 sec  5 sec   Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_search}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_search}
     click element   ${txt_search}
     input text      ${txt_search}     ${USER}
     sleep_call_2
@@ -780,7 +780,7 @@ Download MAC Default Packages for SAAS
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download MAC Default Packages
-    [Arguments]        ${MACSAASNAME}     ${MACSAASLINK}      ${MACSAAS_PACKAGE NAME}
+    [Arguments]        ${MACSAASNAME}     ${MACSAASLINK}      ${MACSAAS_PACKAGE NAME}   ${URL}
 
     ${download_btn}     set variable    mac_download_btn
     ${download_list}    set variable    macPackageType
@@ -799,9 +799,9 @@ Download MAC Default Packages for SAAS
     click element   ${logout}
 
 #PageObjects Python script to confirm correct file has been downloaded
-    ${download_flag}=   download_wait   ${MACSAAS_PACKAGE NAME}
+    ${download_flag}=   download_wait_mac_saas   ${URL}
     log     ${download_flag}
-    delete_file     ${MACSAAS_PACKAGE NAME}
+    #${delete_flag}=   delete_file_package   ${MACSAAS_PACKAGE NAME}     ${URL}
     close browser
 
 Download MAC Default Packages for Hybrid
@@ -828,7 +828,7 @@ Download MAC Default Packages for Hybrid
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download MAC Default Packages
-    [Arguments]        ${MACHYBRIDNAME}     ${MACHYBRIDLINK}      ${MACHYBRID_PACKAGE NAME}
+    [Arguments]        ${MACHYBRIDNAME}     ${MACHYBRIDLINK}      ${MACHYBRID_PACKAGE NAME}     ${URL}
 
     ${download_btn}     set variable    mac_download_btn
     ${download_list}    set variable    macPackageType
@@ -847,9 +847,9 @@ Download MAC Default Packages for Hybrid
     click element   ${logout}
 
 #PageObjects Python script to confirm correct file has been downloaded
-    ${download_flag}=   download_wait   ${MACHYBRID_PACKAGE NAME}
+    ${download_flag}=   download_wait_mac_serverless   ${URL}
     log     ${download_flag}
-    delete_file     ${MACHYBRID_PACKAGE NAME}
+    #delete_file_package     ${MACHYBRID_PACKAGE NAME}     ${URL}
     close browser
 
 Download Default Packages for Windows for SAAS
@@ -876,7 +876,7 @@ Download Default Packages for Windows for SAAS
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download Default Packages for Windows
-    [Arguments]        ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}
+    [Arguments]        ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}       ${URL}
 
     ${download_btn}     set variable    win_download_btn
     ${download_list}    set variable    windowsPackageType
@@ -896,9 +896,9 @@ Download Default Packages for Windows for SAAS
     click element   ${logout}
 
 #PageObjects Python script to confirm correct file has been downloaded
-    ${download_flag}=   download_wait   ${WINSAAS_PACKAGE NAME}
+    ${download_flag}=   download_wait_win_saas     ${URL}
     log     ${download_flag}
-    delete_file     ${WINSAAS_PACKAGE NAME}
+    #delete_file_package     ${WINSAAS_PACKAGE NAME}     ${URL}
     close browser
 
 Download Default Packages for Windows for Hybrid
@@ -925,7 +925,7 @@ Download Default Packages for Windows for Hybrid
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download Default Packages for Windows
-    [Arguments]        ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}
+    [Arguments]        ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}     ${URL}
 
     ${download_btn}     set variable    win_download_btn
     ${download_list}    set variable    windowsPackageType
@@ -945,9 +945,9 @@ Download Default Packages for Windows for Hybrid
     click element   ${logout}
 
 #PageObjects Python script to confirm correct file has been downloaded
-    ${download_flag}=   download_wait   ${WINHYBRID_PACKAGE NAME}
+    ${download_flag}=   download_wait_win_hybrid    ${URL}
     log     ${download_flag}
-    delete_file     ${WINHYBRID_PACKAGE NAME}
+    #delete_file_package     ${WINHYBRID_PACKAGE NAME}     ${URL}
     close browser
 
 Create Custom Package for Windows
