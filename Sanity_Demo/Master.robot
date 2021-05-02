@@ -66,62 +66,62 @@ ${NONADMIN}                             cpmautomation@test.onelxk.co
 Force Tags      Environment-${URL}
 
 *** Test Cases ***
-#Verification of correct cloud login
-#    Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
-#Verification of dashboard title
-#    Dashboard Should Open
-#Check CPM page opens
-#    Validate CPM page opens
-#Logout from portal for admin
-#    Exit
-#Delegate addition and deletion using ${EMAIL USER}
-#    Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
-#    Validate CPM page opens
-#    Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
-#Web Upload and print verification for Text file
-#    Web upload with     ${IP}   ${PIN}  ${FILEPATH}    ${WEBFILENAME}
-#Mobile Job Submission and print verification
-#    Mobile submission   ${IP}   ${PIN}
-#Email submission and print verification with different file using ${FILENAME}
-#    Email submission with  ${IP}   ${PIN}   ${FILENAME}
-#Verify quota creation Total 50 and Color 50 for current month
-#    Open Organisational Policy Page
-#    Open Quota Definition Page
-#    Create Quota different for month
-#Verify Cost Center Assignment
-#    Open Organisational Policy Page
-#    Select Cost Center or Personal First
-#    Open Quota Assignment Page
-#    Set Quota Assignment for Cost Center
-#    Delete Quota without user
-#Verify quota creation Total 50 and Color 50 for all month
-#    Open Quota Definition Page
-#    Create Monthly Quota
-#Verify Department Quota Assignment
-#    Open Organisational Policy Page
-#    Select Department or Personal
-#    Open Quota Assignment Page
-#    Set Quota Assignment for Department
-#    Delete Quota without user
-#Reset Quota to Cost Center
-#    Open Organisational Policy Page
-#    Select Cost Center or Personal
-#Verify User Quota Status by personal assignment
-#    Open Organisational Policy Page
-#    Select Personal
-#    Open Quota Definition Page
-#    Create Custom Quota
-#    Set Quota Assignment for Personal
-#Verify user status for normal reduction
-#    Check Status Table for normal       ${USER}     ${PASSWORD}     ${URL}
-#Verify user status for warning reduction
-#    Check Status Table for warning      ${USER}     ${PASSWORD}     ${URL}
-#Verify user status for exceeded reduction
-#    Check Status Table for exceeded     ${USER}     ${PASSWORD}     ${URL}
-#    Delete Quota    ${USER}     ${PASSWORD}     ${URL}    ${NONADMIN}
-#    Reset to Cost center
-#Log out from portal
-#    Logoutadmin
+Verification of correct cloud login
+    Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
+Verification of dashboard title
+    Dashboard Should Open
+Check CPM page opens
+    Validate CPM page opens
+Logout from portal for admin
+    Exit
+Delegate addition and deletion using ${EMAIL USER}
+    Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
+    Validate CPM page opens
+    Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
+Web Upload and print verification for Text file
+    Web upload with     ${IP}   ${PIN}  ${FILEPATH}    ${WEBFILENAME}
+Mobile Job Submission and print verification
+    Mobile submission   ${IP}   ${PIN}
+Email submission and print verification with different file using ${FILENAME}
+    Email submission with  ${IP}   ${PIN}   ${FILENAME}
+Verify quota creation Total 50 and Color 50 for current month
+    Open Organisational Policy Page
+    Open Quota Definition Page
+    Create Quota different for month
+Verify Cost Center Assignment
+    Open Organisational Policy Page
+    Select Cost Center or Personal First
+    Open Quota Assignment Page
+    Set Quota Assignment for Cost Center
+    Delete Quota without user
+Verify quota creation Total 50 and Color 50 for all month
+    Open Quota Definition Page
+    Create Monthly Quota
+Verify Department Quota Assignment
+    Open Organisational Policy Page
+    Select Department or Personal
+    Open Quota Assignment Page
+    Set Quota Assignment for Department
+    Delete Quota without user
+Reset Quota to Cost Center
+    Open Organisational Policy Page
+    Select Cost Center or Personal
+Verify User Quota Status by personal assignment
+    Open Organisational Policy Page
+    Select Personal
+    Open Quota Definition Page
+    Create Custom Quota
+    Set Quota Assignment for Personal
+Verify user status for normal reduction
+    Check Status Table for normal       ${USER}     ${PASSWORD}     ${URL}
+Verify user status for warning reduction
+    Check Status Table for warning      ${USER}     ${PASSWORD}     ${URL}
+Verify user status for exceeded reduction
+    Check Status Table for exceeded     ${USER}     ${PASSWORD}     ${URL}
+    Delete Quota    ${USER}     ${PASSWORD}     ${URL}    ${NONADMIN}
+    Reset to Cost center
+Log out from portal
+    Logoutadmin
 Verfication download of MAC Default SAAS package
     Download MAC Default Packages for SAAS    ${MACSAASNAME}     ${MACSAASLINK}     ${MACSAAS_PACKAGE NAME}    ${URL}
 Verfication download of MAC Default Hybrid package
@@ -130,6 +130,6 @@ Verification download of Windows Default Packages for SAAS
     Download Default Packages for Windows for SAAS    ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}   ${URL}
 Verification download of Windows Default Packages for Hybrid
     Download Default Packages for Windows for Hybrid    ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}   ${URL}
-#Verification of custom package for Windows
-#    Create Custom Package for Windows   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
+Verification of custom package for Windows
+    Create Custom Package for Windows   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
 #####################################################################
