@@ -4,10 +4,10 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${username_nonadmin}            automateuser@test.onelxk.co
 ${email_text}                   In addition to uploading a file, you may also e-mail it to lcp.dev2@lexmark.com to place it in your print queue.
 ${costcenter}                   stl
@@ -295,7 +295,7 @@ Set Quota Assignment for Personal
     #click element   ${tab_personal}
     #sleep_call
     set selenium timeout    25
-    wait until page contains element    ${btn_assignquota}
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain button    ${btn_assignquota}
     click button    ${btn_assignquota}
     sleep_call_2
     click element   ${txt_email}
