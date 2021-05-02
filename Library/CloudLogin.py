@@ -34,6 +34,12 @@ def sleep_call_2():
 def sleep_call_1():
     time.sleep(1)
 
+def download_wait(filename):
+    path_to_downloads = "C://Users//neogis//Downloads"
+    while not os.path.exists(path_to_downloads + "//" + filename):
+        pass
+    if os.path.isfile(path_to_downloads + '//' + filename):
+        return filename + " File Downloaded"
 
 def download_wait_mac_saas(url):
     filename_us = "LPMCCloudUS_1.1.1417_GenDriver_1.0.66_Mac_Color_1.1.197.pkg"
