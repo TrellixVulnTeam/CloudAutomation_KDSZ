@@ -4,8 +4,8 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
+#${URL}                    https://dev.eu.cloud.onelxk.co/
+#${BROWSER}                      Chrome
 #${USER}                     sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
 ${username_nonadmin}            cpmautomation@test.onelxk.co
@@ -142,7 +142,7 @@ Check Status Table for normal
     Press Keys    ${txt_search}    ENTER
 
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${header_quota_preview}
-    element text should be      ${header_quota_preview}     Quota remaining: ${total} total quota (${color} for color printing)
+    Wait Until Keyword Succeeds     25 sec  5 sec   element text should be     ${header_quota_preview}     Quota remaining: ${total} total quota (${color} for color printing)
     click element   ${queue_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_search}
     click element   ${txt_search}

@@ -513,7 +513,7 @@ Set Quota Assignment for Cost Center
     click element       ${lbl_quotaassignment}
     #Assign Quota by Cost Center
     set selenium timeout    20
-    wait until page contains element   ${btn_assignquota}
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain element    ${btn_assignquota}
     click button    ${btn_assignquota}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${txt_costcentername}
     click element   ${txt_costcentername}
@@ -523,7 +523,7 @@ Set Quota Assignment for Cost Center
     click element   ${txt_quota_def}
     press keys      ${lst_quota_def}    ARROW_DOWN
     Press Keys    ${lst_quota_def}    ENTER
-    wait until element is enabled   ${btn_vary_ok}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be enabled    ${btn_vary_ok}
     click button    ${btn_vary_ok}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${tbl_costcenter_quota}
     Wait Until Keyword Succeeds    35 sec    5 sec    element text should be    ${tbl_costcenter_quota_name}    ${quota_name}
