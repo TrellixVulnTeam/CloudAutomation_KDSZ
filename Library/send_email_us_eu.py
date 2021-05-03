@@ -5,11 +5,11 @@ import time
 
 def check_email_header_text(url):
     if "us" in url:
-        check_email_header_text="In addition to uploading a file, you may also e-mail it to lcp.dev2@lexmark.com to place it in your print queue."
-        return check_email_header_text
+        header_text="In addition to uploading a file, you may also e-mail it to lcp.dev2@lexmark.com to place it in your print queue."
+        return header_text
     else:
-        check_email_header_text = "In addition to uploading a file, you may also e-mail it to lcp.dev1@lexmark.com to place it in your print queue."
-        return check_email_header_text
+        header_text = "In addition to uploading a file, you may also e-mail it to lcp.dev1@lexmark.com to place it in your print queue."
+        return header_text
 
 def send_email_singleattachment_all(env,file):
     global to_address, from_address

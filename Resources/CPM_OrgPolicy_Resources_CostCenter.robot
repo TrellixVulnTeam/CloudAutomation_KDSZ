@@ -188,7 +188,7 @@ Check email header is present
     click element       ${name_printqueue}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${header_email}
     page should contain element     ${header_email}
-    ${email_text}=  check_email_header_text ${URL}
+    ${email_text}=   check_email_header_text    ${URL}
     page should contain           ${email_text}
 
 Reset Email feature
