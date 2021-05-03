@@ -94,7 +94,7 @@ Create Custom Quota
     click button    ${btn_create_def}
 
 #Create user
-    ${user}=   create_user_all  ${USER}     ${PASSWORD}     ${URL}      ${NONADMIN}
+    ${user}=   create_user_all  ${USER}     ${PASSWORD}     ${URL}      ${username_nonadmin}
     log     ${user}
 
 Set Quota Assignment for Personal
