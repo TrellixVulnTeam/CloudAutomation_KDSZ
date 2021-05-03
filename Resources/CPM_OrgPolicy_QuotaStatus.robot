@@ -94,7 +94,7 @@ Create Custom Quota
     click button    ${btn_create_def}
 
 #Create user
-    ${user}=   create_user
+    ${user}=   create_user_all  ${USER}     ${PASSWORD}     ${URL}      ${NONADMIN}
     log     ${user}
 
 Set Quota Assignment for Personal
@@ -124,7 +124,7 @@ Set Quota Assignment for Personal
 
 Check Status Table for normal
     set selenium timeout    25
-    ${total}    ${color}=   quota_green
+    ${total}    ${color}=   quota_green_all    ${USER}     ${PASSWORD}     ${URL}
     Open Quota Status Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   User Quota Status
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotausername}
@@ -153,7 +153,7 @@ Check Status Table for normal
 
 Check Status Table for warning
     set selenium timeout    25
-    ${total}    ${color}=   quota_yellow
+    ${total}    ${color}=   quota_yellow_all    ${USER}     ${PASSWORD}     ${URL}
     Open Quota Status Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   User Quota Status
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotausername}
@@ -181,7 +181,7 @@ Check Status Table for warning
 
 Check Status Table for exceeded
     set selenium timeout    25
-    ${total}    ${color}=   quota_red
+    ${total}    ${color}=   quota_red_all    ${USER}     ${PASSWORD}     ${URL}
     Open Quota Status Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   User Quota Status
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotausername}

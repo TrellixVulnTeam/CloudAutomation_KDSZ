@@ -35,7 +35,7 @@ Open Browser To Login Page
 Email submission with
     [Arguments]        ${IP}   ${PIN}  ${FILENAME}
     set selenium timeout    20
-    ${email_status}=   send_email_singleattachment_all      ${FILENAME}
+    ${email_status}=   send_email_singleattachment_all      ${URL}      ${FILENAME}
     log     ${email_status}
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job1_status}        Ready
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job2_status}        Ready
@@ -80,7 +80,7 @@ Email submission with
 Check blank subject email job
     set selenium timeout    20
     [Arguments]        ${IP}   ${PIN}
-    ${email_status}=   blank_subject
+    ${email_status}=   blank_subject      ${URL}
     log     ${email_status}
     reload page
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job1_status}        Ready
@@ -106,7 +106,7 @@ Check blank subject email job
 
 Check blank body email job
     set selenium timeout    20
-    ${email_status}=   blank_body
+    ${email_status}=   blank_body      ${URL}
     log     ${email_status}
     reload page
     Wait Until Keyword Succeeds    40 sec    5 sec    page should contain        No data available

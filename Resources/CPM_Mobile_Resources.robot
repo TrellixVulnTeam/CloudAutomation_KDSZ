@@ -34,7 +34,7 @@ Open Browser To Login Page
 Mobile submission
     [Arguments]        ${IP}   ${PIN}
     set selenium timeout    20
-    ${mobile_status}=   mobile_submit_all
+    ${mobile_status}=   mobile_submit_all   ${USER}     ${PASSWORD}     ${URL}
     log     ${mobile_status}
     reload page
     Wait Until Keyword Succeeds    40 sec    5 sec    element text should be      ${email_job1_status}        Ready
