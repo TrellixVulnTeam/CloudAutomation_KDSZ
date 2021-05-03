@@ -9,7 +9,7 @@ Variables    ../PageObjects/Locators.py
 #${USER}                     sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
 ${username_nonadmin}            automateuser@test.onelxk.co
-${email_text}                   In addition to uploading a file, you may also e-mail it to lcp.dev2@lexmark.com to place it in your print queue.
+#${email_text}                   In addition to uploading a file, you may also e-mail it to lcp.dev2@lexmark.com to place it in your print queue.
 ${costcenter}                   stl
 ${noquotaassignment}            No custom quota definitions for assigning.
 ${totaldisable}                 0
@@ -188,6 +188,7 @@ Check email header is present
     click element       ${name_printqueue}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${header_email}
     page should contain element     ${header_email}
+    ${email_text}=  check_email_header_text ${URL}
     page should contain           ${email_text}
 
 Reset Email feature
