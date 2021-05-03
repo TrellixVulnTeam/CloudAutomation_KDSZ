@@ -9,10 +9,10 @@ Library     ../Library/send_email_us_eu.py
 Library     ../Library/XMLParser.py
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${tab1name}                     Print Queue
@@ -100,8 +100,10 @@ Increment Copy validation by 1 to 2
 Validation of Confirmation dialog by Discarding
     set selenium timeout    20
     Click Element   id:link-navPrintQueue
-    wait until element is visible       id:confirmation-modal_modalHeader
-    wait until page contains element    id:confirmation-modal_modalHeader
+
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     id:confirmation-modal_modalHeader
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain element   id:confirmation-modal_modalHeader
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     id:confirmation-modal_okButton
     click button        confirmation-modal_okButton
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      printQueueDefaultPrintSettingsButton
     click button    printQueueDefaultPrintSettingsButton
