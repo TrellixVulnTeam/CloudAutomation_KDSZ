@@ -1,13 +1,13 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     ../ChromeExtension/ChromeExtension.py
-Library     ../ChromeExtension/CloudLogin.py
+Library     ../Library/ChromeExtension.py
+Library     ../Library/CloudLogin.py
 Resource     ../Resources/CPM_ClientDownload_Resources.robot
 Library     DataDriver  ../TestData/custom_download_win.xlsx
 
-Library     ../ClientDownload/XMLParser.py
+Library     ../Library/XMLParser.py
 Test Template   Custom Package tests
-Library     ../Email/Printerautomation.py
+Library     ../Library/Printerautomation.py
 
 *** Test Cases ***
 Custom package download for Scenario ${SNO}

@@ -1,9 +1,9 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     ../ChromeExtension/ChromeExtension.py
-Library     ../ChromeExtension/CloudLogin.py
+Library     ../Library/ChromeExtension.py
+Library     ../Library/CloudLogin.py
 Resource     ../Resources/CPM_ClientDownload_Resources.robot
-Library     ../Email/Printerautomation.py
+Library     ../Library/Printerautomation.py
 
 *** Test Cases ***
 Verify custom package download

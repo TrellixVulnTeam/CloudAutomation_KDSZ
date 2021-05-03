@@ -1,9 +1,9 @@
 *** Settings ***
 Library  SeleniumLibrary
 Library     DataDriver  ../TestData/Win_Default_Package.xlsx
-Library     ../ChromeExtension/CloudLogin.py
-Library     ../Email/Printerautomation.py
-Library     ../ClientDownload/XMLParser.py
+Library     ../Library/CloudLogin.py
+Library     ../Library/Printerautomation.py
+Library     ../Library/XMLParser.py
 Variables    ../PageObjects/Locators.py
 #Suite Setup     Open Browser To Login Page
 Test Template   Download Default Packages for Windows
