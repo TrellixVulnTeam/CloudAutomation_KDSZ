@@ -10,10 +10,10 @@ Variables    ../PageObjects/Locators.py
 #Suite Teardown     Log out
 
 *** Variables ***
-${URL}                    https://dev.eu.cloud.onelxk.co/
-${DOWNLOADBROWSER}                      Edge
-${USER}                     sravantesh.neogi@lexmark.com
-${PASSWORD}                     Password@1234
+#${URL}                    https://dev.eu.cloud.onelxk.co/
+#${DOWNLOADBROWSER}                      Edge
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 
 *** Test Cases ***
 Download Default Packages for MAC SAAS
