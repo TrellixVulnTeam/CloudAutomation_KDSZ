@@ -170,7 +170,7 @@ Create Custom Package
 
     ${validation_flag}=  check_values     ${notification}   ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
 
-    close all browsers
+    close browser
 
 
 Set Unused Client Folder values

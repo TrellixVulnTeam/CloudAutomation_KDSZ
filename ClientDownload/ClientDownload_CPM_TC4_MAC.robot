@@ -100,7 +100,7 @@ Download Default MAC Hybrid Package
     ${download_flag}=   download_wait_mac_serverless   ${URL}
     log     ${download_flag}
     #delete_file     ${PACKAGE NAME}
-    #close browser
+    close browser
 
 
 ###################################################################################################################

@@ -441,3 +441,156 @@
 <status status="PASS" starttime="20210504 14:53:58.021" endtime="20210504 14:53:58.119"/>
 </kw>
 <kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25 sec</arg>
+<arg>5 sec</arg>
+<arg>element should be visible</arg>
+<arg>createCustomPackageWindows</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>createCustomPackageWindows</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 14:53:58.453" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210504 14:53:58.150" endtime="20210504 14:53:58.453"/>
+</kw>
+<msg timestamp="20210504 14:53:58.454" level="FAIL">Element with locator 'createCustomPackageWindows' not found.</msg>
+<status status="FAIL" starttime="20210504 14:53:58.121" endtime="20210504 14:53:58.454"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>createCustomPackageWindows</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210504 14:54:03.482" level="INFO">Element 'createCustomPackageWindows' is displayed.</msg>
+<status status="PASS" starttime="20210504 14:54:03.455" endtime="20210504 14:54:03.482"/>
+</kw>
+<status status="PASS" starttime="20210504 14:53:58.120" endtime="20210504 14:54:03.482"/>
+</kw>
+<status status="PASS" starttime="20210504 14:53:41.620" endtime="20210504 14:54:03.482"/>
+</kw>
+<kw name="Download Default Windows Hybrid Package">
+<kw name="Set Variable" library="BuiltIn">
+<var>${download_btn}</var>
+<arg>win_download_btn</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210504 14:54:03.484" level="INFO">${download_btn} = win_download_btn</msg>
+<status status="PASS" starttime="20210504 14:54:03.484" endtime="20210504 14:54:03.484"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${download_list}</var>
+<arg>windowsPackageType</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210504 14:54:03.484" level="INFO">${download_list} = windowsPackageType</msg>
+<status status="PASS" starttime="20210504 14:54:03.484" endtime="20210504 14:54:03.484"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${download_list}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210504 14:54:03.485" level="INFO">Clicking element 'windowsPackageType'.</msg>
+<status status="PASS" starttime="20210504 14:54:03.484" endtime="20210504 14:54:03.567"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25 sec</arg>
+<arg>5 sec</arg>
+<arg>page should contain element</arg>
+<arg>windowsPackageType-listbox-item-serverless</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>windowsPackageType-listbox-item-serverless</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210504 14:54:03.596" level="INFO">Current page contains element 'windowsPackageType-listbox-item-serverless'.</msg>
+<status status="PASS" starttime="20210504 14:54:03.567" endtime="20210504 14:54:03.596"/>
+</kw>
+<status status="PASS" starttime="20210504 14:54:03.567" endtime="20210504 14:54:03.596"/>
+</kw>
+<kw name="Sleep Call 1" library="CloudLogin">
+<status status="PASS" starttime="20210504 14:54:03.597" endtime="20210504 14:54:04.598"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>windowsPackageType-listbox-item-serverless</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210504 14:54:04.598" level="INFO">Clicking element 'windowsPackageType-listbox-item-serverless'.</msg>
+<status status="PASS" starttime="20210504 14:54:04.598" endtime="20210504 14:54:04.673"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25 sec</arg>
+<arg>5 sec</arg>
+<arg>element should be visible</arg>
+<arg>${download_btn}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${download_btn}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210504 14:54:04.701" level="INFO">Element 'win_download_btn' is displayed.</msg>
+<status status="PASS" starttime="20210504 14:54:04.674" endtime="20210504 14:54:04.701"/>
+</kw>
+<status status="PASS" starttime="20210504 14:54:04.673" endtime="20210504 14:54:04.701"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${download_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210504 14:54:04.702" level="INFO">Clicking button 'win_download_btn'.</msg>
+<status status="PASS" starttime="20210504 14:54:04.701" endtime="20210504 14:54:04.862"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${usermenu}</var>
+<arg>userMenu</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210504 14:54:04.863" level="INFO">${usermenu} = userMenu</msg>
+<status status="PASS" starttime="20210504 14:54:04.863" endtime="20210504 14:54:04.863"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${logout}</var>
+<arg>link-logout</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20210504 14:54:04.865" level="INFO">${logout} = link-logout</msg>
+<status status="PASS" starttime="20210504 14:54:04.864" endtime="20210504 14:54:04.865"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${usermenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210504 14:54:04.868" level="INFO">Clicking element 'userMenu'.</msg>
+<status status="PASS" starttime="20210504 14:54:04.866" endtime="20210504 14:54:04.991"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${logout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210504 14:54:04.991" endtime="20210504 14:54:05.018"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210504 14:54:05.019" level="INFO">Clicking element 'link-logout'.</msg>
+<status status="PASS" starttime="20210504 14:54:05.018" endtime="20210504 14:54:05.113"/>
+</kw>
+<kw name="Download Wait Win Hybrid" library="CloudLogin">
+<var>${download_flag}</var>
+<arg>${URL}</arg>
+<msg timestamp="20210504 14:55:46.810" level="INFO">Downloaded</msg>
+<msg timestamp="20210504 14:55:46.810" level="INFO">${download_flag} = LPMC_ServerlessEU_2.3.960.0_UPD_2.15_Win_PCLXL_1.0.289.exe File Downloaded and then deleted</msg>
+<status status="PASS" starttime="20210504 14:54:05.113" endtime="20210504 14:55:46.810"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${download_flag}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210504 14:55:46.812" level="INFO">LPMC_ServerlessEU_2.3.960.0_UPD_2.15_Win_PCLXL_1.0.289.exe File Downloaded and then deleted</msg>
+<status status="PASS" starttime="20210504 14:55:46.811" endtime="20210504 14:55:46.812"/>
+</kw>
+<status status="PASS" starttime="20210504 14:54:03.483" endtime="20210504 14:55:46.812"/>
+</kw>
+<status status="PASS" starttime="20210504 14:53:41.618" endtime="20210504 14:55:46.813"/>
+</test>
+<status status="PASS" starttime="20210504 14:50:52.924" endtime="20210504 14:55:46.816"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="ClientDownload CPM TC3 Windows">ClientDownload CPM TC3 Windows</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
