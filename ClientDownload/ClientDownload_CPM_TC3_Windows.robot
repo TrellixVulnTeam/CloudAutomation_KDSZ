@@ -1,27 +1,31 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     DataDriver  ../TestData/Win_Default_Package.xlsx
+#Library     DataDriver  ../TestData/Win_Default_Package.xlsx
 Library     ../Library/CloudLogin.py
 Library     ../Library/Printerautomation.py
 Library     ../Library/XMLParser.py
 Variables    ../PageObjects/Locators.py
 #Suite Setup     Open Browser To Login Page
-Test Template   Download Default Packages for Windows
-Suite Teardown     Log out
+#Test Template   Download Default Packages for Windows
+#Suite Teardown     Log out
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Edge
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.eu.cloud.onelxk.co/
+${DOWNLOADBROWSER}                      Edge
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 
 *** Test Cases ***
-Verify Default Client Download packge for Windows ${NAME}
+Download Default Packages for Windows SAAS
+    Open Browser To Login Page
+    Download Default Windows SAAS Package
+Download Default Packages for Windows Hybrid
+    Open Browser To Login Page
+    Download Default Windows Hybrid Package
 
 
 *** Keywords ***
-#Open Browser To Login Page
-Download Default Packages for Windows
+Open Browser To Login Page
     Open Browser    ${URL}    ${DOWNLOADBROWSER}
     Maximize Browser Window
     ${username_text}    set variable    id:user_email
@@ -44,15 +48,40 @@ Download Default Packages for Windows
     Click Element   ${tab_clientdownload}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
-#Download Default Packages for Windows
-    [Arguments]        ${NAME}     ${LINK}      ${PACKAGE NAME}
 
+
+Download Default Windows SAAS Package
     ${download_btn}     set variable    win_download_btn
     ${download_list}    set variable    windowsPackageType
-
     click element   ${download_list}
-    wait until page contains element    ${LINK}
-    click element   ${LINK}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    windowsPackageType-listbox-item-default
+    sleep_call_1
+    click element   windowsPackageType-listbox-item-default
+
+
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${download_btn}
+    click button    ${download_btn}
+
+    ${usermenu}     set variable    userMenu
+    ${logout}       set variable    link-logout
+    click element   ${usermenu}
+    wait until page contains element    ${logout}
+    click element   ${logout}
+
+#PageObjects Python script to confirm correct file has been downloaded
+    ${download_flag}=   download_wait_win_saas   ${URL}
+    log     ${download_flag}
+    #delete_file     ${PACKAGE NAME}
+    close browser
+
+Download Default Windows Hybrid Package
+    ${download_btn}     set variable    win_download_btn
+    ${download_list}    set variable    windowsPackageType
+    click element   ${download_list}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    windowsPackageType-listbox-item-serverless
+    sleep_call_1
+    click element   windowsPackageType-listbox-item-serverless
+
 
 #Click Download button
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${download_btn}
@@ -65,12 +94,11 @@ Download Default Packages for Windows
     click element   ${logout}
 
 #PageObjects Python script to confirm correct file has been downloaded
-    ${download_flag}=   download_wait   ${PACKAGE NAME}
+    ${download_flag}=   download_wait_win_hybrid   ${URL}
     log     ${download_flag}
-    delete_file     ${PACKAGE NAME}
+    #delete_file     ${PACKAGE NAME}
+    #close browser
 
-Log out
-    close all browsers
 
 ###################################################################################################################
 

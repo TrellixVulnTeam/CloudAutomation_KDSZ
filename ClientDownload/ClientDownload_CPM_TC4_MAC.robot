@@ -1,28 +1,31 @@
 *** Settings ***
 Library  SeleniumLibrary
-Library     DataDriver  ../TestData/MAC_Default_Package.xlsx
+#Library     DataDriver  ../TestData/Win_Default_Package.xlsx
 Library     ../Library/CloudLogin.py
 Library     ../Library/Printerautomation.py
 Library     ../Library/XMLParser.py
 Variables    ../PageObjects/Locators.py
 #Suite Setup     Open Browser To Login Page
-Test Template   Download MAC Default Packages
-Suite Teardown     Log out
+#Test Template   Download Default Packages for Windows
+#Suite Teardown     Log out
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co
-#${BROWSER}                      Edge
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
-${CPM_URL}                      https://qa.us.iss.lexmark.com/cpm
+${URL}                    https://dev.eu.cloud.onelxk.co/
+${DOWNLOADBROWSER}                      Edge
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 
 *** Test Cases ***
-Verify Default Client Download packge for MAC ${NAME}
+Download Default Packages for MAC SAAS
+    Open Browser To Login Page
+    Download Default MAC SAAS Package
+Download Default Packages for MAC Hybrid
+    Open Browser To Login Page
+    Download Default MAC Hybrid Package
 
 
 *** Keywords ***
-#Open Browser To Login Page
-Download MAC Default Packages
+Open Browser To Login Page
     Open Browser    ${URL}    ${DOWNLOADBROWSER}
     Maximize Browser Window
     ${username_text}    set variable    id:user_email
@@ -45,19 +48,21 @@ Download MAC Default Packages
     Click Element   ${tab_clientdownload}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
-#Download MAC Default Packages
-    [Arguments]        ${NAME}     ${LINK}      ${PACKAGE NAME}
 
+
+Download Default MAC SAAS Package
     ${download_btn}     set variable    mac_download_btn
     ${download_list}    set variable    macPackageType
-
     click element   ${download_list}
-    wait until page contains element    ${LINK}
-    click element   ${LINK}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    macPackageType-listbox-item-default
 
-#Click Download button
+    sleep_call_1
+    click element   macPackageType-listbox-item-default
+
+
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${download_btn}
     click button    ${download_btn}
+
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     click element   ${usermenu}
@@ -65,12 +70,38 @@ Download MAC Default Packages
     click element   ${logout}
 
 #PageObjects Python script to confirm correct file has been downloaded
-    ${download_flag}=   download_wait   ${PACKAGE NAME}
+    ${download_flag}=   download_wait_mac_saas   ${URL}
     log     ${download_flag}
-    delete_file     ${PACKAGE NAME}
+    #delete_file     ${PACKAGE NAME}
+    close browser
 
-Log out
-    close all browsers
+Download Default MAC Hybrid Package
+    ${download_btn}     set variable    mac_download_btn
+    ${download_list}    set variable    macPackageType
+    click element   ${download_list}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    macPackageType-listbox-item-serverless
+
+    sleep_call_1
+    click element   macPackageType-listbox-item-serverless
+
+
+
+#Click Download button
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${download_btn}
+    click button    ${download_btn}
+
+    ${usermenu}     set variable    userMenu
+    ${logout}       set variable    link-logout
+    click element   ${usermenu}
+    wait until page contains element    ${logout}
+    click element   ${logout}
+
+#PageObjects Python script to confirm correct file has been downloaded
+    ${download_flag}=   download_wait_mac_serverless   ${URL}
+    log     ${download_flag}
+    #delete_file     ${PACKAGE NAME}
+    #close browser
+
 
 ###################################################################################################################
 
