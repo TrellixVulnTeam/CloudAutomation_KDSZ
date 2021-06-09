@@ -144,7 +144,7 @@ Check Adding Valid and Duplicate Delegates
 Open Browser To Login Page
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
-    Open Browser    ${URL}    ${BROWSER}
+    Open Browser    ${lnk_cpm}    ${BROWSER}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain   E-mail
     Maximize Browser Window
     Wait Until Keyword Succeeds    35 sec    5 sec    title should be     ${PORTAL TITLE}
@@ -438,7 +438,7 @@ Set Quota Assignment for Personal
 
 
 Check Status Table for normal
-    [Arguments]     ${USER}     ${PASSWORD}     ${URL}
+    #[Arguments]     ${USER}     ${PASSWORD}     ${URL}
     set selenium timeout    25
     ${total}    ${color}=   quota_green_all    ${USER}     ${PASSWORD}     ${URL}
     Open Quota Status Page
@@ -467,7 +467,7 @@ Check Status Table for normal
     Press Keys    ${txt_search}    ENTER
 
 Check Status Table for warning
-    [Arguments]     ${USER}     ${PASSWORD}     ${URL}
+    #[Arguments]     ${USER}     ${PASSWORD}     ${URL}
     set selenium timeout    25
     ${total}    ${color}=   quota_yellow_all    ${USER}     ${PASSWORD}     ${URL}
     Open Quota Status Page
@@ -496,7 +496,7 @@ Check Status Table for warning
     Press Keys    ${txt_search}    ENTER
 
 Check Status Table for exceeded
-    [Arguments]     ${USER}     ${PASSWORD}     ${URL}
+    #[Arguments]     ${USER}     ${PASSWORD}     ${URL}
     set selenium timeout    25
     ${total}    ${color}=   quota_red_all    ${USER}     ${PASSWORD}     ${URL}
     Open Quota Status Page
@@ -525,9 +525,9 @@ Check Status Table for exceeded
     Press Keys    ${txt_search}    ENTER
 
 Delete Quota
-    [Arguments]     ${USER}     ${PASSWORD}     ${URL}    ${NONADMIN}
-    ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
-    ${deleted}=   delete_user_all     ${USER}     ${PASSWORD}     ${URL}    ${NONADMIN}
+    #[Arguments]     ${USER}     ${PASSWORD}     ${URL}    ${NONADMIN}
+    #${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
+    #${deleted}=   delete_user_all     ${USER}     ${PASSWORD}     ${URL}    ${NONADMIN}
     run keyword     Open Quota Definition Page
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_quota_select_all}
