@@ -782,7 +782,7 @@ Download MAC Default Packages for SAAS
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download MAC Default Packages
-    [Arguments]        ${MACSAASNAME}     ${MACSAASLINK}      ${MACSAAS_PACKAGE NAME}   ${URL}
+    [Arguments]   ${URL}     ${MACSAASNAME}     ${MACSAASLINK}      ${MACSAAS_PACKAGE NAME}
 
     ${download_btn}     set variable    mac_download_btn
     ${download_list}    set variable    macPackageType
@@ -830,7 +830,7 @@ Download MAC Default Packages for Hybrid
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download MAC Default Packages
-    [Arguments]        ${MACHYBRIDNAME}     ${MACHYBRIDLINK}      ${MACHYBRID_PACKAGE NAME}     ${URL}
+    [Arguments]   ${URL}     ${MACHYBRIDNAME}     ${MACHYBRIDLINK}      ${MACHYBRID_PACKAGE NAME}
 
     ${download_btn}     set variable    mac_download_btn
     ${download_list}    set variable    macPackageType
@@ -878,7 +878,7 @@ Download Default Packages for Windows for SAAS
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download Default Packages for Windows
-    [Arguments]        ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}       ${URL}
+    [Arguments]   ${URL}     ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}
 
     ${download_btn}     set variable    win_download_btn
     ${download_list}    set variable    windowsPackageType
@@ -927,7 +927,7 @@ Download Default Packages for Windows for Hybrid
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download Default Packages for Windows
-    [Arguments]        ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}     ${URL}
+    [Arguments]   ${URL}     ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}
 
     ${download_btn}     set variable    win_download_btn
     ${download_list}    set variable    windowsPackageType
