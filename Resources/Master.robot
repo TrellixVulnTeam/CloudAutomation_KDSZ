@@ -64,7 +64,8 @@ Open CPM portal and Login Verification
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be enabled     ${btn_next}
     element should be enabled   ${btn_next}
     element should be visible   ${btn_next}
-    element attribute value should be   ${btn_next}     value   ${next}
+    #element attribute value should be   ${btn_next}     value   ${next}
+    element should contain      ${btn_next}     Next
     Click Button    ${btn_next}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be enabled    ${txt_password}
     element should be enabled   ${txt_password}
@@ -127,6 +128,7 @@ Check Adding Valid and Duplicate Delegates
     element should be disabled      ${btn_delegate_remove}
     ${dummy_click}      set variable        delegatesBreadcrumb
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${chk_delegate_delete}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should not be visible     ${spin_delegate}
     click element     ${chk_delegate_delete}
     click element   ${dummy_click}
     element should be enabled      ${btn_delegate_remove}
@@ -167,11 +169,11 @@ Open Browser To Login Page
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Cloud Services Home
 
 Web upload with
-    [Arguments]        ${IP}   ${PIN}  ${FILE PATH}     ${FILE NAME}
+    [Arguments]        ${IP}   ${PIN}  ${FILE NAME}
     set selenium timeout    20
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
-    ${file_path}                set variable    ${FILE PATH}
+    ${file_path}                set variable    ${FILEPATH}
     ${file_name_actual}         set variable    ${FILE NAME}
 
 #Verify File upload Button Feature
@@ -651,7 +653,7 @@ Open Quota Assignment Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   Quota Assignments
 
 Set cost center
-    scroll element into view    ${chk_costcenter}
+    #scroll element into view    ${chk_costcenter}
     click element   ${chk_costcenter}
     click button      ${btn_save}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain       General
@@ -757,6 +759,7 @@ Check Dialog Values
     element text should be      ${tbl_cc_quota_name}    ${quota_name}
 
 Download MAC Default Packages for SAAS
+
     Open Browser    ${URL}    ${DOWNLOADBROWSER}
     Maximize Browser Window
     ${username_text}    set variable    id:user_email
@@ -780,7 +783,7 @@ Download MAC Default Packages for SAAS
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download MAC Default Packages
-    [Arguments]        ${MACSAASNAME}     ${MACSAASLINK}      ${MACSAAS_PACKAGE NAME}   ${URL}
+    [Arguments]   ${URL}     ${MACSAASNAME}     ${MACSAASLINK}      ${MACSAAS_PACKAGE NAME}
 
     ${download_btn}     set variable    mac_download_btn
     ${download_list}    set variable    macPackageType
@@ -828,7 +831,7 @@ Download MAC Default Packages for Hybrid
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download MAC Default Packages
-    [Arguments]        ${MACHYBRIDNAME}     ${MACHYBRIDLINK}      ${MACHYBRID_PACKAGE NAME}     ${URL}
+    [Arguments]   ${URL}     ${MACHYBRIDNAME}     ${MACHYBRIDLINK}      ${MACHYBRID_PACKAGE NAME}
 
     ${download_btn}     set variable    mac_download_btn
     ${download_list}    set variable    macPackageType
@@ -876,7 +879,7 @@ Download Default Packages for Windows for SAAS
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download Default Packages for Windows
-    [Arguments]        ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}       ${URL}
+    [Arguments]   ${URL}     ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}
 
     ${download_btn}     set variable    win_download_btn
     ${download_list}    set variable    windowsPackageType
@@ -925,7 +928,7 @@ Download Default Packages for Windows for Hybrid
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download Default Packages for Windows
-    [Arguments]        ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}     ${URL}
+    [Arguments]   ${URL}     ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}
 
     ${download_btn}     set variable    win_download_btn
     ${download_list}    set variable    windowsPackageType
@@ -1394,5 +1397,4 @@ Set Unused Client Folder values
 #    element attribute value should be     ${rad_saas}      aria-checked    true
 #    element attribute value should be     ${rad_hybrid}    aria-checked    false
 #    element attribute value should be    ${rad_exclude}     aria-checked    false
-
 
