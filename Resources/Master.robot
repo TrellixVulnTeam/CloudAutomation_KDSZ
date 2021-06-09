@@ -653,7 +653,7 @@ Open Quota Assignment Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   Quota Assignments
 
 Set cost center
-    scroll element into view    ${chk_costcenter}
+    #scroll element into view    ${chk_costcenter}
     click element   ${chk_costcenter}
     click button      ${btn_save}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain       General
