@@ -43,6 +43,7 @@ lbl_errormessage="xpath://*[@id='error_explanation']/div/label"
 lbl_delegate="id:link-navDelegates"
 txt_delegate="xpath://*[@id='delegatesPageHeaderDropDown_button']/div"
 header_delegate="id:delegatesPageHeaderDropDown_button"
+spin_delegate="id:delegatesDatagridLoadingBusySpinner"
 
 btn_delegate_add="id:delegatesAddButton"
 btn_delegate_remove="id:delegatesRemoveButton"

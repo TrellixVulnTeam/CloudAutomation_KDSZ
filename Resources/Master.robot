@@ -128,6 +128,7 @@ Check Adding Valid and Duplicate Delegates
     element should be disabled      ${btn_delegate_remove}
     ${dummy_click}      set variable        delegatesBreadcrumb
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${chk_delegate_delete}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should not be visible     ${spin_delegate}
     click element     ${chk_delegate_delete}
     click element   ${dummy_click}
     element should be enabled      ${btn_delegate_remove}
