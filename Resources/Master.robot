@@ -65,7 +65,7 @@ Open CPM portal and Login Verification
     element should be enabled   ${btn_next}
     element should be visible   ${btn_next}
     #element attribute value should be   ${btn_next}     value   ${next}
-    element should contain      ${btn_next}     Submit
+    element should contain      ${btn_next}     Next
     Click Button    ${btn_next}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be enabled    ${txt_password}
     element should be enabled   ${txt_password}
