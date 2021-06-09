@@ -169,11 +169,11 @@ Open Browser To Login Page
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Cloud Services Home
 
 Web upload with
-    [Arguments]        ${IP}   ${PIN}  ${FILE PATH}     ${FILE NAME}
+    [Arguments]        ${IP}   ${PIN}  ${FILE NAME}
     set selenium timeout    20
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
-    ${file_path}                set variable    ${FILE PATH}
+    ${file_path}                set variable    ${FILEPATH}
     ${file_name_actual}         set variable    ${FILE NAME}
 
 #Verify File upload Button Feature
