@@ -169,11 +169,11 @@ Open Browser To Login Page
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Cloud Services Home
 
 Web upload with
-    [Arguments]        ${IP}   ${PIN}  ${FILE NAME}
+    [Arguments]        ${IP}   ${PIN}  ${FILE PATH}     ${FILE NAME}
     set selenium timeout    20
     ${default_settings_btn}     set variable    printQueueDefaultPrintSettingsButton
 
-    ${file_path}                set variable    ${FILEPATH}
+    ${file_path}                set variable    ${FILE PATH}
     ${file_name_actual}         set variable    ${FILE NAME}
 
 #Verify File upload Button Feature
@@ -759,7 +759,6 @@ Check Dialog Values
     element text should be      ${tbl_cc_quota_name}    ${quota_name}
 
 Download MAC Default Packages for SAAS
-
     Open Browser    ${URL}    ${DOWNLOADBROWSER}
     Maximize Browser Window
     ${username_text}    set variable    id:user_email
@@ -783,7 +782,7 @@ Download MAC Default Packages for SAAS
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download MAC Default Packages
-    [Arguments]   ${URL}     ${MACSAASNAME}     ${MACSAASLINK}      ${MACSAAS_PACKAGE NAME}
+    [Arguments]   ${URL}       ${MACSAASNAME}     ${MACSAASLINK}      ${MACSAAS_PACKAGE NAME}   ${URL}
 
     ${download_btn}     set variable    mac_download_btn
     ${download_list}    set variable    macPackageType
@@ -831,7 +830,7 @@ Download MAC Default Packages for Hybrid
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download MAC Default Packages
-    [Arguments]   ${URL}     ${MACHYBRIDNAME}     ${MACHYBRIDLINK}      ${MACHYBRID_PACKAGE NAME}
+    [Arguments]    ${URL}      ${MACHYBRIDNAME}     ${MACHYBRIDLINK}      ${MACHYBRID_PACKAGE NAME}     ${URL}
 
     ${download_btn}     set variable    mac_download_btn
     ${download_list}    set variable    macPackageType
@@ -879,7 +878,7 @@ Download Default Packages for Windows for SAAS
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download Default Packages for Windows
-    [Arguments]   ${URL}     ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}
+    [Arguments]    ${URL}      ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}       ${URL}
 
     ${download_btn}     set variable    win_download_btn
     ${download_list}    set variable    windowsPackageType
@@ -928,7 +927,7 @@ Download Default Packages for Windows for Hybrid
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     createCustomPackageWindows
 
 #Download Default Packages for Windows
-    [Arguments]   ${URL}     ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}
+    [Arguments]   ${URL}       ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}     ${URL}
 
     ${download_btn}     set variable    win_download_btn
     ${download_list}    set variable    windowsPackageType
@@ -1397,5 +1396,4 @@ Set Unused Client Folder values
 #    element attribute value should be     ${rad_saas}      aria-checked    true
 #    element attribute value should be     ${rad_hybrid}    aria-checked    false
 #    element attribute value should be    ${rad_exclude}     aria-checked    false
-
 

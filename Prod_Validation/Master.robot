@@ -16,7 +16,7 @@ Resource     ../Resources/Master.robot
 #${BROWSER}                      headlessChrome
 #${USER}                         sravantesh.neogi@lexmark.com
 #${PASSWORD}                     Password@1234
-#${NORMALBROWSER}                Edge
+#${NORMALBROWSER}                Chrome
 ${username_blank}
 ${username_invalid}             sravantesh@lexmark.com
 ${password_blank}
@@ -121,7 +121,7 @@ Verfication download of MAC Default Hybrid package
 Verification download of Windows Default Packages for SAAS
     Download Default Packages for Windows for SAAS   ${URL}  ${WINSAASNAME}     ${WINSAASLINK}      ${WINSAAS_PACKAGE NAME}
 Verification download of Windows Default Packages for Hybrid
-    Download Default Packages for Windows for Hybrid   ${URL}   ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}
+    Download Default Packages for Windows for Hybrid   ${URL} ${WINHYBRIDNAME}     ${WINHYBRIDLINK}      ${WINHYBRID_PACKAGE NAME}
 Verification of custom package for Windows
     Create Custom Package for Windows   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
 ####################################################################
