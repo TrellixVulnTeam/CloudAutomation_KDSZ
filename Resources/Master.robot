@@ -9,7 +9,7 @@ Variables    ../PageObjects/Locators.py
 #${DOWNLOADBROWSER}              Edge
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
-${next}                         Next
+${next}                         Submit
 ${login}                        Log In
 ${PORTAL TITLE}                 Lexmark Log In
 ${invalid_password_text}        Invalid password.
