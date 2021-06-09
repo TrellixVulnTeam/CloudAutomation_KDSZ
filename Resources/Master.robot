@@ -142,6 +142,7 @@ Check Adding Valid and Duplicate Delegates
 
 
 Open Browser To Login Page
+    [Arguments]    ${username}      ${password}
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     set selenium timeout    20
     Open Browser    ${lnk_cpm}    ${BROWSER}

@@ -69,7 +69,7 @@ Verification of dashboard title
 Logout from portal for admin
     Exit
 Delegate addition using ${EMAIL USER}
-    Open Browser To Login Page
+    Open Browser To Login Page   ${USER}     ${PASSWORD}
     Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
 Web Upload verification for Text file
     Web upload with     ${IP}   ${PIN}  ${WEBFILENAME}
