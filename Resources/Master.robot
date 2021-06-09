@@ -552,7 +552,7 @@ Reset to Cost center
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
     run keyword     Open Organisational Policy Page
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_save}
-    scroll element into view    ${radio_costcenter}
+    #scroll element into view    ${radio_costcenter}
     click element       ${radio_costcenter}
     click button        ${btn_save}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain     General
