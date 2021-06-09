@@ -74,8 +74,8 @@ def download_wait_mac_serverless(url):
 
 
 def download_wait_win_saas(url):
-    filename_us = "LPMC_CloudUS_2.3.960.0_UPD_2.15_Win_PCLXL_1.0.289.exe"
-    filename_eu = "LPMC_CloudEU_2.3.960.0_UPD_2.15_Win_PCLXL_1.0.289.exe"
+    filename_us = "LPMC_CloudUS_2.3.981.0_UPD_2.15_Win_PCLXL_1.0.308.exe"
+    filename_eu = "LPMC_CloudEU_2.3.981.0_UPD_2.15_Win_PCLXL_1.0.308.exe"
     if "us" in url:
         filename = filename_us
     else:
@@ -90,8 +90,8 @@ def download_wait_win_saas(url):
 
 
 def download_wait_win_hybrid(url):
-    filename_us = "LPMC_ServerlessUS_2.3.960.0_UPD_2.15_Win_PCLXL_1.0.289.exe"
-    filename_eu = "LPMC_ServerlessEU_2.3.960.0_UPD_2.15_Win_PCLXL_1.0.289.exe"
+    filename_us = "LPMC_CloudUS_2.3.981.0_UPD_2.15_Win_PCLXL_1.0.308.exe"
+    filename_eu = "LPMC_CloudEU_2.3.981.0_UPD_2.15_Win_PCLXL_1.0.308.exe"
     if "us" in url:
         filename = filename_us
     else:
