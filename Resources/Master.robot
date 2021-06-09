@@ -759,6 +759,7 @@ Check Dialog Values
     element text should be      ${tbl_cc_quota_name}    ${quota_name}
 
 Download MAC Default Packages for SAAS
+
     Open Browser    ${URL}    ${DOWNLOADBROWSER}
     Maximize Browser Window
     ${username_text}    set variable    id:user_email
