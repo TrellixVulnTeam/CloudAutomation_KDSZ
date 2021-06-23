@@ -198,7 +198,7 @@ btn_quota_select_all="id:quotaDefinitionGrid-select-all"
 btn_delete_quota="id:deleteDefinitionButton"
 btn_delete_def="id:confirmation-modal_okButton"
 
-undefined="id:undefined"
+undefined="id:footer-3"
 
 lst_new_quota_namme="id:quotaDefinitionGrid-row-0-definition.name"
 lst_new_quota_interval="id:quotaDefinitionGrid-row-0-definition.type"
