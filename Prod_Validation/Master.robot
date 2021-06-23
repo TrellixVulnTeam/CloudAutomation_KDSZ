@@ -115,14 +115,14 @@ ${WEBFILENAME}                          Attachment.txt
 #    Reset to Cost center
 #Log out from portal
 #    Logoutadmin
-Verfication download of MAC Default SAAS package
-    Download MAC Default Packages for SAAS    ${URL}    ${MACSAASNAME}     ${MACSAASLINK}
-Verfication download of MAC Default Hybrid package
-    Download MAC Default Packages for Hybrid    ${URL}  ${MACHYBRIDNAME}     ${MACHYBRIDLINK}
-Verification download of Windows Default Packages for SAAS
-    Download Default Packages for Windows for SAAS    ${URL}    ${WINSAASNAME}     ${WINSAASLINK}
-Verification download of Windows Default Packages for Hybrid
-    Download Default Packages for Windows for Hybrid   ${URL}    ${WINHYBRIDNAME}     ${WINHYBRIDLINK}
+#Verfication download of MAC Default SAAS package
+#    Download MAC Default Packages for SAAS    ${URL}    ${MACSAASNAME}     ${MACSAASLINK}
+#Verfication download of MAC Default Hybrid package
+#    Download MAC Default Packages for Hybrid    ${URL}  ${MACHYBRIDNAME}     ${MACHYBRIDLINK}
+#Verification download of Windows Default Packages for SAAS
+#    Download Default Packages for Windows for SAAS    ${URL}    ${WINSAASNAME}     ${WINSAASLINK}
+#Verification download of Windows Default Packages for Hybrid
+#    Download Default Packages for Windows for Hybrid   ${URL}    ${WINHYBRIDNAME}     ${WINHYBRIDLINK}
 Verification of custom package for Windows
     Create Custom Package for Windows   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
 ####################################################################
