@@ -314,7 +314,7 @@ Open Organisational Policy Page
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${org_policy}
     click element       ${org_policy}
-    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${page_header}
+    #Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${page_header}
 
 Select Personal
     set selenium timeout    20
