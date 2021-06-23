@@ -80,7 +80,8 @@ email_job2_status="xpath://*[@id='documents-row-1-documentStatus']/lpm-status-re
 spinner_printqueue="id:printQueueBusySpinner"
 
 tab_clientdownload="id:link-navClientDownload"
-lbl_clientdownload="xpath:/html/body/lpm-app/div/lpm-driver-config/cui-pageheader/div[1]/div[1]/h2"
+lbl_clientdownload="xpath:/html/body/lpm-app/div/lpm-driver-config/cui-pageheader/div[1]/div[1]/div[2]/h2[1]"
+
 title_clientdownload="xpath://*[@id='clientDownloadPageHeader']/div[1]/h2"
 
 lnk_custompackage="id:createCustomPackageWindows"
