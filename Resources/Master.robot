@@ -713,7 +713,7 @@ Set Quota Assignment for Cost Center
 
 Select Department or Personal
     set selenium timeout    20
-    scroll element into view    ${radio_dept}
+    #scroll element into view    ${radio_dept}
     click element     ${radio_dept}
     sleep_call_1
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain button   ${btn_confirmchange}
