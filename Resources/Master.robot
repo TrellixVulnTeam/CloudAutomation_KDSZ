@@ -640,6 +640,7 @@ Select Cost Center or Personal First
 Select Cost Center or Personal
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain     General
+    sleep_call_2
     scroll element into view    ${chk_costcenter}
     click element     ${chk_costcenter}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_confirmchange}
@@ -657,6 +658,7 @@ Open Quota Assignment Page
 
 Set cost center
     #scroll element into view    ${chk_costcenter}
+    #sleep_call_2
     click element   ${chk_costcenter}
     click button      ${btn_save}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain       General
@@ -714,6 +716,7 @@ Set Quota Assignment for Cost Center
 Select Department or Personal
     set selenium timeout    20
     #scroll element into view    ${radio_dept}
+    sleep_call_2
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain     General
     click element     ${radio_dept}
     sleep_call_1
