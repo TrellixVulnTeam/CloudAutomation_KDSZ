@@ -311,6 +311,7 @@ Open Browser To Login Page using admin
 Open Organisational Policy Page
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible    ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${org_policy}
     click element       ${org_policy}
@@ -328,6 +329,7 @@ Select Personal
 Open Quota Definition Page
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${admin_dropdown}
+
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
