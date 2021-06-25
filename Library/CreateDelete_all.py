@@ -189,14 +189,25 @@ def quota_green_all(username,password,env):
     color_remaining_current=list[2]
     print("Total original : " + total_remaining_current)
     print("Color original : " + color_remaining_current)
-
+    print(org_id[0])
     user_total_impression=1
     user_color_impression=1
 
     #Release the mobile job
-    payload = "{\n   \"type\":  \"printRelease\",\n   \"identityId\":\"" + str(user_id[0])+"\",\n   \"totalImpressions\":\"" + str(user_total_impression)+"\",\n   \"colorImpressions\":\"" + str(user_color_impression)+"\",\n   \"physicalPageCount\": 5,\n   \"duplex\": \"simplex\",\n   \"color\": true,\n   \"paperTypeId\": 5,\n   \"paperSizeId\": 5,\n   \"copyCount\": 5,\n   \"printedState\": \"\",\n   \"documentId\": \"" + str(document_id) + "\",\n   \"nUp\": 5,\n   \"staple\": \"front\",\n   \"holePunch\": \"off\",\n   \"fold\": \"trifold\",\n   \"esfAppName\": \"customESF\",\n   \"printerJobId\": \"12345\",\n   \"qaice\": {\n        \"serialNo\": \"DEV123456\",\n        \"ipAddress\": \"127.0.0.1\",\n        \"modelName\": \"test1\",\n        \"hostName\": \"host1\",\n        \"domainName\": \"name1\",\n        \"macAddress\": \"B8AC6F9B1157\",\n        \"capabilities\": {\n            \"duplex\": true,\n            \"color\": true,\n            \"mfp\": true,\n            \"finisher\": false\n        }\n    },\n    \"client\": {\n        \"name\": \"LexDAS\",\n        \"version\": \"2.0\"\n    }\n}"
-    url_job = base_url + "/" + org_id[0] + "/jobs/"
-    response = requests.request("POST", url_job, headers=headers, data=payload)
+    #payload = "{\n   \"type\":  \"printRelease\",\n   \"identityId\":\"" + str(user_id[0])+"\",\n   \"totalImpressions\":\"" + str(user_total_impression)+"\",\n   \"colorImpressions\":\"" + str(user_color_impression)+"\",\n   \"physicalPageCount\": 5,\n   \"duplex\": \"simplex\",\n   \"color\": true,\n   \"paperTypeId\": 5,\n   \"paperSizeId\": 5,\n   \"copyCount\": 5,\n   \"printedState\": \"\",\n   \"documentId\": \"" + str(document_id) + "\",\n   \"nUp\": 5,\n   \"staple\": \"front\",\n   \"holePunch\": \"off\",\n   \"fold\": \"trifold\",\n   \"esfAppName\": \"customESF\",\n   \"printerJobId\": \"12345\",\n   \"qaice\": {\n        \"serialNo\": \"DEV123456\",\n        \"ipAddress\": \"127.0.0.1\",\n        \"modelName\": \"test1\",\n        \"hostName\": \"host1\",\n        \"domainName\": \"name1\",\n        \"macAddress\": \"B8AC6F9B1157\",\n        \"capabilities\": {\n            \"duplex\": true,\n            \"color\": true,\n            \"mfp\": true,\n            \"finisher\": false\n        }\n    },\n    \"client\": {\n        \"name\": \"LexDAS\",\n        \"version\": \"2.0\"\n    }\n}"
+    #url="https://apis."+setup+"."+locale+".iss.lexmark.com"
+    #print(url)
+    conn = http.client.HTTPSConnection("apis."+setup+"."+locale+".iss.lexmark.com")
+    payload = "{\n   \"type\":  \"printRelease\",\n   \"identityId\":\"" + str(user_id[0])+"\",\n   \"totalImpressions\":\"" + str(user_total_impression)+"\",\n   \"colorImpressions\":\"" + str(user_color_impression)+"\",\n   \"physicalPageCount\": 5,\n   \"duplex\": \"simplex\",\n   \"color\": true,\n   \"paperTypeId\": 5,\n   \"paperSizeId\": 5,\n   \"copyCount\": 5,\n   \"printedState\": \"\",\n   \"documentId\": \"" + str(document_id) + "\",\n   \"nUp\": 5,\n   \"staple\": \"front\",\n   \"holePunch\": \"off\",\n   \"fold\": \"trifold\",\n   \"esfAppName\": \"customESF\",\n   \"printerJobId\": \"12345\",\n   \"device\": {\n        \"serialNo\": \"DEV123456\",\n        \"ipAddress\": \"157.184.114.123\",\n        \"modelName\": \"test1\",\n        \"hostName\": \"host1\",\n        \"domainName\": \"name1\",\n        \"macAddress\": \"B8AC6F9B1157\",\n        \"capabilities\": {\n            \"duplex\": true,\n            \"color\": true,\n            \"mfp\": true,\n            \"finisher\": false\n        }\n    },\n    \"client\": {\n        \"name\": \"LexDAS\",\n        \"version\": \"2.0\"\n    }\n}"
+    conn.request("POST", "/cpm/print-management-service/v3.0/organizations/"+str(org_id[0])+"/jobs",
+                  payload, headers)
+    res = conn.getresponse()
+    data = res.read()
+    print(data.decode("utf-8"))
+
+
+    #url_job = base_url + "/" + org_id[0] + "/jobs/"
+    #response = requests.request("POST", url_job, headers=headers, data=payload)
 
     #get new quota status and compare with CPM Portal UI
     url = base_url + "/" + org_id[0] + "/users/" + user_id[0] + "/quota/"
@@ -350,9 +361,13 @@ def quota_yellow_all(username,password,env):
     user_color_impression=8
 
     #Release the mobile job
-    payload = "{\n   \"type\":  \"printRelease\",\n   \"identityId\":\"" + str(user_id[0])+"\",\n   \"totalImpressions\":\"" + str(user_total_impression)+"\",\n   \"colorImpressions\":\"" + str(user_color_impression)+"\",\n   \"physicalPageCount\": 5,\n   \"duplex\": \"simplex\",\n   \"color\": true,\n   \"paperTypeId\": 5,\n   \"paperSizeId\": 5,\n   \"copyCount\": 5,\n   \"printedState\": \"\",\n   \"documentId\": \"" + str(document_id) + "\",\n   \"nUp\": 5,\n   \"staple\": \"front\",\n   \"holePunch\": \"off\",\n   \"fold\": \"trifold\",\n   \"esfAppName\": \"customESF\",\n   \"printerJobId\": \"12345\",\n   \"qaice\": {\n        \"serialNo\": \"DEV123456\",\n        \"ipAddress\": \"127.0.0.1\",\n        \"modelName\": \"test1\",\n        \"hostName\": \"host1\",\n        \"domainName\": \"name1\",\n        \"macAddress\": \"B8AC6F9B1157\",\n        \"capabilities\": {\n            \"duplex\": true,\n            \"color\": true,\n            \"mfp\": true,\n            \"finisher\": false\n        }\n    },\n    \"client\": {\n        \"name\": \"LexDAS\",\n        \"version\": \"2.0\"\n    }\n}"
-    url_job = base_url + "/" + org_id[0] + "/jobs/"
-    response = requests.request("POST", url_job, headers=headers, data=payload)
+    conn = http.client.HTTPSConnection("apis."+setup+"."+locale+".iss.lexmark.com")
+    payload = "{\n   \"type\":  \"printRelease\",\n   \"identityId\":\"" + str(user_id[0])+"\",\n   \"totalImpressions\":\"" + str(user_total_impression)+"\",\n   \"colorImpressions\":\"" + str(user_color_impression)+"\",\n   \"physicalPageCount\": 5,\n   \"duplex\": \"simplex\",\n   \"color\": true,\n   \"paperTypeId\": 5,\n   \"paperSizeId\": 5,\n   \"copyCount\": 5,\n   \"printedState\": \"\",\n   \"documentId\": \"" + str(document_id) + "\",\n   \"nUp\": 5,\n   \"staple\": \"front\",\n   \"holePunch\": \"off\",\n   \"fold\": \"trifold\",\n   \"esfAppName\": \"customESF\",\n   \"printerJobId\": \"12345\",\n   \"device\": {\n        \"serialNo\": \"DEV123456\",\n        \"ipAddress\": \"157.184.114.123\",\n        \"modelName\": \"test1\",\n        \"hostName\": \"host1\",\n        \"domainName\": \"name1\",\n        \"macAddress\": \"B8AC6F9B1157\",\n        \"capabilities\": {\n            \"duplex\": true,\n            \"color\": true,\n            \"mfp\": true,\n            \"finisher\": false\n        }\n    },\n    \"client\": {\n        \"name\": \"LexDAS\",\n        \"version\": \"2.0\"\n    }\n}"
+    conn.request("POST", "/cpm/print-management-service/v3.0/organizations/"+str(org_id[0])+"/jobs",
+                  payload, headers)
+    res = conn.getresponse()
+    data = res.read()
+    print(data.decode("utf-8"))
 
     #get new quota status and compare with CPM Portal UI
     url = base_url + "/" + org_id[0] + "/users/" + user_id[0] + "/quota/"
@@ -506,9 +521,13 @@ def quota_red_all(username,password,env):
     user_color_impression=color_remaining_current
 
     #Release the mobile job
-    payload = "{\n   \"type\":  \"printRelease\",\n   \"identityId\":\"" + str(user_id[0])+"\",\n   \"totalImpressions\":\"" + str(user_total_impression)+"\",\n   \"colorImpressions\":\"" + str(user_color_impression)+"\",\n   \"physicalPageCount\": 5,\n   \"duplex\": \"simplex\",\n   \"color\": true,\n   \"paperTypeId\": 5,\n   \"paperSizeId\": 5,\n   \"copyCount\": 5,\n   \"printedState\": \"\",\n   \"documentId\": \"" + str(document_id) + "\",\n   \"nUp\": 5,\n   \"staple\": \"front\",\n   \"holePunch\": \"off\",\n   \"fold\": \"trifold\",\n   \"esfAppName\": \"customESF\",\n   \"printerJobId\": \"12345\",\n   \"qaice\": {\n        \"serialNo\": \"DEV123456\",\n        \"ipAddress\": \"127.0.0.1\",\n        \"modelName\": \"test1\",\n        \"hostName\": \"host1\",\n        \"domainName\": \"name1\",\n        \"macAddress\": \"B8AC6F9B1157\",\n        \"capabilities\": {\n            \"duplex\": true,\n            \"color\": true,\n            \"mfp\": true,\n            \"finisher\": false\n        }\n    },\n    \"client\": {\n        \"name\": \"LexDAS\",\n        \"version\": \"2.0\"\n    }\n}"
-    url_job = base_url + "/" + org_id[0] + "/jobs/"
-    response = requests.request("POST", url_job, headers=headers, data=payload)
+    conn = http.client.HTTPSConnection("apis."+setup+"."+locale+".iss.lexmark.com")
+    payload = "{\n   \"type\":  \"printRelease\",\n   \"identityId\":\"" + str(user_id[0])+"\",\n   \"totalImpressions\":\"" + str(user_total_impression)+"\",\n   \"colorImpressions\":\"" + str(user_color_impression)+"\",\n   \"physicalPageCount\": 5,\n   \"duplex\": \"simplex\",\n   \"color\": true,\n   \"paperTypeId\": 5,\n   \"paperSizeId\": 5,\n   \"copyCount\": 5,\n   \"printedState\": \"\",\n   \"documentId\": \"" + str(document_id) + "\",\n   \"nUp\": 5,\n   \"staple\": \"front\",\n   \"holePunch\": \"off\",\n   \"fold\": \"trifold\",\n   \"esfAppName\": \"customESF\",\n   \"printerJobId\": \"12345\",\n   \"device\": {\n        \"serialNo\": \"DEV123456\",\n        \"ipAddress\": \"157.184.114.123\",\n        \"modelName\": \"test1\",\n        \"hostName\": \"host1\",\n        \"domainName\": \"name1\",\n        \"macAddress\": \"B8AC6F9B1157\",\n        \"capabilities\": {\n            \"duplex\": true,\n            \"color\": true,\n            \"mfp\": true,\n            \"finisher\": false\n        }\n    },\n    \"client\": {\n        \"name\": \"LexDAS\",\n        \"version\": \"2.0\"\n    }\n}"
+    conn.request("POST", "/cpm/print-management-service/v3.0/organizations/"+str(org_id[0])+"/jobs",
+                  payload, headers)
+    res = conn.getresponse()
+    data = res.read()
+    print(data.decode("utf-8"))
 
     #get new quota status and compare with CPM Portal UI
     url = base_url + "/" + org_id[0] + "/users/" + user_id[0] + "/quota/"
@@ -571,3 +590,10 @@ def delete_user_all(username,password,env,nonadmin):
     request=requests.request("DELETE", org_url, headers=headers, data=payload)
     print(request.status_code)
 
+# #create_user_all("sravantesh.neogi@lexmark.com","Password@1234","https://qa.us.iss.lexmark.com","cpmautomation@test.onelxk.co")
+#
+# quota_green_all("sravantesh.neogi@lexmark.com","Password@1234","https://qa.us.iss.lexmark.com")
+#
+# quota_yellow_all("sravantesh.neogi@lexmark.com","Password@1234","https://qa.us.iss.lexmark.com")
+#
+# quota_red_all("sravantesh.neogi@lexmark.com","Password@1234","https://qa.us.iss.lexmark.com")
