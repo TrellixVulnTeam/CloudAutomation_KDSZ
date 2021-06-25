@@ -5,20 +5,20 @@ import time
 
 def check_email_header_text(url):
     if "us" in url:
-        header_text="In addition to uploading a file, you may also e-mail it to lcp.dev2@lexmark.com to place it in your print queue."
+        header_text="In addition to uploading a file, you may also e-mail it to lcp.qa1@lexmark.com to place it in your print queue."
         return header_text
     else:
-        header_text = "In addition to uploading a file, you may also e-mail it to lcp.dev1@lexmark.com to place it in your print queue."
+        header_text = "In addition to uploading a file, you may also e-mail it to lcp.banana@lexmark.com to place it in your print queue."
         return header_text
 
 def send_email_singleattachment_all(env,file):
     global to_address, from_address
-    if 'us' in env and 'dev' in env:
-        to_address="lcp.dev2@lexmark.com"
-        from_address="no-reply@cloud.onelxk.co"
-    elif 'eu' in env and 'dev' in env:
-        to_address="lcp.dev1@lexmark.com"
-        from_address = "no-reply@cloud.onelxk.co"
+    if 'us' in env and 'qa' in env:
+        to_address="lcp.qa1@lexmark.com"
+        from_address="no-reply@iss.lexmark.com"
+    elif 'eu' in env and 'qa' in env:
+        to_address="lcp.banana@lexmark.com"
+        from_address = "no-reply@iss.lexmark.com"
     # elif 'us' in env and 'qa' in env:
     #     to_address="lcp.qa1@lexmark.com"
     #     from_address="no-reply@qa.iss.lexmark.com"
@@ -121,12 +121,12 @@ def blank_subject(env):
 
 def blank_body(env):
     global to_address, from_address
-    if 'us' in env and 'dev' in env:
-        to_address="lcp.dev2@lexmark.com"
-        from_address="no-reply@cloud.onelxk.co"
-    elif 'eu' in env and 'dev' in env:
-        to_address="lcp.dev1@lexmark.com"
-        from_address = "no-reply@cloud.onelxk.co"
+    if 'us' in env and 'qa' in env:
+        to_address="lcp.qa1@lexmark.com"
+        from_address="no-reply@iss.lexmark.com"
+    elif 'eu' in env and 'qa' in env:
+        to_address="lcp.banana@lexmark.com"
+        from_address = "no-reply@iss.lexmark.com"
     outlook = client.Dispatch('Outlook.Application')
     message = outlook.CreateItem(0)
     message.Display()
