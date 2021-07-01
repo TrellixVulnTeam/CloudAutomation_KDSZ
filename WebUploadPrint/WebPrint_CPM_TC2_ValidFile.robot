@@ -120,7 +120,7 @@ Change Default Settings
     ${progress_value}   set variable    //*[@id="_Content"]/div
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${progress_value}
     #Wait Until keyword     ${progress_value}    100%   timeout=30
-    Wait Until Keyword Succeeds     element should contain      ${progress_value}    100%
+    Wait Until Keyword Succeeds   60 sec    5 sec     element should contain      ${progress_value}    100%
 
     ${progress_value_actual}     Set Variable    xpath://*[@id="_bar"]/progressbar/bar
 
