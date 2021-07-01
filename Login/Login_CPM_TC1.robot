@@ -23,7 +23,7 @@ ${password_invalid}             Password@12345
 #Blank User Name verification
     #Open CPM Portal and Blank user name login verification        ${username_blank}
 #Invalid User Name verification
- #   Open CPM Portal and Invalid user name login verification      ${username_invalid}
+    #Open CPM Portal and Invalid user name login verification      ${username_invalid}
 Blank Password verification
     Open CPM Portal and Blank password verification      ${USER}     ${password_blank}
 Invalid Password verification
