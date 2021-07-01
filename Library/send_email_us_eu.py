@@ -157,4 +157,3 @@ def blank_body(env):
             last_message.Delete()
     return email_status
 
-send_email_singleattachment_all("http://dev.us.cloud.onelxk.co","Attachment.txt")
