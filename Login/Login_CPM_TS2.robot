@@ -13,10 +13,10 @@ Library     ../Library/XMLParser.py
 #Suite Teardown     Verify deletion of jobs
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      headlessChrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${tab1name}                     Print Queue
@@ -78,7 +78,7 @@ Verify Next Button is enabled and verify value
     ${nextbtn}  set variable    btn-email-next
     element should be enabled   ${nextbtn}
     element should be visible   ${nextbtn}
-    element attribute value should be   ${nextbtn}     value   ${next}
+    #element attribute value should be   ${nextbtn}     value   ${next}
 
 Click Next button
     Click Button    btn-email-next

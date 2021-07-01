@@ -13,10 +13,10 @@ Test Template   Validation of Paper type dropdown
 Suite Teardown     Reset , Log Out and Close Browsers
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      headlessChrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${tab1name}                     Print Queue
 ${correct}                      Correct Number of Page Types listed
 

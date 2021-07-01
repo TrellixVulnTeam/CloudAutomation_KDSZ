@@ -9,10 +9,10 @@ Library     ../Library/send_email_us_eu.py
 Library     ../Library/XMLParser.py
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      headlessChrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${tab1name}                     Print Queue
 ${correct}                      Correct Number of Output Bins listed
 

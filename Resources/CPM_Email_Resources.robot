@@ -5,14 +5,14 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${password}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                     sravantesh.neogi@lexmark.com
+${password}                     Password@1234
 ${FILENAME2}                    Test Mail.html
 ${FILENAME3}                    emailBody.html
-#${IP}                           10.195.7.210
-#${PIN}                          1234
+${IP}                           10.195.6.123
+${PIN}                          1234
 *** Keywords ***
 Open Browser To Login Page
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm

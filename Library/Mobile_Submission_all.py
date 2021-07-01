@@ -10,15 +10,15 @@ def mobile_submit_all(username, password, env):
     global identity_id
     # username = "sravantesh.neogi@lexmark.com"
     # password = "Password@1234"
-    if "us" in env and "qa" in env:
+    if "us" in env and "dev" in env:
         locale = "us"
-        setup = "qa"
-    elif "eu" in env and "qa" in env:
+        setup = "dev"
+    elif "eu" in env and "dev" in env:
         locale = "eu"
-        setup = "qa"
+        setup = "dev"
 
     # Get Auth token
-    auth_url = "https://idp." + setup + "." + locale + ".iss.lexmark.com/oauth/token"
+    auth_url = "https://idp." + setup + "." + locale + ".cloud.onelxk.co/oauth/token"
     # print(auth_url)
     payload = "{\r\n  \"grant_type\": \"password\",\r\n  \"username\": \"" + str(
         username) + "\",\r\n  \"password\": \"" + str(password) + "\"\r\n}"
@@ -31,7 +31,7 @@ def mobile_submit_all(username, password, env):
     access_token = access_token[0]
 
     # Get Org ID
-    org_url = "https://idp." + setup + "." + locale + ".iss.lexmark.com/rest/users/email/" + username
+    org_url = "https://idp." + setup + "." + locale + ".cloud.onelxk.co/rest/users/email/" + username
     # print(org_url)
     payload = {}
     headers = {'Authorization': ''}
@@ -45,7 +45,7 @@ def mobile_submit_all(username, password, env):
     # return org_id, user_id, access_token
 
     # def mobile_submit(org_id, user_id, access_token):
-    base_url = "https://apis." + setup + "." + locale + ".iss.lexmark.com/cpm/print-management-service/v3.0/organizations"
+    base_url = "https://apis." + setup + "." + locale + ".cloud.onelxk.co/cpm/print-management-service/v3.0/organizations"
     # print(base_url)
     url = base_url + "/" + org_id[0] + "/users/" + user_id[0] + "/documents/"
 
@@ -84,7 +84,7 @@ def user_quota_status():
     password = "Password@1234"
 
     # Get Auth token
-    auth_url = "https://idp.qa.us.iss.lexmark.com/oauth/token"
+    auth_url = "https://idp.dev.us.cloud.onelxk.co/oauth/token"
     payload = "{\r\n  \"grant_type\": \"password\",\r\n  \"username\": \"" + str(
         username) + "\",\r\n  \"password\": \"" + str(password) + "\"\r\n}"
     headers = {'Content-Type': 'application/json'}
@@ -96,7 +96,7 @@ def user_quota_status():
     access_token = access_token[0]
 
     # Get Org ID
-    org_url = "https://idp.qa.us.iss.lexmark.com/rest/users/email/sravantesh.neogi@lexmark.com"
+    org_url = "https://idp.dev.us.cloud.onelxk.co/rest/users/email/sravantesh.neogi@lexmark.com"
     payload = {}
     headers = {'Authorization': ''}
     auth_token = str("Bearer " + access_token)
@@ -109,11 +109,11 @@ def user_quota_status():
     user_id = jsonpath.jsonpath(json_resonse, 'id')
     identity_id = user_id[0]
 
-    base_url = "https://apis.qa.us.iss.lexmark.com/cpm/print-management-service/v3.0/organizations"
+    base_url = "https://apis.dev.us.cloud.onelxk.co/cpm/print-management-service/v3.0/organizations"
 
     # get current quota status and compare with CPM Portal UI
     url = base_url + "/" + org_id[0] + "/users/" + user_id[0] + "/quota/"
-    conn = http.client.HTTPSConnection("apis.qa.eu.iss.lexmark.com")
+    conn = http.client.HTTPSConnection("apis.dev.eu.cloud.onelxk.co")
 
     payload = ""
     headers = {
@@ -136,13 +136,13 @@ def user_quota_status():
         user_id[0]) + "\",\n   \"totalImpressions\":\"" + str(
         user_total_impression) + "\",\n   \"colorImpressions\":\"" + str(
         user_color_impression) + "\",\n   \"physicalPageCount\": 5,\n   \"duplex\": \"simplex\",\n   \"color\": true,\n   \"paperTypeId\": 5,\n   \"paperSizeId\": 5,\n   \"copyCount\": 5,\n   \"printedState\": \"\",\n   \"documentId\": \"" + str(
-        document_id) + "\",\n   \"nUp\": 5,\n   \"staple\": \"front\",\n   \"holePunch\": \"off\",\n   \"fold\": \"trifold\",\n   \"esfAppName\": \"customESF\",\n   \"printerJobId\": \"12345\",\n   \"qaice\": {\n        \"serialNo\": \"DEV123456\",\n        \"ipAddress\": \"127.0.0.1\",\n        \"modelName\": \"test1\",\n        \"hostName\": \"host1\",\n        \"domainName\": \"name1\",\n        \"macAddress\": \"B8AC6F9B1157\",\n        \"capabilities\": {\n            \"duplex\": true,\n            \"color\": true,\n            \"mfp\": true,\n            \"finisher\": false\n        }\n    },\n    \"client\": {\n        \"name\": \"LexDAS\",\n        \"version\": \"2.0\"\n    }\n}"
+        document_id) + "\",\n   \"nUp\": 5,\n   \"staple\": \"front\",\n   \"holePunch\": \"off\",\n   \"fold\": \"trifold\",\n   \"esfAppName\": \"customESF\",\n   \"printerJobId\": \"12345\",\n   \"device\": {\n        \"serialNo\": \"DEV123456\",\n        \"ipAddress\": \"127.0.0.1\",\n        \"modelName\": \"test1\",\n        \"hostName\": \"host1\",\n        \"domainName\": \"name1\",\n        \"macAddress\": \"B8AC6F9B1157\",\n        \"capabilities\": {\n            \"duplex\": true,\n            \"color\": true,\n            \"mfp\": true,\n            \"finisher\": false\n        }\n    },\n    \"client\": {\n        \"name\": \"LexDAS\",\n        \"version\": \"2.0\"\n    }\n}"
     url_job = base_url + "/" + org_id[0] + "/jobs/"
     response = requests.request("POST", url_job, headers=headers, data=payload)
 
     # get new quota status and compare with CPM Portal UI
     url = base_url + "/" + org_id[0] + "/users/" + user_id[0] + "/quota/"
-    conn = http.client.HTTPSConnection("apis.qa.us.iss.lexmark.com")
+    conn = http.client.HTTPSConnection("apis.dev.us.cloud.onelxk.co")
 
     payload = ""
     headers = {

@@ -9,10 +9,10 @@ Library     ../Library/send_email_us_eu.py
 Library     ../Library/XMLParser.py
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${tab1name}                     Print Queue
@@ -155,7 +155,7 @@ Validation with incorrect copies value more than 999
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain      Layout
     input text      //*[@id="copies_input"]     1000
     sleep_call_1
-    click element   //*[@id="id-11"]/div/div[1]/p
+    click element   //*[@id="collateCheckboxDiv"]/div/cui-description/span
 
     page should contain      Value must range from 1 to 999.
     element should be disabled      //*[@id="copies_increment"]
@@ -170,7 +170,7 @@ Validation with incorrect copies value of 0
     press keys      //*[@id="copies_input"]      \DELETE
     press keys      //*[@id="copies_input"]      \DELETE
     input text      //*[@id="copies_input"]     0
-    click element   //*[@id="id-11"]/div/div[1]/p
+    click element   //*[@id="collateCheckboxDiv"]/div/cui-description/span
     sleep_call_1
 
     page should contain      Value must range from 1 to 999.

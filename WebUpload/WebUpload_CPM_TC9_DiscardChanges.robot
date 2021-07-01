@@ -10,7 +10,7 @@ Library     ../Library/XMLParser.py
 
 *** Variables ***
 ${URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
+${BROWSER}                      headlessChrome
 ${USER}                     sravantesh.neogi@lexmark.com
 ${PASSWORD}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.

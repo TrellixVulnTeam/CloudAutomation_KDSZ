@@ -3,8 +3,11 @@ Library  SeleniumLibrary
 Variables    ../PageObjects/Locators.py
 
 *** Variables ***
-#${URL}                          https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      Chrome
+${USER}                         sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
+${URL}                          https://dev.us.cloud.onelxk.co/
+${NONADMIN}                     cpmautomation@test.onelxk.co
+${BROWSER}                      Chrome
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${next}                         Next
@@ -445,7 +448,7 @@ Create Custom Quota
     sleep_call
 
 #Create user
-    ${user}=   create_user
+    ${user}=   create_user_all  ${USER}     ${PASSWORD}     ${URL}      ${NONADMIN}
     log     ${user}
 
 
@@ -484,7 +487,7 @@ Set Quota Assignment for Personal
 Check Status Table for normal
     set selenium timeout    25
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
-    ${total}    ${color}=   quota_green
+    ${total}    ${color}=   quota_green_all    ${USER}     ${PASSWORD}     ${URL}
 
     Open Quota Status Page
     wait until page contains             User Quota Status
@@ -517,7 +520,7 @@ Check Status Table for normal
 Check Status Table for warning
     set selenium timeout    25
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
-    ${total}    ${color}=   quota_yellow
+    ${total}    ${color}=   quota_yellow_all    ${USER}     ${PASSWORD}     ${URL}
     sleep_call_2
     Open Quota Status Page
     wait until page contains             User Quota Status
@@ -550,7 +553,7 @@ Check Status Table for warning
 Check Status Table for exceeded
     set selenium timeout    25
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
-    ${total}    ${color}=   quota_red
+    ${total}    ${color}=   quota_red_all    ${USER}     ${PASSWORD}     ${URL}
     sleep_call_2
     Open Quota Status Page
     wait until page contains             User Quota Status
@@ -582,7 +585,7 @@ Check Status Table for exceeded
 
 Delete Quota
     ${lnk_cpm} =   Catenate    SEPARATOR=   ${URL}   cpm
-    ${deleted}=   delete_user
+    ${deleted}=   delete_user_all     ${USER}     ${PASSWORD}     ${URL}    ${NONADMIN}
     run keyword     Open Quota Definition Page
     set selenium timeout    20
     wait until page contains element     ${btn_quota_select_all}

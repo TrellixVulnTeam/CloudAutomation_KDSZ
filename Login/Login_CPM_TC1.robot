@@ -10,10 +10,10 @@ Library     ../Library/XMLParser.py
 Resource     ../Resources/CPM_LoginPage_resources.robot
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
-#${USER}                         sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      headlessChrome
+${USER}                         sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${username_blank}
 ${username_invalid}             sravantesh@lexmark.com
 ${password_blank}
@@ -22,8 +22,8 @@ ${password_invalid}             Password@12345
 *** Test Cases ***
 Blank User Name verification
     Open CPM Portal and Blank user name login verification        ${username_blank}
-Invalid User Name verification
-    Open CPM Portal and Invalid user name login verification      ${username_invalid}
+#Invalid User Name verification
+ #   Open CPM Portal and Invalid user name login verification      ${username_invalid}
 Blank Password verification
     Open CPM Portal and Blank password verification      ${USER}     ${password_blank}
 Invalid Password verification

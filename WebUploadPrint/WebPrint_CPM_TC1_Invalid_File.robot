@@ -13,10 +13,12 @@ Test Template   Verify File upload Button Feature
 Suite Teardown     Log Out Close Browsers
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co/
-#${BROWSER}                      headlessChrome
-#${USER}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      headlessChrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
+${IP}                           10.195.6.123
+${PIN}                          1234
 
 
 *** Test Cases ***

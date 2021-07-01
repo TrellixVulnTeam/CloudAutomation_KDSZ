@@ -10,25 +10,21 @@ Library     ../Library/XMLParser.py
 Resource     ../Resources/CPM_Mobile_Resources.robot
 
 *** Variables ***
-#${URL}                    https://dev.us.cloud.onelxk.co
-#${BROWSER}                      headlessChrome
-#${URL}                     sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                     sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
 ${tab1name}                     Print Queue
 ${correct}                      Correct Number of Pages listed
+${IP}                           10.195.6.123
+${PIN}                          1234
 
 *** Test Cases ***
 Mobile Job Submission
     Open Browser To Login Page
     Mobile submission   ${IP}   ${PIN}
     Log out
-    #Validation of Paper size dropdown
-    #Reset , Log Out and Close Browsers
 
-#
-#*** Keywords ***
-#Mobile
-#    ${jobstatus}=   mobile_submit
 
 
 
