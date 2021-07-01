@@ -20,8 +20,8 @@ ${password_blank}
 ${password_invalid}             Password@12345
 
 *** Test Cases ***
-Blank User Name verification
-    Open CPM Portal and Blank user name login verification        ${username_blank}
+#Blank User Name verification
+    #Open CPM Portal and Blank user name login verification        ${username_blank}
 #Invalid User Name verification
  #   Open CPM Portal and Invalid user name login verification      ${username_invalid}
 Blank Password verification
