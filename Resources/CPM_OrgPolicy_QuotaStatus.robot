@@ -208,7 +208,7 @@ Check Status Table for exceeded
     Press Keys    ${txt_search}    ENTER
 
 Delete Quota
-    ${deleted}=   delete_user
+    ${deleted}=   delete_user_all   ${USER}     ${PASSWORD}     ${URL}  ${username_nonadmin}
     run keyword     Open Quota Definition Page
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_quota_select_all}
