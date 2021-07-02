@@ -142,12 +142,14 @@ Set Custom Color
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${txt_color_value}
     click element   ${txt_color_value}
     press keys      ${txt_color_value}      \DELETE
+    sleep_call_2
     input text      ${txt_color_value}      ${quota_color_value}
 
 Set Custom Total
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${txt_total_value}
     click element   ${txt_total_value}
     press keys      ${txt_total_value}      \DELETE
+    sleep_call_2
     input text      ${txt_total_value}      ${quota_total_value}
     run keyword     Set Color Controls
 
