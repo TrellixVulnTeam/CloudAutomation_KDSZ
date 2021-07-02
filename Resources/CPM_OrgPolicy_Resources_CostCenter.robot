@@ -243,6 +243,7 @@ Log Out Non admin
     ${usermenu}     set variable    userMenu
     ${logout}       set variable    link-logout
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      userMenu
+    sleep_call_2
     click element   ${usermenu}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      link-logout
     click element   ${logout}
