@@ -10,7 +10,7 @@ Library     ../Library/XMLParser.py
 
 *** Variables ***
 ${URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      headlessChrome
+${BROWSER}                      Chrome
 ${USER}                     sravantesh.neogi@lexmark.com
 ${PASSWORD}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
@@ -95,7 +95,7 @@ Increment Copy validation by 1 to 2
     click element   //*[@id="copies_increment"]
     sleep_call_1
     textfield should contain    //*[@id="copies_input"]  2
-    click element   //*[@id="id-11"]/div/div[1]/p
+    click element   //*[@id="collateCheckboxDiv"]/div/cui-description/span
 
 Validation of Confirmation dialog by Discarding
     set selenium timeout    20
