@@ -143,6 +143,8 @@ Check default state of delegates
 
 Check delegate tab is not visible
     set selenium timeout    20
+    sleep_call_2
+    Wait Until Keyword Succeeds     30 sec  5 sec   page should not contain element     ${lbl_delegate}
     page should not contain element     ${lbl_delegate}
 
 Enable Delegate
@@ -156,9 +158,11 @@ Enable Delegate
 
 Check delegate tab is visible
     set selenium timeout    20
+    sleep_call_2
     page should contain element     ${lbl_delegate}
     click element   ${lbl_delegate}
-    wait until page contains element        ${header_delegate}
+    Wait Until Keyword Succeeds     30 sec  5 sec   page should contain element   ${header_delegate}
+    #wait until page contains element        ${header_delegate}
 
 Reset Delegate feature
     unselect checkbox    ${chk_delegates}
