@@ -250,7 +250,7 @@ Set Quota Assignment for Department
     run keyword     Select Department or Personal
     run keyword     Open Quota Assignment Page
     set selenium timeout    20
-    Wait Until Keyword Succeeds    35 sec    5 sec    page contains element    ${btn_assignquota}
+    Wait Until Keyword Succeeds    35 sec    5 sec    page should contain element  ${btn_assignquota}
     click button    ${btn_assignquota}
     sleep_call_2
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${txt_costcentername}
