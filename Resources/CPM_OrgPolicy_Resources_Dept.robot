@@ -107,6 +107,7 @@ Log out
 Open Quota Assignment Page
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${admin_dropdown}
+    select_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${lbl_quotaassignment}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotaassignment}
