@@ -23,7 +23,7 @@ Delegate addition using ${EMAIL USER}
 
 *** Keywords ***
 Multiple Delegates
-    [Arguments]     ${EMAIL USER}
-    Check Adding Valid and Duplicate Delegates      ${EMAIL USER}
+    [Arguments]     ${EMAIL USER}     ${FILE PATH}     ${FILE NAME}
+    Check Adding Valid and Duplicate Delegates      ${EMAIL USER}     ${FILE PATH}     ${FILE NAME}
 
 ###################################################################
