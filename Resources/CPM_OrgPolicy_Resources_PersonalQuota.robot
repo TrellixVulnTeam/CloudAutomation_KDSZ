@@ -37,6 +37,7 @@ Open Browser To Login Page using Admin
 Open Organisational Policy Page
     set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     wait until page contains element    ${org_policy}
     click element       ${org_policy}
@@ -118,6 +119,7 @@ Select Personal
 Open Quota Assignment Page
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotaassignment}
     click element       ${lbl_quotaassignment}
@@ -126,6 +128,7 @@ Open Quota Assignment Page
 Open Quota Definition Page
     set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
@@ -148,6 +151,7 @@ Open Browser and Quota Page
     Switch Window       Print Management | Lexmark Cloud Services
     Title should be     Print Management | Lexmark Cloud Services
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     wait until page contains element    ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
@@ -265,11 +269,13 @@ Set Custom Total
     run keyword     Set Color Controls
 
 Check Quota Assignment is removed
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${lbl_quotaassignment}
     click element       ${lbl_quotaassignment}
     set selenium timeout    20
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain    ${noquotaassignment}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
@@ -288,6 +294,7 @@ Set Quota Assignment for Personal
     run keyword     Select Personal
     #run keyword     Open Quota Assignment Page
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     sleep_call_2
     click element       ${lbl_quotaassignment}
@@ -326,6 +333,7 @@ Set Quota Assignment for Personal
     #run keyword     Open Browser To Login Page using Admin
     set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
@@ -336,6 +344,7 @@ Set Quota Assignment for Personal
     run keyword     Reset Quota choice
     set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}

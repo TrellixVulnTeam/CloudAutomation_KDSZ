@@ -37,6 +37,7 @@ Open Browser To Login Page using Admin
 Open Organisational Policy Page
     set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     wait until page contains element    ${org_policy}
     sleep_call_2
@@ -205,6 +206,7 @@ Reset to Cost Center or Personal and uncheck quota
 Open Quota Assignment Page
     set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     wait until page contains element    ${lbl_quotaassignment}
     sleep_call_2
@@ -214,6 +216,7 @@ Open Quota Assignment Page
 Open Quota Status Page
     set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     wait until page contains element    ${lbl_quota_status}
     sleep_call_2
@@ -258,6 +261,7 @@ Check whether no tab is displayed
 Open Quota Definition Page
     set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     wait until page contains element    ${lbl_quotadefinition}
     sleep_call_2
@@ -296,6 +300,7 @@ Open Browser and Quota Page
     Switch Window       Print Management | Lexmark Cloud Services
     sleep_call
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     wait until page contains element    ${lbl_quotadefinition}
     sleep_call_2
@@ -425,6 +430,7 @@ Set Custom Total
 Set Quota Assignment for Cost Center
     set selenium timeout    25
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     wait until page contains element    ${org_policy}
     sleep_call_2
@@ -435,6 +441,7 @@ Set Quota Assignment for Cost Center
     click button    ${btn_save}
     sleep_call_2
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     sleep_call_2
     click element       ${lbl_quotaassignment}

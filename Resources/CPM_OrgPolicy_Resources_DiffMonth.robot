@@ -32,6 +32,7 @@ Open Browser and Quota Page
     Switch Window       Print Management | Lexmark Cloud Services
     Title should be     Print Management | Lexmark Cloud Services
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     wait until page contains element    ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
@@ -108,6 +109,7 @@ Set Color Controls
     Wait Until Keyword Succeeds    35 sec    5 sec   page should contain element    ${btn_delete_def}
     click button    ${btn_delete_def}
     Wait Until Keyword Succeeds    35 sec    5 sec   element should be visible    ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds    35 sec    5 sec   element should be visible    ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
@@ -134,6 +136,7 @@ Set Disable Print
     Wait Until Keyword Succeeds    35 sec    5 sec   page should contain element    ${btn_delete_def}
     click button    ${btn_delete_def}
     Wait Until Keyword Succeeds    35 sec    5 sec   element should be visible    ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds    35 sec    5 sec   element should be visible    ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}

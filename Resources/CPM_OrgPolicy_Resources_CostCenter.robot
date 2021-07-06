@@ -35,6 +35,7 @@ Open Browser To Login Page using Admin
 Open Organisational Policy Page
     set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     wait until page contains element    ${org_policy}
     click element       ${org_policy}
@@ -209,6 +210,7 @@ Check default state of quota
     element should be disabled      ${radio_dept}
     element should be disabled      ${radio_personal}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     element should not be visible   lbl_quotadefinition
     element should not be visible   lbl_quotaassignment
@@ -231,6 +233,7 @@ Check Quota feature controls
     element should be enabled      ${radio_dept}
     element should be enabled      ${radio_personal}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotadefinition}
     element should be visible   ${lbl_quotadefinition}
@@ -291,6 +294,7 @@ Reset to Cost Center or Personal and uncheck quota
 Open Quota Assignment Page
     set selenium timeout    20
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotaassignment}
     click element       ${lbl_quotaassignment}
@@ -334,6 +338,7 @@ Check whether no tab is displayed
 Open Quota Definition Page
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
@@ -374,6 +379,7 @@ Open Browser and Quota Page
     Switch Window       Print Management | Lexmark Cloud Services
     Title should be     Print Management | Lexmark Cloud Services
     wait until element is visible   ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     wait until page contains element    ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
@@ -503,8 +509,9 @@ Set Custom Total
 
 Set Quota Assignment for Cost Center
     set selenium timeout    25
-
+    sleep_call_2
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain element    ${org_policy}
     click element       ${org_policy}
@@ -541,6 +548,7 @@ Set Quota Assignment for Cost Center
     #run keyword     Open Browser To Login Page using Admin
     run keyword     Open Organisational Policy Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${admin_dropdown}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element     ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
@@ -553,11 +561,13 @@ Set cost center
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be enabled    ${btn_save}
 
 Check Quota Assignment is removed
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${lbl_quotaassignment}
     click element       ${lbl_quotaassignment}
     set selenium timeout    20
     Wait Until Keyword Succeeds    35 sec    5 sec    page should contain    ${noquotaassignment}
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible    ${lbl_quotadefinition}
     click element       ${lbl_quotadefinition}
