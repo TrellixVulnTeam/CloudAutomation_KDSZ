@@ -10,8 +10,8 @@ ${USER}                     sravantesh.neogi@lexmark.com
 ${PASSWORD}                     Password@1234
 #${file_path}                    C:\\Users\\neogis\\Downloads\\Input\\Hello.txt
 #${file_name_actual}             Hello.txt
-${PIN_DELEGATE}                 2222
-${IP}                           10.195.6.123
+#${PIN_DELEGATE}                 2222
+#${IP}                           10.195.6.123
 
 
 
@@ -98,7 +98,7 @@ Check Adding Valid and Duplicate Delegates
     Wait Until Keyword Succeeds    60 sec    10 sec    element text should be      ${job_status}        Ready
 
     #Call printer automation to print this document for delegated user
-    ${print_job_status} =   printer_automation_delegate  ${USER}   ${IP}    ${PIN_DELEGATE}  ${FILE NAME}
+    ${print_job_status} =   printer_automation_delegate  ${USER}   ${IP}    ${PINDELEGATE}  ${FILE NAME}
     log     {print_job_status}
 
     click element   link-navJobHistory
