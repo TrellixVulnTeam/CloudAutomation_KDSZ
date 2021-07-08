@@ -62,7 +62,7 @@ Open Browser To Login Page using non admin disable
     click element   ${queue_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_search}
     click element   ${txt_search}
-    sleep_call_1
+    sleep_call_2
     input text      ${txt_search}     ${USER}
     sleep_call_2
     Press Keys    ${txt_search}    ENTER
@@ -74,7 +74,7 @@ Open Browser To Login Page using non admin no color
     click element   ${queue_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_search}
     click element   ${txt_search}
-    sleep_call_1
+    sleep_call_2
     input text      ${txt_search}     ${USER}
     sleep_call_2
     Press Keys    ${txt_search}    ENTER
@@ -87,7 +87,7 @@ Open Browser To Login Page using non admin normal
     click element   ${queue_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_search}
     click element   ${txt_search}
-    sleep_call_1
+    sleep_call_2
     input text      ${txt_search}     ${USER}
     sleep_call_2
     Press Keys    ${txt_search}    ENTER
@@ -108,7 +108,7 @@ Log out
 Open Quota Assignment Page
     set selenium timeout    20
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${admin_dropdown}
-    select_call_2
+    sleep_call_2
     click element       ${admin_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element   ${lbl_quotaassignment}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotaassignment}
@@ -313,7 +313,7 @@ Check the table values
     element text should be      ${monthly_color_id}   ${monthly_color_value}
 
     click button    ${btn_summary_close}
-    sleep_call_1
+    sleep_call_2
 
     click element   ${name_printqueue}
     sleep_call_2
