@@ -6,7 +6,7 @@ Resource     ../Resources/CPM_ClientDownload_Resources.robot
 Library     ../Library/Printerautomation.py
 
 *** Test Cases ***
-Verify custom package download
+Verify default state of controls
     Open Browser To Login Page
     Check default state
     Logout

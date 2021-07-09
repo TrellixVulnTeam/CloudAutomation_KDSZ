@@ -139,3 +139,5 @@ def printer_automation_delegate(user,ip,pin,text):
             ups.regex('on text "Yes" do "press" ')
             time.sleep(2)
             return print_status
+
+#printer_automation_delegate("sravantesh.neogi@lexmark.com","10.195.7.158","3333","Helo.txt")
