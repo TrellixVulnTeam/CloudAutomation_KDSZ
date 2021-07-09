@@ -98,7 +98,7 @@ Check Adding Valid and Duplicate Delegates
     Wait Until Keyword Succeeds    60 sec    10 sec    element text should be      ${job_status}        Ready
 
     #Call printer automation to print this document for delegated user
-    ${print_job_status} =   printer_automation_delegate  ${USER}   ${IP}    ${PINDELEGATE}  ${FILE NAME}
+    ${print_job_status} =   printer_automation_delegate  ${EMAIL USER}   ${IP}    ${PINDELEGATE}  ${FILE NAME}
     log     {print_job_status}
 
     click element   link-navJobHistory
