@@ -4,10 +4,10 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-${URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      headlessChrome
-${USER}                     sravantesh.neogi@lexmark.com
-${PASSWORD}                     Password@1234
+#${URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      headlessChrome
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 #${file_path}                    C:\\Users\\neogis\\Downloads\\Input\\Hello.txt
 #${file_name_actual}             Hello.txt
 #${PIN_DELEGATE}                 2222
@@ -98,7 +98,7 @@ Check Adding Valid and Duplicate Delegates
     Wait Until Keyword Succeeds    60 sec    10 sec    element text should be      ${job_status}        Ready
 
     #Call printer automation to print this document for delegated user
-    ${print_job_status} =   printer_automation_delegate  ${EMAIL USER}   ${IP}    ${PINDELEGATE}  ${FILE NAME}
+    ${print_job_status} =   printer_automation_delegate  ${USER}   ${IP}    ${PINDELEGATE}  ${FILE NAME}
     log     {print_job_status}
 
     click element   link-navJobHistory
