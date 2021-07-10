@@ -184,6 +184,8 @@ Check email header is not visible
 Enable Email
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox     ${chk_email}
     select checkbox    ${chk_email}
+    sleep_call_2
+    select checkbox     ${chk_guestprint}
     click element       ${btn_save}
     element attribute value should be       ${chk_email}       aria-checked    true
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_clientdownload}

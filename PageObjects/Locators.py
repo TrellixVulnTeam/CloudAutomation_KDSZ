@@ -269,3 +269,4 @@ fileupload="xpath://*[@id='_Content']/div"
 impression_count="id:dataGridMyPrintJobsId-row-0-impressions"
 
 header_costcenter="xpath://*[@id='costCenterTabContent']/lpm-collection-quota-assignments/lpm-collection-quota-assignment-modal/cui-form/form/cui-modal/div/div[2]/div[1]/div/cui-modal-body/cui-priv-block/div/div/div/lpm-collection-select/cui-select/div/cui-label/label"
+chk_guestprint="id:enableGuestPrintSubmissionCheckbox"
