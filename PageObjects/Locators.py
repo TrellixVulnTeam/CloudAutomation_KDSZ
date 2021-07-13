@@ -272,3 +272,8 @@ header_costcenter="xpath://*[@id='costCenterTabContent']/lpm-collection-quota-as
 chk_guestprint="id:enableGuestPrintSubmissionCheckbox"
 
 chk_printandkeep="id:enablePrintKeepCheckbox"
+chk_latebindcopy="id:enableAllowLateBindCopiesCheckbox"
+btn_defaultprintsettings="id:printQueueDefaultPrintSettingsButton"
+txt_copies="id:copies_input"
+btn_saveprintsettings="id:saveChangesButton"
+btn_copyincrement="id:copies_increment"

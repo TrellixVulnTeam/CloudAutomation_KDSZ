@@ -17,6 +17,8 @@ ${file_path}                    C:\\Users\\neogis\\Downloads\\Input\\Hello.txt
 ${file_name}                    Hello.txt
 ${enable_true}                  true
 ${enable_false}                 false
+${copy_value_enable}            2
+${copy_value_disable}           1
 
 *** Keywords ***
 Open Browser To Login Page using Admin
@@ -227,6 +229,11 @@ Check default state of print and keep
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
     element attribute value should be       ${chk_printandkeep}        aria-checked    true
 
+Check default state of change copy
+    set selenium timeout    20
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_latebindcopy}
+    element attribute value should be       ${chk_latebindcopy}        aria-checked    true
+
 Submit a job
     Click Element   link-navPrintQueue
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      id:printQueueUploadButton
@@ -258,7 +265,48 @@ Delete Job
     click button    ${btn_delegate_delete_ok}
     Wait Until Keyword Succeeds   60 sec    5 sec     page should contain   No data available
 
+Change number of copies
+    Click Element   link-navPrintQueue
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      id:printQueueUploadButton
+    click button    ${btn_defaultprintsettings}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${txt_copies}
+    click element   //*[@id="copies_increment"]
+    sleep_call_1
+    click button    ${btn_saveprintsettings}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      id:printQueueUploadButton
 
+Reset Copies
+    Click Element   link-navPrintQueue
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      id:printQueueUploadButton
+    click button    ${btn_defaultprintsettings}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${txt_copies}
+    click element   //*[@id="copies_decrement"]
+    sleep_call_1
+    click button    ${btn_saveprintsettings}
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      id:printQueueUploadButton
+
+Check copies value in enable state
+    click element   document_link_0
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${txt_copies}
+    textfield should contain    //*[@id="copies_input"]  2
+    element should be enabled   ${txt_copies}
+    Click Element   link-navPrintQueue
+
+Check copies value for previous job
+    Click Element   link-navPrintQueue
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      id:printQueueUploadButton
+    click element   document_link_0
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${txt_copies}
+    textfield should contain    //*[@id="copies_input"]  2
+    element should be disabled   ${txt_copies}
+    Click Element   link-navPrintQueue
+
+Check copies value in disable state
+    click element   document_link_0
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${txt_copies}
+    textfield should contain    //*[@id="copies_input"]  1
+    element should be disabled   ${txt_copies}
+    Click Element   link-navPrintQueue
 
 Check print and keep in printer in enable state
     ${print_job_status} =   printer_automation_printkeep  ${IP}   ${PIN}  ${file_name}  ${enable_true}
@@ -268,12 +316,25 @@ Check print and keep in printer in disable state
     ${print_job_status} =   printer_automation_printkeep  ${IP}   ${PIN}  ${file_name}  ${enable_false}
     log     {print_job_status}
 
+Check latebind copy in printer in enable state
+    ${print_job_status} =   printer_automation_latebindcopy  ${IP}   ${PIN}  ${file_name}  ${enable_true}     ${copy_value_enable}
+    log     {print_job_status}
+
+Check latebind copy in printer in disable state
+    ${print_job_status} =   printer_automation_latebindcopy  ${IP}   ${PIN}  ${file_name}  ${enable_false}     ${copy_value_disable}
+    log     {print_job_status}
+
+Check latebind binding for previous job in op panel
+    ${print_job_status} =   printer_automation_latebindcopy  ${IP}   ${PIN}  ${file_name}  ${enable_false}     ${copy_value_enable}
+    log     {print_job_status}
+
 Uncheck Print and Keep
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
     click element       ${chk_printandkeep}
     click button        ${btn_save}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
     element attribute value should be       ${chk_printandkeep}        aria-checked    false
+    sleep_call_2
 
 Check print and keep
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
@@ -281,7 +342,23 @@ Check print and keep
     click button        ${btn_save}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
     element attribute value should be       ${chk_printandkeep}        aria-checked    true
+    sleep_call_2
 
+Uncheck Late Bind copy
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
+    click element       ${chk_latebindcopy}
+    click button        ${btn_save}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
+    element attribute value should be       ${chk_latebindcopy}        aria-checked    false
+    sleep_call_2
+
+Check latebind copy
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
+    click element       ${chk_latebindcopy}
+    click button        ${btn_save}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
+    element attribute value should be       ${chk_latebindcopy}        aria-checked    true
+    sleep_call_2
 
 Enable Quota
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}

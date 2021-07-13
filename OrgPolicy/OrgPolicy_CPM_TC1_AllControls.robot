@@ -12,10 +12,12 @@ Variables    ../PageObjects/Locators.py
 
 
 *** Variables ***
-#${LOGIN URL}                    https://qa.us.iss.lexmark.com
-#${BROWSER}                      Chrome
-#${USER}                         sravantesh.neogi@lexmark.com
-#${PASSWORD}                     Password@1234
+${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
+${BROWSER}                      Chrome
+${USER}                         sravantesh.neogi@lexmark.com
+${PASSWORD}                     Password@1234
+${IP}                           10.195.6.123
+${PIN}                          1234
 
 
 *** Test Cases ***
@@ -64,4 +66,41 @@ Check Quota feature
     Enable Quota
     Check Quota feature controls
     Log out quota
+
+Check Print and Keep feature
+    Open Browser To Login Page using Admin
+    Open Organisational Policy Page
+    Check default state of print and keep
+    Submit a job
+    Check print and keep in printer in enable state
+    Open Organisational Policy Page
+    Uncheck Print and Keep
+    Check print and keep in printer in disable state
+    Delete job
+    Open Organisational Policy Page
+    Check print and keep
+    Log out
+
+Check Changing number of copy feature
+    Open Browser To Login Page using Admin
+    Open Organisational Policy Page
+    Check default state of change copy
+    Change number of copies
+    Submit a job
+    Check copies value in enable state
+    Check latebind copy in printer in enable state
+    Open Organisational Policy Page
+    Uncheck Late Bind copy
+    Check copies value for previous job
+    Check latebind binding for previous job in op panel
+    Delete Job
+    Submit a job
+    Check copies value in disable state
+    Check latebind copy in printer in disable state
+    Delete job
+    Open Organisational Policy Page
+    Check latebind copy
+    Reset Copies
+    Open Organisational Policy Page
+    Log out
 ###################################################################
