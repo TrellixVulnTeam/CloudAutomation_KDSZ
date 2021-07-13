@@ -248,6 +248,18 @@ Submit a job
     ${job_status}   set variable    documents-row-0-documentStatus
     Wait Until Keyword Succeeds    60 sec    10 sec    element text should be      ${job_status}        Ready
 
+Delete Job
+    Click Element   link-navPrintQueue
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      id:printQueueUploadButton
+    click element     ${chk_deleteall}
+    click element   footer-3
+    click button    ${btn_delete}
+    Wait Until Keyword Succeeds   60 sec    5 sec     element should be visible     ${lbl_delete}
+    click button    ${btn_delegate_delete_ok}
+    Wait Until Keyword Succeeds   60 sec    5 sec     page should contain   No data available
+
+
+
 Check print and keep in printer in enable state
     ${print_job_status} =   printer_automation_printkeep  ${IP}   ${PIN}  ${file_name}  ${enable_true}
     log     {print_job_status}
