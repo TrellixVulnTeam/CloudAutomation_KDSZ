@@ -13,6 +13,10 @@ ${username_nonadmin}            automateuser@test.onelxk.co
 ${costcenter}                   stl
 ${noquotaassignment}            No custom quota definitions for assigning.
 ${totaldisable}                 0
+${file_path}                    C:\\Users\\neogis\\Downloads\\Input\\Hello.txt
+${file_name}                    Hello.txt
+${enable_true}                  true
+${enable_false}                 false
 
 *** Keywords ***
 Open Browser To Login Page using Admin
@@ -217,6 +221,55 @@ Check default state of quota
     element should not be visible   lbl_quotadefinition
     element should not be visible   lbl_quotaassignment
     element should not be visible   lbl_quotastatus
+
+Check default state of print and keep
+    set selenium timeout    20
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
+    element attribute value should be       ${chk_printandkeep}        aria-checked    true
+
+Submit a job
+    Click Element   link-navPrintQueue
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      id:printQueueUploadButton
+    Click Element   id:printQueueUploadButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      xpath://*[@id="printQueueUploadModalModalHeader"]
+    choose file     id:multiFileSelectUpload    ${file_path}
+    ${progress_bar}     set variable    //*[@id="_bar"]/progressbar/bar
+    ${progress_value}   set variable    //*[@id="_Content"]/div
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${progress_value}
+    #Wait Until keyword     ${progress_value}    100%   timeout=30
+    Wait Until Keyword Succeeds   60 sec    5 sec     element should contain      ${progress_value}    100%
+
+    ${progress_value_actual}     Set Variable    xpath://*[@id="_bar"]/progressbar/bar
+
+    element attribute value should be   ${progress_value_actual}    aria-valuenow   100
+    ${done_btn}     set variable    printQueueUploadModalDoneButton
+    Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${done_btn}
+    click button    ${done_btn}
+    ${job_status}   set variable    documents-row-0-documentStatus
+    Wait Until Keyword Succeeds    60 sec    10 sec    element text should be      ${job_status}        Ready
+
+Check print and keep in printer in enable state
+    ${print_job_status} =   printer_automation_printkeep  ${IP}   ${PIN}  ${file_name}  ${enable_true}
+    log     {print_job_status}
+
+Check print and keep in printer in disable state
+    ${print_job_status} =   printer_automation_printkeep  ${IP}   ${PIN}  ${file_name}  ${enable_false}
+    log     {print_job_status}
+
+Uncheck Print and Keep
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
+    click element       ${chk_printandkeep}
+    click button        ${btn_save}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
+    element attribute value should be       ${chk_printandkeep}        aria-checked    false
+
+Check print and keep
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
+    click element       ${chk_printandkeep}
+    click button        ${btn_save}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
+    element attribute value should be       ${chk_printandkeep}        aria-checked    true
+
 
 Enable Quota
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox   ${chk_quota}
