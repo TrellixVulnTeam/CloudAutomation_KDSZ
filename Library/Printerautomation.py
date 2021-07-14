@@ -297,5 +297,5 @@ def printer_automation_latebindcopy(ip,pin,text,state,copy_value):
             ups.regex('on text "Yes" do "press" ')
             time.sleep(1)
             return print_status
-quota_status=printer_automation("10.195.6.123","1234","Hello.txt")
-print(quota_status)
+# quota_status=printer_automation("10.195.6.123","1234","Hello.txt")
+# print(quota_status)
