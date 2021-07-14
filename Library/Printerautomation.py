@@ -14,9 +14,9 @@ def printer_automation(ip,pin,text):
     print(ip)
     ups = UPS(printer_ip=ip)
     ups.initialize()
-    time.sleep(1)
+    time.sleep(5)
     ups.regex('do "press key KEYCODE_HOME"')
-    time.sleep(1)
+    time.sleep(5)
 
     # Click PIN login
     # ups.regex('Find widget "text-id=\'STRING_IDLEBUTTON_ID_1\'" do "press"')
@@ -24,20 +24,20 @@ def printer_automation(ip,pin,text):
     #time.sleep(5)
     ups.regex('on text "PIN Login" do "press" ')
     ups.regex('Find widget "text-id=\'pin_login_ui_pinvalue\'" Do "wait_until_found"')
-    time.sleep(1)
+    time.sleep(5)
     # Click Input text to bring keypad
     ups.regex('Find widget "text-id=\'pin_login_ui_pinvalue\'" do "press"')
     ups.regex('Find widget "text-id=\'DIALOG_OK_ID\'" Do "wait_until_found"')
-    time.sleep(1)
+    time.sleep(5)
     # Enter PIN and login
     lxk_universal_panel_step.core.universal_panel_step.type_text(pin)
     ups.regex('Find widget "text-id=\'DIALOG_OK_ID\'" do "press"')
-    time.sleep(1)
+    time.sleep(5)
 
     # Wait till Print Release Appears
     ups.regex('On text "Print Release" Do "wait_until_found"')
     ups.regex('On text "Print Release" Do "press"')
-    time.sleep(1)
+    time.sleep(5)
     # Wait till list view appears
     ups.regex('on text "Print" Do "wait_until_found"')
 
@@ -48,20 +48,20 @@ def printer_automation(ip,pin,text):
             # text="Hello.txt"
             #ups.regex('Find Widget "resource-id=\'esf.printReleaseUi:id/action_settings\'" do "press"')
             #ups.regex('On text "Refresh" do "press"')
-            time.sleep(5)
+            time.sleep(6)
             ups_command = '''In area "resource-id='esf.printReleaseUi:id/lvFragMain'" On text "{}" Do "press"'''.format(
                 text)
             ups.regex(ups_command)
             ups.regex('on text "Print" do "press"')
-            time.sleep(5)
+            time.sleep(10)
             ups.regex('on text "Print" Do "wait_until_found"')
             time.sleep(5)
             ups.regex('do "press key KEYCODE_BACK"')
-            time.sleep(5)
+            time.sleep(2)
             ups.regex('on text "sravantesh.neogi@lexmark.com" do "press" ')
-            time.sleep(5)
+            time.sleep(2)
             ups.regex('on text "Yes" do "press" ')
-            time.sleep(5)
+            time.sleep(2)
             print_status = 'True'
             return print_status
             #break
@@ -92,20 +92,20 @@ def printer_automation_delegate(user,ip,pin,text):
     #time.sleep(5)
     ups.regex('on text "PIN Login" do "press" ')
     ups.regex('Find widget "text-id=\'pin_login_ui_pinvalue\'" Do "wait_until_found"')
-    time.sleep(2)
+    time.sleep(5)
     # Click Input text to bring keypad
     ups.regex('Find widget "text-id=\'pin_login_ui_pinvalue\'" do "press"')
     ups.regex('Find widget "text-id=\'DIALOG_OK_ID\'" Do "wait_until_found"')
-    time.sleep(2)
+    time.sleep(5)
     # Enter PIN and login
     lxk_universal_panel_step.core.universal_panel_step.type_text(pin)
     ups.regex('Find widget "text-id=\'DIALOG_OK_ID\'" do "press"')
-    time.sleep(2)
+    time.sleep(5)
 
     # Wait till Print Release Appears
     ups.regex('On text "Print Release" Do "wait_until_found"')
     ups.regex('On text "Print Release" Do "press"')
-    time.sleep(2)
+    time.sleep(5)
     # Wait till list view appears
     #ups.regex('on text "Print" Do "wait_until_found"')
 
@@ -116,16 +116,16 @@ def printer_automation_delegate(user,ip,pin,text):
             # text="Hello.txt"
             #ups.regex('Find Widget "resource-id=\'esf.printReleaseUi:id/action_settings\'" do "press"')
             #ups.regex('On text "Refresh" do "press"')
-            time.sleep(2)
+            time.sleep(5)
             #ups.regex('on text "sravantesh.neogi@lexmark.com" do "press"')
             ups.regex('on text "{}" Do "press"'.format(user))
-            time.sleep(2)
+            time.sleep(7)
             ups_command = '''In area "resource-id='esf.printReleaseUi:id/lvFragMain'" On text "{}" Do "press"'''.format(text)
             ups.regex(ups_command)
             ups.regex('on text "Print" do "press"')
-            time.sleep(2)
+            time.sleep(10)
             ups.regex('on text "Print" Do "wait_until_found"')
-            time.sleep(2)
+            time.sleep(5)
             ups.regex('do "press key KEYCODE_BACK"')
             time.sleep(2)
             ups.regex('on text "user_pallabi@test.onelxk.co" do "press" ')
@@ -165,20 +165,20 @@ def printer_automation_printkeep(ip,pin,text,state):
     #time.sleep(5)
     ups.regex('on text "PIN Login" do "press" ')
     ups.regex('Find widget "text-id=\'pin_login_ui_pinvalue\'" Do "wait_until_found"')
-    time.sleep(2)
+    time.sleep(5)
     # Click Input text to bring keypad
     ups.regex('Find widget "text-id=\'pin_login_ui_pinvalue\'" do "press"')
     ups.regex('Find widget "text-id=\'DIALOG_OK_ID\'" Do "wait_until_found"')
-    time.sleep(2)
+    time.sleep(5)
     # Enter PIN and login
     lxk_universal_panel_step.core.universal_panel_step.type_text(pin)
     ups.regex('Find widget "text-id=\'DIALOG_OK_ID\'" do "press"')
-    time.sleep(2)
+    time.sleep(5)
 
     # Wait till Print Release Appears
     ups.regex('On text "Print Release" Do "wait_until_found"')
     ups.regex('On text "Print Release" Do "press"')
-    time.sleep(2)
+    time.sleep(5)
     # Wait till list view appears
     ups.regex('on text "Print" Do "wait_until_found"')
 
@@ -198,11 +198,11 @@ def printer_automation_printkeep(ip,pin,text,state):
             print(status_message)
             print_status="True"
             ups.regex('do "press key KEYCODE_BACK"')
-            time.sleep(1)
+            time.sleep(4)
             ups.regex('on text "sravantesh.neogi@lexmark.com" do "press" ')
-            time.sleep(1)
+            time.sleep(4)
             ups.regex('on text "Yes" do "press" ')
-            time.sleep(1)
+            time.sleep(4)
             return print_status
 
         except ValueError:
@@ -210,11 +210,11 @@ def printer_automation_printkeep(ip,pin,text,state):
             print(status_message)
             print_status="False"
             ups.regex('do "press key KEYCODE_BACK"')
-            time.sleep(1)
+            time.sleep(4)
             ups.regex('on text "sravantesh.neogi@lexmark.com" do "press" ')
-            time.sleep(1)
+            time.sleep(4)
             ups.regex('on text "Yes" do "press" ')
-            time.sleep(1)
+            time.sleep(4)
             return print_status
 
 
@@ -235,20 +235,20 @@ def printer_automation_latebindcopy(ip,pin,text,state,copy_value):
     #time.sleep(5)
     ups.regex('on text "PIN Login" do "press" ')
     ups.regex('Find widget "text-id=\'pin_login_ui_pinvalue\'" Do "wait_until_found"')
-    time.sleep(2)
+    time.sleep(5)
     # Click Input text to bring keypad
     ups.regex('Find widget "text-id=\'pin_login_ui_pinvalue\'" do "press"')
     ups.regex('Find widget "text-id=\'DIALOG_OK_ID\'" Do "wait_until_found"')
-    time.sleep(2)
+    time.sleep(5)
     # Enter PIN and login
     lxk_universal_panel_step.core.universal_panel_step.type_text(pin)
     ups.regex('Find widget "text-id=\'DIALOG_OK_ID\'" do "press"')
-    time.sleep(2)
+    time.sleep(5)
 
     # Wait till Print Release Appears
     ups.regex('On text "Print Release" Do "wait_until_found"')
     ups.regex('On text "Print Release" Do "press"')
-    time.sleep(2)
+    time.sleep(5)
     # Wait till list view appears
     ups.regex('on text "Print" Do "wait_until_found"')
 
@@ -257,7 +257,7 @@ def printer_automation_latebindcopy(ip,pin,text,state,copy_value):
     while True:
         try:
             # text="Hello.txt"
-            time.sleep(2)
+            time.sleep(5)
             ups_command = '''In area "resource-id='esf.printReleaseUi:id/lvFragMain'" On text "{}" Do "press"'''.format(
                 text)
             ups.regex(ups_command)
@@ -277,13 +277,13 @@ def printer_automation_latebindcopy(ip,pin,text,state,copy_value):
             print(status_message)
             print_status="True"
             ups.regex('do "press key KEYCODE_BACK"')
-            time.sleep(1)
+            time.sleep(2)
             ups.regex('do "press key KEYCODE_BACK"')
-            time.sleep(1)
+            time.sleep(2)
             ups.regex('on text "sravantesh.neogi@lexmark.com" do "press" ')
-            time.sleep(1)
+            time.sleep(2)
             ups.regex('on text "Yes" do "press" ')
-            time.sleep(1)
+            time.sleep(2)
             return print_status
 
         except ValueError:
@@ -291,11 +291,11 @@ def printer_automation_latebindcopy(ip,pin,text,state,copy_value):
             print(status_message)
             print_status="False"
             ups.regex('do "press key KEYCODE_BACK"')
-            time.sleep(1)
+            time.sleep(2)
             ups.regex('on text "sravantesh.neogi@lexmark.com" do "press" ')
-            time.sleep(1)
+            time.sleep(2)
             ups.regex('on text "Yes" do "press" ')
-            time.sleep(1)
+            time.sleep(2)
             return print_status
 # quota_status=printer_automation("10.195.6.123","1234","Hello.txt")
 # print(quota_status)
