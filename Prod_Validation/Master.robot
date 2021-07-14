@@ -132,19 +132,19 @@ Verify user status for exceeded reduction
 Log out from portal
     [Tags]  Logout
     Logoutadmin
-Verfication download of MAC Default SAAS package
-    [Tags]  Client Download
-    Download MAC Default Packages for SAAS    ${URL}    ${MACSAASNAME}     ${MACSAASLINK}
-Verfication download of MAC Default Hybrid package
-    [Tags]  Client Download
-    Download MAC Default Packages for Hybrid    ${URL}  ${MACHYBRIDNAME}     ${MACHYBRIDLINK}
-Verification download of Windows Default Packages for SAAS
-    [Tags]  Client Download
-    Download Default Packages for Windows for SAAS    ${URL}    ${WINSAASNAME}     ${WINSAASLINK}
-Verification download of Windows Default Packages for Hybrid
-    [Tags]  Client Download
-    Download Default Packages for Windows for Hybrid   ${URL}    ${WINHYBRIDNAME}     ${WINHYBRIDLINK}
-Verification of custom package for Windows
-    [Tags]  Client Download
-    Create Custom Package for Windows   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
+#Verfication download of MAC Default SAAS package
+#    [Tags]  Client Download
+#    Download MAC Default Packages for SAAS    ${URL}    ${MACSAASNAME}     ${MACSAASLINK}
+#Verfication download of MAC Default Hybrid package
+#    [Tags]  Client Download
+#    Download MAC Default Packages for Hybrid    ${URL}  ${MACHYBRIDNAME}     ${MACHYBRIDLINK}
+#Verification download of Windows Default Packages for SAAS
+#    [Tags]  Client Download
+#    Download Default Packages for Windows for SAAS    ${URL}    ${WINSAASNAME}     ${WINSAASLINK}
+#Verification download of Windows Default Packages for Hybrid
+#    [Tags]  Client Download
+#    Download Default Packages for Windows for Hybrid   ${URL}    ${WINHYBRIDNAME}     ${WINHYBRIDLINK}
+#Verification of custom package for Windows
+#    [Tags]  Client Download
+#    Create Custom Package for Windows   ${notification}     ${DELETE CLIENT FOLDER}   ${unused_client_value_delete_span}      ${hybrid_unprinted_jobs_value}  ${latebind}    ${hybrid_printed_jobs_value}    ${saas}
 ####################################################################
