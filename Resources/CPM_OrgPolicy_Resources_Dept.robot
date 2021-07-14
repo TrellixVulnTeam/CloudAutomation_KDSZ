@@ -224,7 +224,8 @@ Reset Quota choice
     set selenium timeout    20
     wait until page contains element    ${chk_costcenter}
     click element     ${chk_costcenter}
-    wait until page contains element        ${btn_confirmchange}
+    Wait Until Keyword Succeeds    40 sec    5 sec    page should contain element   ${btn_confirmchange}
+    sleep_call_2
     click element       ${btn_confirmchange}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${btn_save}
     click element       ${btn_save}
