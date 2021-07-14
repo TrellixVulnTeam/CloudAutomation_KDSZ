@@ -62,11 +62,15 @@ ${WEBFILENAME}                          Attachment.txt
 
 
 *** Test Cases ***
+
 Verification of correct cloud login
+[tags] Login
     Open CPM portal and Login Verification      ${USER}     ${PASSWORD}
 Verification of dashboard title
+[tags] Dashboard
     Dashboard Should Open
 Logout from portal for admin
+[tags] Logout
     Exit
 #Delegate addition using ${EMAIL USER}
 #    Open Browser To Login Page   ${USER}     ${PASSWORD}
