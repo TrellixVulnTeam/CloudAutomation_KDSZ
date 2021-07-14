@@ -48,25 +48,32 @@ def printer_automation(ip,pin,text):
             # text="Hello.txt"
             #ups.regex('Find Widget "resource-id=\'esf.printReleaseUi:id/action_settings\'" do "press"')
             #ups.regex('On text "Refresh" do "press"')
-            time.sleep(1)
+            time.sleep(5)
             ups_command = '''In area "resource-id='esf.printReleaseUi:id/lvFragMain'" On text "{}" Do "press"'''.format(
                 text)
             ups.regex(ups_command)
             ups.regex('on text "Print" do "press"')
-            time.sleep(1)
+            time.sleep(5)
             ups.regex('on text "Print" Do "wait_until_found"')
-            time.sleep(1)
+            time.sleep(5)
             ups.regex('do "press key KEYCODE_BACK"')
-            time.sleep(1)
+            time.sleep(5)
             ups.regex('on text "sravantesh.neogi@lexmark.com" do "press" ')
-            time.sleep(1)
+            time.sleep(5)
             ups.regex('on text "Yes" do "press" ')
-            time.sleep(1)
+            time.sleep(5)
             print_status = 'True'
             return print_status
             #break
         except ValueError:
             print("Job name not found")
+            ups.regex('do "press key KEYCODE_BACK"')
+            time.sleep(5)
+            ups.regex('on text "sravantesh.neogi@lexmark.com" do "press" ')
+            time.sleep(5)
+            ups.regex('on text "Yes" do "press" ')
+            time.sleep(5)
+
             print_status = 'False'
             return print_status
 
@@ -290,5 +297,5 @@ def printer_automation_latebindcopy(ip,pin,text,state,copy_value):
             ups.regex('on text "Yes" do "press" ')
             time.sleep(1)
             return print_status
-# quota_status=printer_automation_latebindcopy("10.195.6.123","1234","Hello_email.txt","false")
-# print(quota_status)
+quota_status=printer_automation("10.195.6.123","1234","Hello.txt")
+print(quota_status)
