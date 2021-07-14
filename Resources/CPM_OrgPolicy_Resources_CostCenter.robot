@@ -19,6 +19,8 @@ ${enable_true}                  true
 ${enable_false}                 false
 ${copy_value_enable}            2
 ${copy_value_disable}           1
+${IP}
+${PIN}
 
 *** Keywords ***
 Open Browser To Login Page using Admin
