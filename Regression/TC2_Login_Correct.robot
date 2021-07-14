@@ -8,12 +8,13 @@ Library     ../Library/Mobile_Submission_all.py
 Library     ../Library/send_email_us_eu.py
 Library     ../Library/XMLParser.py
 Resource     ../Resources/CPM_LoginPage_resources.robot
+Force Tags      Login
 
 *** Variables ***
-${URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      headlessChrome
-${USER}                         sravantesh.neogi@lexmark.com
-${PASSWORD}                     Password@1234
+#${URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      headlessChrome
+#${USER}                         sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 ${username_blank}
 ${username_invalid}             sravantesh@lexmark.com
 ${password_blank}

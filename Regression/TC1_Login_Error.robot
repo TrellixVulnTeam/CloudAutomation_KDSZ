@@ -6,17 +6,18 @@ Library     ../Library/CloudLogin.py
 Library     ../Library/Printerautomation.py
 Library     ../Library/CreateDelete_all.py
 Library     ../Library/Mobile_Submission_all.py
-Library     ../Library/send_email_eu_eu.py
+Library     ../Library/send_email_us_eu.py
 Library     ../Library/XMLParser.py
 #Suite Setup     Open Browser To Login Page
 #Test Template   Change Default Settings
 #Suite Teardown     Verify deletion of jobs
+Force Tags      Login
 
 *** Variables ***
-${URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      headlessChrome
-${USER}                     sravantesh.neogi@lexmark.com
-${PASSWORD}                     Password@1234
+#${URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${tab1name}                     Print Queue
