@@ -13,12 +13,12 @@ Force Tags      Organisation Policy
 
 
 *** Variables ***
-${LOGIN URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
-${USER}                         sravantesh.neogi@lexmark.com
-${PASSWORD}                     Password@1234
-${IP}                           10.195.6.123
-${PIN}                          1234
+#${URL}                    https://dev.eu.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${USER}                         sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
+#${IP}                           10.195.6.123
+#${PIN}                          1234
 
 
 *** Test Cases ***

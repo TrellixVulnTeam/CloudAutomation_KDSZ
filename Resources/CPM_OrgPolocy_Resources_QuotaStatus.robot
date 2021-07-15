@@ -3,11 +3,11 @@ Library  SeleniumLibrary
 Variables    ../PageObjects/Locators.py
 
 *** Variables ***
-${USER}                         sravantesh.neogi@lexmark.com
-${PASSWORD}                     Password@1234
-${URL}                          https://dev.us.cloud.onelxk.co/
-${NONADMIN}                     cpmautomation@test.onelxk.co
-${BROWSER}                      Chrome
+#${USER}                         sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
+#${URL}                          https://dev.us.cloud.onelxk.co/
+#${NONADMIN}                     cpmautomation@test.onelxk.co
+#${BROWSER}                      Chrome
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${next}                         Next

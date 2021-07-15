@@ -14,12 +14,12 @@ Suite Teardown     Log Out Close Browsers
 Force Tags      Web Upload Client
 
 *** Variables ***
-${URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      Chrome
-${USER}                     sravantesh.neogi@lexmark.com
-${PASSWORD}                     Password@1234
-${IP}                           10.195.6.123
-${PIN}                          1234
+#${URL}                    https://dev.us.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
+#${IP}                           10.195.6.123
+#${PIN}                          1234
 ${loginyear}                    © 2021, Lexmark. All rights reserved.
 ${cpmyear}                      © 2021 Lexmark.
 ${tab1name}                     Print Queue
@@ -128,6 +128,7 @@ Change Default Settings
     element attribute value should be   ${progress_value_actual}    aria-valuenow   100
     ${done_btn}     set variable    printQueueUploadModalDoneButton
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible     ${done_btn}
+    sleep_call
     click button    ${done_btn}
     ${job_status}   set variable    documents-row-0-documentStatus
     Wait Until Keyword Succeeds    60 sec    10 sec    element text should be      ${job_status}        Ready

@@ -14,12 +14,12 @@ Suite Teardown     Log Out Close Browsers
 Force Tags      Web Upload Client
 
 *** Variables ***
-${URL}                    https://dev.us.cloud.onelxk.co/
-${BROWSER}                      headlessChrome
-${USER}                     sravantesh.neogi@lexmark.com
-${PASSWORD}                     Password@1234
-${IP}                           10.195.6.123
-${PIN}                          1234
+#${URL}                    https://dev.eu.cloud.onelxk.co/
+#${BROWSER}                      Chrome
+#${USER}                     sravantesh.neogi@lexmark.com
+#${PASSWORD}                     Password@1234
+#${IP}                           10.195.6.123
+#${PIN}                          1234
 
 
 *** Test Cases ***
@@ -94,6 +94,7 @@ Verify File upload Button Feature
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${done_btn}
     element should be visible       ${done_btn}
     element should be enabled       ${done_btn}
+    sleep_call
     click button    ${done_btn}
     ${table_entry}      set variable    //*[@id="document_link_0"]
     Wait Until Keyword Succeeds    35 sec    5 sec    element should not be visible      ${table_entry}
