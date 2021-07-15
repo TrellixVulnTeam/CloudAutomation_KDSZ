@@ -82,15 +82,21 @@ Create Custom Quota
     click element   ${quota_total}
     wait until page contains element    ${txt_total_value}
     click element   ${txt_total_value}
+    sleep_call_2
     press keys      ${txt_total_value}      \DELETE
+    sleep_call_2
     input text      ${txt_total_value}      10
+    sleep_call_2
     click element   ${quota_color}
-    wait until page contains element    ${txt_color_value}
+    sleep_call_2
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${txt_color_value}
     click element   ${txt_color_value}
+    sleep_call_2
     press keys      ${txt_color_value}      \DELETE
     input text      ${txt_color_value}      10
+    sleep_call_2
     click button    ${btn_vary_ok}
-    wait until page contains element        ${btn_create_def}
+    Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element       ${btn_create_def}
     click button    ${btn_create_def}
 
 #Create user
