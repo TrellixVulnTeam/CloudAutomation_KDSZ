@@ -87,7 +87,7 @@ Create Custom Quota
     sleep_call_2
     input text      ${txt_total_value}      10
     sleep_call_2
-    click element   ${quota_color}
+    click element   ${radio_customcolor}
     sleep_call_2
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${txt_color_value}
     click element   ${txt_color_value}
