@@ -53,7 +53,7 @@ Create Custom Package
     Wait until Element Is Visible   ${tab_clientdownload}
     Click Element   ${tab_clientdownload}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${title_clientdownload}
-    click element    ${lnk_custompackage}
+    click element    ${lnk_customwin}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible     ${lbl_clientdownload}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox     ${chk_status}
 #Setting the value for notifications
@@ -189,7 +189,7 @@ Set Unused Client Folder values
     ${unused_client_value_delete_span}      get text    ${txt_noprint_span}
 
 Check default state
-    click element    ${lnk_custompackage}
+    click element    ${lnk_customwin}
     Wait Until Keyword Succeeds    35 sec    5 sec    element should be visible      ${lbl_clientdownload}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain checkbox     ${chk_status}
 #Validating default state for notifications
