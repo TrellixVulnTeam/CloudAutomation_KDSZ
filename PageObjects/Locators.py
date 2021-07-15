@@ -259,8 +259,8 @@ queue_dropdown="id:printQueuePageHeaderDropDown_button"
 txt_search="id:userFilterInput"
 
 lnk_history="id:link-navJobHistory"
-monthly_total_id="id:individualQuotaValuesId-row-5-totalQuota"
-monthly_color_id="id:individualQuotaValuesId-row-5-colorQuota"
+monthly_total_id="id:individualQuotaValuesId-row-6-totalQuota"
+monthly_color_id="id:individualQuotaValuesId-row-6-colorQuota"
 
 tbl_cc_quota_name="id:collections-row-0-quotaDefinition.name"
 

@@ -91,6 +91,8 @@ Open Browser To Login Page using non admin
 Open Browser To Login Page using non admin disable
     Open Print queue for another user
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_upload}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${header_quota_preview}
+    sleep_call_2
     element text should be      ${header_quota_preview}     Quota remaining: Printing disabled
     click element   ${queue_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_search}
@@ -103,6 +105,8 @@ Open Browser To Login Page using non admin disable
 Open Browser To Login Page using non admin no color
     Open Print queue for another user
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_upload}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${header_quota_preview}
+    sleep_call_2
     element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (no color printing)
     click element   ${queue_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_search}
@@ -116,6 +120,8 @@ Open Browser To Login Page using non admin no color
 Open Browser To Login Page using non admin normal
     Open Print queue for another user
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${btn_upload}
+    Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${header_quota_preview}
+    sleep_call_2
     element text should be      ${header_quota_preview}     Quota remaining: ${monthly_total_value} total quota (${monthly_color_value} for color printing)
     click element   ${queue_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_search}
