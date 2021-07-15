@@ -84,7 +84,7 @@ lbl_clientdownload="xpath:/html/body/lpm-app/div/lpm-driver-config/cui-pageheade
 
 title_clientdownload="xpath://*[@id='clientDownloadPageHeader']/div[1]/div[2]/h2[1]"
 
-lnk_custompackage="id:createCustomPackageWindows"
+#lnk_custompackage="id:createCustomPackageWindows"
 chk_status="id:StatusNotification"
 chk_deletefolder="id:DeleteClientFolders"
 txt_noprint_span="id:deleteAfterLabel_input"
