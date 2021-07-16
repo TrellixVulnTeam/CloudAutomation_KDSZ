@@ -50,15 +50,15 @@ Check Delegate feature
     Log out quota
 
 
-Check Email feature
-    Open Browser To Login Page using Admin
-    Open Organisational Policy Page
-    Check default state of email
-    Check email header is not visible
-    Open Organisational Policy Page
-    Enable Email
-    Check email header is present
-    Log out quota
+#Check Email feature
+#    Open Browser To Login Page using Admin
+#    Open Organisational Policy Page
+#    Check default state of email
+#    Check email header is not visible
+#    Open Organisational Policy Page
+#    Enable Email
+#    Check email header is present
+#    Log out quota
 
 Check Quota feature
     Open Browser To Login Page using Admin
