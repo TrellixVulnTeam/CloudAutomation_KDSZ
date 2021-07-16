@@ -427,7 +427,7 @@ Set Quota Assignment for Personal
     click button    ${btn_assignquota}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_email}
     click element   ${txt_email}
-    input text      ${txt_email_input}   ${username_nonadmin}
+    input text      ${txt_email_input}   ${NONADMIN}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lst_email}
     click element   userAssignmentModalHeader
     sleep_call_2
@@ -438,7 +438,7 @@ Set Quota Assignment for Personal
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be enabled   ${btn_vary_ok}
     click button    ${btn_vary_ok}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${tbl_email_quota}
-    element text should be      ${tbl_personal_name}    ${username_nonadmin}
+    element text should be      ${tbl_personal_name}    ${NONADMIN}
 
 
 Check Status Table for normal
@@ -448,7 +448,7 @@ Check Status Table for normal
     Open Quota Status Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   User Quota Status
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotausername}
-    element should contain      ${lbl_quotausername}       ${username_nonadmin}
+    element should contain      ${lbl_quotausername}       ${NONADMIN}
     element should contain      ${lbl_totalquotaremaining}    ${total}
     element should contain      ${lbl_colorquotaremaining}     ${color}
     element attribute value should be      ${icon_condition}     class   glyphicon icon-valid text-primary
@@ -457,7 +457,7 @@ Check Status Table for normal
     click element   ${queue_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_search}
     click element   ${txt_search}
-    input text      ${txt_search}     ${username_nonadmin}
+    input text      ${txt_search}     ${NONADMIN}
     sleep_call_2
     Press Keys    ${txt_search}    ENTER
 
@@ -477,7 +477,7 @@ Check Status Table for warning
     Open Quota Status Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   User Quota Status
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotausername}
-    element should contain      ${lbl_quotausername}       ${username_nonadmin}
+    element should contain      ${lbl_quotausername}       ${NONADMIN}
     element should contain      ${lbl_totalquotaremaining}    ${total}
     element should contain      ${lbl_colorquotaremaining}     ${color}
     element attribute value should be      ${icon_condition}     class   glyphicon icon-warning text-warning
@@ -486,7 +486,7 @@ Check Status Table for warning
     click element   ${queue_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_search}
     click element   ${txt_search}
-    input text      ${txt_search}     ${username_nonadmin}
+    input text      ${txt_search}     ${NONADMIN}
     sleep_call_2
     Press Keys    ${txt_search}    ENTER
 
@@ -506,7 +506,7 @@ Check Status Table for exceeded
     Open Quota Status Page
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain   User Quota Status
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${lbl_quotausername}
-    element should contain      ${lbl_quotausername}       ${username_nonadmin}
+    element should contain      ${lbl_quotausername}       ${NONADMIN}
     element should contain      ${lbl_totalquotaremaining}    ${total}
     element should contain      ${lbl_colorquotaremaining}     ${color}
     element attribute value should be      ${icon_condition}     class   glyphicon icon-notify_alert text-danger
@@ -515,7 +515,7 @@ Check Status Table for exceeded
     click element   ${queue_dropdown}
     Wait Until Keyword Succeeds     25 sec  5 sec   element should be visible   ${txt_search}
     click element   ${txt_search}
-    input text      ${txt_search}     ${username_nonadmin}
+    input text      ${txt_search}     ${NONADMIN}
     sleep_call_2
     Press Keys    ${txt_search}    ENTER
 

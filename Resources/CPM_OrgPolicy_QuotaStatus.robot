@@ -82,19 +82,19 @@ Create Custom Quota
     click element   ${quota_total}
     wait until page contains element    ${txt_total_value}
     click element   ${txt_total_value}
-    sleep_call_2
+    sleep_call_1
     press keys      ${txt_total_value}      \DELETE
-    sleep_call_2
+    sleep_call_1
     input text      ${txt_total_value}      10
-    sleep_call_2
+    sleep_call_1
     click element   ${radio_customcolor}
-    sleep_call_2
+    sleep_call_1
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element    ${txt_color_value}
     click element   ${txt_color_value}
-    sleep_call_2
+    sleep_call_1
     press keys      ${txt_color_value}      \DELETE
     input text      ${txt_color_value}      10
-    sleep_call_2
+    sleep_call_1
     click button    ${btn_vary_ok}
     Wait Until Keyword Succeeds     25 sec  5 sec   page should contain element       ${btn_create_def}
     click button    ${btn_create_def}
